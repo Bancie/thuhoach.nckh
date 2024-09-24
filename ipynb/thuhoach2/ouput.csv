@@ -1,0 +1,35 @@
+Name,p,r,d,w,p-factor
+Project A - Phát triển ý tưởng,4.0,0,200,0.85,0.2125
+Project A - Quy hoạch không gian,3.0,0,200,0.8,0.2357142857142857
+Project C - Phát triển ý tưởng,5.0,0,200,0.85,0.16999999999999998
+Project C - Quy hoạch không gian,2.0,0,200,0.8,0.2357142857142857
+Project A - Phát triển thiết kế,5.0,0,200,0.75,0.15
+Project A - Lựa chọn vật liệu,2.0,0,200,0.7,0.20714285714285713
+Project A - Tính toán chi phí,2.0,0,200,0.6,0.22777777777777775
+Project A - Xây dựng,10.0,0,200,0.95,0.095
+Project A - Lắp đặt,4.0,0,200,0.7,0.11785714285714285
+Project A - Decor,3.0,0,200,0.85,0.14705882352941177
+Project A - Bàn giao,1.0,0,200,1.0,0.19444444444444445
+Project C - Phát triển thiết kế,4.0,0,200,0.75,0.1875
+Project C - Lựa chọn vật liệu,6.0,0,200,0.7,0.11666666666666665
+Project C - Tính toán chi phí,1.0,0,200,0.6,0.1857142857142857
+Khảo sát hiện trạng 1,2.0,0,200,0.33,0.165
+Khảo sát hiện trạng 6,4.0,0,200,0.6,0.15
+Project C - Xây dựng,15.0,0,200,0.95,0.06333333333333332
+Project C - Lắp đặt,4.0,0,200,0.7,0.08684210526315789
+Project C - Decor,4.0,0,200,0.85,0.10869565217391304
+Project C - Bàn giao,1.0,0,200,1.0,0.14583333333333334
+Khảo sát hiện trạng 2,6.0,0,200,0.67,0.11166666666666668
+Project B - Phát triển ý tưởng,8.0,0,200,0.85,0.10625
+Project B - Quy hoạch không gian,7.0,0,200,0.8,0.11
+Khảo sát hiện trạng 3,5.0,0,200,0.45,0.09
+Project B - Phát triển thiết kế,20.0,0,200,0.95,0.0475
+Project B - Lựa chọn vật liệu,3.0,0,200,0.7,0.07173913043478261
+Project B - Tính toán chi phí,2.0,0,200,0.6,0.09
+Khảo sát hiện trạng 4,15.0,0,200,0.85,0.056666666666666664
+Project B - Xây dựng,40.0,0,200,0.95,0.02375
+Project B - Lắp đặt,15.0,0,200,0.7,0.03
+Project B - Decor,9.0,0,200,0.85,0.0390625
+Project B - Bàn giao,1.0,0,200,1.0,0.05384615384615385
+Khảo sát hiện trạng 7,20.0,0,200,0.7,0.034999999999999996
+Khảo sát hiện trạng 5,4.0,0,200,0.1,0.025
