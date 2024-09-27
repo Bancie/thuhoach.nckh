@@ -1,0 +1,35 @@
+Name,p,r,d,w,p-factor
+Project A - Concept development,4.0,0,200,0.85,0.2125
+Project A - Space planning,3.0,0,200,0.8,0.2357142857142857
+Project C - Concept development,5.0,0,200,0.85,0.16999999999999998
+Project C - Space planning,2.0,0,200,0.8,0.2357142857142857
+Project A - Design development,5.0,0,200,0.75,0.15
+Project A - Material selection,2.0,0,200,0.7,0.20714285714285713
+Project A - Cost estimation,2.0,0,200,0.6,0.22777777777777775
+Project A - Construction,10.0,0,200,0.95,0.095
+Project A - Installation,4.0,0,200,0.7,0.11785714285714285
+Project A - Decoration,3.0,0,200,0.85,0.14705882352941177
+Project A - Handover,1.0,0,200,1.0,0.19444444444444445
+Project C - Design development,4.0,0,200,0.75,0.1875
+Project C - Material selection,6.0,0,200,0.7,0.11666666666666665
+Project C - Cost estimation,1.0,0,200,0.6,0.1857142857142857
+Survey Location 1,2.0,0,200,0.33,0.165
+Survey Location 6,4.0,0,200,0.6,0.15
+Project C - Construction,15.0,0,200,0.95,0.06333333333333332
+Project C - Installation,4.0,0,200,0.7,0.08684210526315789
+Project C - Decoration,4.0,0,200,0.85,0.10869565217391304
+Project C - Handover,1.0,0,200,1.0,0.14583333333333334
+Survey Location 2,6.0,0,200,0.67,0.11166666666666668
+Project B - Concept development,8.0,0,200,0.85,0.10625
+Project B - Space planning,7.0,0,200,0.8,0.11
+Survey Location 3,5.0,0,200,0.45,0.09
+Project B - Design development,20.0,0,200,0.95,0.0475
+Project B - Material selection,3.0,0,200,0.7,0.07173913043478261
+Project B - Cost estimation,2.0,0,200,0.6,0.09
+Survey Location 4,15.0,0,200,0.85,0.056666666666666664
+Project B - Construction,40.0,0,200,0.95,0.02375
+Project B - Installation,15.0,0,200,0.7,0.03
+Project B - Decoration,9.0,0,200,0.85,0.0390625
+Project B - Handover,1.0,0,200,1.0,0.05384615384615385
+Survey Location 7,20.0,0,200,0.7,0.034999999999999996
+Survey Location 5,4.0,0,200,0.1,0.025
