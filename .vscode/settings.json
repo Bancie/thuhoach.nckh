@@ -1,0 +1,7 @@
+{
+    "dataWrangler.debug": true,
+    "dataWrangler.startInEditModeForNotebookEntrypoints": true,
+    "dataWrangler.useRelativePath": true,
+    "dataWrangler.experiments.autoDetectCsvDelimiter": true,
+    "dataWrangler.experiments.fastCsvParsing": true
+}
