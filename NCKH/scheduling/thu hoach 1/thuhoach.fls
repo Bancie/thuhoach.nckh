@@ -1,8 +1,8 @@
-PWD /Users/chibangnguyen/Documents/BigBrain/NCKH/scheduling/thu hoach 1
+PWD /Users/chibangnguyen/Documents/thuhoach.nckh/NCKH/scheduling/thu hoach 1
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/chibangnguyen/Documents/BigBrain/NCKH/scheduling/thu hoach 1/thuhoach.tex
+INPUT /Users/chibangnguyen/Documents/thuhoach.nckh/NCKH/scheduling/thu hoach 1/thuhoach.tex
 OUTPUT thuhoach.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/report.cls

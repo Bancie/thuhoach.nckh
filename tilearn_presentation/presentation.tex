@@ -9,6 +9,8 @@
 \usepackage{tikz}
 \usepackage{hyperref}
 \usepackage{caption}
+\usepackage{listings}
+
 
 % import citation package
 \usepackage{biblatex}
@@ -100,10 +102,10 @@
   }
 }
 
-\title{Phương pháp giải bài toán \\ Tối ưu tuyến tính nguyên}
+\title{Chạy số liệu minh hoạ bằng thư viện TiLearn}
 
 
-% \titlegraphic{\hfill \includegraphics[height=1cm]{logodhsg.png}}
+\titlegraphic{\hfill \includegraphics[height=1cm]{tilearn.png}}
 %\titlegraphic{\hfill\includegraphics[height=0.6cm]{sybila-logo/new.png}}
 %\titlegraphic{\hfill\includegraphics[height=0.6cm]{sybila-logo/old.png}}
 %\titlegraphic{\hfill\includegraphics[height=0.6cm]{sybila-logo/old-flat.png}}
@@ -120,7 +122,34 @@
 %\institute{Center for modern beamer themes}
 %\titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
 \begin{document}
+
 \begin{frame}
   \titlepage
 \end{frame}
@@ -130,8 +159,284 @@
     \tableofcontents
 \end{frame}
 
-\section{Giới thiệu}
+\section{Giới thiệu về thư viện}
 
+\begin{frame}{Giới thiệu về thư viện TiLearn}
+\textbf{TiLearn} là sự kết hợp của Time và Machine Learning (học máy), thư viện được xây dựng với mục đích ban đầu hướng đến mục tiêu tự động hoá quá trình đánh giá trọng số cho công việc ($w_j$) và cải thiện quá trình phân nhánh (Learning to Branch) bằng phương pháp học máy.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{pypi_capture.png}
+\includegraphics[width=0.489\linewidth]{web_capture.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Giới thiệu về thư viện TiLearn}
+Mã nguồn hiện đã được tải lên \textbf{GitHub}, quét mã bên dưới để truy cập:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\linewidth]{tilearn_github.png}
+\caption{Mã nguồn GitHub.}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{Giới thiệu về thư viện TiLearn}
+Thư viện cũng đã được công bố trên trang \textbf{PyPI} giúp dễ dàng tải và sử dụng, quét mã bên dưới để truy cập:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\linewidth]{tilearn_pypi.png}
+\caption{Trang thư viện PyPI.}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Giới thiệu về thư viện TiLearn}
+Bên cạnh đó, \textbf{web document} cũng được tạo để cung cấp tài liệu hướng dẫn cách sử dụng, cách chạy cũng như cách thư viện hoạt động, quét mã bên dưới để truy cập:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\linewidth]{tilearn_docs.png}
+\caption{Web document.}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Giới thiệu về thư viện TiLearn}
+    Hiện thư viện đã hoàn thiện các tính năng sau:
+    \begin{itemize}
+    \item Hàm chạy thuật toán EDD.
+    \medskip
+    \item Hàm chạy thuật toán WSPT.
+    \medskip
+    \item Hàm giúp xử lý bài toán $1||\sum C_j$.
+    \medskip
+    \item Hàm giúp xử lý bài toán $1||\sum w_j C_j$.
+    \medskip
+    \item Hàm giúp xử lý bài toán $1|prec|\sum C_j$.
+    \medskip
+    \item Hàm giúp xử lý bài toán $1|prec|\sum w_j C_j$.
+    \medskip
+    \item Hàm giúp xử lý hỗn hợp 2 bài toán $1|prec|\sum w_j C_j$ và $1||\sum w_j C_j$.
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Giới thiệu về thư viện TiLearn}
+Để sử dụng thư viện, ta tải thư viện bằng lệnh sau:
+\medskip
+\begin{lstlisting}
+    pip install tilearn
+\end{lstlisting}
+\medskip
+Một số thư viện hỗ trợ phân tích dữ liệu:
+\begin{lstlisting}
+    pip install pandas
+    pip install ipython
+    pip install jinja2
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]{Giới thiệu về thư viện TiLearn}
+
+Ta khai báo thư viện chính sau:
+\medskip
+\begin{lstlisting}[language=Python]
+    import tilearn as tl
+    from tilearn import _plat as pl
+\end{lstlisting}
+
+Thư viện hỗ trợ phân tích dữ liệu:
+\medskip
+\begin{lstlisting}[language=Python]
+    import csv
+    import pandas as pd
+    from IPython.display import display
+    import matplotlib.pyplot as plt
+\end{lstlisting}
+
+\end{frame}
+
+
+\section{Chạy số liệu minh hoạ}
+
+\begin{frame}{Chạy số liệu minh hoạ}
+Giả sử ta cần xử lý 3 danh sách công việc sau:
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+    \begin{table}[t]
+        \centering
+        \resizebox{85pt}{!}{%
+            \begin{tabular}{|l|c|c|c|c|}
+            \hline
+            \textbf{Name} & \textbf{p} & \textbf{r} & \textbf{d} & \textbf{w} \\
+            \hline
+            Job 1  & 4  & 0  & 100 & 0.65 \\
+            Job 2  & 1  & 0  & 100 & 0.84 \\
+            Job 3  & 3  & 0  & 100 & 0.46 \\
+            Job 4  & 3  & 0  & 100 & 0.79 \\
+            Job 5  & 1  & 0  & 100 & 0.17 \\
+            Job 6  & 3  & 0  & 100 & 0.50 \\
+            Job 7  & 4  & 0  & 100 & 0.95 \\
+            Job 8  & 2  & 0  & 100 & 0.14 \\
+            Job 9  & 5  & 0  & 100 & 0.52 \\
+            Job 10 & 2  & 0  & 100 & 0.40 \\
+            Job 11 & 4  & 0  & 100 & 0.55 \\
+            Job 12 & 1  & 0  & 100 & 0.39 \\
+            Job 13 & 2  & 0  & 100 & 0.57 \\
+            Job 14 & 1  & 0  & 100 & 0.90 \\
+            Job 15 & 1  & 0  & 100 & 0.22 \\
+            \hline
+            \end{tabular}%
+        }
+        \caption{Danh sách 1.}
+        \label{tab:job_table}
+    \end{table}
+\end{column}
+\begin{column}{0.5\textwidth}
+    Trong đó, danh sách 1 các công việc độc lập và \textbf{không tồn tại} ràng buộc thứ tự, tức thuộc dạng bài toán $1||\sum w_j C_j$.
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Chạy số liệu minh hoạ}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+    \begin{table}[ht]
+        \centering
+        \resizebox{160pt}{!}{%
+            \begin{tabular}{|l|c|c|c|c|}
+            \hline
+            \textbf{Name} & \textbf{p} & \textbf{r} & \textbf{d} & \textbf{w} \\
+            \hline
+            Job 16 & 4  & 0  & 100 & 0.70 \\
+            Job 17 & 3  & 0  & 100 & 0.95 \\
+            Job 18 & 4  & 0  & 100 & 0.49 \\
+            Job 19 & 1  & 0  & 100 & 0.13 \\
+            Job 20 & 5  & 0  & 100 & 0.94 \\
+            Job 21 & 1  & 0  & 100 & 0.57 \\
+            Job 22 & 4  & 0  & 100 & 0.79 \\
+            \hline
+            \end{tabular}%
+        }
+        \caption{Danh sách 2.}
+        \label{tab:extended_job_table}
+    \end{table}
+\end{column}
+\begin{column}{0.5\textwidth}
+Trong đó, danh sách 2 \textbf{tồn tại} ràng buộc thứ tự, tức thuộc dạng bài toán $1|prec|\sum w_j C_j$.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Chạy số liệu minh hoạ}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+    \begin{table}[ht]
+        \centering
+        \resizebox{150pt}{!}{%
+            \begin{tabular}{|l|c|c|c|c|}
+            \hline
+            \textbf{Name} & \textbf{p} & \textbf{r} & \textbf{d} & \textbf{w} \\
+            \hline
+            Job 23 & 4  & 0  & 100 & 0.24 \\
+            Job 24 & 1  & 0  & 100 & 0.54 \\
+            Job 25 & 2  & 0  & 100 & 0.81 \\
+            Job 26 & 2  & 0  & 100 & 0.41 \\
+            Job 27 & 5  & 0  & 100 & 0.22 \\
+            Job 28 & 2  & 0  & 100 & 0.29 \\
+            Job 29 & 5  & 0  & 100 & 0.65 \\
+            Job 30 & 4  & 0  & 100 & 0.69 \\
+            \hline
+            \end{tabular}%
+        }
+        \caption{Danh sách 3.}
+        \label{tab:further_extended_job_table}
+    \end{table}
+\end{column}
+\begin{column}{0.5\textwidth}
+Tương tự, danh sách 3 \textbf{tồn tại} ràng buộc thứ tự, tức thuộc dạng bài toán $1|prec|\sum w_j C_j$.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Chạy số liệu minh hoạ}
+Cấu trúc tập tin được thiết lập như sau:
+\medskip
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\linewidth]{path.png}
+\caption{Cấu trúc tập tin.}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Chạy số liệu minh hoạ}
+Ta thực hiện hai báo đường dẫn dữ liệu như sau:
+\begin{lstlisting}[language=Python]
+    original = 'thuhoach2/data'
+    backup = 'thuhoach2/data/backup'
+    list1 = 'thuhoach2/data/list1.csv'
+    list2 = 'thuhoach2/data/list2.csv'
+    list3 = 'thuhoach2/data/list3.csv'
+\end{lstlisting}
+Tiếp theo, ta chọn dạng bài toán cho từng danh sách bằng cách thiết lập tham số \textbf{prec} như sau:
+    
+\begin{itemize}
+\item \textbf{prec=0} cho bài toán không tồn tại ràng buộc thứ tự.
+\item \textbf{prec=1} cho bài toán tồn tại ràng buộc thứ tự.
+\end{itemize}
+
+\begin{lstlisting}[language=Python]
+    lists = [
+        pl.List(file_path=list1, prec=0),
+        pl.List(file_path=list2, prec=1),
+        pl.List(file_path=list3, prec=1),
+    ]
+\end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]{Chạy số liệu minh hoạ}
+Ta chạy chương trình bằng lệnh sau:
+\begin{lstlisting}[language=Python]
+    schedule = tl.optimal_list(lists, original, backup)
+    print(schedule)
+\end{lstlisting}
+
+{\scriptsize [['Job 14', 1.0, 0, 100, 0.9, 0.9], ['Job 2', 1.0, 0, 100, 0.84, 0.84], ['Job 12', 1.0, 0, 100, 0.39, 0.39], ['Job 13', 2.0, 0, 100, 0.57, 0.285], ['Job 4', 3.0, 0, 100, 0.79, 0.26333333333333336], ['Job 7', 4.0, 0, 100, 0.95, 0.2375], ['Job 16', 4.0, 0, 100, 0.7, 0.175], ['Job 17', 3.0, 0, 100, 0.95, 0.2357142857142857], ['Job 23', 4.0, 0, 100, 0.24, 0.06], ['Job 24', 1.0, 0, 100, 0.54, 0.156], ['Job 25', 2.0, 0, 100, 0.81, 0.22714285714285715], ['Job 15', 1.0, 0, 100, 0.22, 0.22], ['Job 26', 2.0, 0, 100, 0.41, 0.205], ['Job 10', 2.0, 0, 100, 0.4, 0.2], ['Job 18', 4.0, 0, 100, 0.49, 0.1225], ['Job 19', 1.0, 0, 100, 0.13, 0.124], ['Job 20', 5.0, 0, 100, 0.94, 0.156], ['Job 21', 1.0, 0, 100, 0.57, 0.19363636363636363], ['Job 5', 1.0, 0, 100, 0.17, 0.17], ['Job 6', 3.0, 0, 100, 0.5, 0.16666666666666666], ['Job 1', 4.0, 0, 100, 0.65, 0.1625], ['Job 3', 3.0, 0, 100, 0.46, 0.15333333333333335], ['Job 11', 4.0, 0, 100, 0.55, 0.1375], ['Job 22', 4.0, 0, 100, 0.47, 0.1175], ['Job 27', 5.0, 0, 100, 0.22, 0.044], ['Job 28', 2.0, 0, 100, 0.29, 0.07285714285714286], ['Job 29', 5.0, 0, 100, 0.65, 0.09666666666666668], ['Job 30', 4.0, 0, 100, 0.69, 0.115625], ['Job 9', 5.0, 0, 100, 0.52, 0.10400000000000001], ['Job 8', 2.0, 0, 100, 0.14, 0.07]]}
+
+\end{frame}
+\section*{Trực quan hoá dữ liệu}
+
+\begin{frame}{Trực quan hoá dữ liệu}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{output_p.png}
+\caption{Biểu đồ khoảng thời gian xử lý.}
+\end{figure}
+
+Dựa vào biểu đồ trên, có thể thấy rằng sau khi tối ưu hóa danh sách công việc, thời gian xử lý của từng công việc có \textbf{xu hướng tăng} từ công việc đầu tiên đến công việc cuối cùng.
+\end{frame}
+
+\begin{frame}{Trực quan hoá dữ liệu}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{output_w.png}
+\caption{Biểu đồ trọng số công việc.}
+\end{figure}
+
+Dựa vào biểu đồ trên, ta có thể thấy rằng sau khi tối ưu hóa danh sách công việc, trọng số của từng công việc có \textbf{xu hướng giảm} từ công việc đầu tiên đến công việc cuối cùng.
+\end{frame}
+
+\begin{frame}{Trực quan hoá dữ liệu}
+
+Từ đây, ta dễ dàng nhận thấy rằng các công việc có \textbf{thời gian xử lý ngắn} và \textbf{trọng số (mức độ ưu tiên) cao} sẽ được đẩy lên đầu, trong khi những công việc có thời gian xử lý dài hơn và mức độ ưu tiên thấp hơn sẽ được xếp sau.
+\end{frame}
+
+\section{Ứng dụng thực tế}
 
 \begin{frame}[allowframebreaks, noframenumbering]
     \nocite{*}
