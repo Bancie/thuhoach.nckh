@@ -1,0 +1,13 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {chapter}{Lời cam đoan}{i}{chapter*.1}%
+\contentsline {chapter}{Lời cảm ơn}{ii}{chapter*.2}%
+\contentsline {chapter}{Mục lục}{iii}{chapter*.2}%
+\contentsline {chapter}{Danh mục các kí hiệu}{iv}{chapter*.4}%
+\contentsline {chapter}{{\bf Lời nói đầu}\rm }{1}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}Kiến thức chuẩn bị}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1} Tập lồi }{4}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1} Một số khái niệm topo cơ bản trong $\mathbb {R}^n$ }{4}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2} Tập lồi và các tính chất cơ bản }{4}{subsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.2.1} Tập lồi}{4}{subsubsection.1.1.2.1}%
+\contentsline {chapter}{{\bf Kết luận}\rm }{6}{chapter*.6}%
+\contentsline {chapter}{{\bf Tài liệu tham khảo}}{7}{chapter*.7}%

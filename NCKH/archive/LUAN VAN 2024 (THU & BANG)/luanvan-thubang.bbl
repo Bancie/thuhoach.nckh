@@ -1,0 +1,69 @@
+\begin{thebibliography}{10}
+
+\bibitem{phanhoangchon}
+Phan~Hoàng Chơn.
+\newblock {\em Giáo trình Đại số tuyến tính}, Đại học Sài Gòn, 2022.
+
+\bibitem{conforti2014integer}
+M.~Conforti, G.~Cornuejols, and G.~Zambelli.
+\newblock {\em Integer Programming}.
+\newblock Graduate Texts in Mathematics. Springer International Publishing, 2014.
+
+\bibitem{dantzig1997linear}
+G.B. Dantzig and M.N. Thapa.
+\newblock {\em Linear Programming 2: 2: Theory and Extensions}.
+\newblock Linear Programming. Springer, 1997.
+
+\bibitem{dantzig97}
+George~B. Dantzig and Mukund~Narain Thapa.
+\newblock {\em Linear Programming 1: Introduction}.
+\newblock Springer Series in Operations Research and Financial Engineering. Springer, New York, 1997.
+
+\bibitem{eiselt2007linear}
+H.A. Eiselt and C.L. Sandblom.
+\newblock {\em Linear Programming and its Applications}.
+\newblock Springer Berlin Heidelberg, 2007.
+
+\bibitem{inbook}
+Ralph Gomory.
+\newblock {\em Outline of an Algorithm for Integer Solutions to Linear Programs and An Algorithm for the Mixed Integer Problem}, pages 77--103.
+\newblock 01 2010.
+
+\bibitem{jünger200950}
+M.~J{\"u}nger, T.M. Liebling, D.~Naddef, G.L. Nemhauser, W.R. Pulleyblank, G.~Reinelt, G.~Rinaldi, and L.A. Wolsey.
+\newblock {\em 50 Years of Integer Programming 1958-2008: From the Early Years to the State-of-the-Art}.
+\newblock Springer Berlin Heidelberg, 2009.
+
+\bibitem{Land1960AnAM}
+Ailsa~H. Land and Alison~G. Doig.
+\newblock An automatic method of solving discrete programming problems.
+\newblock {\em Econometrica}, 28:497, 1960.
+
+\bibitem{lay2003linear}
+D.C. Lay.
+\newblock {\em Linear Algebra and Its Applications}.
+\newblock Pearson Education, 2003.
+
+\bibitem{rao2009engineering}
+S.S. Rao.
+\newblock {\em Engineering Optimization: Theory and Practice}.
+\newblock Wiley, 2009.
+
+\bibitem{taquangson}
+Tạ~Quang Sơn.
+\newblock {\em Bài giảng Quy hoạch tuyến tính}, Đại học Sài Gòn, 2023.
+
+\bibitem{buithetam}
+Bùi~Thế Tâm.
+\newblock {\em Quy hoạch rời rạc}, NXB Hà Nội, 2008.
+
+\bibitem{huudien}
+Nguyễn~Hữu Điển.
+\newblock {\em Giáo trình Tối ưu tuyến tính và Ứng dụng}, NXB ĐHQG Hà Nội.
+
+\bibitem{nguyễn1996tối}
+Nguyễn Đức Nghĩa.
+\newblock {\em Tối ưu ho{\'a}: Quy hoạch tuyến t{\'\i}nh v{\`a} rời rạc}.
+\newblock Gi{\'a}o dục, 1996.
+
+\end{thebibliography}

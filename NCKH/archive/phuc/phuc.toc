@@ -1,0 +1,21 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {section}{\bf \hspace {-18pt}Lời cam đoan}{i}{Doc-Start}%
+\contentsline {section}{\bf \hspace {-18pt}Lời cảm ơn}{ii}{Doc-Start}%
+\contentsline {section}{{{\bf \hspace {-18pt}Mục lục}}}{iii}{Doc-Start}%
+\contentsline {section}{\bf \hspace {-18pt}MỞ ĐẦU}{1}{chapter*.1}%
+\contentsline {chapter}{\numberline {1}Đa thức một biến và một số đánh giá về nghiệm của chúng }{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Đa thức một biến}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Đánh giá nghiệm của đa thức phức một biến}{4}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Đa thức không phân cực}{10}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Vấn đề Routh-Hurwitz}{13}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3} Các nghiệm của một đa thức đã cho và của đạo hàm của nó}{14}{subsection.1.2.3}%
+\contentsline {chapter}{\numberline {2}Khảo sát một số bất đẳng thức với đa thức phức và đạo hàm của chúng}{16}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Một số bất đẳng thức với đa thức phức}{16}{section.2.1}%
+\contentsline {subsubsection}{Đạo hàm của bất đẳng thức với đa thức phức}{20}{equation.2.1.12}%
+\contentsline {subsubsection}{Một số định lý và hệ quả của đạo hàm của bất đẳng thức đối với đa thức phức }{21}{equation.2.1.17}%
+\contentsline {chapter}{\numberline {3} Ứng dụng để khảo sát tính bất khả quy của đa thức hệ số nguyên}{30}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Tính bất khả quy của đa thức hệ số nguyên}{30}{section.3.1}%
+\contentsline {subsubsection}{Tiêu chí bất khả quy}{34}{1dl.3.1.4}%
+\contentsline {subsubsection}{Tính bất khả quy của đa thức bậc 3 và bậc 4}{43}{vd.13}%
+\contentsline {subsubsection}{Bất khả quy của một số nhị thức bậc ba}{46}{1dl.3.1.19}%
+\contentsline {subsubsection}{Định lý bất khả quy Hilbert}{46}{1dl.3.1.22}%

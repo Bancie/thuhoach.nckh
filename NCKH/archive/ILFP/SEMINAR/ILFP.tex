@@ -1,0 +1,884 @@
+\documentclass{beamer}
+\mode<presentation>
+\setbeamertemplate{bibliography item}{}
+\usepackage[utf8]{vietnam}
+\usepackage{beamerthemesplit}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{textpos}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{caption}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary {datavisualization} 
+\pgfplotsset{compat=1.18, width = 7cm}
+\usetikzlibrary{patterns}
+\setbeamertemplate{bibliography item}[text]
+\usetheme{Ilmenau} % AnnArbor, Ilmenau, Darmstadt, Dresden, CambridgeUS, Frankfurt, Singapore
+\newtheorem{dn}{Định nghĩa}[section]
+\newtheorem{dl}{Định lý}[section]
+\newtheorem{tc}{Tính chất}[section]
+\newtheorem{hq}{Hệ quả}[section]
+\newtheorem{bd}{Bổ đề}[section]
+\newtheorem{md}{Mệnh đề}[section]
+\newtheorem{vd}{Ví dụ}[section]
+\newtheorem{nx}{Nhận xét}[section]
+\newcommand{\dom}{\text{{\rm dom}}}
+\newcommand{\epi}{\text{{\rm epi}}}
+\newcommand{\Min}{\text{{\rm Min}}}
+\setbeamertemplate{theorems}[numbered]
+\setbeamertemplate{definitions}[numbered]
+\setbeamertemplate{footline}[frame number]
+\usepackage{algorithm}
+\usepackage{color}
+\usepackage{algorithmic}
+\usepackage{footmisc}
+\usepackage{indentfirst} 
+\usepackage{comment}
+\AtBeginEnvironment{proof}{%
+  \setbeamercolor{block title}{use=example text,fg=white,bg=example text.fg!75!black}
+  \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\usefonttheme{professionalfonts}
+\setbeamercolor{normal text}{bg=white,fg=black}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\beamertemplatetransparentcoveredhigh
+\title[]{\fontsize{13pt}{10pt}\selectfont {\bf \LARGE Tối ưu phân tuyến tính \\ cho nghiệm nguyên}\\}
+\author[]{\bf Nguyễn Chí Bằng \\}
+\small{\date{\today}}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{TÓM TẮT}
+\Large
+\begin{itemize}
+\item Giới thiệu về bài toán tối ưu phân tuyến tính:
+\begin{itemize} \Large
+\item Cơ sở lý thuyết.
+\item Thuật toán Dinkelbach.
+\end{itemize}
+\item Phương pháp giải bài toán tối ưu phân tuyến tính cho nghiệm nguyên bằng thuật toán nhánh cận (LandDoig).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{NỘI DUNG}
+    \tableofcontents
+\end{frame}
+
+\section{Giới thiệu}
+%FLP-begin
+\begin{frame}
+   \center 
+   \Huge Giới thiệu bài toán 
+\end{frame}
+\begin{frame}{Tối ưu phân tuyến tính (Linear-Fractional Programming)}
+    \begin{equation} \small \label{F}
+        \begin{split}
+        (F) \quad Q(x) & = \frac{P(x)}{D(x)} \quad \longrightarrow Max \\
+            & \left\{
+            \begin{split}
+            &Ax \leq  b, \\
+            &x \geq 0. \\
+            \end{split}
+            \right.    
+        \end{split}
+    \end{equation}            
+    \begin{itemize} \small
+    \item Bài toán $(F)$ gọi là bài toán \textbf{Tối ưu phân tuyến tính.}
+    \item Trong đó $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
+        b_1 \\
+        b_2 \\
+        \vdots \\
+        b_m
+        \end{pmatrix}$, với $x\in \mathbb{R}^n_+$. Tập $S_F:=\{x\in \mathbb{R}^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu phân tuyến tính. 
+    \item $P(x)=p^Tx+p_0$, với $p^T = (p_1 \: p_2 \: \ldots \: p_n)$ và $D(x)=d^Tx+d_0$, với $d^T = (d_1 \: d_2 \: \ldots \: d_n)$ ($D(x)>0, \forall x \in S_F$).
+    \end{itemize}
+\end{frame}
+\begin{frame}{Bài toán minh hoạ} \Large
+    \begin{equation}
+    \begin{split}
+    \quad Q(x) & = \frac{4x_1+2x_2-6}{3x_1+2x_2-5} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        & x_1 + x_2 \geq 6 \\
+        & x_1 + 2x_2 \leq 12 \\
+        &x_1, x_2 \geq 0. \\
+        \end{split}\right.    
+    \end{split}
+    \end{equation}            
+\end{frame}
+\begin{frame}{Mối quan hệ với bài toán tối ưu tuyến tính}
+\begin{itemize}
+\item Nếu $d^T=0$ và $d_0=1$, bài toán (F) trở thành bài toán tối ưu tuyến tính (P) và ta gọi (F) là bài toán mở rộng của (P):
+\begin{equation} \small \label{P}
+    \begin{split}
+    (P) \quad P(x) & = p^Tx+p_0 \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &x \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}
+\item Nếu $d^T=0$ và $d_0 \neq 0$, ta thu được bài toán tuyến tính (Q):
+\begin{equation} \small \label{Q}
+    \begin{split}
+    (Q) \quad Q(x) & = \frac{p^T}{d_0}x+\frac{p_0}{d_0}=\frac{P(x)}{d_0} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &x \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\begin{itemize}
+\item Ngược lại nếu $p^T=0$ và $p_0 \neq 0$:
+\begin{equation} \small \label{Q}
+    \begin{split}
+    (Q) \quad Q(x) & = \frac{p_0}{d^Tx+d_0} = \frac{p_0}{D(x)} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &x \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}
+Tương tự bài toán:
+\begin{equation} \small \label{Q}
+    \begin{split}
+    (Q) \quad Q(x) & = \frac{d^Tx+d_0}{p_0} = \frac{D(x)}{p_0} \quad \longrightarrow Min \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &x \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}
+\item Nếu $p^T$ và $d^T$ phụ thuộc tuyến tính, khi đó tồn tại $\mu \neq 0$ và $p^T=\mu d^T$, ta thu được hàm:
+\end{itemize}
+\end{frame}
+\begin{frame} \large
+\begin{equation} \label{Q}
+    \begin{split}
+    (Q) \quad Q(x) & = \frac{\mu d^Tx + p_0}{d^Tx+d_0} = \mu + \frac{p_0-\mu d_0}{d^Tx+d_0} \quad \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &x \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}
+Ta thay bằng hàm $D(x)$ với điều kiện:
+\begin{itemize}
+\item Nếu $p_0 - \mu d_0 > 0$, $D(x) \longrightarrow Min$.
+\item Nếu $p_0 - \mu d_0 < 0$, $D(x) \longrightarrow Max$.
+\item Nếu $p_0 - \mu d_0 = 0$ thì $Q(x)=\mu= \text{hằng số} \: (\forall x \in S_F)$, ta bỏ qua bài toán.
+\end{itemize}
+\end{frame}
+%FLP-end
+
+%GRAPHICAL-BEGIN
+\section{Phương pháp hình học}
+\begin{frame}
+   \center 
+   \Huge Phương pháp hình học 
+\end{frame}
+
+\begin{frame}{Bài toán trên không gian $\mathbb{R}^2$}
+\begin{equation} \large
+    \begin{split}
+    (F) \quad Q(x) & = \frac{P(x)}{D(x)} = \frac{p_1x_1 + p_2 x_2 + p_0}{d_1x_1+d_2x_2 + d_0}\quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \text{ trong đó } A=m \times 2 \\
+        &x_1, x_2 \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+    \begin{tikzpicture}[scale=1.2]
+    \begin{axis}
+        [
+        xmin=0,xmax=80,
+        ymin=0,ymax=80,
+        xlabel={$x_1$},
+        ylabel={$x_2$},
+        grid style={line width=.1pt, draw=darkgray!50},
+        major grid style={line width=.2pt,draw=darkgray!50},
+        axis lines=middle,
+        yticklabel=\empty,
+        xticklabel=\empty,
+        enlargelimits={abs=0},
+        samples=100,
+        domain = -20:20,
+        ]
+        \filldraw[blue!30, pattern=north west lines, pattern color=blue!30, line width=1pt] (30, 25) -- (50, 20) -- (70, 30) -- (70, 50) -- (50, 65) -- (20, 50) -- cycle;
+        \node[blue!50] at (60,40) {\tiny $S_F$};
+    \end{axis}
+    \end{tikzpicture}  
+    \caption{Tập nghiệm minh hoạ của bài toán (F)}
+    \end{figure}
+\end{frame}
+\begin{frame}{Tính chất}
+Đặt $Q(x)=K$ ($K \in \mathbb{R}$), ta được:
+\begin{equation} \label{pt0}
+(p_1-Kd_1)x_1+(p_2-Kd_2)x_2+(p_0-Kd_0) = 0
+\end{equation}
+\begin{equation} \label{pt1}
+\implies
+\left\{ \large
+\begin{array}{rcr}
+p_1x_1+p_2x_2+p_0 &=& 0 \\
+d_1x_1+d_2x_2+d_0 &=& 0 \\
+\end{array}
+\right.
+\end{equation}
+\begin{itemize}
+\item $Q(x)=K$ là đường mức quét qua tập $S_F$, đến khi gặp \textsl{cực điểm} thì ở đó ta nhận được giá trị $K$ là giá trị tối ưu của bài toán (F).
+\item Ta xác định được điểm cố định $F$ là nghiệm của phương trình \eqref{pt0}, nói cách khác, điểm cố định $F$ là điểm giao của 2 đường thẳng $P(x)=0$ và $D(x)=0$.
+\item Trường hợp $P(x)=0$ song song với $D(x)=0$, hay nói cách khác hệ \eqref{pt0} vô nghiệm thì điểm cố định $F$ không tồn tại.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\begin{figure}
+    \begin{tikzpicture}[scale=1.2]
+    \begin{axis}
+        [
+        xmin=-10,xmax=80,
+        ymin=-10,ymax=80,
+        xlabel={$x_1$},
+        ylabel={$x_2$},
+        grid style={line width=.1pt, draw=darkgray!50},
+        major grid style={line width=.2pt,draw=darkgray!50},
+        axis lines=middle,
+        yticklabel=\empty,
+        xticklabel=\empty,
+        enlargelimits={abs=0},
+        samples=100,
+        domain = -20:20,
+        ]
+        \filldraw[blue!30, pattern=north west lines, pattern color=blue!30, line width=1pt] (30, 25) -- (50, 20) -- (70, 30) -- (70, 50) -- (50, 65) -- (20, 50) -- cycle;
+        \node[blue!50] at (60,40) {\tiny $S_F$};
+        \node at (20, 25) {\small $F$};
+        \node at (20,19.5) {\large \textbullet};
+        \node at (55, -7) {\tiny $D(x)=0$};
+        \node[rotate=60] at (42, 70) {\tiny $P(x)=0$};
+        \draw (15, 10) -- (50, 80);
+        \draw (10, 25) -- (70, -7);
+    \end{axis}
+    \end{tikzpicture}  
+    \caption{Minh hoạ điểm cố định $F$}
+    \end{figure}
+\end{frame}
+\begin{frame}
+\begin{figure}
+    \begin{tikzpicture}[scale=1.2]
+    \begin{axis}
+        [
+        xmin=-10,xmax=80,
+        ymin=-10,ymax=80,
+        xlabel={$x_1$},
+        ylabel={$x_2$},
+        grid style={line width=.1pt, draw=darkgray!50},
+        major grid style={line width=.2pt,draw=darkgray!50},
+        axis lines=middle,
+        yticklabel=\empty,
+        xticklabel=\empty,
+        enlargelimits={abs=0},
+        samples=100,
+        domain = -20:20,
+        ]
+        \filldraw[blue!30, pattern=north west lines, pattern color=blue!30, line width=1pt] (30, 25) -- (50, 20) -- (70, 30) -- (70, 50) -- (50, 65) -- (20, 50) -- cycle;
+        \node[blue!50] at (60,40) {\tiny $S_F$};
+        \node at (20, 25) {\small $F$};
+        \node at (20,19.5) {\large \textbullet};
+        \node at (55, -7) {\tiny $D(x)=0$};
+        \node[rotate=60] at (42, 70) {\tiny $P(x)=0$};
+        \draw (15, 10) -- (50, 80);
+        \draw (10, 25) -- (70, -7);
+        \draw[blue] (5, 19) -- (80, 20);
+        \draw[blue] (20, 11) -- (20, 72);
+        \draw [red] (6, 7) -- (77, 73);
+        \node at (65, 15) {\tiny \color{blue} $Q(x)= Min$};
+        \node[rotate=90] at (15, 60) {\tiny \color{blue} $Q(x)= Max$};
+        \node[rotate=35] at (70, 60) {\tiny \color{red} $Q(x)=K$};
+    \end{axis}
+    \end{tikzpicture}  
+    \caption{Minh hoạ đường mức $Q(x)=K$}
+    \end{figure}
+\end{frame}
+\begin{frame}{Xét tính biến thiên} \large
+Từ phương trình \eqref{pt0}, ta có:
+\begin{equation}
+x_2=-\frac{p_1-Kd_1}{p_2-Kd_2}x_1-\frac{p_0-Kd_0}{p_2-Kd_2}.
+\end{equation}
+Đạo hàm 2 vế ta được:
+\begin{equation*}
+\begin{split}
+    \frac{dx_2}{dx_1} &= \frac{d}{dx_1} \Bigg[-\frac{p_1-Kd_1}{p_2-Kd_2}x_1\Bigg] - \frac{d}{dx_1} \Bigg[\frac{p_0-Kd_0}{p_2-Kd_2} \Bigg] \\
+    \frac{dx_2}{dx_1} &= -\frac{p_1-Kd_1}{p_2-Kd_2} \\
+    k &= -\frac{p_1-Kd_1}{p_2-Kd_2} \text{    (Đặt $k=\frac{dx_2}{dx_1}$)}
+\end{split} 
+\end{equation*}
+\end{frame}
+
+\begin{frame} \large
+\begin{itemize}
+\item Ta thấy hệ số góc $k$ phụ thuộc vào tham số $K$, Khảo sát sự biến thiên của $k$ theo $K$, ta có:
+\begin{equation}
+\frac{dk}{dK}=\frac{d_1p_2-d_2p_1}{(p_2-Kd_2)^2}
+\end{equation}
+\item Giá trị của $Q(x)$ tăng hay giảm phụ thuộc vào $(d_1p_2-d_2p_1)$, do đó $k$ biến thiên theo 1 chiều nhất định. Từ đây, ta có thể tìm được nghiệm tối ưu của bài toán (F).
+\item Quay đường mức $Q(x)=K$ quanh điểm $F$ đến khi trùng với cực điểm $x^*$ ta nhận được giá trị cực đại của hàm $Q(x)$, $x^{**}$ ta nhận được giá trị cực tiểu của hàm $Q(x)$. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+    \begin{tikzpicture}[scale=1.2]
+    \begin{axis}
+        [
+        xmin=-10,xmax=80,
+        ymin=-10,ymax=80,
+        xlabel={$x_1$},
+        ylabel={$x_2$},
+        grid style={line width=.1pt, draw=darkgray!50},
+        major grid style={line width=.2pt,draw=darkgray!50},
+        axis lines=middle,
+        yticklabel=\empty,
+        xticklabel=\empty,
+        enlargelimits={abs=0},
+        samples=100,
+        domain = -20:20,
+        ]
+        \filldraw[blue!30, pattern=north west lines, pattern color=blue!30, line width=1pt] (30, 25) -- (50, 20) -- (70, 30) -- (70, 50) -- (50, 65) -- (20, 50) -- cycle;
+        \node[blue!50] at (60,40) {\tiny $S_F$};
+        \node at (20, 25) {\small $F$};
+        \node at (20,19.5) {\large \textbullet};
+        \node at (55, -7) {\tiny $D(x)=0$};
+        \node[rotate=60] at (42, 70) {\tiny $P(x)=0$};
+        \draw (15, 10) -- (50, 80);
+        \draw (10, 25) -- (70, -7);
+        \draw[red] (5, 19) -- (80, 20);
+        \draw[blue] (20, 11) -- (20, 72);
+        \node at (60, 15) {\tiny \color{red} $Q(x)= Min = K$};
+        \node[rotate=90] at (15, 60) {\tiny \color{blue} $Q(x)= Max$};
+        \node[blue] at (53, 27) {\small $x^{**}$};
+        \node[blue] at (50,20) {\large \textbullet};
+    \end{axis}
+    \end{tikzpicture}  
+    \caption{$Q(x)$ đạt giá trị tối ưu lại điểm $x^{**}$}
+    \end{figure}
+\end{frame}
+\begin{frame}
+\begin{figure}
+    \begin{tikzpicture}[scale=1.2]
+    \begin{axis}
+        [
+        xmin=-10,xmax=80,
+        ymin=-10,ymax=80,
+        xlabel={$x_1$},
+        ylabel={$x_2$},
+        grid style={line width=.1pt, draw=darkgray!50},
+        major grid style={line width=.2pt,draw=darkgray!50},
+        axis lines=middle,
+        yticklabel=\empty,
+        xticklabel=\empty,
+        enlargelimits={abs=0},
+        samples=100,
+        domain = -20:20,
+        ]
+        \filldraw[blue!30, pattern=north west lines, pattern color=blue!30, line width=1pt] (30, 25) -- (50, 20) -- (70, 30) -- (70, 50) -- (50, 65) -- (20, 50) -- cycle;
+        \node[blue!50] at (60,40) {\tiny $S_F$};
+        \node at (20, 25) {\small $F$};
+        \node at (20,19.5) {\large \textbullet};
+        \node at (55, -7) {\tiny $D(x)=0$};
+        \node[rotate=60] at (42, 70) {\tiny $P(x)=0$};
+        \draw (15, 10) -- (50, 80);
+        \draw (10, 25) -- (70, -7);
+        \draw[blue] (5, 19) -- (80, 20);
+        \draw[red] (20, 11) -- (20, 72);
+        \node at (65, 15) {\tiny \color{blue} $Q(x)= Min$};
+        \node[rotate=90] at (15, 60) {\tiny \color{red} $Q(x)= Max=K$};
+        \node[blue] at (25, 50) {\small $x^{*}$};
+        \node[blue] at (20,50) {\large \textbullet};
+    \end{axis}
+    \end{tikzpicture}  
+    \caption{$Q(x)$ đạt giá trị tối ưu lại điểm $x^*$}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Ví dụ minh hoạ}
+\begin{equation} \large \label{F}
+    \begin{split}
+    (F) \quad Q(x) & = \frac{6x_1+3x_2+6}{5x_1+2x_2+5} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &4x_1 - 2x_2 \leq  20, \\
+        &3x_1+5x_2 \leq 25 \\
+        &x_1, x_2 \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}            
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \begin{figure}
+        \begin{tikzpicture} [scale=1.3]
+        \begin{axis}
+            [
+            xmin=-3,xmax=10,
+            ymin=-3,ymax=7,
+            grid=both,
+            grid style={line width=.1pt, draw=darkgray!50},
+            major grid style={line width=.2pt,draw=darkgray!50},
+            axis lines=middle,
+            minor tick num=1,
+            enlargelimits={abs=0},
+            samples=100,
+            domain = -20:20,
+            ]
+            \filldraw[green, pattern=north west lines, pattern color=green, line width=2pt] (0, 0) -- (0, 5) -- (6, 1.4) -- (5, 0) -- cycle;
+            \draw (-1.2, -1) -- (0.2, 6);
+            \draw (-1.9, -0.6) -- (5.4, 4);
+            \draw (-1,5.6) -- (9.6,-0.7) ;
+            \draw (4.2,-1) -- (6.7, 2.4);
+            \draw (-2,0) -- (9,0);
+            \node at (-1.5, 0.5) {$F$};
+            \node at (1, 5.5) {$A$};
+            \node at (5.5, -0.5) {$B$};
+            \node at (0.5, -0.5) {$C$};
+        \end{axis}
+        \end{tikzpicture}  
+        \caption{Tập nghiệm của bài toán}
+        \end{figure}
+        \end{center}      
+\end{frame}
+
+\begin{frame}
+Ta có hệ:
+\begin{equation*}
+    \begin{split}
+        & \left\{
+        \begin{split}
+        &6x_1 - 3x_2 = -6, \\
+        &5x_1+2x_2 = -5 \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation*}
+$\Rightarrow$ điểm cố định $F=(-1,0)$
+Ta có các cực điểm 
+\begin{equation*}
+A=(0,5), B=(5,0), C=(0,0)
+\end{equation*}
+với giá trị
+\begin{equation*}
+Q(A)=\frac{21}{15}, Q(B)-\frac{18}{15}, Q(C)=\frac{18}{15}
+\end{equation*}
+Hàm $Q(x)$ đạt cực đại tại $A=(0,5)$.
+\end{frame}
+%GRAPHICAL-END
+%DINKELBACH-start
+\section{Thuật toán Dinkelbach}
+\begin{frame}
+   \center 
+   \Huge Thuật toán Dinkelbach
+\end{frame}
+
+\begin{frame}{Tính chất} \large
+\begin{itemize}
+\item Quay lại bài toán:
+\begin{equation} \label{F}
+    \begin{split}
+    (F) \quad Q(x) & = \frac{P(x)}{D(x)} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &x \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}            
+\item Ta đặt hàm:
+\begin{equation}
+F(\lambda) = \underset{x \in S_F}{\max}\{P(x)-\lambda D(x)\}, \: \lambda \in \mathbb{R}
+\end{equation}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{dl}
+Vector $x^*$ là nghiệm tối ưu của bài toán (F) nếu và chỉ nếu 
+\begin{equation}
+F(\lambda^*) = \underset{x \in S_F}{\max}\{P(x)-\lambda^* D(x)\} = 0 
+\end{equation}
+Với
+\begin{equation}
+\lambda^* = \frac{P(x^*)}{D(x^*)}
+\end{equation}
+\end{dl}
+\end{frame}
+
+\begin{frame}
+\begin{proof}
+Nếu vector $x^*$ là nghiệm tối ưu của bài toán (F), ta có:
+\begin{equation*}
+\lambda^* = \frac{P(x^*)}{D(x^*)} \geq \frac{P(x)}{D(x)}, \: \forall x \in S_F
+\end{equation*}
+Tương tự,
+\begin{equation} \label{pt2}
+P(x)-\lambda^* D(x) \leq 0,  \forall x \in S_F
+\end{equation}
+Từ bất phương trình \eqref{pt2}, ta được:
+\begin{equation*}
+\Rightarrow \underset{x \in S_F}{\max}\{P(x)-\lambda^* D(x)\} = 0
+\end{equation*}
+Nếu vector $x^*$ là nghiệm tối ưu thì:
+\begin{equation*}
+P(x)-\lambda^*D(x) \leq P(x^*)-\lambda^* D(x^*) = 0, \: \forall x \in S_F
+\end{equation*}
+\end{proof}
+\end{frame}
+
+\begin{frame} \Large
+Với $D(x)>0, \: \forall x \in S_F$, ta có:
+\begin{equation}
+\frac{\partial F(\lambda)}{\partial \lambda}= -D(x) < 0
+\end{equation}
+Đồng nghĩa $F(\lambda)$ giảm theo $\lambda$, từ đó ta thiết lập được thuật toán Dinkelbach.
+\end{frame}
+
+\begin{frame}{Thuật toán Dinkelbach}
+\setlength{\parindent}{4em}
+\noindent \textbf{Bước 1. Thiết lập} \\
+Đặt $x^{(0)} \in S_F$, tính $\lambda^{(1)}:=\frac{P(x^{(0)})}{D(x^{(0)})}$, $k:=1$. \\
+\noindent \textbf{Bước 2. Tìm nghiệm} \\
+Tìm $x^{(k)}$ là nghiệm của bài toán $\underset{x \in S_F}{\max}\{P(x)-\lambda^{(k)} D(x)\}$ \\
+\noindent \textbf{Bước 3. Kiểm tra} \\
+Nếu $F(\lambda^{(k)})=0$ thì $x^*=x^{(k)}$ là nghiệm tối ưu và bài \\ toán được giải, nếu không chuyển sang bước 4. \\
+\noindent \textbf{Bước 4. Cải thiện} \\
+Đặt $\lambda^{(k+1)}:=\frac{P(x^{(k)})}{D(x^{(k)})}$, $k:=k+1$ và quay lại bước 2.
+\end{frame}
+
+\begin{frame}{Ví dụ minh hoạ}
+\begin{equation} \large \label{F}
+    \begin{split}
+    (F) \quad Q(x) & = \frac{x_1+x_2+5}{3x_1+2x_2+15} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &3x_1 + x_2 \leq  6, \\
+        &3x_1+4x_2 \leq 12 \\
+        &x_1, x_2 \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}                
+\end{frame}
+
+\begin{frame}
+Với $x=(0,0)^T$ ta có $x^{(0)} \in S_F$, cho $x^{(0)}=(0,0)^T$ ta có
+\begin{equation*}
+\lambda^{(1)}=\frac{P(x^{(0)})}{D(x^{(0)})}=\frac{1}{3}
+\end{equation*}
+Ta giải bài toán
+\begin{equation*}
+P(x)-\lambda^{(1)}D(x)=P(x)-\frac{1}{3}D(x)=\frac{1}{3}x_2 \rightarrow \max
+\end{equation*}
+\begin{equation*}
+\Rightarrow x^{(1)}=(0,3)^T, F(\lambda^{(1)})=1
+\end{equation*}
+vì $F(\lambda^{(1)}) \neq 0$
+\begin{equation*}
+    \lambda^{(2)}=\frac{P(x^{(1)})}{D(x^{(1)})}=\frac{8}{21}
+\end{equation*}
+\begin{equation*}
+    P(x)-\lambda^{(2)}D(x)=-\frac{1}{7}x_1+\frac{5}{21}x_2-\frac{5}{7} \rightarrow \max
+\end{equation*}
+\begin{equation*}
+    \Rightarrow x^{(2)}=(0,3)^T, F(\lambda^{(2)})=0
+\end{equation*}
+Vậy nghiệm tối ưu của bài toán (F) là $x^*=(0,3)^T$ và giá trị tối ưu $Q(x^*)=\frac{8}{21}$.
+\end{frame}
+%DINKELBACH-end
+
+%LD-start
+\section{Thuật toán LandDoig - Dinkelbach}
+\begin{frame}
+   \center 
+   \Huge Thuật toán LandDoig - Dinkelbach
+\end{frame}
+
+\begin{frame}{Tối ưu phân tuyến tính nguyên hoàn toàn}
+\begin{equation} \small
+    \begin{split}
+    (H) \quad Q(x) & = \frac{P(x)}{D(x)} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &x \geq 0, \text{nguyên} \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}            
+\begin{itemize} \small
+\item Bài toán $(H)$ gọi là bài toán \textbf{Tối ưu phân tuyến tính nguyên hoàn toàn.}
+\item Trong đó $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
+    b_1 \\
+    b_2 \\
+    \vdots \\
+    b_m
+    \end{pmatrix}$, với $x\in \mathbb{Z}^n_+$. Tập $S_h:=\{x\in \mathbb{Z}^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu phân tuyến tính nguyên hoàn toàn. 
+\item $P(x)=p^Tx+p_0$, với $p^T = (p_1 \: p_2 \: \ldots \: p_n)$ và $D(x)=d^Tx+d_0$, với $d^T = (d_1 \: d_2 \: \ldots \: d_n)$ ($D(x)>0, \forall x \in S_h$).
+\end{itemize}
+\end{frame}
+\begin{frame}
+\begin{figure}
+    \begin{tikzpicture}[scale=1.2]
+    \begin{axis}
+        [
+        xmin=0,xmax=80,
+        ymin=0,ymax=80,
+        xlabel={$x_1$},
+        ylabel={$x_2$},
+        grid=both,
+        grid style={line width=.1pt, draw=darkgray!50},
+        major grid style={line width=.2pt,draw=darkgray!50},
+        axis lines=middle,
+        yticklabel=\empty,
+        xticklabel=\empty,
+        enlargelimits={abs=0},
+        samples=100,
+        domain = -20:20,
+        ]
+        \filldraw[green!30, pattern=north west lines, pattern color=green!30, line width=1pt] (30, 25) -- (50, 20) -- (70, 30) -- (70, 50) -- (50, 65) -- (20, 50) -- cycle;
+        \node[green] at (60,40) {\tiny $S_h$};
+    \end{axis}
+    \end{tikzpicture}  
+    \caption{Tập nghiệm minh hoạ của bài toán (H)}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Tối ưu phân tuyến tính nguyên bộ phận} \Large
+\begin{equation}
+    \begin{split}
+    (B) \quad Q(x,y) & = \frac{P(x,y)}{D(x,y)} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax + Gy \leq  b, \\
+        &x \geq 0, \text{nguyên} \\
+        &y \geq 0.
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}            
+\end{frame}
+\begin{frame}
+\begin{itemize}
+\item Bài toán $(B)$ gọi là bài toán \textbf{Tối ưu phân tuyến tính nguyên bộ phận.}
+\item Trong đó $A$ là ma trận $m\times n$, $G$ là ma trận $m\times t$, $b=\begin{pmatrix}
+    b_1 \\
+    b_2 \\
+    \vdots \\
+    b_m
+    \end{pmatrix}$, với $x\in \mathbb{Z}^n_+$ và $y \in \mathbb{R}^t_+$. Tập $S_b:=\{(x,y)\in \mathbb{Z}^n_+ \times \mathbb{R}^t_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu phân tuyến tính nguyên bộ phận. 
+\item $P(x,y)=p^T_1x+p^T_2y+p_0$, với $p^T_1 = (p_1 \: p_2 \: \ldots \: p_n)$ và $p^T_2 = (p_1 \: p_2 \: \ldots \: p_t)$.
+\item $D(x,y)=d^T_1x+d^T_2y+d_0$, với $d^T_1 = (d_1 \: d_2 \: \ldots \: d_n)$ và $d^T_2 = (d_1 \: d_2 \: \ldots \: d_t)$ ($D(x,y)>0, \forall x \in S_b$).
+\end{itemize}
+\end{frame}
+\begin{frame}
+\begin{figure}
+    \begin{tikzpicture}[scale=1.2]
+    \begin{axis}
+        [
+        xmin=0,xmax=80,
+        ymin=0,ymax=80,
+        xlabel={$x$},
+        ylabel={$y$},
+        grid style={line width=.1pt, draw=darkgray!50},
+        major grid style={line width=.2pt,draw=darkgray!50},
+        axis lines=middle,
+        yticklabel=\empty,
+        xticklabel=\empty,
+        enlargelimits={abs=0},
+        samples=100,
+        xmajorgrids=true,
+        domain = -20:20,
+        ]
+        \filldraw[green!30, pattern=north west lines, pattern color=green!30, line width=1pt] (30, 25) -- (50, 20) -- (70, 30) -- (70, 50) -- (50, 65) -- (20, 50) -- cycle;
+        \node[green] at (60,40) {\tiny $S_b$};
+    \end{axis}
+    \end{tikzpicture}  
+    \caption{Tập nghiệm minh hoạ của bài toán (B)}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+   \center 
+   \Huge Mục tiêu phương pháp
+\end{frame}
+
+\begin{frame}{Bài toán quan tâm}
+\begin{equation} \small \label{F}
+    \begin{split}
+    (F) \quad Q(x) & = \frac{P(x)}{D(x)} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &x \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}            
+\begin{itemize} \small
+\item Trong đó (F) là bài toán (H) với nghiệm thuộc tập số thực, ta nói (F) là bài toán mở rộng của (H).
+\item Bài toán $(F)$ gọi là bài toán \textbf{Tối ưu phân tuyến tính thông thường} hay gọi đơn giản là bài toán Tối ưu phân tuyến tính (LFP relaxation).
+\item Tập $S_F:=\{x\in \mathbb{R}^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu phân tuyến tính. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Phương pháp xử lý bài toán}
+Giải bài toán (F) ta được nghiệm tối ưu ban đầu, ký hiệu vector $x_j \:\: (j=1,\ldots,n)$.
+\begin{itemize}
+\item Nếu $x_j \in \mathbb{Z}^n_+ \:\: (j=1,\ldots,n)$, thì bài toán (H) được giải.
+\item Nếu $\exists x_j \notin \mathbb{Z}^n_+ \:\: (j=1,\ldots,n)$, ta thêm vào các ràng buộc 
+\begin{equation*}
+    x^i_j \leq \lfloor x_j \rfloor \text{ và } x^i_j \geq \lceil x_j \rceil 
+\end{equation*}
+vào bài toán (F) bằng \textsl{lý thuyết nhánh cận} và ta thiết lập được 2 bài toán con từ bài toán (F) ban đầu, ký hiệu $(F_1)$ và $(F_2)$:
+\begin{equation*}
+(F_1) \quad \underset{x \in S_1}{\max}Q_1(x),
+\end{equation*} \\
+và
+\begin{equation*}
+(F_2) \quad \underset{x \in S_2}{\max}Q_2(x).
+\end{equation*} \\    
+Lặp lại quá trình đến khi $\forall x_j \in \mathbb{Z}^n_+$.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\begin{equation} \small \label{F}
+    \begin{split}
+    (F_1) \quad Q(x) & = \frac{P(x)}{D(x)} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &\color{red} x^i_j \leq \lfloor x_j \rfloor \\
+        &x \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}
+\begin{itemize}
+    \item Tập $S_1:=S_F \cap \{ x: x^i_j \leq \lfloor x_j \rfloor \}$ là tập nghiệm tối ưu của bài toán con $(F_1)$.
+    \end{itemize}               
+\end{frame}
+
+\begin{frame}
+\begin{equation} \small \label{F}
+    \begin{split}
+    (F_1) \quad Q(x) & = \frac{P(x)}{D(x)} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &\color{red} x^i_j \geq \lceil x_j \rceil \\
+        &x \geq 0. \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}
+\begin{itemize}
+    \item Tập $S_2:=S_F \cap \{ x: x^i_j \geq \lceil x_j \rceil \}$ là tập nghiệm tối ưu của bài toán con $(F_2)$.
+\end{itemize}               
+\end{frame}
+    
+
+\begin{frame}{Điều kiện nghiệm}
+    \begin{itemize}
+    \item Nếu tồn tại $(F_i)$ với $i=1,2$ không giải được $(S_i = \emptyset )$, ta gọi bài toán \textbf{vô nghiệm}.
+    \item Giả sử $x^i$ là nghiệm tối ưu của bài toán $(F_i)$ và giá trị tối ưu là $Q_i(x)$ với $i = 1,2$.
+    \begin{itemize}
+    \item Nếu $\forall x^i \in Z^n_+$, ta nói $S_i$ là tập nghiệm thoả mãn bài toán tối ưu phần tuyến tính nguyên hoàn toàn, $Q^*_i(x)$ là giá trị tối ưu và bài toán con $(F_i)$ được giải \textbf{(gọt bởi nghiệm nguyên)}.
+    \item Nếu $\exists x^i \notin Z^n_+$ đồng thời $Q_i(x) \leq Q^*_i(x)$, ta dừng phân nhánh và bỏ qua bài toán \textbf{(gọt bởi cận)}.
+    \item Nếu $\exists x^i \notin Z^n_+$ đồng thời $Q_i(x) > Q^*_i(x)$, bài toán chưa tối ưu và có thể tiếp tục cải thiện.
+    \iffalse
+    Với $x^i_{j^'}$ là nghiệm không nguyên và phân thành 2 bài toán con $P_3$ với tập nghiệm $S_l := S_i \cap \{ (x,y): x_{j^{'}} \leq \lfloor x_{j^{'}} \rfloor \}$, $P_l$ với $S_l := S_i \cap \{ (x,y): x_{j^{'}} \geq \lceil x_{j^{'}} \rceil \}$ trong đó $l=3,4$ và lặp lại quá trình.
+    \fi
+    \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Ví dụ minh hoạ}
+
+\end{frame}
+
+\begin{frame}{Thuật toán LandDoig - Dinkelbach}
+\begin{itemize}
+\item Ta gọi bài toán $(F)$ có nút ban đầu là $N_0$, tương ứng mỗi bài toán tối ưu phân tuyến tính thông thường $(F_i)$ ứng với mỗi nút $N_i$ trên sơ đồ nhánh và $\mathcal{L}$ là danh sách chứa các nút được lập thông qua lý thuyết xác định cận và lý thuyết nghiệm.
+\item Ta đánh dấu giá trị tối ưu tốt nhất và nghiệm tối ưu tốt nhất của bài toán lần lượt là $Q^*(x)$ và $x^*$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Thuật toán LandDoig - Dinkelbach}
+\setlength{\parindent}{4em}
+\noindent \textbf{Bước 0. Thiết lập} \\
+Đặt $\mathcal{L}:={N_0}$. \\
+Giải bài toán (F) được nghiệm $x^*=x$ và $Q^*(x)=Q(x)$. \\
+\noindent \textbf{Bước 1. Kiểm tra} \\
+Nếu $\forall x^i_j\in\mathbb{Z}^n_+$ thì vector $x$ là nghiệm của bài toán (H), \\ tương ứng $\mathcal{L}=\emptyset$ và bài toán được giải. \\
+Nếu $\exists x^i_j\notin \mathbb{Z}^n_+$, tương ứng $\mathcal{L}\neq \emptyset$, ta chuyển sang bước 2. \\
+\noindent \textbf{Bước 2. Phân nhánh} \\
+Chọn nút $N_i$ ($x^i_j \notin \mathbb{Z}^n_+$ có phần thập phân lớn nhất) để \\ phân nhánh bằng cách thêm vào $S_k$ ràng buộc:
+\begin{equation*}
+x^i_j \leq \lfloor x_j \rfloor \text{ và } x^i_j \geq \lceil x_j \rceil 
+\end{equation*} \\
+lần lượt thành 2 bài toán con $S_i$ và $S_k$ ($k:=i+1$). \\
+\end{frame}
+
+\begin{frame}
+\setlength{\parindent}{4em}
+\noindent \textbf{Bước 3. Thiết lập bài toán con (các nút)} \\
+Ta tập trung xử lý 2 bài toán con (các nút):
+\begin{equation*}
+(F_i) \quad \underset{x \in S_i}{\max}Q_i(x),
+\end{equation*} \\
+và
+\begin{equation*}
+(F_{k}) \quad \underset{x \in S_k}{\max}Q_k(x).
+\end{equation*} \\
+bằng cách dùng \textsl{thuật toán Dinkelbach}. \\
+Nếu bài toán vô nghiệm hoặc $Q_i(x)\leq Q^*(x)$, đặt \\ $i:=k+1$ và quay lại bước 1, nếu không, chuyển sang \\ bước 4. \\
+\end{frame}
+
+\begin{frame}
+\setlength{\parindent}{4em}
+\noindent \textbf{Bước 4. Kiểm tra} \\
+\end{frame}
+%LD-end
+
+\begin{frame}
+\end{frame}
+
+\end{document}

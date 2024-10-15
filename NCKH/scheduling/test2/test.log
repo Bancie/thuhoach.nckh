@@ -1,0 +1,296 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  13 SEP 2024 21:06
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/Users/chibangnguyen/Documents/BigBrain/NCKH/scheduling/test2/test.tex
+(/Users/chibangnguyen/Documents/BigBrain/NCKH/scheduling/test2/test.tex
+LaTeX2e <2023-11-01>
+L3 programming layer <2023-11-09>
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/tree-dvips/tree-dvips.sty
+tree-dvips version .91 of May 16, 1995
+\nodemargin=\dimen141
+\treelinewidth=\dimen142
+\dashlength=\dimen143
+\arrowwidth=\dimen144
+\arrowlength=\dimen145
+\arrowinset=\dimen146
+\pos@t=\toks17
+\pos@b=\toks18
+\pos@l=\toks19
+\pos@r=\toks20
+\pos@tl=\toks21
+\pos@tr=\toks22
+\pos@bl=\toks23
+\pos@br=\toks24
+\@arrow=\count194
+\@tempdimc=\dimen147
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/qtree/qtree.sty
+Package: 2008/12/12 v.3.1bQtree: tree-drawing for linguistics
+Package: qtree 2008/12/12 v.3.1bQtree: tree-drawing for linguistics
+(/usr/local/texlive/2023/texmf-dist/tex/latex/pict2e/pict2e.sty
+Package: pict2e 2020/09/30 v0.4b Improved picture commands (HjG,RN,JT)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/pict2e/pict2e.cfg
+File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
+)
+Package pict2e Info: Driver file: pdftex.def on input line 112.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+)
+Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 114.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/pict2e/p2e-pdftex.def
+File: p2e-pdftex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+\pIIe@GRAPH=\toks25
+\@arclen=\dimen148
+\@arcrad=\dimen149
+\pIIe@tempdima=\dimen150
+\pIIe@tempdimb=\dimen151
+\pIIe@tempdimc=\dimen152
+\pIIe@tempdimd=\dimen153
+\pIIe@tempdime=\dimen154
+\pIIe@tempdimf=\dimen155
+)
+\c@treecount=\count195
+\c@branchcount=\count196
+\parentbox=\box51
+\treebox=\box52
+\treeboxone=\box53
+\treeboxtwo=\box54
+\treeboxthree=\box55
+\treeboxfour=\box56
+\treeboxfive=\box57
+\treeboxsix=\box58
+\treeboxseven=\box59
+\treeboxeight=\box60
+\treeboxnine=\box61
+\treeboxten=\box62
+\treeboxeleven=\box63
+\treeboxtwelve=\box64
+\treeboxthirteen=\box65
+\treeboxfourteen=\box66
+\treeboxfifteen=\box67
+\treeboxsixteen=\box68
+\treeboxseventeen=\box69
+\treeboxeighteen=\box70
+\treeboxnineteen=\box71
+\treeboxtwenty=\box72
+\treeoffsetone=\skip50
+\treeoffsettwo=\skip51
+\treeoffsetthree=\skip52
+\treeoffsetfour=\skip53
+\treeoffsetfive=\skip54
+\treeoffsetsix=\skip55
+\treeoffsetseven=\skip56
+\treeoffseteight=\skip57
+\treeoffsetnine=\skip58
+\treeoffsetten=\skip59
+\treeoffseteleven=\skip60
+\treeoffsettwelve=\skip61
+\treeoffsetthirteen=\skip62
+\treeoffsetfourteen=\skip63
+\treeoffsetfifteen=\skip64
+\treeoffsetsixteen=\skip65
+\treeoffsetseventeen=\skip66
+\treeoffseteighteen=\skip67
+\treeoffsetnineteen=\skip68
+\treeoffsettwenty=\skip69
+\treeshiftone=\skip70
+\treeshifttwo=\skip71
+\treeshiftthree=\skip72
+\treeshiftfour=\skip73
+\treeshiftfive=\skip74
+\treeshiftsix=\skip75
+\treeshiftseven=\skip76
+\treeshifteight=\skip77
+\treeshiftnine=\skip78
+\treeshiftten=\skip79
+\treeshifteleven=\skip80
+\treeshifttwelve=\skip81
+\treeshiftthirteen=\skip82
+\treeshiftfourteen=\skip83
+\treeshiftfifteen=\skip84
+\treeshiftsixteen=\skip85
+\treeshiftseventeen=\skip86
+\treeshifteighteen=\skip87
+\treeshiftnineteen=\skip88
+\treeshifttwenty=\skip89
+\treewidthone=\skip90
+\treewidthtwo=\skip91
+\treewidththree=\skip92
+\treewidthfour=\skip93
+\treewidthfive=\skip94
+\treewidthsix=\skip95
+\treewidthseven=\skip96
+\treewidtheight=\skip97
+\treewidthnine=\skip98
+\treewidthten=\skip99
+\treewidtheleven=\skip100
+\treewidthtwelve=\skip101
+\treewidththirteen=\skip102
+\treewidthfourteen=\skip103
+\treewidthfifteen=\skip104
+\treewidthsixteen=\skip105
+\treewidthseventeen=\skip106
+\treewidtheighteen=\skip107
+\treewidthnineteen=\skip108
+\treewidthtwenty=\skip109
+\daughteroffsetone=\skip110
+\daughteroffsettwo=\skip111
+\daughteroffsetthree=\skip112
+\daughteroffsetfour=\skip113
+\branchwidthone=\skip114
+\branchwidthtwo=\skip115
+\branchwidththree=\skip116
+\branchwidthfour=\skip117
+\parentoffset=\skip118
+\treeoffset=\skip119
+\daughteroffset=\skip120
+\branchwidth=\skip121
+\parentwidth=\skip122
+\treewidth=\skip123
+\qta=\toks26
+\qtb=\toks27
+\nbranches=\count197
+\qroofx=\count198
+\qroofy=\count199
+\@qrscratchbox=\box73
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+)
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 70.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count266
+\l__pdf_internal_box=\box74
+) (./test.aux)
+\openout1 = `test.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+ (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count267
+\scratchdimen=\dimen156
+\scratchbox=\box75
+\nofMPsegments=\count268
+\nofMParguments=\count269
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count270
+\MPscratchDim=\dimen157
+\MPnumerator=\count271
+\makeMPintoPDFobject=\count272
+\everyMPtoPDFconversion=\toks29
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 77.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 77.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 112.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 151.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/omspcr.fd
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 151.
+ [1
+
+
+Non-PDF special ignored!
+<special> header=tree-dvips91.pro
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [4.0 pt] ...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+Non-PDF special ignored!
+<special> ps:@beginspec/nodemargin 2.0 pt def 0.3 pt setlinewidth [] 0 setd...
+] (./test.aux)
+ ***********
+LaTeX2e <2023-11-01>
+L3 programming layer <2023-11-09>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 1560 strings out of 474273
+ 24455 string characters out of 5747713
+ 1953555 words of memory out of 5000000
+ 23792 multiletter control sequences out of 15000+600000
+ 568222 words of font info for 52 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,12n,65p,252b,333s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on test.pdf (1 page, 82879 bytes).
+PDF statistics:
+ 49 PDF objects out of 1000 (max. 8388607)
+ 29 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

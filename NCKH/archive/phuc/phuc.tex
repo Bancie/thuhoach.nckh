@@ -1,0 +1,1090 @@
+
+\documentclass[a5paper,12pt]{report}%{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{titling}
+\usepackage{subfigure}
+\usepackage{secdot}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{textpos}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{caption}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary {datavisualization} 
+\pgfplotsset{compat=1.18, width = 7cm}
+\usetikzlibrary{patterns}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage[tikz]{ocgx2}
+\usepackage{xcolor}
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{changepage}
+\usepackage{float}
+\usepackage{pgfplotstable}
+\usepackage{pgfplots}
+\usepackage{blindtext}
+\usepackage{titlesec}
+\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{nccmath}
+\usetikzlibrary{calc}
+\usepackage{longtable}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{exscale,relsize,makeidx}
+\usepackage{amssymb}
+\usepackage{secdot}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{graphicx}
+%\usepackage{mathtools}
+\usepackage[portrait, top=2cm, bottom=2 cm, left=2cm, right=2cm] {geometry}
+%\usepackage{blindtext}
+%\title{Sections and Chapters}
+%\usepackage[utf8]{vietnam} % Nếu đã có rồi thì khỏi thêm dòng này
+\usepackage{tocloft,calc}
+\renewcommand{\cftchappresnum}{Chương }
+\AtBeginDocument{\addtolength\cftchapnumwidth{\widthof{\bfseries Chương }}}
+\newcommand{\nocontentsline}[3]{}
+\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+\usepackage[unicode]{hyperref}% tạo bookmark
+\everymath{\displaystyle}
+\allowdisplaybreaks
+\usepackage{scrextend}
+\changefontsizes{11pt}
+
+\usetikzlibrary{calc}
+
+\pagestyle{fancy}
+\lhead{}
+\rhead{}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\makeindex
+\usetikzlibrary{calc}
+\pagestyle{fancy}
+\sectiondot{chapter}
+\sectiondot{section}
+\sectiondot{subsection}
+\sectiondot{subsubsection}
+
+\theoremstyle{definition}
+\newtheorem{1dn}{Định nghĩa}[section]
+\newtheorem{1dns}{Định nghĩa}[section]
+\newtheorem{vd}{Ví dụ}
+\newtheorem*{1cm}{Chứng minh}
+\newtheorem{1dl}{Định lý}[section]
+\newtheorem{1dls}{Định lý}[section]
+\newtheorem{1tc}{Tính chất}[section]
+\newtheorem{1tcs}{Tính chất}[section]
+\newtheorem{1hq}{Hệ quả}[1dl]
+\newtheorem{1hqs}{Hệ quả}[1dls]
+\newtheorem{1bd}{Bổ đề}[section]
+\newtheorem{1bds}{Bổ đề}[section]
+\newtheorem{1md}{Mệnh đề}[section]
+\newtheorem{1mds}{Mệnh đề}[section]
+\newtheorem{1nx}{{\it\bfseries{Nhận Xét}}}[section]
+\newtheorem{1cg}{{\it\bfseries{Chú giải}}}[section]
+\newtheorem{1vda}{Ví dụ}[section]
+\newtheorem{1vds}{Ví dụ}[section]
+
+
+\newcommand{\eq}{\begin{equation}}
+	\newcommand{\heq}{\end{equation}}
+	\newcommand{\dn}{\begin{1dn}}
+		\newcommand{\hdn}{\end{1dn}}
+	\newcommand{\dns}{\begin{1dns}}
+		\newcommand{\hdns}{\end{1dns}}
+	\newcommand{\dl}{\begin{1dl}\it}
+	\newcommand{\hdl}{\end{1dl}}
+\newcommand{\dls}{\begin{1dls}}
+	\newcommand{\hdls}{\end{1dls}}
+\newcommand{\bds}{\begin{1bds}\it}
+	\newcommand{\hbds}{\end{1bds}}
+\newcommand{\bd}{\begin{1bd}\it}
+	\newcommand{\hbd}{\end{1bd}}
+
+	\newcommand{\vds}{\begin{1vds}}
+	\newcommand{\hvds}{\end{1vds}}
+
+	\newcommand{\vda}{\begin{1vda}}
+	\newcommand{\hvda}{\end{1vda}}
+
+
+
+\newcommand{\md}{\begin{1md}}
+	\newcommand{\hmd}{\end{1md}}
+\newcommand{\mds}{\begin{1mds}}
+	\newcommand{\hmds}{\end{1mds}}
+\newcommand{\hqs}{\begin{1hqs}}
+	\newcommand{\hhqs}{\end{1hqs}}
+\newcommand{\hq}{\begin{1hq}}
+	\newcommand{\hhq}{\end{1hq}}
+\newcommand{\tcs}{\begin{1tcs}}
+	\newcommand{\htcs}{\end{1tcs}}
+\newcommand{\tc}{\begin{1tc}}
+	\newcommand{\htc}{\end{1tc}}
+\newcommand{\cm}{\begin{1cm}}
+	\newcommand{\hcm}{\het\end{1cm}}
+
+
+\newcommand{\eqs}{\begin{equation*}}
+	\newcommand{\heqs}{\end{equation*}}
+\newcommand{\ali}{\begin{align}}
+\newcommand{\hali}{\end{align}}
+\newcommand{\alis}{\begin{align*}}
+\newcommand{\halis}{\end{align*}}
+\newcommand{\enu}{\begin{enumerate}}
+	\newcommand{\henu}{\end{enumerate}}
+\newcommand{\nx}{\begin{1nx}}
+	\newcommand{\hnx}{\end{1nx}}
+\newcommand{\cg}{\begin{1cg}}
+	\newcommand{\hcg}{\end{1cg}}
+
+
+
+
+\date{2020}
+\def\D{\mathrm{d}}
+\def\NN{\mathbb{N}}
+\def\RR{\mathbb{R}}
+\def\KK{\mathbb{K}}
+\def\V{\Vert}
+\def\vt{\vert}
+\def\e{\varepsilon}
+\def\EE{\mathbb{E}}
+\def\CC{\mathbb{C}}
+\def\veps{\varepsilon}
+\def\het{\hfill\text{$\blacksquare$}}
+\def\bt{$b$-mêtric}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\epi}{epi}
+\DeclareMathOperator{\cone}{cone}
+\DeclareMathOperator{\co}{co}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\ri}{ri}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\inte}{int}
+\usepackage{indentfirst} % thụt đầu dòng dòng đầu tiên
+%\renewenvironment{proof}{{\bf Proof}}
+
+\usepackage{cases}
+
+\begin{document}
+	\begin{titlepage}
+		\begin{tikzpicture}[remember picture, overlay]
+		%\draw[line width = 4pt] ($(current page.north west) + (1in,-1in)$) rectangle ($(current page.south east) + (-1in,1in)$);
+		\draw[line width = 1pt] ($(current page.north west) + (1.5cm,-1cm)$) rectangle ($(current page.south east) + (-1.5cm,1cm)$);
+		\draw[line width = 2pt] ($(current page.north west) + (1.4cm,-0.9cm)$) rectangle ($(current page.south east) + (-1.4cm,0.9cm)$);
+		\end{tikzpicture}
+		\centering
+		{\small\textbf{ỦY BAN NHÂN DÂN THÀNH PHỐ HỒ CHÍ MINH\\
+		\centering{TRƯỜ\underline{NG ĐẠI HỌC SÀ}I GÒN}}}
+		
+		\vspace{2cm}
+		{\large\textbf{MAI HOÀNG PHÚC}}\par
+		\vspace{2cm}
+		{\Large\textbf{VỀ MỘT SỐ BẤT ĐẲNG THỨC VỚI ĐA THỨC PHỨC VÀ ỨNG DỤNG}}\par
+		\vspace{3cm}
+		{\textbf{Chuyên ngành: TOÁN GIẢI TÍCH}}\par
+		%\vspace{3cm}
+		\vspace{2cm}
+		\vfill
+		{\small\textbf{Thành phố Hồ Chí Minh, năm 2024}}
+	\end{titlepage}
+	
+	\begin{titlepage}
+		\begin{tikzpicture}[remember picture, overlay]
+		%\draw[line width = 4pt] ($(current page.north west) + (1in,-1in)$) rectangle ($(current page.south east) + (-1in,1in)$);
+		\draw[line width = 1pt] ($(current page.north west) + (1.5cm,-1cm)$) rectangle ($(current page.south east) + (-1.5cm,1cm)$);
+		\draw[line width = 2pt] ($(current page.north west) + (1.4cm,-0.9cm)$) rectangle ($(current page.south east) + (-1.4cm,0.9cm)$);
+		\end{tikzpicture}
+		
+		{Công trình được hoàn thành tại Trường Đại học Sài Gòn}
+		\par
+		\vspace{2cm}
+		{Người hướng dẫn khoa học:PGS- TS Kiều Phương Chi\par}
+		\vspace{3cm}
+		{Phản biện 1:………………………………………\par}
+		\vspace{2cm}
+		{Phản biện 2:………………………………………}\par
+		\vspace{3cm}
+		\centering{Luận văn được bảo vệ tại Hội đ ồng chấm luận văn thạc sĩ, Trường Đại học
+			Sài Gòn, 273 An Dương Vương, Phường 3, Quận 5, TP. Hồ Chí Minh}\\
+		\centering	{ Thời gian: ngày…… tháng……  năm……}
+		
+		
+	\end{titlepage}
+		\pagenumbering{roman}
+		\fancyhf{}
+		\lhead{}
+		\chead{\thepage}
+		\rhead{}
+		\cfoot{}
+		\rfoot{}
+		\lfoot{}
+		\pagestyle{fancy}
+		\renewcommand{\headrulewidth}{0pt}
+		\renewcommand{\footrulewidth}{0pt}
+		
+	%\begin{center}
+	\section*{Lời cam đoan}
+	
+	%\end{center}
+		
+	\addcontentsline{toc}{section}{\bf\hspace{-18pt}Lời cam đoan}
+
+	Tôi tên Mai Hoàng Phúc, tôi cam đoan luận văn này do tôi tự làm dưới sự hướng dẫn của  PGS.TS. Kiều Phương Chi. Mọi sự tham khảo, trích dẫn trong luận văn đều hợp lệ và được ghi cụ thể trong  phần tài liệu tham khảo. Mọi sao chép không hợp lệ, gian lận, tôi xin hoàn toàn chịu trách nhiệm.\\
+	\hspace*{8cm}
+	Tác giả
+	\\[12ex]
+	\hspace*{7,5cm}
+	Mai Hoàng Phúc
+	\newpage
+	%\begin{center}
+		\section*{Lời cảm ơn}
+	\addcontentsline{toc}{section}{\bf\hspace{-18pt}Lời cảm ơn}
+		\thispagestyle{fancy}
+		\rhead{}
+		\lhead{}
+		\rfoot{}
+		\chead{\thepage}
+		\lfoot{}
+		\cfoot{}
+\quad
+		\thispagestyle{fancy}
+		\rhead{}
+		\lhead{}
+		\rfoot{}
+		\chead{\thepage}
+		\lfoot{}
+		\cfoot{}
+	\newpage
+		\pagestyle{fancy}
+		\rhead{}
+		\lhead{}
+		\rfoot{}
+		\chead{\thepage}
+		\lfoot{}
+		\cfoot{}
+		%\setcounter{page}{3}
+		%\pagenumbering{roman}
+		\addcontentsline{toc}{section}{{{\bf\hspace{-18pt}Mục lục}}}
+	\def\nocontentsname%{\centerline{Mục lục}}
+	\section*{Mục lục}
+	
+	\tableofcontents
+	
+	%\addcontentsline{toc}{section}{\textit{\large{Mục lục}}}
+	\thispagestyle{fancy}
+	\rhead{}
+	\lhead{}
+	\rfoot{}
+	\chead{\thepage}
+	\lfoot{}
+	\cfoot{}
+	\thispagestyle{fancy}
+	\rhead{}
+	\lhead{}
+	\rfoot{}
+	\chead{\thepage}
+	\lfoot{}
+	\cfoot{}
+	\newpage
+	\rhead{}
+	\rfoot{}
+	\thispagestyle{fancy}
+	\rhead{}
+	\lhead{}
+	\rfoot{}
+	\chead{\thepage}
+	\lfoot{}
+	\cfoot{}
+	\setcounter{page}{1}
+	\pagenumbering{arabic}
+		\chapter*{MỞ ĐẦU}
+		\addcontentsline{toc}{section}{\bf\hspace{-18pt}MỞ ĐẦU}
+
+		
+	Bài nghiên cứu về "Một số bất đẳng thức với đa thức phức và ứng dụng" tập trung và việc khám phá mối liên kết giữa đa thức phức và bất đẳng thức, một lĩnh vực quan trọng trong toán học và ứng dụng. Đa thức phức, với tính chất đặc biệt của mình, đóng vai trò quan trọng trong việc mô tả và giải quyết các vấn đề phức tạp, từ đó tạo ra những ứng dụng sâu rộng trong nhiều lĩnh vưc.Mở đầu bằng việc giới thiệu về đa thức phức một biến và các tính chất cơ bản của chúng. Chúng ta sẽ xem xét độ phức tạp và đánh giá nghiệm của đa thức phức một biến thông qua các định lý như: Định lý Rouché, định lý Cơ bản của Đại số, định lý Ostrovsky, định lý Cauchy...  Chương II, chương này tập trung vào nghiên cứu các bất đẳng thức và đạo hàm của bất đẳng thức đối với số phức. Một số bất đẳng thức quan trọng trong toán học được trình bày: Bất đẳng thức Turan, bất đẳng thức Govil, bất đẳng thức Bernstein,... Chương III, ở chương cuối cùng đặt ra mục tiêu khảo sát tính chất khả quy và bất khả quy của đa thức phức. Chúng ta sẽ xem xét các điều kiện và thuật toán để xác định khả quy của một đa thức phức, cũng như nghiên cứu các phương pháp để xác định khi một đa thức là bất khả quy. Những kết quả này không chỉ mang lại sự hiểu biết sâu rộng về tính chất cơ bản của đa thức phức mà còn áp dụng vào các vấn đề trong lĩnh vực tối ưu hóa, ứng dụng trong khoa hoc tự nhiên và kỹ thuật... Các kết quả này đã được trình bày trong bài báo khoa học "Inequality for complex polynomial" của F.A.Bhat và bài báo khoa học "Sharpening of Turan type inequality for polar derivative of a polynomial" của tác giả Thangjam Birkram Singh. Robinson Soraism và Barchand Chanam. 
+		\chapter{Đa thức một biến và một số đánh giá về nghiệm của chúng }
+	\par Chương này trình bày định nghĩa, ví dụ về đa thức phức một biến và mốt số cách đánh giá nghiệm của chúng.
+ \section{Đa thức một biến}
+ \dn\label (Biểu thức đa thức là biểu thức được xây từ các hằng số và các ký hiệu chữ số được gọi là biến và được nối với nhau bằng các phép cộng, phép nhân. Đa thức trong một biến z luôn có thể viết (hoặc viết lại) dưới dạng sau:
+	\[P(z)=a_nz^n+a_{n-1}z^{n-1}+...+a_0\]
+ Trong đó $a_0,a_1,...,a_n$ được gọi là các hệ số phức và $z$ là biến số.
+\vda  Cho $P(z)=4z^2+3z+1$ khi đó $P(z)$ là một đa thức phức một biến với hệ số của $z^2=4$,$z=3$ và hệ số tự do bằng $1$.
+	\section{Đánh giá nghiệm của đa thức phức một biến}
+	
+	Đánh giá nghiệm của một đa thức giúp cung cấp thông tin quan trọng về hình dạng và đặc tính của đa thức đó thông qua việc sử dụng các định lý sau.
+	
+	
+	\dl\label{} Định lý Rouché 
+	\par Ta xét trên một miền $D \in \mathbb{C}$ và $C= \overline{D}$ với hai đa thức $f,g \in H(\overline{D})$. Ta thu được $|f(z)|>|g(z)|\hspace{0.2cm} \forall z \in D \cup C$\\
+	\cm\label{}
+	Giả sử $|f(z)|>0 \hspace{0.2cm}\forall z \in C$ 
+	\[|f(z)+g(z)| \ge |f(z)|-|g(z)|>0 \hspace{0.2cm} \forall z \in C\]\\
+	Theo nguyên lý Argument ta thu được:
+	$$
+	\begin{cases}
+		z_f=\frac{1}{2 \pi}\Delta_c arg f(z) \hspace{0.5cm} (1)\\
+		z_{f+g}=\frac{1}{2 \pi}\Delta_c arg(f(z)+g(z))
+	\end{cases}$$
+	Mà $z_{f+g}=\frac{1}{2 \pi }\Delta_c arg(f(z)+g(z))=\frac{1}{2 \pi}\Delta_c arg (f(z)+(1+\frac{g(z)}{f(z)}))=\frac{1}{2 \pi}\Delta_c argf(z)+\frac{1}{2\pi}\Delta_c arg(1+\frac{g(z)}{f(z)}) \hspace{0.5cm}(2)$\\
+	Ta lại có:\[\frac{1}{2 \pi}\Delta_c arg(1+\frac{g(z)}{f(z)})=0 \hspace{0.2cm} \forall z \in C \hspace{0.5cm} (3)\]
+	Từ $(1),(2)$ và $(3)$ suy ra $z_f=z_{f+g}$\\
+	Vậy ta chứng minh được định lý Rouché.\\
+	\vda Cho $P(z)=z^3+2z^2-6$. Hãy đánh giá nghiệm của $P(z)$ trong miền $D=\{|z|<2\}$ và $C=\{|z|=2\}$
+ Trong miền $C=\{|z|=2\}$ ta chọn:
+	$$
+	\begin{cases}
+		f(z)=z^3\\
+		g(z)=2z^2-6
+	\end{cases}$$
+	Suy ra
+	$$
+	\begin{cases}
+		|f(z)|=|z|^3=|2|^3=8 \hspace{0.2cm} (|z|=2)\\
+		|g(z)|=2|z|^2-6=2|2|^2-6=2 \hspace{0.2cm} (|z|=2)
+	\end{cases}$$
+	Từ đó ta thu được $|f(z)|>|g(z)| \hspace{0.2cm} \forall z \in C$\\
+	Theo định lý Rouché ta nhận xét được nghiệm của $P(z)$ trên miền $D=\{|z|<2\}$ và $C=\{|z|=2\}$ bằng với số nghiệm của $f(z)$ là 3 nghiệm.\\
+	\hvda
+ \dl \label{} Định lý cơ bản của đại số\\
+\par Cho $P(z)=a_nz^n+a_{n-1}z^{n-1}+...+a_1z+a_0$ có $n$ nghiệm kể cả bội $(a_n \ne 0)$\\
+\cm Chọn\\
+	$$
+	\begin{cases}
+		f(z)=a_nz_n \hspace{0.2cm} {|z|<R},R>1\\
+		g(z)=a_{n-1}z^{n-1}+a_{n-2}z^{n-2}+...+a_0
+	\end{cases}$$
+	Suy ra 
+	$$\begin{cases}
+		|f(z)|_{||z|=R}=|a_n|R^n \\
+		|g(z)|_{||z|=R}=|a_{n-1}|R^{n-1}+...+|a_0|
+	\end{cases}$$
+
+	Mà $\frac{|g(z)|}{|f(z)|}\le \frac{|a_{n-1}|R^{n-1+..+|a_0|}}{|a_n|R^n}\le \frac{1}{R}(\frac{|a_{n-1}|+...+|a_0|}{|a_n|})<1$\\ 
+	Theo định lý Rouché: $P=f+g$ có $n$ nghiệm kể cả bội trên $C$ trong ${|z|<R}$\\
+	Vậy ta chứng minh được định lý cơ bản của đại số thông qua định lý Rouché.\\
+	\dl\label{} Định lý Cauchy\\
+\par  Cho $f(z)=x^n-b_1x^{n-1}-...-b_1$ trong đó tất cả các số $b$ đều không âm và có ít nhất một trong số chúng khác không. Đa thức $f$ có một nghiệm duy nhất $p$(nghiệm đơn) và giá trị tuyệt đối của các nghiệm khác không vượt quá $p$.\\
+	\cm Đặt 
+	\[F(x)=\frac{-f(x)}{x^n}=\frac{b_1}{x_1}+\frac{b_2}{x_2}+...+\frac{b_n}{x_n}-1\]
+	Nếu $x \ne 0$ thì phương trình $f(x)$ tương đương với phương trình $F(x)=0$. Khi $x$ tăng từ $0$ đến $+\infty$ thì hàm $F(x)$ giảm từ $+\infty$ đến $-1$. Do đó, với $a>0$ hàm $F(x)$ triệt tiêu tại đúng một điểm $p$. Suy ra ta có:
+	\[\frac{-f(x)}{p^n}=F'(x)=\frac{-b_1}{p^2}-...-\frac{nb_n}{p^{n+1}}<0\]
+	Do đó $p$ là nghiệm đơn của $f(x)$. Ta cần phải chứng minh rằng nếu $x_0$ là nghiệm của $f(x)$ thì $q=|x_0| \le p$, giả sử rằng $q>p$. Khi đó $F(x)$ đơn điệu nên ta suy ra được $q>p$ tương đương với $f(q)>0.$ Mặt khác, đẳng thức $x_0^n=b_1x_o^{n-1}+...+b_n$ ngụ ý rằng:
+	\[q^n \le b_1p^{n-1}+...+b_n,\]
+	suy ra $f(q) \le 0$. Điều này gây ra mâu thuẫn. Từ đó ta chứng minh được định lý Cauchy.\\
+	\vd
+ \dl\label{} Định lý Ostrovsky\\
+ \par Cho $f(z)=x^n-b_1x^{n-1}-...-b_n$ trong đó tất cả các số $b_i$ không âm và có ít nhất một nghiệm khác không. Nếu ước chung lớn nhất của các chỉ số của các hệ số dương $b_i$ bằng 1 thì $f$ có một nghiệm duy nhất $p$ và giá trị tuyệt đối của các nghiệm còn lại đều nhỏ hơn $p$.\\
+ \cm Chỉ xét các hệ số $b_{k_1}, b_{k_2}, ...b_{k_m}$ với $k_1<k_2<...<k_m$ dương. Vì ước chung lớn nhất của $k_1,...,k_m$ bằng 1, tồn tại số thực $s_1,...s_m$ sao cho $s_1k_1+...+s_mk_m=1$. Xem xét lại hàm 
+ \[F(x)=\frac{b_{k_1}}{x^{k_1}}+...+\frac{b_{k_1}}{x^{k_m}}-1\]
+ Phương trình $F(x)=0$ có một nghiệm duy nhất là số dương $p$. Cho $x$ là một nghiệm khác của $f$. Đặt $q=|x|$ thì 
+ \[1=\frac{b_{k_1}}{x^{k_1}}+...+\frac{b_{k_m}}{x^{k_m}} \le |\frac{b_{k_1}}{x^{k_1}}|+...+|\frac{b_{km}}{x^{km}}|=\frac{b_{k_1}}{q^{k_m}}+...+\frac{b_{k_m}}{q^{k_m}}\],
+ $F(q)\ge 0$. Chúng ta thấy rằng đa thức $F(q)=0$ chỉ dương nếu 
+ \[\frac{b_{k_i}}{x^{k_i}}=|\frac{b_{k_i}}{x^{k_i}}|\] với mọi $i$.\\
+ Nhưng trong trường hợp 
+ \[\frac{b^{s_1}_{k_1}....b^{s_m}_{k_m}}{x}=(\frac{b_{k_1}}{x^{k_1}})^{s_1}...(\frac{b_{k_m}}{x^{k_m}})^{s_m}>0\],
+ $x>0$ Điều này mâu thuẫn với việc a là duy nhất nghiệm dương của phương trình $F(x)=0$. Do đó $F(q)>0.$ và $F(X)$ tăng đơn điệu với $x$. Do đó $q<p.$
+ \dl\label{} Định lý Eneström-Kakeya
+ \par Nếu $P(z)=\sum_{j=0}^na_jz^j$ là đa thức bậc $n$ ( trong đó $z$ là một biến số phức) với các hệ số thực thỏa mãn $0 \le a_0 \le a_1 \le...\le a_n$, thì tất cả nghiệm của $P(z)$ đều nằm trong $|z| \le 1$.\\
+ \vd\label{}  Cho đa thức $P(z)=4z^3+3z^2 +2z +1$. Đa thức này có các hệ số thực tăng dần: $a_0=1,a_1=2,a_2=3$ và $a_3=4$. Theo định lý Eneström-Kakeya, tất cả nghiệm của $P(z)$ nằm trong đường tròn $|z| \le 1$. Để kiểm tra điều này ta có thể sử dụng phương pháp đồ thị hoặc tính nghiệm chính xác của đa thức.\par
+\dl\label{}Nếu $P(z)=\sum_{j=0}^n a_jz^j$ là đa thức bậc $n$ ( trong đó $z$ là một biến số phức) với các hệ số thực thỏa mãn $0 \le a_0 \le a_1 \le...\le a_n$, thì tất cả nghiệm của đa thức $P(z)$ đều nằm trong $|z| \le (\frac{|a_0|-a_0+a_n}{|a_n|.})$\\
+\vd  Cho đa thức $P(z)=3z^2+2z+1$. Đa thức này có hệ số thực không giảm: $a_0=1,a_1=2,a_2=3$. Theo định lý 1.2, tất vả nghiệm của $P(z)$ đều nằm trong đường tròn $|z| \le (\frac{|1|-(1)+3}{3})=\frac{5}{3}$.\\
+\dl\label{} Nếu $P(z)=\sum_{j=0}^n a_jz^j$ là đa thức bậc $n$ với hệ số thỏa mãn $|arg \hspace{0.2cm} a_j-\beta| \le \phi \le \frac{\pi}{2}$ cho một số $\beta$ và $\phi$, cho $j=0,1,2,...,n$ thỏa mãn $0 \le a_0 \le a_1 \le...\le a_n$. Thì tất cả nghiệm của đa thức $P(z)$ sẽ nằm trong đường tròn $|z|\le cos\phi+sin\phi+\frac{2sin\phi}{|a_n|}\sum_{j=0}^{n-1}|a_j|$.\\
+\vd  Giả sử $p(z)=(3+i)z^3+(2+i)z^2+(1-i)z+i$.
+	Trong cùng một bài báo, Govil và Rahman đã đưa ra một kết quả áp dụng cho đa thức với hệ số phức và áp dụng một điều kiện không âm và tăng dần cho các hệ số.\par
+\dl\label{} Nếu $P(z)=\sum_{j=0}^n a_jz^j$ là đa thức bậc $n$ với các hệ số phức, trong đó $Re (a_j)=a_j$ và $Im (a_j)=\beta_j$ với $j=\overline{0,n}$ thỏa mãn $0\le a_0 \le a_1 \le a_2 \le...\le a_n, a_n \ne 0$. Thì tất cả nghiệm của $P(z)$ nằm trong $|z| \le 1+\frac{2}{a_n}\sum_{j=0}^n|\beta_j|.$\\ 
+
+\dl\label{} Định lý Laguerre
+Cho $z_1,...,z_n \in \mathbb{C}$ là các điểm khối lượng đơn vị. Các điểm $\zeta=\frac{1}{n}(z_1+...+z_n)$ được gọi là trọng tâm của $z_1,...,z_n$. Thực hiện một biến đổi tuyến tính phân số với $w$ sao cho $z_0$ tiến tới $\infty$.
+\[w(z)=\frac{\alpha}{z-z_0}+b\]
+Hàm tìm trọng tâm ảnh của $z_1,...,z_n$ và sau đó áp dụng phép biến đổi nghịch đảo $w^{-1}$. Các phép tính đơn giản cho thấy kết quả không phụ thuộc vào a và b, nghĩa là, chúng ta thu được điểm
+\[\zeta_{z_0}=z_0+n\frac{1}{\frac{1}{z_1-z_0}+...+\frac{1}{z_n-z_0}}\]
+được gọi là trọng tâm của $z_1,...,z_n$ liên quan đến $z_0$.
+\\
+Dễ thấy trọng tâm của $z_1,...,z_n$ nằm bên trong vỏ lồi của chúng.\par
+Tuyên bố này dễ dàng tổng quát hóa cho trường hợp của trọng tâm liên quan đến $z_0$. Chỉ cần thay thế các đường thẳng kết nối các điểm $z_i$ và $z_j$ bằng các đường tròn đi qua $z_i, z_j$ và $z_0$. Điểm $z_0$ tương ứng với $\infty$ nằm bên ngoài vỏ.
+\dl \label{} Cho $f(z)=(z-z_1)...(z-z_n)$. Khi đó trọng tâm của các nghiệm của $f$ liên quan đến một điểm tùy ý $z$ được cho bởi công thức
+\[zeta_z= z-n\frac{f(z)}{f'(z)}.\]
+\cm
+Dễ thấy
+\[\frac{f'(z)}{f(z)}=\frac{1}{z-z_1}+...+\frac{1}{z-z_n}\]
+Tuyên bố mong muốn được suy ra trực tiếp từ công thức.
+\dl \label{} Laguerre 
+\par Cho $f(z)$ la đa thức bậc $n$ và $x$ là nghiệm đơn. Khi đó trọng tâm của tất cả các nghiệm của $f(z)$ liên quan đến $x$ là điểm 
+\[X=x-2(n-1)\frac{f'(x)}{f''(x)}.\]
+\cm
+Cho $f(z)=(z-x)F(z).$ Thì $f'(z)= (z-x)F'(z)$ và $f''(z)= 2F'(z)+(z-x)F''(z).$ 
+Áp dụng định lý trước đó với đa đa thức $F$ bậc $n-1$, và điểm $z=x$,ta chứng minh được định lý trên.
+\dl \label{} Cho $f$ là đa thức với hệ số thức và xác định 
+\[\zeta_z=z-n\frac{f(z)}{f'(z)}\]
+tất cả nghiệm của $f$ là số thực khi và chỉ khi $Im z.Im \zeta _z<0, \forall z\in \mathbb{C}\setminus\mathbb{R}$.
+\cm 
+Giả sử trước hết rằng tất cả các nghiệm của $f$ là số thực. Giả sử $Im(z) =a>0$. Đường thẳng bao gồm các điểm với phần ảo $\epsilon$, khi $0<\epsilon<a$, chia điểm $z$ với tất cả các nghiệm của $f$ vì chúng thuộc trục số thực. Do đó, $Im(\zeta_z) \le \epsilon$. Trong giới hạn khi $\epsilon$ tiến tới $\infty$ ta thu được $Im\zeta_z \le 0$.
+Dễ dàng kiểm tra rằng không thể có $In \zeta_z=0,$. Giả sử cho $\zeta_z \in \mathbb{R}$. Xét một vòng tròn đi qua $z$ và tiếp xúc với trục thực tại $\zeta_z$.Di chuyển vòng tròn này chúng ta có thể xây dựng một vòng tròn mà phía một bên có các điểm $z$ và $\zeta_z$ và ở phía kia có tất cả các nghiệm của $f$. Nếu $Imz=a$ thì các lập luận tương tự.
+\par
+Bây giờ giả sử rằng $Imz.Im\zeta_z<0, \forall z \in \mathbb{c} \setminus \mathbb{R}.$ Cho $z_1$ là nghiệm của $f$ sao cho $Im z_1 \ne 0$. Khi đó $\lim_{z \rightarrow z_1}\zeta_z=z_1$, vì thế $Imz_1.Im\zeta_{z_1}>0$.
+\subsection{Đa thức không phân cực} 
+  \dl \label{} (J. H. Grace, 1902) Hãy cho $f$ và $g$ là các đa thức apolar. Nếu tất cả các nghiệm của $f$ thuộc một miền hình tròn $K$, thì ít nhất một trong các nghiệm của $g$ cũng thuộc $K$.
+  \bd \label{} Giả sử tất cả các nghiệm $z_1,...,z_n$ của $f(z)$ nằm bên trong miền hình tròn $K$ và $\zeta$ nằm bên ngoài $K$. Khi đó, tất cả các nghiệm của đa thức $A_cf(z)$ cũng nằm bên trong $K$.
+  \cm 
+  Trước hết, quan sát rằng, nếu wi là một nghiệm của đa thức $A_cf(z)$, thì $\zeta$ là trọng tâm của các nghiệm của $f(z)$ liên quan đến $w_i$. Thực sự, nếu $\zeta \ne \infty$, chúng ta có thể biểu diễn đa thức $A_cf(z)$ dưới dạng:
+  \[(\zeta-w_i)f'(w_i)+nf(w_i)=0, \zeta=w_i-n\frac{f(w_i}{
+  f'(w_i)} \]
+  Nếu $\zeta= \infty$ thì $f'(w_i)=A_cf(z)=0$ và do đó 
+  \[\sum_{j=1}^n \frac{1}{z_j-w_i }=\frac{f'(w_i)}{f(w_i}=0.\]
+  Do đó trọng tâm của $z_1,..,z_n$ liên quan tới $w_i$ nằm tại 
+  \[w_i+\frac{1}{\sum_{j}\frac{1}{z_j-w_i}}=\infty\]
+Bây giờ dễ thấy điểm $w_i$ không thể nằm bên ngoài $K$. Nếu $w_i$ nằm bên ngoài $K$ thì trọng tâm của $z_1,...z_n$ liên quan đến $w_i$ sẽ nằm bên trong $K$. Tuy nhiên, điều này mâu thuẫn với với việc $\zeta$ nằm bên ngoài $K$. \par
+Dựa vào bổ đề 3.0.2 và định lý 3.0.13 được chứng minh như sau. Giả sử rằng tất cả các nghiệm $\zeta_1,...,.\zeta_n$ của $g$ đều nằm bên ngoài $K.$ Xem xét đa thức $A_{\zeta_1}f(z),...,A_{\zeta_n}f(z)$. Bậc của nó bằng 1 nghĩa là nó có dạng $c(z-k), k \in K$. Vì $f$ và $g$ là các đa thức apolar, do đó suy ra $A_{\zeta_1}(z-k) = 0$. Trong khi đó, việc tính toán trực tiếp của đạo hàm cho thấy rằng $A_{\zeta_1}(z-k)=\zeta_1 -k$. Vì thế, $k= \zeta_1 \notin K$ và điều đó gây ra mâu thuẫn. \par
+Mỗi đa thức $f$ đều có một họ đa thức apolar liên quan đến nó. Sau khi chọn một đa thức apolar thuận tiện, nhờ vào Định lý của Grace, ta có thể chứng minh rằng $f$ có một nghiệm thuộc một miền hình tròn nhất định. Đôi khi để đạt được mục tiêu tương tự, việc sử dụng Bổ đề 3.0.2 trực tiếp là thuận lợi.
+\vd Cho đa thức 
+\[f(z)=1-z+cz^n\]
+với $c \in \mathbb{C}$ có một nghiệm trong đĩa $|z-1|\le 1 .$
+\cm 
+Đa thức 
+\[f(z)=1+\begin{pmatrix}
+n \\
+1
+\end{pmatrix} \frac{-1}{n} z+c z^n\] và \[g(z)=z^n +\begin{pmatrix}
+n \\
+1
+\end{pmatrix} b_{n-1} z^{n-1} +...+b_0\]
+la apolar nếu 
+\[1- n(\frac{-1}{n}) b{n-1} +cb_0 =0 , 1+b_{n-1} +cb_0=0\]
+Cho $\zeta_k=1-e^{\frac{2 \pi i k}{n}}, \forall k \in \overline{1,n}$ và lấy $g(z)$ là 
+\[g(z)= \prod(z-\zeta_k)=z^n+\begin{pmatrix}
+n \\
+1
+\end{pmatrix}b_{n-1}z^{n-1} +...+b_0\]
+Thì $b_{n-1}=-1$ và $b_0= \pm \prod \zeta_k =0.$ \
+Vì thế đa thức $f$ và $g$ là không phân cực. Vì vậy tất cả các nghiệm của $g$ nằm trong đĩa $|z-1|\le 1.$ Và ít nhất một nghiệm của $f$ nằm trong đĩa này.
+\dl \label{}  (Szegő)
+Cho $f$ và $g$ là đa thức bậc $n$, và cho tất cả nghiệm của $f$ thuộc miền hình tròn $K$. Sau đó mõi nghệm của tổ hơp $h$ của $f$ và $g$ có dạng $-\zeta_i k_i$ với $zeta
+_i$ là nghiệm của $g$ và $k \in K$.
+\cm
+Cho $\gamma$ là một nghiệm của $h$, tức là $\sum_{i=1}^na_ib_i \gamma ^i=0$. Thì đa thức $f(z)$ và $g(z)=z^ng(-\gamma z^{-1})=0, k \in K$. Khi đó, $-\gamma k^{-1} =\zeta_i, \zeta_i $ là nghiệm của $g$.\par\
+Đối với các đa thức mà bậc của chúng không nhất thiết phải bằng nhau, có một phiên bản tương tự định lý Grace.
+\dl \label{}  ([Az])
+Cho $f(z)=\sum_{i=1}^n \begin{pmatrix}
+    n \\
+    i
+\end{pmatrix} a_i z^i$ và $g(z)=\sum_{i=1}^m \begin{pmatrix}
+    m \\
+    i
+\end{pmatrix}b_i z^i$ là đa thức với $m \le n$. Cho các hệ số của $f$ và $g$ có mối quan hệ như sau:
+\[\begin{pmatrix}
+    m \\
+    0
+\end{pmatrix} a_0 b_m -\begin{pmatrix}
+    m \\
+    1
+\end{pmatrix} a_1n_{m-1}+...+(-1)^m \begin{pmatrix}
+    m\\
+    m
+\end{pmatrix}a_m b_0\]
+Khi đó các nhận định sau đây đều đúng:\par
+a) Nếu tất cả nghiệm của $g(z)$ thuộc đĩa $|z|\le r$, thì ít nhất một trong các nghiệm của $f(z)$ cũng thuộc đĩa đó.\par
+b) Nếu tất cả nghiệm của $f(z)$ nằm ngoài đĩa $|z|\le r$, thì ít nhất một nghiệm của $g(z)$ nàm bên ngoài đĩa đó.
+\subsection{Vấn đề Routh-Hurwitz}
+Trong nhiều vấn đề về ổn định, ta cần điều tra xem tất cả các nghiệm của một đa thức đã cho có thuộc nửa mặt trái của mặt phẳng phức không (nghĩa là phần thực của các nghiệm là âm). Các đa thức có tính chất này được gọi là ổn định. Vấn đề Routh-Hurwitz là làm thế nào để tìm ra trực tiếp từ việc nhìn vào các hệ số của đa thức xem nó có ổn định hay không.
+\par
+Đầu tiên, chúng ta nhận thấy rằng chỉ cần xem xét trường hợp các đa thức có hệ số thực. Nếu $p(z)=\sum a_n z^n $ là đa thức với hệ số phức, chúng ta xem xét đa thức 
+\[p^*(z)=p(z)\overline{p(z)}=\left(\sum a_nz^n\right)\left(\sum \overline{a_n}z^n\right)\]
+Rõ ràng, phần thực của nghiệm của $\overline{p(z)}$ giống với $p(z)$. Hơn nữa, các hệ số của $p^*(z)$ đối xứng liên quan đến $a_n$ và $\overline{a_n}$ , điều này có nghĩa là các hệ số của $p^*(z)$ không thay đổi khi chúng thực hiện phép phức hợp suy ra chúng là số thực.
+\dl \label{} Cho $p(z)=z^n+a_1z^{n-1}+...+a_n$ là đa thức với hệ số thực. Cho $p(z)= z^m+b_1z^{m-1}+...+b_m$, với $m =\frac{1}{2}n(n-1),$ là đa thức mà tất cả nghiệm của nó là tổng các cặp nghiệm của $p$. Đa thức $p$ là ổn định khi và chỉ khi hệ số của đa thức $p$ và $q$ dương.
+\cm
+Giả sử $p$ là ổn định. Cho một nghiệm không âm $\alpha$ của $p$ rơi vào các cặp nghiệm liên hợp vì các hệ số của $q$ là thực. Hơn nữa, phần thực của tất cả các nghiệm của $q$ là âm.Như cùng với $p$, ta có thể chứng minh rằng tất cả các hệ số của $q$ là dương.
+Tiếp theo, giả sử tất cả các hệ số của $p$ và $q$ đều dương. Trong trường hợp này, tất cả các nghiệm thực của $p$ và $q$ đều âm. Do đó, nếu $\alpha$ là một nghiệm thực của $p$, thì $\alpha <0$ và nếu $\alpha \pm i \beta$ là một cặp nghiệm liên hợp của $p$ thì $2\alpha=(\alpha+ i\beta)+(\alpha-\i\beta)$ là nghiệm của $q$. Do đó $2\alpha <0$.
+\subsection{ Các nghiệm của một đa thức đã cho và của đạo hàm của nó}
+\dl \label{}  (Gauss-Lucas)
+Các nghiệm của $P'$ thuộc về lỗi của tập hợp các nghiệm của đa thức $P$ chính nó.
+\cm
+Giả sử $P(z)=(z-z_1)+...+(z-z_n)$ suy ra
+\begin{equation} \label{1}
+    \frac{P'(z)}{P(z)}=\frac{1}{z-z_1}+...+\frac{1}{z-z_n}
+\end{equation}
+
+Giả sử  $P'(w)=0, P(w)\ne 0$ và ngược lại rằng $w$ không thuộc về lồi của các điểm $z_1,..,z_n$. Khi đó ta có thể vẽ một đường thẳng qua $w$ mà không giao với lỗi của $z_1,...z_n$. Do đó, các vecto $w-z_1,...,w-z_n$ nằm trong một nửa mặt phẳng được xác định bởi đưởng thẳng này. Vì vậy các vecto
+\[\frac{1}{w-z_1},...,\frac{1}{w-z_n}\]
+cũng nằm trong một nửa mặt phẳng, vì $\frac{1}{z}=\frac{\overline{z}}{|z|^2}$. Do đó,
+\[\frac{P'(w)}{P(w)}=\frac{1}{w-z_1}+...+\frac{1}{w-z_n}\ne 0.\]
+Điều này gây ra mâu thuẫn, do đó $w$ thuộc về lỗi của các nghiệm của $P$.
+\dl \label [Anl]
+Cho \( P(z) = (z -x_1)(z - x_2) \ldots (z - x_n) \), với \( x_1 < x_2 < \ldots < x_n \).
+Nếu một nghiệm \( x_i \) được thay thế bằng $x'_i \in (x_i, x_{i+1})$ thì tất cả các nghiệm của $P'$ tăng giá trị của chúng.
+\cm
+Giả sử $z_1<z_2<...<z_{n-1}$ là nghiệm của $P$, $z'_1<z'_2<...<z'_{n-1}$ là nghiệm của $Q'$ và $x'_1=x_1, ...,x'_{i-1}=x_{i-1}, x'_i,x'_{i+1}=x_{i+1},..,x'_n=x_n$ là nghiệm của $Q$. Đối với các nghiệm $z_k$ và $z'_k$, mối quan hệ (1.1) có dạng
+\begin{equation}\label{2}
+    \sum_{i-1}^n \frac{1}{z_k-x_i}=0, \hspace{1cm} \sum_{i=1}^n\frac{1}{z'_k-x'_i}=0
+\end{equation}
+Giả sử rằng phát biểu của định lý là sai, tức là $z'_k < z_k$ với một số $k$. Thì $z'_k-x'_i<z_k-x_i$. Quan sát rằng sự khác nhau của $z'_k-x'_i$ và $z_k-x_i$ có cùng dấu. Thật vậy
+$z_j<x_i,z'_j<x'_i, j \le i-1$ và $z_j>x_i, z'_j>x'_i, j \ge i.$\par
+Do đó,$\frac{1}{z_k-x_i}<\frac{1}{x'_k-x'_i}, \forall i=\overline{1,n}$. Nhưng trong trường hợp này, các mối quan hệ $(1.2)$ không thể đồng thời xảy ra.
+
+
+\newpage
+\chapter{Khảo sát một số bất đẳng thức với đa thức phức và đạo hàm của chúng}
+\section{Một số bất đẳng thức với đa thức phức}
+\par
+Nếu $P(z)=\sum_{v=0}^n a_vz^v$ là đa thức bậc $n$ và tất cả nghiệm của chúng thuộc đường tròn đơn vị $|z|=1$. Khi đó S.Bernstein \cite{milovanovic1999extremal} đã chứng minh được:
+	\begin{equation} \label{(1.1)}
+		\underset{|z|=1}{max}|P'(z)| \le n\underset{|z|=1}{max}|P(z)| .
+	\end{equation} 
+	Chứng minh $(1)$\\
+	$P(z)=\sum_{v=0}^{n}a_vz^v$\\
+	Đạo hàm của $P(z)$:
+	$P'(z)=\sum_{v=1}^{n}va_vz^{v-1}$\\
+	Theo định lý tích phân Cauchy của đạo hàm cấp cao ta có:\\
+	\[P'(z)=\frac{1}{2\pi i} \oint_C\frac{P(z)}{(z-z_0)^n}dz.\]
+	\[|P'(z)|=|\frac{1}{2 \pi i}\oint_C\frac{P(z)}{(z-z_0)^n}dz| \le \frac{1}{2 \pi }\oint_C \frac{|P(z)|}{|z-z_0|^n}|dz|.\]
+	Đặt $M= max P(z)$ $\rightarrow$ $M'= max P'(z)$ và $|z-z_0|=r$.\\
+	Từ đó ta thu được biểu thức:\\
+	\[P'(z) \le \frac{1}{2\pi}\oint_C\frac{|M|}{|r|^n}|dz|\le \frac{2 \pi rM}{2\pi |r|^n }\le \frac{|M|}{|r|^{n-1}}.\]
+	Chọn r=1 biểu thức trở thành:\\
+	\[\underset{|z|=1}{max}|P'(z)| \le max_{|z|=1}|P(z)|.\]
+	Do đó ta chứng minh được: \[\underset{|z|=1}{max}|P'(z)|\le n\underset{|z|=1}{max}|P(z)|.\]
+
+	Đối với các đa thức không có nghiệm trong $|z|<1$,  Lax\cite{lax1944proof} đã chứng minh rằng:
+	\begin{equation} \label{(2)}
+		\underset{|z|=1}{max}|P'(z)|  \le \frac{n}{2}\underset{|z|=1}{max}|P(z)|.
+	\end{equation}
+	Bất đẳng thức $(7)$ là tốt nhất khi và chỉ khi $P(z)=\alpha+ \beta z^n$ trong đó $|\alpha|=|\beta|.$\\
+ Để khảo sát nghiệm của đa thức với nguyện thuộc $|z|<K.K \ge 1$. Malik đã chứng minh được bất đẳng thức:
+	\begin{equation}\label{(3)}
+		\underset{|z|=1}{max}|P'(z)| \ge \frac{n}{1+K}\underset{|z|=1}{max}|P(z)|. 
+	\end{equation}
+	Trong bài báo này, sự tổng hợp và cải tiến của bất đẳng thức $(8)$, để hiểu ngắn gọn, bạn có thể tham khảo: Chan and Malik \cite{Chan1983OnET}, Qazi \cite{qazi1992maximum}  , Bidkham and Dewan \cite{bidkham1992inequalities}. Aziz and Zargar \cite{AZIZ1988306}, Chanam and Dewan \cite{chanam2007inequalities}, Aziz and Shad [3]...\\
+	Ngược lại đối với lớp đa thức $P(z)$ sao cho $P(z)\ne 0$ trong $|z| <K,K \ge 1$, ước lượng chính xác cho giá trị lớn nhất của $P'(z)$ trên $|z|=K,K \le 1$ nên là:
+	\begin{equation}\label{(4)}
+		\underset{|z|=1}{max}|P'(z)| \le \frac{n}{1+K^n}\underset{|z|=1}{max}|P(z)|.
+	\end{equation} 
+	Với giả định bổ sung, bất đẳng thức $(9)$ có thể được thỏa mãn. Trong đó, Govil[11] đã chứng minh nếu $P(z)$ là đa thức bậc $n$ có tất cả nghiệm trong $|z|<K,K\ge 1$. Với giả thuyết $|P'(z)|$ và $|Q'(z)|$ đạt giá trị lớn nhất tại cùng một điểm trên $|z|=1$ thì:
+	\begin{equation}\label{5}
+		\underset{|z|=1}{max}|P'(z)| \le \frac{n}{1+K^n}\underset{|z|=1}{max}|P(z)|   
+	\end{equation}
+	Dưới cùng một giả thuyết, Kumar and Dhankar [18] đã cải tiến bất đẳng thức $(10)$ thành:
+	\begin{equation} \label{6}
+		\underset{|z|=1}{max}|P'(z)| \le \frac{n}{1+K^n}\left(1-\frac{K^n(|c_0|-|c_n|K^n(1-K))}{2(|c_0|K+|c_n|K^n)}\right)\underset{|z|=1}{max}|P(z)|
+	\end{equation}
+	Một cách cải tiến khác được chứng minh bởi  Singh and Chanam [23];
+	\begin{equation} \label{7}
+		\underset{|z|=1}{max}|P'(z)| \le \left(\frac{n}{1+K^n}-\frac{(\sqrt{|c_0|}-K^{\frac{n}{2}}\sqrt{|c_n|})K^n}{(1+K^n)\sqrt{|c_0|}}\right)\underset{|z|=1}{max}|P(z)| 
+	\end{equation}
+	Năm 1939, bất đẳng thức kinh điển của Turan cung cấp ước lượng giới hạn dưới cho kích thước của đạo hàm của một đa thức trên đường tròn đơn vị so với kịch thước của chính đa thức đó khi có ràng buộc về các nghiệm của nó. Bất đẳng thức này khẳng định rằng nếu $P(z)$ là một đa thức  bậc $n$ có tất cả nghiệm của nó nằm trong $|z|\le 1$, thì:
+	\begin{equation} \label{(8)}
+		\underset{|z|=1}{max}|P'(z)|  \ge \frac{n}{2}\underset{|z|=1}{max}|P(z)|.
+	\end{equation}
+	Aziz và Dawood [1] đã tích hợp bất đẳng thức (13) với giá trị nhỏ nhất của $P(z),|z|=1$. Thực tế, họ đã chứng minh:
+	\begin{equation}\label{9}
+		\underset{|z|=1}{max}|P'(z)| \ge \frac{n}{2}\{\underset{|z|=1}{max}|P(z)| +\underset{|z|=1}{min}|P(z)| \}
+	\end{equation}
+	Cả hai bất đẳng thức $(13)$ và $(14)$ đều tốt nhất với $P(z)$ có tất cả nghiệm nằm trong $|z|=1$.
+	Bất đẳng thức $(13)$ và $(14)$ đã được mở rộng và được tổng quát hóa trong một hướng khác. Govil \cite{govil1973derivative}  đã chứng minh cho đa thức $P(z)$ có tất cả nghiệm nằm trong $|z|\le K, K \ge 1$:
+	\begin{equation}\label{(10)}
+		\underset{|z|=1}{max}|P'(z)| \ge \frac{n}{1+K^n}\underset{|z|=1}{max}|P(z)| 
+	\end{equation}
+	Hay:
+	\begin{equation} \label{(11)}
+		\underset{|z|=1}{max}|P'(z)| \ge \frac{n}{1+K^n}\underset{|z|=1}{max}|P(z)| +\frac{n}{1+K^n}\underset{|z|=1}{min}|P(z)| 
+	\end{equation}
+	Bất đẳng  thức (15) và (16) là những giả định cực kỳ chặt chẽ và bất đẳng thức được thỏa mãn cho $P(z)=z^n+K^n.$\\ 
+	Govil \cite{govil1990inequalities} cũng đã đạt được sự tinh chỉnh sau đây của bất đẳng thức $(16)$ bằng cách liên quan đến các hệ số của đa thức. Trên thực tế ông đã chứng minh rằng nếu $P(z)=\sum_{v=0}^{n}a_vz^v=a_n\prod_{v=0}^{n}(z-z_v),a_n \ne 0$ là một bất đẳng thức bậc $n \ge 2$ với $|z_v|\le K_v$,$1 \le v \le n$ và chọn \\$K=max(K_1,K_2,...,K_n) \ge 1$. Thì
+	\begin{equation} \label{(12)}
+		\underset{|z|=1}{max}|P'(z)|  \ge \sum_{v=1}^{n}\frac{K}{K+K_v}\left(\frac{2}{1+K^n}\underset{|z|=1}{max}|P(z)| +\frac{2|a_{n-1}|}{K(1+K^n)\phi(K)}\right)+|\alpha 1|\psi(K).
+	\end{equation}
+	khi:\\
+	$\phi (K)$=
+	$$\begin{cases}
+		\phi (K)=\frac{K^n-1}{n}\frac{K^{n-2}-1}{n-2}, n>2\\
+		\phi (K)=\frac{(1-K)^2}{2}, n=2
+	\end{cases}$$
+	và\\
+	$$\begin{cases}
+		\psi (K)=1-\frac{1}{K^2}, n>2\\
+		\psi (K)=1-\frac{1}{K}, n=2.\\
+	\end{cases}$$
+	\subsubsection{Đạo hàm của bất đẳng thức với đa thức phức}
+	Cho hàm số $D_\alpha P(z)$ là một đạo hàm cực đại của một đa thức bậc $n$ đối với một số thức hoặc số phức $\alpha$. Khi đó
+	\[D_\alpha P(z)= nP(z)+(\alpha -z)P'(z).\]
+	Đạo hàm cực $D_\alpha P(z)$ là một đa thức bậc tối đa là $n-1$. Hơn nữa, nó tổng quát hóa đạo hàm thông thường $P'(z)$ của $P(z)$ theo nghĩa là:
+	\[\lim_{\alpha\to\infty}\frac{D_\alpha P(z)}{\alpha }=P'(z).\]
+	Shah [22] đã mở rộng bất đẳng thức $(13)$ đến đạo hàm cực và chứng minh rằng nếu $P(z)$ là đa thức bậc $n$ có tất cả nghiệm của chúng nằm trong $|z|\ge 1$, thì đối với mọi số phức $\alpha$ với $\alpha \ge 1$:
+	\begin{equation}\label{(13)}
+		\underset{|z|=1}{max}|D_\alpha P(z)| \ge \frac{n(|\alpha|-1)}{K}\underset{|z|=1}{max}|P(z)|.
+	\end{equation}
+	In 1988, Aziz and Rather[2] đã mở rộng bất đẳng thức (10) cho đạo hàm cực và được chứng minh nếu $P(z)$ là đa thức bậc $n$ có tất cả nghiệm trong $|z| \le K, K \ge 1$, khi đó với mọi số phức $|\alpha|$ và $|\alpha| \ge K.$
+	\begin{equation}\label{(14)}
+		\underset{|z|=1}{max}|D_\alpha P(z)| \ge n\left(\frac{|\alpha|-K}{1+K^n}\right)\underset{|z|=1}{max}|P(z)|.
+	\end{equation}
+	Gần đây, Kumar and Dhankhar [18] đã khái quát hóa và cải tiến bất đẳng thức $(19)$ khi giả định rằng nếu $P(z)=z^s\sum_{j=0}^{n-s}c_iz^j$ là đa thức bậc $n$ và có tất cả nghiệm trong $|z| \le K, K\ge 1$ với mọi số phức $|\alpha| \ge K$. 
+	\begin{equation}\label{(15)}
+		\underset{|z|=1}{max}|D_\alpha P(z)|\ge \frac{n(|\alpha|-K)}{1+K^{n-s}}\left(1+\frac{(|c_{n-s}|K^n-|c_o|K^s)(k-1)}{2(|c_{n-s}|K^n+|c_0|K^{s+1}}\right)\underset{|z|=1}{max}|P(z)|.
+	\end{equation}
+	Với giả thuyết tương tự, Singh and Chanam [23] cung cấp cải tiến khác của bất đẳng thức $(19)$, tổng quát của bất đẳng thức (13) và đạt được:
+	\begin{equation}\label{(16)}
+		\underset{|z|=1}{max}|D_\alpha P(z)| \ge \frac{(|\alpha|-K)}{1+K^n}\left(n+s+\frac{K^{\frac{n-s}{2}\sqrt{|c_{n-s}|}-\sqrt{|c_0|}}}{K^{\frac{n-s}{2}}\sqrt{|c_{n-s}|}}\right).
+	\end{equation}
+	Cuối cùng Govil và Metume \cite{govil2004some} đã mở rộng bất đẳng thức $(16)$ đến đạo hàm cực và chứng minh rằng:
+	\begin{equation}\label{(17)}
+		\underset{|z|=1}{max}|D_\alpha P(z)| \ge n\left(\frac{|\alpha|-K}{1+K^n}\right)\underset{|z|=1}{max}|P(z)|+n\left(\frac{|\alpha|-(1+K+K^n}{1+K^n}\right)\underset{|z|=1}{min}|P(z)|.
+	\end{equation}
+	Khi $\alpha$ là bất kỳ số phức nào với $|\alpha|\ge 1+K+K^n$.
+	\subsubsection{Một số định lý và hệ quả của đạo hàm của bất đẳng thức đối với đa thức phức }
+\dl \label{} Nếu $P(z)=a_n\prod_{j=1}^n(z-z_j)$ là một đa thức có bậc $n \ge 2$ với tất cả nghiệm của nó nằm trong $|z|\le K,K \ge 1$ thì ta có: 
+	\begin{equation}\label{(18)}
+		\underset{|z|=1}{max}|D_\alpha P(z)| \ge \sum_{j=0}
+		^n \frac{|\alpha-K|}{K+|z_j|}\left(\frac{2K}{1+K^n}\underset{|z|=1}{max}|P(z)|+\frac{2|a_{n-1}|}{1+K^n}\phi(K)\right)+|na_0+\alpha a_1|\psi(K)
+	\end{equation}
+	Với $\phi(K)$ và $\psi(K)$ được định nghĩa ở $(17).$\\
+\cm 
+	Khi $P(z)=a_n\prod_{j=1}^n(z-z_j)$ có tất cả nghiệm nằm trong $|z| \le K$. Và đa thức $G(z)=P(Kz)=K^n a_n\prod_{j=1}^n(z\frac{z_j}{K})$ có tất cả nghiệm nằm trong $|z|\le 1.$ Do đó, với mọi số phức $z$ trên $|z|=1$ cho mọi $G(z)\ne 0$. Ta có
+	\[\frac{G'(z)}{G(z)}=\frac{K^na_n[(z-z_2)...(z-z_n)+(z-z_1)...(z-z_n)+(z-z_1)...(z-z_{n-1})]}{K^na_n(z-z_1)...(z-z_n)}=\sum_{j=1}^n\frac{1}{z-\frac{z_j}{K}}\]
+	Ta xét trên điểm $e^{i\phi},0 \le \phi < 2 \pi$ đối với $G(z) \ne 0$
+	\[Re\left(\frac{e^{i\phi}G'(e^{i\phi})}{G(e^{i\phi}}\right)=\sum_{j=1}^nRe\left(\frac{e^{i\phi}}{e^{i\phi}-R_je^{i\phi}}\right)=\sum_{j=1}^n\frac{1}{1-R_je^{i(cos(\phi_j-\phi)})}\]
+	trong đó $R=\frac{1}{K}$ mà $K \ge 1$ suy ra $R \le 1$.
+	Từ đó suy ra
+	\[Re\left(\frac{e^{i\phi}G'(e^{i\phi})}{G(e^{i\phi})}\right)=\sum_{j=1}^n\frac{1-R_jcos(\phi_j-\phi)}{1+R^2-2R_jcos(\phi_j-\phi)}\]
+	Điều này tương đương với 
+	\begin{equation}
+		|\frac{e^{i\phi}G'(e^{i\phi})}{G(e^{i\phi})}| \ge \frac{1}{1+R_j}
+	\end{equation}
+	Ta có cũng có thể biểu diễn dưới dạng:
+	\[|G'(e^{i\phi})| \ge \sum_{j=1}^n\frac{1}{1+R_j}G(e^{i\phi})\]
+	Với điểm $e^{i\phi},0 \le \phi <2 \pi$ đối với $G(e^{i\phi})\ne 0$. Khi bất đẳng thức (19) dễ dàng thỏa mãn tại điểm $e^{i\phi},0\le \phi < 2\pi$, đối với $G(e^{i\phi})=0$ ta có kết luận rằng:
+	\begin{equation}
+		\underset{|z|=1}{max}|G'(z)| \ge \sum_{j=1}^n\frac{K}{K+|z_j|}\underset{|z|=1}{max}|G(z)|.
+	\end{equation}
+	Khi đa thức $G(z)$ có tất cả nghiệm nằm trong $|z|\le 1$. Với $\frac{|\alpha|}{K}=1$ ta dễ dàng thu được:
+	\[\underset{|z|=1}{max}|D_\frac{\alpha}{K}G(z)|\ge \frac{(|\alpha|-K)}{K}\underset{|z|=1}{max}|G'(z)|,\]
+	hoặc 
+	\[\underset{|z|=K}{max}|D_{\alpha}G(z)|\ge\frac{(|\alpha-K|)}{K}\underset{|z|=1}{max}|G'(z)|.\]
+	Sử dụng bất đẳng thức (20) ta có
+	\[\underset{|z|=K}{max}|D_\alpha P(z)|\ge \frac{(|\alpha|-K)}{K}\sum_{j=1}^n\frac{K}{K-|z_j|}\underset{|z|=K}{max}|G(z)|,\]
+	Và điều này tương đương với
+	\begin{equation}
+	    \underset{|z|=K}{max}|D_\alpha P(z)|\ge \frac{(|\alpha|-K)}{K}\sum_{j=1}^n\frac{K}{K-|z_j|}\underset{|z|=K}{max}|P(z)|.
+	\end{equation}
+ Khi $D_\alpha P(z)$ là đa thức bậc $n-1$. Từ $(1)$ với $R=K \ge 1$ cho $n>2$ chúng ta có
+ \begin{equation}
+K^{n-1}\underset{|z|=1}{max}|D_\alpha P(z)|-\left(k^{n-1}-K^{n-3}\right)|n a_0 +\alpha a_1|\ge \sum_{j=1}^n\frac{|\alpha|-K}{K+|z_j|}\underset{|z|=K}{max}P|(z)|.
+ \end{equation}
+ Đa thức $G(z)$ có tất cả nghiệm nằm trong $|z|\le 1$. Vì thế, $G^*(z)=z^n\overline{G(\frac{1}{z})}$ không có nghiệm nằm trong $|z|\le 1 $. Áp dụng bất đẳng thức $(2)$ cho đa thức $G^*(Z)$ với $R=K \ge 1$, chúng ta thu được
+ \[\underset{|z|=1}{max}|G^*(z)| \le \frac{K^n+1}{2}\underset{|z|=1}{max}|G^*(z)|-\left(\frac{KKn-1}{n}\frac{K^{n-2}}{n-2}\right)|a_{n-1}K^{n-1}|, n>2\]
+ hay
+ \[K^n\underset{|z|=1}{max}|P(z)| \le \frac{K^n+1}{2}\underset{|z|=1}{max}|P(z)|-\left(\frac{K^n-1}{n}-\frac{K^{n-2}}{n-2}\right)|a_{n-1}|K^{n-1}, n>2. \]
+ Hoặc có thể diễn đạt tương đương, 
+ \[\underset{|z|=K}{max}|P(z)| \ge \frac{2K^n}{K^n+1}\underset{|z|=1}{max}|P(z)|\] 
+ \[+\frac{2|a_{n-1}|K^{n-1}}{K^n+1}\left(\frac{K^n-1}{n}-\frac{K^n-1}{n}-\frac{K^{n-2}}{n-2}\right).\]
+ Sử dụng bất đẳng thức $(26)$ với $n>2$ chúng ta có
+ \[\underset{|z|=1}{max}|D_\alpha P(z)| \ge \sum_{j=1}^n \frac{|\alpha|-K}{K+|z_j|}\left(\frac{2K}{K^n+1}\underset{|z|=1}{max}|P(z)|+\frac{2|a_{n-1}|\phi(K)}{K^n+1}\right)\]\[+\psi (K)|na_0+\alpha a_1|\]
+ Qua đó ta chứng minh được định lý trên.\\
+\hq \label{}Nếu $P(z)=a_n\prod_{j=1}^n(z-z_j)$ là đa thức bận $n \ge 2$ với tất cả nghiệm thuộc $|z|\le K, K\ge 1$ thì
+\[\underset{|z|=1}{max}|D_\alpha P(z)| \ge \frac{|\alpha|-K}{1+K^n}\sum_{j=1}^n\frac{2K}{K+|z_j|}\underset{|z|=1}{max}|P(z)|.\]
+\hq \label{} Nếu $P(z)=a_n\prod_{j=1}^n(z-z_j)$ là đa thức bận $n \ge 2$ với tất cả nghiệm thuộc $|z|\le K, K\ge 1$ thì
+\[\underset{|z|=1}{max}|P'(z)|\ge \sum_{j=1}^n \frac{2K}{K+|z_j|}\left(\frac{1}{1+K^n}\underset{|z|=1}{max}|P(z)| +\frac{|a_{n-1}|}{K(1+K^n}\phi(K)\right)\]\[+|a_1|\psi(K).\]
+	với $\phi(K)$ và $\psi(K)$ được định nghĩa ở bất đẳng thức $(17)$.
+	Khi tất cả nghiệm của $P(z)$ thuộc $|z|\le K$, chúng ta có 
+	\[\sum_{j=1}^n\frac{1}{K+|z_j|}=\frac{1}{K}\sum_{j=1}^n\frac{1}{1+\frac{|z_j|}{K}}\ge \frac{1}{K}\left(\frac{n-1}{2}+\frac{1}{\frac{|z_1|}{K}\frac{|z_2|}{K}...\frac{|z_n|}{K}}\right)\]
+	Suy ra 
+	\[\sum_{j=1}^n\frac{1}{K+|z_j|}\ge\frac{1}{K}\left(\frac{n}{2}+\frac{|a_n|K^n-|a_0|}{|a_n|K^n+|a_0|}\right)\]
+\hq \label{} Nếu $P(z)=a_n\prod_{j=1}^n(z-z_j)$ có tất cả nghiệm nằm trong $|z|\le K, K \ge 1$ thì với mọi số thực hoặc số phức $|\alpha|$ với $|\alpha| \ge K$
+	\[\underset{|z|=1}{max}|D_\alpha P(z) \ge \left(n+\frac{|a_n|K^n-|a_0|}{|a_n|K^n+|a_0|}\right)\]\[\left(\frac{|\alpha-K|}{1+K^n}\underset{|z|=1}{max}|P(z)+\frac{(|\alpha|-K)|a_{n-1}|}{K(1+K^n)}\phi(K)\right)+\psi(K)|na_0+\alpha_1|\]
+	Với $\phi(K)$ và $\psi(K)$ được định nghĩa ở (17)\\
+\dl\label{} Nếu $P(z)=z^2\sum_{j=1}^{n-2}c_jz^j, 0\le s \le n$, là đa thức bậc $n$ có tất cả nghiệm nằm trong $|z| \le K,K \ge 1$. Thì với mọi số phức $\alpha, |\alpha| \ge K$,
+      \[\underset{|z|=1}{max}|D_\alpha P(z)| \ge \left(\frac{|\alpha|-K}{1+K^{n-s}}\right)\left(n+s+\frac{K^{\frac{n-s}{2}}\sqrt{|c_{n-s}|}-\sqrt{|c_0|}}{K^{\frac{n-s}{2}}\sqrt{|c_{n-2}|}}\right)\]\[\{1+\frac{(|c_{n-s}|K^n-|c_0|K^s)(K-1)}{2(|c_{n-2}|K^n+|c_0|K^{s+1})}\}\underset{|z|=1}{max}|P(z)|.\]
+
+\cm 
+ \textbf{Chú ý:} Khi đa thức $h(z)=\frac{P(z)}{z^2}=\sum_{j=0}^n c_jz^j$ có tất cả nghiệm nằm trong $|z| <K,K \ge 1$, chúng ta có 
+ \[|\frac{c_0}{c_{n-s}}| \le K^{n-s}\]
+ Tương đương với
+ \[|c_0|K^s \le |c_{n-s}|K^n.\]
+ và 
+ \[K^{\frac{n-s}{2}}\sqrt{|c_{n-s}|} \ge \sqrt{|c_0|}.\]
+\hq \label Nếu $P(z)=z^s\sum_{j=0}^{n-s}c_jz^j, 0 \le s \le n$ là đa thức bậc $n$ có tất cả nghiệm nằm trong $|z| \le K, K \ge 1$, thì
+     \[\underset{|z|=1}{max}|P'(z)| \ge \left(\frac{1}{1+K^{n-s}}\right)\left(n+s+\frac{K^{\frac{n-s}{2}}\sqrt{|c_{n-s}|}-\sqrt{|c_0|}}{K^{\frac{n-s}{2}}\sqrt{|c_{n-s}|}}\right)\]\[\left(1+\frac{(|c_{n-s}|K^n-|c_0|K^s(K-1))}{2(|c_{n-s}K^n+|c_0|K^{s+1}|)}\right)\underset{|z|=1}{max}|P(z)|.\]
+
+\hq  \label{}Nếu $P(z)=\sum_{j=0}^nc_jz^j$ là đa thức bậc $n$ có tất cả nghiệm nằm trong $|z| \le K, K \ge 1$, thì với mọi số phức $\alpha$, $|\alpha \ge K|$
+\[\underset{|z|=1}{max}|D_\alpha P(z)| \ge \left(\frac{|\alpha|-K}{1+K^n}\right)\left(n+\frac{K^\frac{n}{2}\sqrt{|c_n|}-\sqrt{|c_0|}}{K^{\frac{n}{2}}\sqrt{|c_n|}}\right)\]\[\{1+\frac{(|c_n|K^n-|c_0|)(k-1)}{2(|c_n|K^n+|c_0|K)}\}\underset{|z|=1}{max}|P(z)|.\]
+\hq \label{} Nếu $P(z)=\sum_{j=0}^n c_jz^j$ là đa thức bậc $n$ có tất cả nghiệm nằm trong $|z| \le K, K \ge 1$ thì
+    \[ \underset{|z|=1}{max}|P'(z)|\ge \left(\frac{1}{1+K^n}\right)\left(n+\frac{K^\frac{n}{2}\sqrt{|c_n|}-\sqrt{|c_0|}}{K^\frac{n}{2}\sqrt{|c_n|}}\right)\]\[\{1+\frac{(|c_n|K^n-|c_0|)(k-1)}{2(|c_n|K^n+|c_0|K)}\}\underset{|z|=1}{max}|P(z)|.\]
+\dl \label{} Nếu $P(z)=\sum_{j=0}^nc_jz^j$ là đa thức bậc $n$ có tất cả nghiệm nằm trong $|z| \le K, K \ge 1$, thì với mọi số phức $\alpha, |\alpha| \ge 1+K+K^n$
+\begin{align}
+    &\underset{|z|=1}{\max}|D_\alpha P(z)| \ge \frac{|\alpha|-K}{1+K^n}\left(n+\frac{K^\frac{n}{2}\sqrt{|c_n|}-\sqrt{|c_0+e^{i \theta_0}m|}}{K^\frac{n}{2}\sqrt{|c_n|}}\right) \notag \\
+    &\quad \times \left(1+\frac{(|c_n|K^n-|c_0+e^{i \theta_0}m|)(k-1)}{2(|c_n|K^n+|c_0|K)}\right)\underset{|z|=1}{\max}|P(z)| \notag \\
+    &\quad + [n\left(\frac{|\alpha|-(1+K+K^n)}{1+K^n}\right)+\frac{|\alpha|-K}{1+K^n}\{\frac{K^\frac{n}{2}\sqrt{|c_n|}-\sqrt{|c_0+e^{i \theta_0}m|}}{K^\frac{n}{2}\sqrt{|c_n|}}+ \notag \\ 
+    &\quad +\frac{|c_n|K^\frac{n}{2}-|c_0+e^{i\theta_0}m|(k-1)}{2(|c_n|K^n+|c_0+e^{i\theta_0}m|k)}  \left( n+\frac{K^{\frac{n}{2}}\sqrt{|c_n|}-\sqrt{|c_0+e^{i\theta_0}m|}}{K^{\frac{n}{2}}\sqrt{|c_n|}} \right)\}]m,
+\end{align}
+Khi $m=\underset{|z=1|}{min}|P(z)|$ và $\theta_0=arg {P(e^{i\phi_0})}$ trong đó $|P(e^{i\phi_0})|=\underset{|z|=1}{max}|P(z)|$.\\
+\textbf{Chú ý:} Nếu $P(z)=\sum_{j=0}^nc_jz^j$ là đa thức bậc $n$ có tất cả nghiệm của nó nằm trong $|z| \le K, K \ge 1$, với mọi số phức $|\lambda| e^{i\phi_0}, |\lambda| <1$. Dựa trên định lý Rouché đa thức $P(z)+|\lambda|e^{i\theta_0}m=(c_0+|\lambda|e^{i\theta_0}m)+c_1z+....+c_nz^n$ có tất cả nghiệm nằm trong $|z| \le K,$ trong đó $m=\underset{|z|=k}{min}|P(z)|,$ thì
+\[K^n \ge |\frac{c_0+|\lambda|e^{i\theta_0}m}{c_n}|,\]
+Điều này có nghĩa rằng:
+\[K^{\frac{n}{2}}\sqrt{|c_n|} \ge \sqrt{|c_0+|\lambda|e^{i\theta_0}m|.}\]
+Khi $|\lambda|\rightarrow 1$ thì
+\[K^n\sqrt{|c_n|} \ge \sqrt{|c_0+e^{i\theta_0}m|,}\]
+Và 
+\[K^n|c_n|\ge |c_0+e^{i\theta_0}m|.\]
+\hq\label{} Nếu $P(z)=\sum_{j=0}^nc_jz^j$ là đa thức bậc $n$ có tất cả nghiệm nằm trong $|z| \le K, K  \ge 1$ thì
+\begin{align}
+    &\underset{|z|=1}{\max}|P'(z)| \ge \frac{1}{1+K^n}\left(n+\frac{K^\frac{n}{2}\sqrt{|c_n|}-\sqrt{|c_0+e^{i \theta_0}m|}}{K^\frac{n}{2}\sqrt{|c_n|}}\right) \notag \\
+    &\quad \times \left(1+\frac{(|c_n|K^n-|c_0+e^{i \theta_0}m|)(k-1)}{2(|c_n|K^n+|c_0|K)}\right)\underset{|z|=1}{\max}|P(z)| \notag \\
+    &\quad + [\frac{n}{1+K^n}+\frac{1}{1+K^n}\{\frac{K^{\frac{n}{2}}\sqrt{|c_n|}-\sqrt{|c_0+e^{i\theta_0}m|}}{K^{\frac{n}{2}}\sqrt{|c_n|}}\notag \\ 
+    &\quad +\frac{|c_n|K^\frac{n}{2}-|c_0+e^{i\theta_0}m|(k-1)}{2(|c_n|K^n+|c_0+e^{i\theta_0}m|k)}   \notag \\
+    &\quad \left( n+\frac{K^{\frac{n}{2}}\sqrt{|c_n|}-\sqrt{|c_0+e^{i\theta_0}m|}}{K^{\frac{n}{2}}\sqrt{|c_n|}} \right)\}]m,
+\end{align}
+Khi $m=\underset{|z=1|}{min}|P(z)|$ và $\theta_0=arg {P(e^{i\phi_0})}$ trong đó $|P(e^{i\phi_0})=\underset{|z|=1}{max}|P(z)|$.\\
+\hq \label{} Nếu $P(z)=\sum_{j=0}^n c_jz^j$ là đa thức bậc $n$ có tất cả nghiệm nằm trong $|z| \le 1$, thì
+   \[\underset{|z|=1}{max}|P'(z)| \ge \frac{1}{2}\left(n+\frac{\sqrt{|c_n|}-\sqrt{|c_0+e^{i\theta_0}m|}}{\sqrt{|c_n|}}\right)\]\[\underset{|z|=1}{max}|P(z)|+\frac{1}{2}\left[ n+\left( \frac{\sqrt{|c_n|}-\sqrt{|c_0+e^{i\theta_0}m|}}{}\right)\right]m,\]
+trong đó $m=\underset{|z|=1}{min}|P(z)| \text{và} \theta_0 =arg \{P(e^{i\phi_0})\}$ mà $|P(e^{i\phi_0})|=\underset{|z|=1}{max}|P(z).|$\\
+\hq\label{} Nếu $P(z)=\sum_{j=0}^n c_jz^j$ là đa thức bậc $n$ không có nghiệm nằm trong $|z|<K, K \ge 1$. Nếu $|P'(z)|$ và $|Q'(z)|$ đạt cực đại cùng một điểm trên $|z|=1$, thì $\underset{|z|=1}{max}|P'(z)|$\\
+\[
+\leq \frac{1}{1+K^n}\left[ n-K^n\left\{ 
+ \frac{\sqrt{|c_0|}-K^{\frac{n}{2}}\sqrt{|c_n|}}{\sqrt{|c_0|}}+\frac{(|c_0|-K^n|c_n|)(1-K)}{2(|c_0|K+K^n|c_n|)}\right\} \right]
+\]
+\[
+\left(n+ \frac{\sqrt{|c_0|}-K^\frac{n}{2}\sqrt{|c_n|}}{\sqrt{|c_0|}}\right)
+\]
+
+với $P(z)=z^n+K^n.$\\
+\textbf{Chú ý:} Khi $P(z)=\sum_{j=0}^n c_jz^j$ có tất cả nghiệm trong $|z| \ge K, K \le 1$, $Q(z)$ có tất cả nghiệm trong $|z| \le \frac{1}{K}, \frac{1}{K} \ge 1$, thì 
+\[|\frac{c_n}{c_0}| \le \frac{1}{K^n}\]
+Tương đương với
+\[|c_0|\ge |c_n|K^n\]
+và 
+\[\sqrt{|c_0|} \ge K^\frac{n}{2}\sqrt{|c_n|}\]
+\hq \label{} Nếu $P(z)=\sum_{j=0}^nc_jz^j$ là đa thức bậc $n$ không có nghiệm nằm trong $|z|<1$. Nếu $|P'(z)|$ và $|Q'(z)|$ đạt giá trị lớn nhất tại cùng một điểm trên $|z|=1$, thì
+\begin{equation}
+    \underset{|z|=1}{max}|P'(z)| \le \frac{1}{2}\left( n-\frac{\sqrt{|c_0|}-\sqrt{|c_n|}}{\sqrt{|c_0|}}\right)\underset{|z|=1}{max}|P(z)|
+\end{equation}
+\chapter{ Ứng dụng để khảo sát tính bất khả quy của đa thức hệ số nguyên}
+\section{Tính bất khả quy của đa thức hệ số nguyên}
+\par Cho $f$ và $g$ là hai đa thức một biến có hệ số thuộc môt trường $k$. Ta nói rằng $f$ chia hết cho $g$ nếu $f=gh$, trong đó $h$ là một đa thức (với hệ số thuộc $k$). Đa thức $d$ được gọi là một ước chung của $f$ và $g$ nếu cả $f$ và $g$ đều chia hết cho $d$. Ước chung của $f$ và $g$ được gọi là ước chung lớn nhất nếu nó  chia hết cho bất kỳ ước chung nào của $f$ và $g$. Rõ ràng, ước chung lớn nhất được định nghĩa duy nhất đến việc nhận với một phần tử khác không của $k$.\\
+Ta có thể tìm ước chung lớn nhất $d=(f,g)$ của $f$ và $g$ với sự giúp đỡ của thuật toán Euclid sau đây. Giả sử, vì tính chặt chẽ deg$f$ $\ge$ deg $g$. Hãy cho $r_1$ là phần dư sau khi chia $f$ cho $g$, $r_2$ là phần dư khi chia $g$ cho $r_1$ và tổng quát cho $r_{k+1}$ là phần dư khi chia $r_{k-1}$ bởi $r_k$.  Vì các bậc của đa thức giảm chặt chẽ, ta có thể kết luận rằng, với một số nào đó, ta có $r_{n+1} = 0$, tức là $r_{n-1}$ chia hết cho $r_n$. Ta thấy rằng cả $f$ và $g$ đều chia hết cho $r_n$ vì $r_n$ chia hết cho tất cả các đa thức $r_{n-1}$,$r_{n-2}$,... Hơn nữa, nếu $f$ và $g$ chia hết cho một đa thức $h$ nào đó, thì $r_n$ cũng chia hết cho $h$ vì $h$ chia hết cho tất cả các đa thức $r_1,r_2$,...\\
+Thuật toán Euclid trực tiếp dẫn đến những hệ quả quan trong mà chúng ta sẽ sử dụng như một định lý độc lập.\\
+\dl \label{}  Nếu $d$ là ước chung lớn nhất của đa thức $f$ và $g$, thì tồn tại đa thức $a$ và $b$ sao cho $d=af+bg$.
+\vd Cho $f(x)=x^2-3x+2$ và $g(x)=x^2-5x+6$ sau khi áp dụng thuật toán Euclid ta tìm được ước chung lớn nhất của $f,g$ là $d=x-2$. Khi đó ta có thể biểu diễn dưới dạng: 
+\[d=af+bg \leftrightarrow x-2=a(x^2-3x+2)+b(x^2-5x+6)=(a+b)x^2+x(-3a-3b)+2a+6b\]
+So sánh hệ số của hai phương trình:
+$$\begin{cases}
+    -3a-5b=1\\
+    2a+6b=-2\\
+    a+b=0
+\end{cases}$$
+Ta tìm được $a=\frac{1}{2}$ và $b=\frac{-1}{2}$\\
+Vậy biểu thức có dạng: $x-2=\frac{1}{2}(x^2-3x+2)-\frac{1}{2}(x^2-5x+6).$
+\dl \label{} Cho $f$ và $g$ là hai đa thức trong trường $k \subset K$. Nếu $f$ và $g$ là ước chung không trắc tính trên $K$ thì chúng cũng có ước chung không trắc tính trên $k$. \\
+Một đa thức $f$ với các hệ số từ một nhóm với phần tử đơn vị $k$ được gọi là có thể phân tích được trên $k$ nếu $f=gh$ với $g$ và $h$ là các đa thức có bậc dương và có hệ số thuộc $k$. Ngược lại $f$ được gọi là không thể phân tích được trên $k$. \\
+Giả sử $f=f_1...f_n$ là một phân tích của đa thức $f$ trên trường $k$ thành các thừa số $f_1...f_n$ là các đa thức trên $k$. Từ phân tích thành tích của các thừa số với các hệ số tùy ý ta có thể chuyển sang phân tích thành các đa thức chủ lực. Nếu $f_i(x)=a_ix^i...$ là một đa thức trên trường $k$ thì $g_i=\frac{f_i}{a_i}$ là một đa thức chủ lực trên $k$. Do đó, ta có thể thay thế phân tích $f=f_1...f_n$ dưới dạng $f=\prod_{i=1}^n a_ig_i$. Ta không phân biệt hai phân tích có dạng như vậy mà chỉ khác nhau về thư tự của các thừa số.
+\dl \label{} Giả sử $k$ là một trường. Khi đó đa thức $f \in k[x]$ có thể được phân tích thành các nhân tử không phân tích được và phân tích này là duy nhất.
+\cm
+Sự tồn tại của phân tích dễ dàng chứng minh bằng quy trên $n=deg f$. Đầu tiên, quan sát rằng đối với các đa thức không phân tích được $f$, phân tích mong muốn bao gồm chính $f$ đó.
+\par
+Đối với $n=1$, đa thức $f$ không thể phân tích được. Giả sử phân tích tồn tại cho bất kỳ đa thức nào có bậc $< n$ và $deg f =n$. Ta có thể giả sử rằng $f=gh$ với $deg g<n$ và $deg h<$. Nhưng các phân tích cho $g$ và $h$ tồn tại theo giả thuyết quy nạp.\par 
+Bây giờ, chúng ta sẽ chứng minh tính duy nhất của phân tích. Giả sử \( \alpha g_1 \cdot ... \cdot g_s = \beta h_1 \cdot ... \cdot h_t \) với \( \alpha, \beta \in k \) và \( g_1,...,g_s, h_1,....,h_t \) là các đa thức chuẩn không thể phân tích được trên \( k \). Rõ ràng, trong trường hợp này \( \alpha = \beta \). Đa thức \( g_1,...,g_s \) chia hết cho đa thức không thể phân tích được \( h_1 \). Điều này có nghĩa rằng một trong các đa thức \( g_1,...,g_s \) chia hết cho \( h_1 \). Để hiểu rõ hơn, ta chỉ cần chứng minh bổ đề:
+\bd Nếu đa thức $qr$ chia hết cho một đa thức không thể phân tích được $p$, thì $q$ hoặc $r$ chai hết cho $p$.
+\cm
+Giả sử $r$ không chia hết cho $p$. Khi đó $(p,q)=1$, tức là tồn tại các đa thức $\alpha, \beta$ sao cho $\alpha p+\beta q=1.$ Nhân hai vế của phương trình này với $r$, ta được $\alpha p r+\beta q r= r$. Nhưng $pr$ và $qr$ chia hết cho $p$. Vì vậy $r$ cũng chia hết cho $p$.
+\par 
+Để rõ ràng, giả sử $g_1$ chia hết cho $h_1$. Xét rằng $g_1$ và $h_1$ là các đa thức chuẩn không phân tích được. Ta suy ra $g_1= h_1$. Chia hai vế với $g_1=h_1$ để rút gọn đa thức $g_1 \cdot ... \cdot g_s=h_1 \cdot ... \cdot h_t$. Sau một số lần thực hiện phép chia như vậy ta thu được $s=t$ và $g_1 =h_{i_1},...,g_s=h_{i_s}$ với $\{i_1,...,i_s\}$ là hoán vị của tập hợp $\{1,..,s\}.$ 
+\bd $cont(fg)=cont(f)cont(g)$.
+\cm
+Để chứng minh điều này ta chi cần xét trương hợp khi $cont(f)=cont(g)=1$.Thực tế, các hệ số của các đa thức $f$ và $g$ có thể chia cho $cont(f)$ và $cont(g)$ tương ứng.
+Gọi $f(x)=\sum a_i x^i$, $g(x)=\sum b_i x^i$ và $fg(x)=\sum c_i x^i$. Giả sử $cont(fg)=d>1$ và $p$ là một ước nguyên tố của $d$. Khi đó tất cả các hệ số của $fg$ đều chia hết cho $p$ trong khi các hệ số của $f$ và $g$ không chia hết cho $p$. Gọi $\alpha_r$ là hệ số đầu tiên của $f$ không chia hết cho $p$, $\beta_s$ là hệ số đầu tiên của $g$ không chia hết cho $p$. Khi đó 
+\[ c_{s+r} = a_r b_s + a_{r+1} b_{s-1} + \ldots + a_{r-1} b_{s+1} + a_{r-2} b_{s+2} + \ldots \equiv a_r b_s \not\equiv 0 \ (\text{mod} \ p) \]
+Vì 
+\[b_{s-1}\equiv b_{s-2} \equiv ...\equiv b_0\equiv  \ (\text{mod} \ p) ,\]
+\[a_{r-1}\equiv a_{r-2} \equiv ...\equiv a_0\equiv  \ (\text{mod} \ p) ,\]
+Do đó chúng ta đã phản chứng.
+\hq Đa thức với hệ số nguyên là không thể phân tích được trên $\mathbb{Z}$ nếu nó bất khả quy trên $\mathbb{Q}.$
+\dl Đa thức $P(x)= x^4 +ax^2+b^2, a,b \in \mathbb{Z}$ là phân tích được trên $F_p$ với mọi số nguyên tố $p$.
+\cm
+ Cho $p=2$, chỉ có 4 đa thức thuộc dạng chỉ định, tức là:
+ \[x^4,\hspace{0,5cm} x^4+x^2=x^2(x^2+1), \hspace{0,5cm} x^4+1 =(x+1)^4, \hspace{0.5cm} x^4+x^2+1=(x^2+x+1)^2\]
+ Tất cả đa thức trên đều phân tích được.\par 
+ Cho $p$ là một số nguyên tố lẻ. Khi đó chúng ta có thể chọn một số nguyên tố $s$ sao cho $\alpha \equiv 2s \hspace{0,5cm} \text{mod} p$. Chúng ta có 
+\[
+\begin{aligned}
+P(x) &\equiv (x^2+s)^2 -(s^2 -b^2) \\
+&\equiv (x^2+b)^2 -(2b-2s)x^2 \\
+&\equiv (x^2-b)^2 -(-2b-2s)x^2 \quad \text{mod }p 
+\end{aligned}
+\]
+Vì vậy chỉ cần chứng minh rằng một trong các số $s^2-b^2,2b-2s,-2b-2s$ là một phần tử bình phương module $p.$
+....
+\subsubsection{Tiêu chí bất khả quy}
+\dl Tiêu chí Dumas
+Cho $p$ là một số nguyên tố cố định và $f(x)=\sum A_i x^i$ là một đa thức có hệ số nguyên sao cho $A_0 A_n \ne 0.$ Hãy biểu diễn các hệ số khác không của $f$ dưới dạng $A_i=\alpha_i p^ {\alpha_i} $ chúng ta gán một điểm trên mặt phẳng với tọa độ $(i, alpha
+_i).$ Các điểm này tạo thành biểu đồ Newton của đa thức $f$ (tương ứng với  $p$). Quá trình xây dựng biểu đồ được thực hiện như sau. Gọi $P_0 =(0, \alpha_0)$ và $P_1=(i_1, \alpha_{i_1})$ với $i_i$ là số nguyên lớn nhất sao cho không có điểm nào $(i,\alpha_i)$ dưới đường thẳng $P_0P_1$. Tiếp theo gọi $P_2=(i_2, \alpha_{i_2})$, với $i_2$ là số nguyên tố lớn nhất sao cho không có điểm nào $(i, \alpha_i)$ dưới đường thẳng $P_1P_2$.(Hình bên dưới). Đoạn cuối cùng có dạng $P_{r-1}P_r$, với $P_r=(n, \alpha_n)$. Nếu một số đoạn của đường nối $P_0,..,P_r$ đi qua các điểm có tọa độ số nguyên. Khi đó, những điểm đó sẽ được xem xét là các đỉnh của đường nối. Theo cách này, vào các đỉnh $P_0,...,P_r$, chúng ta thêm vào ít nhất $s \ge 0$ đỉnh nữa. Đường nối kết quả từ $Q_0,...,Q_{r+s}$ được gọi là đồ thị Newton ($Q_0=P_0$ và $Q_{r+s}=P_r$). Các đoạn $P_iP_{i+1}$ và $Q_iQ_{i+1}$ sẽ được gọi là các cạnh và đoạn của đồ thị Newton tương ứng, và các vecto $\overrightarrow{\rm Q_iQ_{i+1}}$ sẽ được gọi là vecto của các đoạn của đồ thị Newton.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{hinh 1.png}
+  \caption{Hình 1}
+  \label{fig:ten_label}
+\end{figure}
+\par Xem xét hệ các vectơ của các đoạn thẳng trong biểu đồ Newton, tính theo số lần xuất hiện của mỗi vectơ. Nghĩa là, mỗi vectơ được tính bằng bội số của nó trong tập hợp các vectơ đoạn thẳng.
+\dl \label{} Định lý Louville
+\par Nếu $f \in H(C)$ và bị chặn thì nó là hàm hằng.
+\cm Đặt $M=sup_{z\in C}|f(z)| < \infty$. Giả sử $a \in C$ tùy ý. Khi đó, theo bất đẳng thức Cauchy ta có 
+\[|f'(a)| \le \frac{M}{R}\]
+Với mọi $R >0$ khi đó cho $R \rightarrow \infty$ ta nhận được $f'(a)=0$. Vì a tùy ý suy ra $f$ là hắng số.
+\vd  Cho $f \in H(C), \forall z \in \mathbb{C}$ sao cho $Im f >0$. Chứng minh rằng $f(z)$ là đa thức bất khả quy. 
+Giả sử $f(z)=u+iv$ trong đó $u>0$\\
+Đặt $g(z)=e^{i f(x)}=e^{i(u+iv)}=e^{-v+iu}$
+Ta lấy module của $g(z)$\\
+$|g(z)| \ge Reg(z)=e^{-v} \le e^0=1$. 
+Suy ra $g(z)$ bị chặn nên $f(z)$ cũng bị chặn theo định lý Louvile $f(z)$ là hàm hằng\\
+Vậy $f(z)$ là bất khả quy trên $\mathbb{C}.$
+\dl \label{} Tiêu chuẩn Eisenstein
+Trong muc này chúng ta sẽ trình bày lại tiêu chuẩn Eisenstein và một số mở rộng liên quan về tính bất khả quy của đa thức hệ số nguyên trên trường số hữu tỉ. Đây là một tiêu chuẩn khá phổ biến để khảo sát sự bất khả quy của một đa thức.\\
+Cho 
+\[f(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0\] 
+là đa thức bậc $n$ với $a_i \in Z, i=\overline{1,n}$ và $a_n \ne 0$.
+Tiêu chuẩn này được phát biểu qua các dịnh lý sau:
+\dl \label{} Cho đa thức $f(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0$ là đa thức bậc $n >0$ với hệ số nguyên. Nếu tồn tại một số nguyên tố $p\nmid a_n$, $p| a_i\forall i =\hspace{0.1cm} \overline{1,n-1}$ và $p^2\nmid a_0$ thì đa thức $f(x)$ là bất khả quy trên $\mathbb{Q}$.
+\cm Giả sử $f(x)$ khả quy trên $\mathbb{Q}$. Theo bổ đề Gauss, tồn tại biểu diễn $f(x)=g(x)h(x)$ trong đó $g(x)=b_mx^m+...+b_1x+b_0$ và $h(x)=c_kx^k+...+c_1x+c_0 \in Z[x]$ với $deg \hspace{0.1cm } g(x)=m, deg \hspace{0.1cm} h(x)=k$ và $m,k <n$. Do $p$ là ước của $a_0=b_0c_0$ nên $p \hspace{0.1cm}|  \hspace{0.1cm} b_o$ hoặc $p \hspace{0.1cm} | 
+\hspace{0.1cm} h_0$. Mặt khác, $p^2$ không là ước của $a_0$ nên trong hai số $b_0$ và $c_0$ chỉ có một và một số chia hết cho $p$. Giả thuyết $p \hspace{0.1cm} |c_0$. Khi đó $b_0 
+\nmid p$. Vì $a_n=b_mc_k$ và $p | a_n$ nên $b_m,c_k\nmid p$. Do đó tồn tại số $r$ bé nhất sao cho $c_r$ không là bội của $p$. Ta có:
+\[a_r=b_0c_r+(b_1c_{r-1}+b_2c_{r-2}+...+b_rc+0)\]
+vì $r \le k < n$ nên $p |a_r$. Theo cách chọn $r$ ta có
+\[p|b_1c_{r-1}+b_2c_{r-2}+...+b_rc+0.\]
+Suy ra $p | b_0c_r$ điều này vô lý so với cả hai số $b_0$ và $c_r$ đều không là bội của $p$. Vậy $f(x)$ là bất khả quy trên $\mathbb{Q}$.
+\vd $P(x)=x^5-4x^4+18x^2+4x+6$ là đa thức Eisenstien vì nó bất khả quy với $p=2$.
+\par Thông thường Tiêu chuẩn Eisenstein không áp dụng trực tiếp cho đa thức $f(x)$ mà chúng ta có thể áp dụng cho đa thức $f(x+a)$ với $a$ là hằng số bất kỳ. Chú ý rằng đa thức $f(x)$ là bất khả quy trên $\mathbb{Q}$ nếu và chỉ nếu đa thức $f(x+a)$ khả quy trên $\mathbb{Q}$ với mọi số nguyên $a$.\\
+\vd Chứng minh rằng $f(x)=x^4-8x^3+12x^2-6x+3$ bất khả quy trên $\mathbb Q[x]$.
+Giả sử $p$ là một số nguyên tố:
+$$\begin{cases}
+	p \nmid 1\\
+	p | 8,p| 12,p| 6,p| 3\\
+	p^2 \nmid 3
+\end{cases}$$
+Suy ra không tồn tại $p$.
+\[f(x-1)=(x-1)^4-8x(x-1)^3+12(x-1)^2-6(x-1)+3=x^4-12x^3+42x^2-58x+30\]
+Từ phương trình ta thu được:
+$$\begin{cases}
+	p \nmid 1 \\
+	p |12,p|42,p|58,p|30 \\
+	p^2 \nmid 30
+\end{cases}$$
+$\Rightarrow p=2$\\
+$\Rightarrow p(x-1)$ là bất khả quy trong $\mathbb Q[x]$\\
+Vậy $f(x)$ là bất khả quy trong $\mathbb Q[x]$.
+\vd Nếu $p$ là số nguyên tố, thì $f(x)=x^{p-1} +x^{p-2}+...+x+1$ là bất khả quy.
+Thật vậy, ta có thể áp dụng tiêu chuẩn Eisenstien vào:
+	
+	\[f(x+1)=\frac{(x+1)^p-1}{(x+1)-1}=x^{p-1}+(p,1)^Tx^{p-2}+...+(p,p-1)^T.  \]
+ \vd  Với mọi số thực $n$, đa thức 
+	\[f(x)=1+x+\frac{x^2}{2!}+...+\frac{x^n}{n!}\] là bất khả quy.
+ \dl \label{} Cho $f(x)=a_nx^n+...+a_1x+a_0$ là đa thức bậc $n$ với hệ số nguyên. Giả sử $p$ là một số nguyên tố sao cho có hai chỉ số $t \ne k$ thỏa mãn:
+	$$\begin{cases}
+		p \nmid a_t \\
+		p \mid a_i \forall \hspace{0.1cm} i \ne t \\
+		p^2 \mid a_0
+	\end{cases}$$
+	Khi đó nếu $f(x)$ là tích của hai đa thức với hệ số nguyên thì một trong hai đa thức đó có bậc lớn hơn hoặc bằng $k+1$.
+ \cm Giả sử $P(x)=f(x)g(x)$ với $f(x),g(x)$ là các đa thức với hệ số nguyên có bậc lớn hơn bằng 1.
+	\[f(x)=b_rx^r+b_{r-1}x^{r-1}+...+b_0\]
+	\[g(x)=c_sx^s+c_{s-1}x^{s-1+...+c_0}\]
+	Theo giả thuyết $b_0c_0=a_0 |p$ nên $c_0 | p$ hoặc $b_0 |p$. Không mất tính tổng quát giả sử $b_0 |p$. Vì $a_0 \nmid p^2$ nên $c_0 \nmid p$. Mặc khác $b_rc_s=a_n \nmid p$ nên $b_r \nmid p$. Gọi $t$ là số nguyên dương nhỏ nhất sao cho $b_t \nmid p, 1 \le t \le r$. Ta có
+	\[a_t=b_tc_0+\sum_{1 \le i \le min(t,s)}b_t-ic_i\]
+	Ta thấy $a_t  \nmid p$ nên phải có $t \ge k+1$. Suy ra $r \ge k+1$.\\
+	Nhận xét: Với $k=n-1$ ta nhận được tiêu chuẩn Eisenstein.
+ \bd Cho $P(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0$ là đa thức với hệ số nguyên và $\alpha$ là một nghiệm phức của $P(x)$. Khi đó
+	\[|\alpha|<1+H\]
+	Trong đó $H=\underset{0\le i \le n }{max}|\frac{ai}{a_n}|$
+ \cm Nếu $|\alpha| \le 1$ thì $|\alpha| <1+H$\\
+	Nếu $|\alpha| >1$, ta có 
+	\[a^n=-\frac{a_{n-1}}{a_n}\alpha^{n-1}-...-\frac{a_1}{a_n}-\frac{a_0}{a_n}\]
+	Suy ra
+	\[|\alpha|^n\le H(|\alpha|^{n-1}+...+|\alpha|+1)=H\frac{|\alpha|^n-1}{|\alpha|} < H\frac{|\alpha|^n}{|\alpha|-1}\]
+	Suy ra $|\alpha|< 1+H$.
+ \dl \label{} Cho $P(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0$ là đa thức với hệ số nguyên. Giả sử tồn tại số tự nhiên $m \ge H+2$ sao cho $P(m)$ là số nguyên tố. Khi đó $P(x)$ bất khả quy.
+ \cm Giả sử $P(x)=f(x)g(x)$ với $f(x)$ và $g(x)$ là các đa thức hệ số nguyên có bậc lớn hơn hoặc bằng 1. Vì $f(m)g(m)=P(m)$ là số nguyên tố nên $|f(m)|=1$ hoặc $|g(m)=1|$. Không mất tính tổng quát giả sử $|g(m)|=1$. Giả sử
+	\[g(x)=d(x-\alpha_1)(x-\alpha_2)...(x-\alpha_k)\]
+	với $d$ là hệ số cao nhất của $g(x)$, $d\in \mathbb{R},d \ne 0, \alpha_1...\alpha_k$ là các nghiệm phức của $g(x)$ và cũng là các nghiệm phức của $P(x)$. Ta có
+	\[|g(m)|=|d|(m-|\alpha_1|)(m-|\alpha_2|)...(m-|\alpha_k|) > (m-H-1^k) \ge 1.\]
+	Điều này gây ra mâu thuẫn.\\
+	Vậy $P(x)$ là bất khả quy.
+ \dl \label{} Cho $p$ là số nguyên tố biểu diễn trong cơ sở $b>2$ có dạng
+	\[p=a_nb^n+a_{n-1}b^{n-1}+...+a_1b+a_0\]
+	Khi đó đa thức $P(x)=a_nx^{n}+a_{n-1}x^{n-1}+...+a_1x+a_0$ bất khả quy.
+ \cm Giả sử $P(x)=f(x)g(x)$ là các đa thức với hệ số nguyên có bậc lớn hơn bằng 1. Vì $f(b)g(b)=P(b)=p$ là số nguyên tố nên $|f(b)|=1$ hoặc $|g(b)|=1$. Không mất tính tổng quát giả sử $|g(b)|=1$. Giả sử
+	\[g(x)=d(x-\alpha_1)(x-\alpha_2)...(x-\alpha_k)\]
+	với $d$ là hệ số cao nhất của $g(x), d \ne 0, d \in \mathbb{Z},\alpha_1...\alpha_k$ là các nghiệm phức của $g(x)$ và cũng là các nghiệm phức của $P(x)$.\\
+	Theo bổ đề thì $Re(\alpha_i) \le 0$  khi đó $|b-\alpha_i| \ge b$ hoặc
+	\[|\alpha|<\frac{1+\sqrt{4(b-1)}}{2} \le b-1\]
+	Do $b \ge 3$ suy ra $|b-\alpha_i|>1$ với mọi $i=\overline{1,k}.$ Suy ra 
+	\[|g(b)|=|d||b-\alpha_1|...|b-\alpha_k|>1\]
+	Điều này mâu thuẫn với giả thuyết\\
+	Vậy $P(x)$ bất khả quy.
+ \dl \label{} Cho $f(x)=a_nx^n+...+a_1x+a_0$ là đa thức bậc $n$ với hệ số nguyên. Giả sử $p$ là một số nguyên tố sao cho $p$ không là ước của $a_n$, $p$ là ước của $a_i, \forall \hspace{0.1cm} i \ne n$ và $p^2$ không là ước của $a_k$ với $ 0\le k\le n-1$. Gọi $k_0$ là số bé nhất trong các số $k$ thỏa mãn điều kiện trên. Khi đó nếu $f(x)=g(x)h(x)$ là tích của hai đa thức với hệ số nguyên thì 
+	\[min \{deg \hspace{0.1cm} g(x), deg \hspace{0.1cm}h(x)\} \le k_0.\]
+	Định lý trên cũng là không tầm thường của tiêu chuẩn Eisenstein. Khi $k_0=0$ thì ta nhận được tiêu chuẩn Eisenstein. Khi $k_0=1$ và $f(x)$ không có nghiệm $t$. Thì $f(x)$ cùng là bất khả quy theo định lý 3. Khi $k_0=2$ và $f(x)$ không có nhân tử $b$ và $c$ thì $f(x)$ cũng bất khả quy $\mathbb{Q}.$
+ \vd  Đa thức $f(x)=x^4-14x^2+4$ là đa thức bất khả quy trên $\mathbb{Q}.$
+ \dl \label{} Cho $f(x)=x^{n}+a_{1}x^{n-1}+...+a_n$ là đa thức hệ số nguyên và $a_n\ne 0$.\\
+	Nếu 
+	\[|a_{1}| > 1+|a_2|+...+|a_{n}|\]
+	Khi đó $f(x)$ có đúng 1 nghiệm phức thỏa mãn $|z| >1$ và $n-1$ nghiệm phức còn lại thỏa mãn $|z|<1$.
+ \cm  Đầu tiên chúng ta sẽ chứng minh tất cả nghiệm của $f$, trừ một điểm duy nhất, nằm trong đường tròn $|z| \le 1$. Rõ ràng, cho đa thức $g(x)=x^n+a_{1}x^{n-1}$ cũng thỏa mãn tính chất này tức là $g(x)$ có tất cả nghiệm, trừ một điểm duy nhất nằm trong đường trong $|z|\le 1$. Do đó theo định lý Rouché ta chỉ cần chứng mình rằng đối với $|z|=1$ thì $|f(x)-g(z)|<|f(z)|+|g(z)|$.\\
+	Nhưng đối với $|z|=1$. ta có 
+	\[|f(z)-g(z)|=|a_{2}z^{n-2}+...+a_n| \le |a_{2}|+|a_n| \le |a_{1}|-1 \hspace{0.5cm} (1)\]
+	Mặt khác:
+	\[|f(z)+g(z)| \ge |g(z)|=|z^n+a_1z^{n-1}|=|z+a_1| \ge |a_1|-1 \hspace{0,5cm} (2)\]
+	Giả sử ngược lại rằng $f$ có thể biểu diễn như là tích của hai đa thức $f_1$ và $f_2$ có hệ số nguyên và bậc dương. Tích của các nghiệm của mỗi đa thức $f_1$ và $f_2$ là một số nguyên khác không. Và do đó, mỗi đa thức này là một nghiệm có giá trị tuyệt đối không nhỏ hơn 1. Tuy nhiên, $f$ chỉ có một nghiệm qua đó gây ra mâu thuẫn. Vậy ta chứng minh được định lý trên.
+ \dl \label{}
+  Nếu $|a_{1}| >1+ |a_{2}|+...+|a_n|$ và $f(1),f(-1) \ne 0$, thì $f$ là bất khả quy.\\
+	Khi có một dãy số $a_1, a_2,...,a_n$, và chúng ta xét bất đẳng thức (1) sau:
+	
+	$|a_1| \ge 1 + |a_2| +...+ |a_n|$
+	
+	Nếu ít nhất một phần tử trong dãy $a_i$ thoả mãn $|a_1| = 1 + |a_2| + ... + |a_n|$, thì bất đẳng thức (1) trở thành bất đẳng thức không nghiêm ngặt. Tuy nhiên, nếu $f(1),f(-1) \ne 0$, bất đẳng thức (2) lại trở thành bất đẳng thức nghiêm ngặt. Thực tế, với $|z| = 1$, giá trị bằng nhau $|f(z)| + |g(z)| = |a_1| - 1$ chỉ xảy ra khi cùng thời điểm $|f(z)| = 0$ và $|z + a_1| = |a_1| - 1$. Đẳng thức sau chỉ có thể đúng khi $z \in \mathbb{R}$. Vì $|z| = 1$, ta suy ra $z = 1$ và $z=-1$.
+ \dl \label {}Tiêu chuẩn Osada
+ Cho $f(x)=x^n+a_1x^{m-1}+...+a_{n-1}x+-p$ là đa thức bậc $n$ trong $Z[x]$, khi $p$ là số nguyên tố:\\
+ a)Nếu $p \ge 1+|a_1|+...+|a_{n-1}|$, thì $f$ là bất khả quy \\
+ b) Nếu $p \ge 1+|a_2|+...+|a_{n-1}|$ và giữa các nghiệm của $f$ không có nghiệm của đơn vị thì $f$ là bất khả quy.
+ \cm  Giả sử $f(x)$ là khả quy. Khi đó $f(x)=g(x)h(x)$, ở đó $g,h$ là những đa thức bậc dương với các hệ số nguyên. Vì $p$ là số nguyên tố nên một trong các số hạng tự do của g hay h phải $\pm 1$, chẳng hạn hệ số tự do của g bằng $\pm 1$. Vậy giá trị tuyệt đối của tích các nghiệm của g phải bằng 1. Khi đó $g(x)=0$ phải có một nghiệm $\alpha$ với $|\alpha|\leqslant 1$. Vì $  \alpha$ cũng là nghiệm của $f(x)=0$ nên $p=|\alpha^n+a_1\alpha^{n-1}+\cdots+a_{n-1}\alpha|\leqslant 1+|a_1|+\cdots+|a_{n-1}|$. Điều mâu thuẫn này chứng tỏ $f(x)$là bất khả qui.
+ \dl \label{} Định lý Polya 
+ \par Cho $f$ là đa thức bậc n và xác định $m=[\frac{n+1}{2}]$. Giả sử rằng, đối với $n$ số nguyên khác $a_1...a_{n}$, chúng ta có $|f(a_i)<\frac{m!}{2^m}|$ và số $a_1...a_n$ không phải là nghiệm của $f$. Thì $f$ là bất khả quy.
+ \bd Hãy cho $g$ là một đa thức bậc $k$ có các hệ số nguyên, và hãy cho $d_<d_1<...<d_k$ là số thực. Thì $|g(d_i)|\ge k!2^{-k}$ cho một số $i$.
+ \cm
+ Xem xét đa thức
+ \[G(z)=(x-d_0)\cdot ...\cdot (x-d_k)\sum_{i=0}^k \frac{g(d_i)}{x-d_i}\prod _{j \ne i}\frac{1}{d_-d_j}.\]
+ Dễ thấy $G(d_i)=g(d_i),  i \in \overline{0,k}$ và $deg G \le $. Do đó $G(x)=g(x).$
+ Hệ số cao nhất của $G$ bằng
+ \[\sum_{i=1}^k g(d_i)\prod_{j\ne i} \frac{1}{d_i-d_j}.\]
+ Theo giả , hệ số này là một số nguyên không bằng không, và do đó giá trị tuyệt đối của nó $\ge 1$. Vì thế một trong các số $|g(d_i)|$ không nhỏ hơn
+\[
+\begin{aligned}
+&\frac{1}{
+\left| \sum_{0 \leq i \leq k} \prod_{j \neq i} \frac{1}{|d_i - d_j|} \right|} \geq \\
+&\frac{1}{
+\left| \sum_{0 \leq i \leq k} \prod_{j \neq i} \frac{1}{|i - j|} \right|} = \\
+&\frac{1}{
+\sum_{0 \leq i \leq k} \frac{1}{i |(k-i)|}} = \\
+&\frac{k!}{\sum_{0 \leq i \leq k} \begin{pmatrix} k \\ i \end{pmatrix}} = \frac{k!}{2^k}.
+\end{aligned}
+\]
+Quay lại chứng minh định lý, chúng ta giả định ngược lại rằng $f=gh$, trong đó $g$ và $h$ là các đa thức có hệ số nguyên. Chúng ta có thể giả sử rằng $deg h < deg g=k$. Khi đó $m \le k <n$. Rõ ràng $g(\alpha) \ne 0$ và $g(\alpha_i)$ chia hết cho $f(\alpha_i).$ Do dó
+\[|g(\alpha_i)|\le |f(\alpha_i)|<\frac{m!}{2^m}. \]
+\par Tuy nhiên theo bổ đề của Pólya, chúng ta có $g(\alpha_i)\ge 2^{-k}k!$ trong một trong các số $\alpha_i$ (chúng ta áp dụng bổ đề Pólya cho $d$ và $\alpha_{i-1}$. Bây giờ chú ý rằng, vì $k <m$ nên $2^{-k}k!\ge 2^{-m}m!$. Nếu $=k+r$
+\[\frac{m!}{k!}=(k+1)(k+2)\cdot...\cdot(k+r)\le ^r =\frac{2^m}{2^k}\]
+Ví dụ đa thức $(x-1)(x-2)\cdot ... \cdot(x-n)+1$ là bất khả quy. 
+  \dl \label{}  Tiêu chuẩn Brauer
+  \par Cho $a_1 \ge a_2 \ge ...\ge a_n$ là số thực dương và $n \ge 2$. Thì đa thức $f(x)=x^n-a_1x^{n-1}-a_2x^{n-2}-...-a_n$ là bất khả quy trên $\mathbb{Z}.$
+  \vd  Đa thức $f(x)=x^{52}+2024x^{51}+4x^{50}+...+51x^1+52$ bất khả quy trong $\mathbb{Z}.$\
+  \subsubsection{Tính bất khả quy của đa thức bậc 3 và bậc 4}
+Bất khả quy của đa thức có dạng $x^ \pm x^m \pm x^p \pm 1$.
+Cho $f(x)=x^n+\epsilon_1x^m +\epsilon_2 x^p +\epsilon_3$ với $n >m> p \ge 1$ và $\epsilon_1 \ne \pm 1.$ Chúng ta cần tìm $[L_j]$ khi $f$ là bất khả quy. Đầu tiên, chúng ta chỉ ra rằng đủ để xem xét trường hợp $m+p \ge n.$ Dễ thấy, $f$ bất khả quy khi và chỉ khi đa thức
+\[x^n f \left(\frac{1}{x}\right)=1+ \epsilon_1 x^{n-m}+\epsilon_2 x^{n-p} +\epsilon_3 x^n\]
+là bất khả quy và sau đó, nếu $m+p <n$ và chúng ta có $(n-m) +(n-p)>n.$.
+\par Chúng ta cũng có thể loại bỏ trường hợp tầm thường $f(x)= (x^m +\epsilon_2)(x^p +\epsilon_1),n=m+ p$ và $\epsilon_3 =\epsilon_1 \epsilon_2$.
+\par 
+Đa thức $\phi(x)$ bậc của $s$ được gọi là không đệ quy nếu
+\[\phi(x)=\pm x^s \phi(\frac{1}{x})\]
+\bd Cho $f(x)=\phi(x)\psi (x)$ với $\phi(x)$ và $\psi (x)$ là các đa thức bậc 1 có hệ số nguyên và bậc dương. Khi đó một trong hai đa thức $p(x)$ và $q(x)$ là đệ quy.
+\cm Cho $r=deg\phi$ và $s= n-r =deg \phi$. Xem xét đa thức 
+\[f_1(x)=x^ r\phi(\frac{1}{x})\psi(x)=\sum_{i=0}^nc_i x^{n-i}\]
+\[f_2(x)=x^s\psi(\frac{1}{x})= x^n f_1(\frac{1}{x})=\sum_{i=o}^n c_{n-i}x^{n-i}\]
+Dễ thấy,
+\[f_1(x)f_2(x)=x^n f(\frac{1}{x})=(x^n\epsilon_1x^m +\epsilon_2 x^p +\epsilon_3)(\epsilon_3 x^n +\epsilon_2 x^{n-p}+\epsilon_1x^{n-m}+ 1).\]
+So sánh với hệ số của $x^{2n}$ cho \\
+
+\bd Cho $\lambda$ và $\lambda^{-1}$ là nghiệm của $f(x)$. Khi đó một trong ba cặp điều kiện sau sẽ được khỏa mãn.
+\[1) \lambda^n =-\epsilon_3 \text{và} \lambda^{m-p} = -\epsilon_1 \epsilon_2,\]
+\[2) \lambda^m = \epsilon_1 \epsilon_3 \text{và } \lambda^{n-p}=-\epsilon_2,\]
+\[3)\lambda^p =-\epsilon2\epsilon_3 \text{và} \lambda^{n-m}=-\epsilon_1.\]
+Các điều kiện $f(\lambda) =0$ và $f(\lambda^{-1})=0$ có thể biểu diễn dưới dạng 
+\[\lambda^n +\epsilon_1 \lambda^m +\epsilon_2\lambda^p +\epsilon_3=0, \hspace{0.2cm} \lambda^n +\epsilon_2 \epsilon_3 \lambda^{n-p}+\epsilon_1\epsilon_3 \lambda^{n-m}+\epsilon_3=0\]
+Bằng cách hiệu hai phương trình ta thu được
+\[\epsilon_2 \epsilon_3 \lambda^{n-p}+\epsilon_1 \epsilon_3 \lambda^{n-m}-\epsilon_1 \lambda^{m}-\epsilon_2\lambda^p=0\]
+hay 
+\[(\epsilon_2 \lambda^{m-p}+ \epsilon_1)(\epsilon_3\lambda^{n-m}-\epsilon_1\epsilon_2\lambda^{p}=0\]
+Và từ đó ta có $\lambda^{p}=-\epsilon_1 \epsilon_2 \lambda^{m}$
+hoặc $\lambda^{p}= \epsilon_1 \epsilon_2 \epsilon_3 \lambda^{n-m}.$ Thay các giá trị của $\lambda^p$ vào phương trình $f(\lambda)=0$ ta thu được $\lambda^{n}=-\epsilon_3 $ hoặc
+\[(\lambda^{m} +\epsilon_1\epsilon_2)(\lambda^{n-m} -\epsilon_1 )=0\]
+Với sự giúp đỡ của bổ đề 3.1.6 và bổ đề 3.1.5 ta dễ dàng chứng minh được hai định lý sau đây, từ đó dẫn đến một mô tả hoàn chỉnh về các đa thức không giảm được có dạng $x^n +\epsilon_1 x^m +\epsilon_2 x^p + \epsilon_3$. Trong cả hai mệnh đề ta giả sử $n \le m+ p$ và $f(x)\ne (x^m +\epsilon_2 )(x^p +\epsilon_1).$
+\dl 
+\par a) Nếu đa thức $f(x)$ không có nghiệm là nghiệm của đơn vị phức thì $f(x)$ là bất khả quy.
+\par 
+b) Nếu đa thức $f(x)$ có chính xác $q$ nghiệm của đơn vị phức thì $f(x)$ được biểu diễn dưới dạng tích của hai đa thức có hệ số nguyên, trong đó một trong các số đó có bậc là $q$ và các nghiệm đã cho là nghiệm của đơn vị phức. Trong khi đa thức còn lại bất khả quy.
+\cm Cho $f(x)= \phi(x) \psi(x), \phi(x). \psi \in \mathbb{Z[\text{x}]}$.  Theo bổ đề 3.1.5 chúng ta có thể giả sử nếu $\lambda$ là nghiệm của $\phi$, thì $\phi^{-1}$ cũng là nghiệm của $\phi$. Kết quả từ bổ đề 3.1.6 cho biết $\lambda$ cũng là nghiệm của đơn vị phức. Nếu không phải tất cả các nghiệm của f đều là các nghiệm của đơn vị phức, thì f có thể là bất khả quy trên $\mathbb{Z}$ hoặc $\psi \ne \psi_1 \psi_2, \psi_1, \psi_2 \in \mathbb{Z[\text{x}]}$ và tất cả nghiệm của $\psi_1$ là nghiệm phức trong khi $\psi_2$ có một nghiệm không phải là nghiệm phức. Trong trường hợp tất cả nghiệm của $\phi \psi_1$ là nghiệm phức. Tiếp tục với các lập luận tương tự áp dụng cho $\psi_2$ ta thu được nhân tử hóa của $f$.
+\dl 
+Cho $d$ là ước chung lớn nhất của $n,m,p$. Đặt
+\[n_1=\frac{n}{d}, m_1=\frac{m}{d}, p_1 =\frac{p}{d},\]
+\[d_1=\left(n_1,m_1mp_1\right), d_2 \left( m_1, n_1-p_1\right), d_s= \left(p_1, n_1-m_1\right)\]
+khi đó gọi nghiệm phức là nghiệm của $f$ thì thỏa mãn một trong các phương trình
+\[x^{dd _i}=\pm 1, x^{dd_2}=\pm 1, x^{dd_s}=\pm 1,\]
+và nó là một nghiệm của đơn vị $f$.
+\subsubsection{Bất khả quy của một số nhị thức bậc ba}
+Dựa trên kết quả của phần trước không khó để xác định rằng tam thức $x^{n} \pm x^{m} \pm 1$ là bất khả quy.
+\dl Cho $n\ge 2m, d=(m,n), n_1 =\frac{n}{d}$ và $m_1 \frac{m}{d}$
+Thì tam thức bậc ba có dạng:
+\[g(x)=x^{n} +_\epsilon x^{m} +\epsilon', \epsilon = \pm 1 \text{và } \epsilon' =\pm 1.\]
+là bất khả quy ngoài trừ ba trường hợp $n_1+m_1 \equiv 0 \text{(mod 3)}$:
+a) $n_1 $ và $m_1 $ là số lẻ và $\epsilon= 1$.\\
+b) $n_1 $ là số chẳn và $\epsilon' =1$.\\
+c) $m_1$ là số chẳn và $\epsilon' =\epsilon$.
+Trogn tất cả các trường hợp $g(x)$ là một tích của $x^{2d} +_\epsilon^{m} \epsilon'^{n}x^{d} +1$ là đa thức bất khả quy.
+\dl [Mi2 ]
+Cho đa thức bậc ba $x^{n} \pm px^{m} \pm 1, n >m $ và $p$ là một số nguyên tốm là khả quy thì $\frac{n}{\left(n,m\right)\le 4^{p^2}}$
+\dl [Ra2] \par
+a) Tam thức $x^5 +n$ chỉ có thể phân tích thành tích của các đa thức  hai và bậc ba khi và chỉ khi $n= \pm 1$ và $n=\pm 6$.\par
+b) Tam thức $x^5 -x +n$ có thể phân tích thành tích của các đa thức bậc hai và bậc ba khi và chỉ khi $n=\pm 15, n= \pm $ hoặc $n= \pm 2759640$.
+\subsubsection{Định lý bất khả quy Hilbert}
+CHo $f(t, x) \in \mathbb{Q\text{[t,x]}}$ là đa thức hai biến, Đa thức $f$ được gọi là khả quy nếu $f= gh$ với $g,h \in \mathbb{Q\text{[t,x]}}$ là đa thức có bậc dương. 
+\dl [Hi3] 
+Nếu $f(t, x)$ là đa thức bậc khả quy trên $\mathbb{Q\text{[t,x]
+}}$ thì tồn tại một số hữu tỉ $t_0$ sao cho đa thức $f(t_0,x)$ trong một biến là bất khả quy trên $\mathbb{Q}.$
+\par 
+Ta thiết thiết lập một mối quan hệ giữa tính khả quy của đa thức $f(t,x)$ và sự tồn tại của điểm $(t_0, y_0)$ có tọa độ hữu tỉ trên một đường cong đại số cụ thể. Cho $f(t,x) \in \mathbb{Q\text{[t,x]}} $ là một đa thức bất khả quy. Ta biểu diễn nó dưới dạng:
+\[f(t,x)=a_{n}(t)x^{n}+...+ a_0(t), a_i(t) \in \mathbb{\text{[t]}}\]
+và chúng ta định nghĩa đa thức $F(x)=f(t,x)$ với hế số từ trường $k= \mathbb{Q\text{(t)}}$. Cho $\overline{k}$ là phép mở rộng đại số của $k.$ Thì
+\[F(x)=a_n(t).(x- \alpha)\cdot ... \cdot (x-\alpha_n)\]
+với $\alpha_1...\alpha_n \in \overline{k}$ là nghiệm của $F(x)$  và nó bất khả quy trên $k= \mathbb{Q\text{(t)}}$.\\
+Nếu $a_n(t_0) \ne $ thì tương ứng với chúng và các nghiệm $\alpha_1
+'...\alpha_n' \in \mathbb{Q'}$ của $f(t_0,x)$. \par 
+Giả sử rằng $f(t_0,x)$ là khả quy trên $\mathbb{Q}$. Sau khi sắp xếp lại thứ tự của các nghiệm, ta có thể giả định rằng $f(t_0,x)=a_n (t_0)g_0 (x)$ với
+\[g_0(x) =(x-\alpha_1')\cdot ...\cdot (x- \alpha_s') \in \mathbb{Q\text{[x]}}\]
+\[h_0(x) = (x- \alpha'_{s+1})\cdot ... \cdot (x-\alpha'_n) \in \mathbb{Q\text{[x]}}\].
+Đặt 
+\[g(x) = (x- \alpha_1) \cdot ...\cdot (x- \alpha_) \text{và} h(x)=(x- \alpha'_{s+1}\cdot...\cdot(x-\alpha_n)\]
+Thì $F(x)= a_n(t)g(x) h(x)$ với $g(x), h(x) \in\overline{K}\text{[x]}$. Theo giả thuyết $F(x)$ là bất khả quy trên $k\text{[x]}$ và do đó $g(x)$ có hệ số $y$ phụ thuộc $\overline{k} \backslash k$. Gọi rằng $k= \mathbb{Q \text{(t)}}$, vì thế $y$ là đại số trên $\mathbb{Q\text{(t)}}$.
+\[b_m (t) y^{m} +b_{m-1} y^{m-1}+...+ b_o(t) =0,  b_i (t) \in \mathbb{Q \text{(t)}}\].
+Kết quả chúng ta thu được một đường cong đại số $C$ ( với hệ số hữu tỉ) trong mặt phẳng $(t,y)$. Hệ số $y$ của $g$ tương ứng với một hệ số $y_0 \in \mathbb{Q} $ của đa thức $g_0$ và hệ số này thỏa mãn mối quan hệ 
+\[b_m(t_0) y_0 ^m +b_{m-1} y_0 ^{m-1}+ ...+ b_0(t_0)=0,\]\
+Chú ý: C có hữu tỉ điểm $(t_0,y_0).$
+Do đó, xem xét tất cả đa thức có dạng $(x- \alpha_{i_1})\cdot ... \cdot (x- \alpha_{i_k}$, $1 \le k \le n-1$, và cho mỗi đa thức này, chọn hệ số không thuộc $\mathbb{Q}$. Với các hệ số này, ta gán các đuòng cong đại số thẳng $C_1...C_M$ có hệ số thuộc $\mathbb{Q}.$ Nếu $t_0 \in \mathbb{Q}$ sao cho không có một trong các đường cong $C_1...C_M$ có điểm thuộc điểm $\left(t_0,y_0\right)$, đa thức $f(t_0,x)$ là bất khả quy.
+\par 
+Bây giờ chúng ta sẽ nghiêm cứu các điểm thuộc $\mathbb{Q}$ trên đường cong đại số phẳng $C$ được cho bởi phương trình
+\[b_m(t)y^{m} +b_{m-1}y^{m-1}+...+ b_0(t)=0, b_i\in \mathbb{Z\text{(t).}}\]
+Đầu tiên, ta thực hiện sự thay đổi biến số $\overline{y}= b_m(t)y.$ Kết quả thu được là đường cong 
+\[ \overline{y}^m +b_{m-1} \overline{y}^ {m-1}+b_{m-2}(t)b_m(t) \overline{y}^{m-2}+...+ b_o(t)(b_m (t))^{m-1}=0.\]
+Nếu $(t_0, \overline{y_0})$ là một điểm thuộc $\mathbb{Q}$ trên đường cong này và $t_0 \in \mathbb{Z}$, thì $\overline{y_0}\in \mathbb{Z}$. Trong phần tiếp theo, ta giới giới hạn việc nghiêm cứu các điểm nguyên trên đường cong.
+\[y(t) =a(\sqrt[k]{t}^n)+...+ b+c(\sqrt[k]{t})^{-1}+...,\]
+trong đó $\sqrt[k]{t}$ là một trong các nhánh của căn thứ $k$ của $t$ (để cụ thể, ta chọn nhánh sao cho một phủ kín có $\sqrt[k]{t}>, t>0$). Ánh xạ $(y,t) \mapsto t$ xác định một phần của $M^{2}\mapsto CP^{1}$ trong đó $M^2 $ là mặt phẳng Riemann của hàm số đại số $y(t)$. Chúng ta quan tâm đến các nhánh của phần này trên $\infty$. Lấy một trong các nhánh và xem xét sự giao điểm của nó với ảnh ngược của một khu vực lân cận của $\infty$. Sự hạn chế của rẽ nhanh trên tập hợp này có dạng $z \mapsto z^{k}.$ Điều này có nghĩa là $y(z)$ là một giá trị duy nhất và $z^k =t$. Cũng rõ ràng rằng $z= \infty$ không phải là một điểm cần thiết của $y(z)$.
+\par 
+Chúng ta quan tâm đến trường hợp có một dãy số nguyên dương vô hạn tăng không ngừng $t_i$ sao cho $y(t_i)$ là số thực(và hơn nữa là số nguyên). Hãy chứng minh rằng trong trường hợp này, tất cả cáchệ số của phương trình phân rã $y(t)$ đều là số thực. Giả sử rằng các hệ số này không đều là số thực. Cho $\epsilon^{\frac{s}{k}}$ là hạng tử có bậc cao nhất $\frac{s}{k}$ và $\epsilon$ không phải là số thực. Sau đó, đối với các giá trị thực của $t$, các hạng tuẻ có bậc cao không ảnh hưởng đến phần ỏ của tổng của dãy số, và khi $t \mapsto \infty$, các hạng tử có bậc thấp hơn với $\epsilon t^{\frac{s}{k}}$ và  không thể bỏ đi phần ảo của nó.
+\par \
+\dl Cho 
+\[\phi(t)=a (\sqrt[k]{t})^n +...+b+c (\sqrt[k]{t})^{-1}+...,\]
+trong đó $t$ là số thực và chuỗi là số  và hội tụ với $t \ge R$. Điều này chỉ ra rằng $\phi(t)$ không phải là đa thức. Thì tồn tại dãy hội tụ $C> 0$ và $\epsilon \in \left(0,1\right)$ sao cho số lượng nguyên dương $t \le \mathbb{N}$ sao cho $y(t) \in \mathbb{Z}$ không vượt quá $CN^{\epsilon}.$
+\bd \
+Tồn tại các hằng số dương $c_1$ và $\alpha$ sao cho, nếu $T$ đủ lớn thì khoẳng $[T, T+ c_1 T^{\alpha}]$ không chứa nhiều hơn $m$ số nguyên dương $t$ sao cho $\phi(t) \in \mathbb{Z}.$
+
+\end{document}

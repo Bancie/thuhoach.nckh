@@ -1,0 +1,220 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{vietnam}\usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
+\usepackage[top=3.5cm, bottom=3.0cm, left=3cm, right=3.0cm]{geometry} 
+\usepackage{color, fancyhdr, graphicx, wrapfig}
+\usepackage[unicode]{hyperref}
+\usepackage[vietnamese]{babel}
+\usepackage{titling}
+\usepackage{subfigure}
+\usepackage{secdot}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage[tikz]{ocgx2}
+\usepackage{xcolor}
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{changepage}
+\usepackage{float}
+\usepackage{pgfplotstable}
+\usepackage{pgfplots}
+\usepackage{blindtext}
+\usepackage{titlesec}
+\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{nccmath}
+\usetikzlibrary{calc}
+\usepackage{longtable}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{exscale,relsize,makeidx}
+%\usepackage{refcheck}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\newtheorem{dn}{Định nghĩa}
+\newtheorem{tc}{Tính chất}
+\newtheorem{dl}{Định lý}
+\newtheorem{md}{Mệnh đề}
+\newtheorem{bd}{Bổ đề}
+\newtheorem{hq}{Hệ quả}
+\newtheorem{nx}{Nhận xét}
+\newtheorem{vd}{Ví dụ}
+\newtheorem{cy}{Chú ý}
+\newtheorem{ttoan}{Thuật toán}
+\pagenumbering{roman}\pagestyle{plain}
+%\pagestyle{fancy}
+%\lhead{\it \changefontsizes{11pt}Luận văn thạc sĩ:}
+%\rhead{\it Một số phương pháp vô hướng hóa cơ bản trong tối ưu đa mục tiêu}
+%\lfoot{\it Nguyễn Văn Vân } 			         
+%\rfoot{\it K19.2 trường ĐHSG}
+\renewcommand{\headrulewidth}{1,2pt} 			
+\renewcommand{\footrulewidth}{1,2pt}
+\newcommand{\dstc}[2]
+{
+	\newdimen\stringwidth\setbox0=\hbox{#1}
+	\stringwidth=\wd0
+	\hspace*{-\parindent}\hspace*{.5\textwidth}\hspace*{-.5\wd0}#1\hfill #2\bigskip
+	
+}  
+\usepackage{scrextend}
+\fancyhf{}
+\lhead{}
+\chead{\thepage}
+\rhead{}
+\cfoot{}
+\rfoot{}
+\lfoot{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{1pt}
+\begin{document} 
+\subsection{Phương pháp đơn hình}
+
+\begin{dn}[Cơ sở]
+Cơ sở là cột có số hạng đầy đủ. Tương ứng với tập con của ràng buộc $b$ độc lập tuyến tính.
+\end{dn}
+
+Ta xét bài toán chính tắc:
+    \begin{equation} \small \label{chinhtac}
+        \begin{split}
+        (P) \quad \text{Min } & f(x) = c^Tx \\
+            & \left\{
+            \begin{split}
+            & Ax=b, \\
+            & x_j \geq 0.
+            \end{split}
+            \right.    
+        \end{split}
+    \end{equation}
+có thể được viết lại dưới dạng:
+\begin{equation}
+\begin{pmatrix}
+    1 & 0 & c \\
+    0 & I & A
+\end{pmatrix}
+\begin{pmatrix}
+    -z \\
+    x_B \\
+    x_N
+\end{pmatrix}
+=
+\begin{pmatrix}
+    -z_0 \\
+    b
+\end{pmatrix}.
+\end{equation}
+trong đó $x_B$ ký hiệu là biến cơ sở,
+\begin{equation}
+x_B=(x_1,x_2,\ldots,x_m)^T
+\end{equation}
+biến $x_N$ ký hiệu là biến phi cơ sở,
+\begin{equation}
+x_N=(x_{m+1},x_{m+2},\ldots,x_n)^T
+\end{equation}
+và phương án
+\begin{equation}
+z=z_0, \quad x_B=b, \quad x_N=0 \quad (x_B \geq 0).
+\end{equation}
+
+\begin{ttoan}[Đơn hình]
+\setlength{\parindent}{4em}
+Ta có dạng chính tắc của bài toán được thiết lập lại dưới dạng
+\begin{equation}
+\left\{\begin{split}
+(-z) + 0x_B + c^Tx_N &= -z_0 \\
+Ix_B + Ax_N &= b.
+\end{split}\right.
+\end{equation}
+với $x_B \geq 0, \: x_N=0, \: z=z_0$. Thuật toán đơn hình tuân theo các bước sau:
+
+\noindent \textbf{Bước 1. Thiết lập.}
+Xác định biến $c_j$ nhỏ nhất, ký hiệu
+\begin{equation}
+c_s = \underset{j}{\min} c_j
+\end{equation}
+sau đó chuyển sang bước 2.
+
+\noindent \textbf{Bước 2. Kiểm tra sự tối ưu.}
+Nếu $\forall c_s \geq 0$, bài toán được giải và thuật toán dừng lại. Nếu $\exists c_s \leq 0$, ta chuyển sang bước 3. 
+
+\noindent \textbf{Bước 3. Chọn biến vào.}
+Nếu $\exists c_s < 0$, đánh dấu $c_s$ là biến vào và chuyển sang bước 4.
+
+\noindent \textbf{Bước 4. Kiểm tra giới hạn.}
+Nếu $A_s \leq 0$, ta thực hiện loạt biến đổi sau:
+\begin{equation}
+z=z_0+c_sx_s, \: x_B = b - A_sx_s, \: x_j=0 \quad (j\neq s)
+\end{equation}
+trong đó $x_j$ là biến phi cơ sở. Nếu $z \rightarrow -\infty $ tương ứng $x_s \rightarrow \infty$, bài toán được giải và thuật toán kết thúc, nếu không chuyển sang bước 5.
+
+\noindent \textbf{Bước 5. Chọn biến ra.}
+Ta đánh dấu biến $x_j$ đã thực hiện trước đó thành biến ra $x_s$ với điều kiện:
+\begin{equation}
+x_s = \frac{b_r}{a_{rs}} = \underset{a_{is}>0}{\min} \quad \frac{b_i}{a_{is}} \geq 0, \quad (a_{rs}>0).
+\end{equation}
+Sau đó chuyển sang bước 6.
+
+\noindent \textbf{Bước 6. Xoay trục.}
+Chọn $a_{rs}$ làm phần tử trụ, xác định $a_{ij}$ mới ký hiệu $a_{ij}^{'}$ bằng cách thực hiện thao tác:
+\begin{equation}
+a_{ij}^{'} = a_{ij} - \frac{a_{is}a_{rj}}{a_{rs}}
+\end{equation}
+sau đó quay trở lại bước 1.
+\end{ttoan}
+\subsubsection*{Ví dụ minh hoạ}
+Ta xét bài toán:
+\begin{equation*}
+	\begin{split}
+	(P) \quad & z = 2x_1 + 2x_2 + 2x_3 + x_4 + 4x_5 \longrightarrow Min \\
+		& \left\{\begin{split}
+        4x_1 + 2x_2 + 13x_3 + 3x_4 + x_5 &= 17 \\
+        x_1 + x_2 + 5x_3 + x_4 +x_5 &= 7 \\
+		x_i &\geq 0 \quad (i=1,2,\ldots,5) \\
+		\end{split}\right.    
+	\end{split}
+\end{equation*}
+Bài toán được viết lại dưới dạng:
+\begin{equation*}
+    \left\{\begin{array}{ccccccc}
+    2x_1 &+ 2x_2 &+ 2x_3 &+ x_4 &+ 4x_5 &=& z \\
+    4x_1 &+ 2x_2 &+ 13x_3 &+ 3x_4 &+ x_5 &=& 17 \\
+    x_1 &+ x_2 &+ 5x_3 &+ x_4 &+x_5 &=& 7 \\
+    \end{array}\right.
+\end{equation*}
+
+\begin{equation*}
+    \left\{\begin{array}{cccccccc}
+    (-z) &+2x_1 &&-5x_3 &&+ x_5 &=& -11 \\
+    &2x_1 &&+ 3x_3 &+ x_4 &- x_5 &=& 3 \\
+    &-x_1 &+ x_2 &+ 2x_3 &&+2x_5 &=& 4 \\
+    \end{array}\right.
+\end{equation*}
+\begin{equation*}
+z=11, \quad x_B=(x_5,x_2)=(3,4), \quad x_N=(x_1,x_2,x_3)=(0,0,0).
+\end{equation*}
+\begin{equation*}
+z=6, x_3=1, x_2=2, x_1=x_4=x_5=0
+\end{equation*}
+
+\begin{equation*}
+    \left\{\begin{array}{cccccccc}
+    (-z) &+\frac{16}{3}x_1 &&&+\frac{5}{3}x_4&-\frac{2}{3} x_5 &=& -6 \\
+    &\frac{2}{3}x_1 &&+ x_3 &+ \frac{1}{3}x_4 &-\frac{1}{3} x_5 &=& 1 \\
+    &-\frac{7}{3}x_1 &+ x_2 & &-\frac{2}{3}x_4&+\frac{8}{3}x_5 &=& 2 \\
+    \end{array}\right.
+\end{equation*}
+\begin{equation*}
+z=6, x_B=(x_3,x_2)=(1,2), x_N=(x_1,x_4,x_5)=(0,0,0).
+\end{equation*}
+\begin{equation*}
+    \left\{\begin{array}{cccccccc}
+    (-z) &+\frac{19}{4}x_1 &+\frac{1}{4}x_2&&+\frac{3}{2}x_4&&=& -\frac{11}{2} \\
+    &\frac{3}{8}x_1 &+\frac{1}{8}x_2&+x_3 &+\frac{1}{4}x_4 &&=& \frac{5}{4} \\
+    &-\frac{7}{8}x_1 &+ \frac{3}{8}x_2 &&-\frac{1}{4}x_4&+x_5 &=& \frac{3}{4} \\
+    \end{array}\right.
+\end{equation*}
+Nghiệm tối ưu của bài toán là
+\begin{equation*}
+z=\frac{11}{2}, x_3=\frac{5}{4}, x_5=\frac{3}{4}, x_1=x_2=x_4=0.
+\end{equation*}
+\end{document}

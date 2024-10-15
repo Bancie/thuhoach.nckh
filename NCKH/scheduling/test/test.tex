@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[utf8]{vietnam}\usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
+\usepackage{pgfgantt} % For Gantt chart
+
+\begin{document}
+
+\section{Main Content}
+Some content here...
+
+\clearpage % This will ensure the figure is placed on a new page
+
+\section*{Index Page / Appendix}
+\addcontentsline{toc}{section}{Index Page / Appendix}
+
+\begin{figure}[h!]
+\centering
+\begin{ganttchart}[
+    hgrid, vgrid,
+    y unit title=.5cm,
+    title/.style={draw=none, fill=none},
+    include title in canvas=false
+]{1}{18}
+
+\end{ganttchart}
+\caption{Sơ đồ Gantt không ngắt quãng của phương án $J_1^3$}
+\label{ganttchart-appendix}
+\end{figure}
+
+\end{document}

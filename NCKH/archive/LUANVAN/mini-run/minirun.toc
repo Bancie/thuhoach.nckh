@@ -1,0 +1,40 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {chapter}{Lời cam đoan}{i}{chapter*.1}%
+\contentsline {chapter}{Lời cảm ơn}{ii}{chapter*.2}%
+\contentsline {chapter}{Mục lục}{iii}{chapter*.2}%
+\contentsline {chapter}{Danh mục các kí hiệu}{v}{chapter*.4}%
+\contentsline {chapter}{{\bf Lời nói đầu}\rm }{1}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}Một số kiến thức cơ bản về bài toán quy hoạch tuyến tính}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1} Véc tơ, ma trận và các tính chất}{4}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1} Véc tơ và các phép toán }{4}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2} Ma trận và các phép toán}{5}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Các phép biến đổi trên ma trận}{7}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4} Định thức của ma trận và ma trận đảo}{7}{subsection.1.1.4}%
+\contentsline {section}{\numberline {1.2}Một số kiến thức cơ bản về Bài toán tối ưu tuyến tính}{8}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Bài toán dạng chính tắc và chuẩn tắc}{8}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Chuyển bài toán về dạng chính tắc}{10}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Phương pháp giải bài toán tối ưu tuyến tính}{11}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Phương pháp hình học}{11}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Phương pháp đơn hình}{11}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Phương pháp đơn hình đối ngẫu từ vựng}{11}{subsection.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.3.3.1} Bài toán đối ngẫu }{11}{subsubsection.1.3.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.3.2}Phương pháp đơn hình đối ngẫu:}{15}{subsubsection.1.3.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3.3} Phương pháp đơn hình đối ngẫu từ vựng }{25}{subsubsection.1.3.3.3}%
+\contentsline {chapter}{\numberline {2}Bài toán quy hoạch tuyến tính có nghiệm nguyên}{27}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Sự cần thiết phải nghiên cứu về bài toán quy hoach có nghiệm nguyên}{27}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Lý thuyết về cách tìm nghiệm nguyên của bài toán Quy hoạch tuyến tính}{28}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Sự cần thiết phải có một lý thuyết riêng}{28}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Phương pháp Gomory}{28}{subsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.1} Giới thiệu về phương pháp Gomory}{28}{subsubsection.2.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2.2} Tư tưởng về phương pháp cắt}{28}{subsubsection.2.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.3} Thuật toán Gomory cho bài toán tối ưu nguyên hoàn toàn}{28}{subsubsection.2.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.2.4}Thuật toán Gomory cho bài toán tối ưu nguyên bộ phân}{28}{subsubsection.2.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.2.5}Ý nghĩa của phương pháp Gomory}{28}{subsubsection.2.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.2.6}Ví dụ minh họa}{28}{subsubsection.2.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.3}Phương pháp Land-Doig}{28}{subsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.1}Giới thiệu phương pháp và ý nghĩa}{28}{subsubsection.2.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.2.3.2}Các bước thực hiện của phương pháp}{28}{subsubsection.2.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.2.3.3}Ví dụ minh họa}{28}{subsubsection.2.2.3.3}%
+\contentsline {chapter}{\numberline {3}Mở rộng kết quả cho bài toán dạng phân thức tuyến tính}{29}{chapter.3}%
+\contentsline {chapter}{{\bf Kết luận}\rm }{30}{chapter*.6}%
+\contentsline {chapter}{{\bf Tài liệu tham khảo}}{31}{chapter*.7}%

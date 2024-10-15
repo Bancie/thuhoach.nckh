@@ -1,0 +1,149 @@
+\documentclass[10pt]{beamer}
+\mode<presentation>
+\usepackage{beamerthemesplit}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{textpos}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{caption}
+
+% import citation package
+\usepackage{biblatex}
+\addbibresource{presentation.bib}
+\AtBeginBibliography{\small}
+
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary {datavisualization} 
+\pgfplotsset{compat=1.18, width = 7cm}
+\usetikzlibrary{patterns}
+\usetheme{Ilmenau} % AnnArbor, Ilmenau, Darmstadt, Dresden, CambridgeUS, Frankfurt, Singapore
+\newtheorem{dn}{Định nghĩa}[section]
+\newtheorem{dl}{Định lý}[section]
+\newtheorem{tc}{Tính chất}[section]
+\newtheorem{hq}{Hệ quả}[section]
+\newtheorem{bd}{Bổ đề}[section]
+\newtheorem{md}{Mệnh đề}[section]
+\newtheorem{vd}{Ví dụ}[section]
+\newtheorem{nx}{Nhận xét}[section]
+\newtheorem{cy}{Chú ý}[section]
+\newcommand{\dom}{\text{{\rm dom}}}
+\newcommand{\epi}{\text{{\rm epi}}}
+\newcommand{\Min}{\text{{\rm Min}}}
+\setbeamertemplate{theorems}[numbered]
+\setbeamertemplate{definitions}[numbered]
+\setbeamertemplate{footline}[frame number]
+\usepackage{algorithm}
+\usepackage{color}
+\usepackage{algorithmic}
+\usepackage{footmisc}
+\usepackage{indentfirst} 
+\usepackage{comment}
+\AtBeginEnvironment{proof}{%
+  \setbeamercolor{block title}{use=example text,fg=white,bg=example text.fg!75!black}
+  \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\usefonttheme{professionalfonts}
+\setbeamercolor{normal text}{bg=white,fg=black}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\beamertemplatetransparentcoveredhigh
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage[utf8]{vietnam}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+\definecolor{mSybilaRed}{HTML}{990000}
+
+\setbeamercolor{title separator}{
+  fg=mSybilaRed
+}
+
+\setbeamercolor{progress bar}{%
+  fg=mSybilaRed,
+  bg=mSybilaRed!90!black!30
+}
+
+\setbeamercolor{progress bar in section page}{
+  use=progress bar,
+  parent=progress bar
+}
+
+\setbeamercolor{alerted text}{%
+  fg=mSybilaRed
+}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode
+  \hbox{
+  \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}
+    \usebeamerfont{author in head/foot}\insertshorttitle
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}
+    \insertframenumber{} / \inserttotalframenumber
+  \end{beamercolorbox}
+  }
+}
+
+\title{Phương pháp giải bài toán \\ Tối ưu tuyến tính nguyên}
+
+
+% \titlegraphic{\hfill \includegraphics[height=1cm]{logodhsg.png}}
+%\titlegraphic{\hfill\includegraphics[height=0.6cm]{sybila-logo/new.png}}
+%\titlegraphic{\hfill\includegraphics[height=0.6cm]{sybila-logo/old.png}}
+%\titlegraphic{\hfill\includegraphics[height=0.6cm]{sybila-logo/old-flat.png}}
+
+\date{\today}
+\author{Hướng dẫn: TS. Lê Minh Huy}
+% \institute{Sinh viên lớp: DTU1221, Khóa: 22 @ Trường Đại học Sài Gòn}
+
+%\title{Metropolis}
+\subtitle{Thực hiện: Nguyễn Chí Bằng}
+% \date{\today}
+%\date{}
+%\author{Matthias Vogelgesang}
+%\institute{Center for modern beamer themes}
+%\titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{NỘI DUNG}
+    \tableofcontents
+\end{frame}
+
+\section{Giới thiệu}
+
+
+\begin{frame}[allowframebreaks, noframenumbering]
+    \nocite{*}
+    \printbibliography
+\end{frame}
+
+
+\begin{frame}
+    \begin{block}{}
+    \medskip
+    \center{\huge \it \textcolor[rgb]{0.50,0.30,1.0}{Cảm ơn mọi người đã quan tâm theo dõi!}}
+    \medskip
+    \end{block}	
+\end{frame}    
+\end{document}
