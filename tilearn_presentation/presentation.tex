@@ -438,6 +438,218 @@ Từ đây, ta dễ dàng nhận thấy rằng các công việc có \textbf{th�
 
 \section{Ứng dụng thực tế}
 
+\section*{Lập kế hoạch gia công thiết kế}
+
+\section*{Giới thiệu về quy trình thiết kế}
+
+\begin{frame}{Giới thiệu về quy trình thiết kế}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{nt1.jpg}
+\includegraphics[width=0.274\linewidth]{nt2.jpg}
+\end{figure}
+
+Trong quá trình xử lý, studio thường phải đối mặt với việc phân bổ thời gian và quản lý \textbf{nhiều dự án đồng thời}, dựa trên sự ưu tiên, độ phức tạp của từng dự án cũng như thời gian thi công.
+
+Việc áp dụng các \textbf{kỹ thuật lập lịch} giúp quản lý dữ liệu và lập kế hoạch hiệu quả hơn, đồng thời hỗ trợ theo dõi tiến độ và điều chỉnh khi cần thiết.
+\end{frame}
+
+\begin{frame}{Giới thiệu về quy trình thiết kế}
+Thông thường, một dự án thiết kế nội thất sẽ trải qua các giai đoạn chính sau:
+\begin{itemize}
+\item Phát triển ý tưởng.
+\item Quy hoạch không gian.
+\item Phát triển thiết kế.
+\item Lựa chọn vật liệu.
+\item Tính toán chi phí.
+\item Xây dựng.
+\item Lắp đặt.
+\item Decor.
+\item Nghiệm thu.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Giới thiệu về quy trình thiết kế}
+    
+Các công đoạn trong một dự án cần được thực hiện theo thứ tự (hay \textbf{ràng buộc thứ tự}). Do đó, bài toán có thể được mô hình hóa dưới dạng bài toán $1|prec|\sum w_j C_j$.
+
+Ngoài ra, studio còn phải thực hiện các công việc khảo sát hiện trạng cho nhiều dự án khác nhau mà không yêu cầu thứ tự thực hiện (hay \textbf{không tồn tại ràng buộc thứ tự}). Trường hợp này có thể được mô hình hóa thành bài toán $1||\sum w_j C_j$.
+\end{frame}
+
+\begin{frame}{Giới thiệu về quy trình thiết kế}
+\begin{vd}
+
+Giả sử studio đang trong giai đoạn thực hiện 3 dự án (công trình) sau:
+
+\begin{itemize} \footnotesize
+\item \textbf{SJC Tower} - Dự án A.
+\item \textbf{Nguyễn Cư Trinh Centre} - Dự án B.
+\item \textbf{Tòa nhà phức hợp Amigo} - Dự án C.
+\end{itemize}
+
+Cũng trong quá trình đó, studio cần thực hiện khảo sát hiện trạng cho các công trình sau:
+\begin{itemize} \footnotesize
+\item \textbf{Tòa nhà văn phòng Fideco} - Khảo sát hiện trạng 1.
+\item \textbf{Công trình tại đường Tôn Đức Thắng} - Khảo sát hiện trạng 2.
+\item \textbf{Dự án căn hộ và văn phòng tại đường Nguyễn Hữu Cảnh} - Khảo sát hiện trạng 3.
+\item \textbf{Dự án cầu đường Nguyễn Khoái} - Khảo sát hiện trạng 4.
+\item \textbf{Công trình nhà dân dụng và công nghiệp tại quận 1} - Khảo sát hiện trạng 5.
+\item \textbf{IFC One Saigon} - Khảo sát hiện trạng 6.
+\item \textbf{One Central Saigon} - Khảo sát hiện trạng 7.
+\end{itemize}
+\end{vd}
+\end{frame}
+
+\section*{Xử lý số liệu bằng TiLearn}
+
+\begin{frame}{Xử lý số liệu bằng TiLearn}
+    \begin{table}[ht]
+        \centering
+        \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        \textbf{Name} & \textbf{p} & \textbf{r} & \textbf{d} & \textbf{w} \\
+        \hline
+        Project A - Phát triển ý tưởng    & 4  & 0  & 200 & 0.85 \\
+        Project A - Quy hoạch không gian  & 3  & 0  & 200 & 0.80 \\
+        Project A - Phát triển thiết kế   & 5  & 0  & 200 & 0.75 \\
+        Project A - Lựa chọn vật liệu     & 2  & 0  & 200 & 0.70 \\
+        Project A - Tính toán chi phí     & 2  & 0  & 200 & 0.60 \\
+        Project A - Xây dựng              & 10 & 0  & 200 & 0.95 \\
+        Project A - Lắp đặt               & 4  & 0  & 200 & 0.70 \\
+        Project A - Decor                 & 3  & 0  & 200 & 0.85 \\
+        Project A - Bàn giao              & 1  & 0  & 200 & 1.00 \\
+        \hline
+        \end{tabular}
+        \caption{Project A - SJC Tower.}
+        \end{table}
+\end{frame}
+
+
+\begin{frame}{Xử lý số liệu bằng TiLearn}
+    \begin{table}[ht]
+        \centering
+        \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        \textbf{Name} & \textbf{p} & \textbf{r} & \textbf{d} & \textbf{w} \\
+        \hline
+        Project B - Phát triển ý tưởng    & 8  & 0  & 200 & 0.85 \\
+        Project B - Quy hoạch không gian  & 7  & 0  & 200 & 0.80 \\
+        Project B - Phát triển thiết kế   & 20 & 0  & 200 & 0.95 \\
+        Project B - Lựa chọn vật liệu     & 3  & 0  & 200 & 0.70 \\
+        Project B - Tính toán chi phí     & 2  & 0  & 200 & 0.60 \\
+        Project B - Xây dựng              & 40 & 0  & 200 & 0.95 \\
+        Project B - Lắp đặt               & 15 & 0  & 200 & 0.70 \\
+        Project B - Decor                 & 9  & 0  & 200 & 0.85 \\
+        Project B - Bàn giao              & 1  & 0  & 200 & 1.00 \\
+        \hline
+        \end{tabular}
+        \caption{Project B - Nguyễn Cư Trinh Centre.}
+        \end{table}
+\end{frame}
+
+\begin{frame}{Xử lý số liệu bằng TiLearn}
+    \begin{table}[ht]
+        \centering
+        \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        \textbf{Name} & \textbf{p} & \textbf{r} & \textbf{d} & \textbf{w} \\
+        \hline
+        Project C - Phát triển ý tưởng    & 5  & 0  & 200 & 0.85 \\
+        Project C - Quy hoạch không gian  & 2  & 0  & 200 & 0.80 \\
+        Project C - Phát triển thiết kế   & 4  & 0  & 200 & 0.75 \\
+        Project C - Lựa chọn vật liệu     & 6  & 0  & 200 & 0.70 \\
+        Project C - Tính toán chi phí     & 1  & 0  & 200 & 0.60 \\
+        Project C - Xây dựng              & 15 & 0  & 200 & 0.95 \\
+        Project C - Lắp đặt               & 4  & 0  & 200 & 0.70 \\
+        Project C - Decor                 & 4  & 0  & 200 & 0.85 \\
+        Project C - Bàn giao              & 1  & 0  & 200 & 1.00 \\
+        \hline
+        \end{tabular}
+        \caption{Project C - Tòa nhà phức hợp Amigo.}
+        \end{table}
+\end{frame}
+
+\begin{frame}{Xử lý số liệu bằng TiLearn}
+    \begin{table}[ht]
+        \centering
+        \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        \textbf{Name} & \textbf{p} & \textbf{r} & \textbf{d} & \textbf{w} \\
+        \hline
+        Khảo sát hiện trạng 1 & 2  & 0  & 200 & 0.33 \\
+        Khảo sát hiện trạng 2 & 6  & 0  & 200 & 0.67 \\
+        Khảo sát hiện trạng 3 & 5  & 0  & 200 & 0.45 \\
+        Khảo sát hiện trạng 4 & 15 & 0  & 200 & 0.85 \\
+        Khảo sát hiện trạng 5 & 4  & 0  & 200 & 0.10 \\
+        Khảo sát hiện trạng 6 & 4  & 0  & 200 & 0.60 \\
+        Khảo sát hiện trạng 7 & 20 & 0  & 200 & 0.70 \\
+        \hline
+        \end{tabular}
+        \caption{Danh sách khảo sát hiện trạng.}
+        \end{table}
+
+\end{frame}
+
+\begin{frame}{Xử lý số liệu bằng TiLearn}
+Cấu trúc tập tin được thiết lập như sau:
+\medskip
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\linewidth]{project_nt.png}
+\caption{Cấu trúc tập tin.}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Xử lý số liệu bằng TiLearn}
+Ta thực hiện khai báo đường dẫn dữ liệu như sau:
+\begin{lstlisting}[language=Python]
+    original_project = 'thuhoach2/data_project'
+    backup_project = 'thuhoach2/data_project/backup'
+    project_A = 'thuhoach2/data_project/Project A-Project A.csv'
+    project_B = 'thuhoach2/data_project/Project B-Project B.csv'
+    project_C = 'thuhoach2/data_project/Project C-Project C.csv'
+    survey = 'thuhoach2/data_project/Survey.csv'
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Xử lý số liệu bằng TiLearn}
+Tiếp theo, ta chọn dạng bài toán cho từng danh sách bằng cách thiết lập tham số \textbf{prec} như sau:
+    
+\begin{itemize}
+\item \textbf{prec=0} cho bài toán không tồn tại ràng buộc thứ tự.
+\item \textbf{prec=1} cho bài toán tồn tại ràng buộc thứ tự.
+\end{itemize}
+
+\begin{lstlisting}[language=Python]
+    lists_project = [
+        pl.List(file_path=project_A, prec=1),
+        pl.List(file_path=project_B, prec=1),
+        pl.List(file_path=project_C, prec=1),
+        pl.List(file_path=survey, prec=0),
+    ]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Chạy số liệu minh hoạ}
+Ta chạy chương trình bằng lệnh sau:
+\begin{lstlisting}[language=Python]
+schedule = tl.optimal_list(lists_project,
+                            original_project,
+                            backup_project)
+print(schedule)
+\end{lstlisting}
+
+{\scriptsize [['Project A - Phát triển ý tưởng', 4.0, 0, 200, 0.85, 0.2125], ['Project A - Quy hoạch không gian', 3.0, 0, 200, 0.8, 0.2357142857142857], ['Project C - Phát triển ý tưởng', 5.0, 0, 200, 0.85, 0.16999999999999998], ['Project C - Quy hoạch không gian', 2.0, 0, 200, 0.8, 0.2357142857142857], ['Project A - Phát triển thiết kế', 5.0, 0, 200, 0.75, 0.15], ['Project A - Lựa chọn vật liệu', 2.0, 0, 200, 0.7, 0.20714285714285713], ['Project A - Tính toán chi phí', 2.0, 0, 200, 0.6, 0.22777777777777775], ['Project A - Xây dựng', 10.0, 0, 200, 0.95, 0.095], ['Project A - Lắp đặt', 4.0, 0, 200, 0.7, 0.11785714285714285], ['Project A - Decor', 3.0, 0, 200, 0.85, 0.14705882352941177], ['Project A - Bàn giao', 1.0, 0, 200, 1.0, 0.19444444444444445], ['Project C - Phát triển thiết kế', 4.0, 0, 200, 0.75, 0.1875], ['Project C - Lựa chọn vật liệu', 6.0, 0, 200, 0.7, 0.11666666666666665], ['Project C - Tính toán chi phí', 1.0, 0, 200, 0.6, 0.1857142857142857], ['Khảo sát hiện trạng 1', 2.0, 0, 200, 0.33, 0.165], ['Khảo sát hiện trạng 6',
+}
+    
+\end{frame}
+
+\begin{frame}{Chạy số liệu minh hoạ}
+\footnotesize
+4.0, 0, 200, 0.6, 0.15], ['Project C - Xây dựng', 15.0, 0, 200, 0.95, 0.06333333333333332], ['Project C - Lắp đặt', 4.0, 0, 200, 0.7, 0.08684210526315789], ['Project C - Decor', 4.0, 0, 200, 0.85, 0.10869565217391304], ['Project C - Bàn giao', 1.0, 0, 200, 1.0, 0.14583333333333334], ['Khảo sát hiện trạng 2', 6.0, 0, 200, 0.67, 0.11166666666666668], ['Project B - Phát triển ý tưởng', 8.0, 0, 200, 0.85, 0.10625], ['Project B - Quy hoạch không gian', 7.0, 0, 200, 0.8, 0.11], ['Khảo sát hiện trạng 3', 5.0, 0, 200, 0.45, 0.09], ['Project B - Phát triển thiết kế', 20.0, 0, 200, 0.95, 0.0475], ['Project B - Lựa chọn vật liệu', 3.0, 0, 200, 0.7, 0.07173913043478261], ['Project B - Tính toán chi phí', 2.0, 0, 200, 0.6, 0.09], ['Khảo sát hiện trạng 4', 15.0, 0, 200, 0.85, 0.056666666666666664], ['Project B - Xây dựng', 40.0, 0, 200, 0.95, 0.02375], ['Project B - Lắp đặt', 15.0, 0, 200, 0.7, 0.03], ['Project B - Decor', 9.0, 0, 200, 0.85, 0.0390625], ['Project B - Bàn giao', 1.0, 0, 200, 1.0, 0.05384615384615385], ['Khảo sát hiện trạng 7', 20.0, 0, 200, 0.7, 0.034999999999999996], ['Khảo sát hiện trạng 5', 4.0, 0, 200, 0.1, 0.025]]
+\end{frame}
+
+
 \begin{frame}[allowframebreaks, noframenumbering]
     \nocite{*}
     \printbibliography
