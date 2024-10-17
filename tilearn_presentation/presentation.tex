@@ -649,6 +649,36 @@ print(schedule)
 4.0, 0, 200, 0.6, 0.15], ['Project C - Xây dựng', 15.0, 0, 200, 0.95, 0.06333333333333332], ['Project C - Lắp đặt', 4.0, 0, 200, 0.7, 0.08684210526315789], ['Project C - Decor', 4.0, 0, 200, 0.85, 0.10869565217391304], ['Project C - Bàn giao', 1.0, 0, 200, 1.0, 0.14583333333333334], ['Khảo sát hiện trạng 2', 6.0, 0, 200, 0.67, 0.11166666666666668], ['Project B - Phát triển ý tưởng', 8.0, 0, 200, 0.85, 0.10625], ['Project B - Quy hoạch không gian', 7.0, 0, 200, 0.8, 0.11], ['Khảo sát hiện trạng 3', 5.0, 0, 200, 0.45, 0.09], ['Project B - Phát triển thiết kế', 20.0, 0, 200, 0.95, 0.0475], ['Project B - Lựa chọn vật liệu', 3.0, 0, 200, 0.7, 0.07173913043478261], ['Project B - Tính toán chi phí', 2.0, 0, 200, 0.6, 0.09], ['Khảo sát hiện trạng 4', 15.0, 0, 200, 0.85, 0.056666666666666664], ['Project B - Xây dựng', 40.0, 0, 200, 0.95, 0.02375], ['Project B - Lắp đặt', 15.0, 0, 200, 0.7, 0.03], ['Project B - Decor', 9.0, 0, 200, 0.85, 0.0390625], ['Project B - Bàn giao', 1.0, 0, 200, 1.0, 0.05384615384615385], ['Khảo sát hiện trạng 7', 20.0, 0, 200, 0.7, 0.034999999999999996], ['Khảo sát hiện trạng 5', 4.0, 0, 200, 0.1, 0.025]]
 \end{frame}
 
+\section*{Trực quan hoá dữ liệu}
+
+\begin{frame}{Trực quan hoá dữ liệu}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{output_project_p.png}
+\caption{Biểu đồ khoảng thời gian xử lý.}
+\end{figure}
+
+Dựa vào biểu đồ trên, có thể thấy rằng sau khi tối ưu hóa danh sách công việc, thời gian xử lý của từng công việc có \textbf{xu hướng tăng} từ công việc đầu tiên đến công việc cuối cùng.
+\end{frame}
+
+\begin{frame}{Trực quan hoá dữ liệu}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{output_project_w.png}
+\caption{Biểu đồ trọng số công việc.}
+\end{figure}
+
+Dựa vào biểu đồ trên, ta có thể thấy rằng sau khi tối ưu hóa danh sách công việc, trọng số của từng công việc có \textbf{xu hướng giảm} từ công việc đầu tiên đến công việc cuối cùng.
+\end{frame}
+
+\begin{frame}{Trực quan hoá dữ liệu}
+
+Từ đây, ta dễ dàng nhận thấy rằng các công việc có \textbf{thời gian xử lý ngắn} và \textbf{trọng số (mức độ ưu tiên) cao} sẽ được đẩy lên đầu, trong khi những công việc có thời gian xử lý dài hơn và mức độ ưu tiên thấp hơn sẽ được xếp sau.
+
+Từ đó giúp tối ưu hoá quy trình dự án một cách hiệu quả.
+\end{frame}
+
+
 
 \begin{frame}[allowframebreaks, noframenumbering]
     \nocite{*}
