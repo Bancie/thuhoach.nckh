@@ -224,40 +224,42 @@ Bên cạnh đó, \textbf{web document} cũng được tạo để cung cấp t�
 
 
 \begin{frame}[fragile]{Giới thiệu về thư viện TiLearn}
-Để sử dụng thư viện, ta tải thư viện bằng lệnh sau:
+\begin{itemize}
+\item<1-> Để sử dụng thư viện, ta tải thư viện bằng lệnh sau:
 \medskip
 \begin{lstlisting}
     pip install tilearn
 \end{lstlisting}
 \medskip
-Một số thư viện hỗ trợ phân tích dữ liệu:
-\begin{lstlisting}
-    pip install pandas
-    pip install ipython
-    pip install jinja2
-\end{lstlisting}
-
-\end{frame}
-
-\begin{frame}[fragile]{Giới thiệu về thư viện TiLearn}
-
-Ta khai báo thư viện chính sau:
+% Một số thư viện hỗ trợ phân tích dữ liệu:
+% \begin{lstlisting}
+%     pip install pandas
+%     pip install ipython
+%     pip install jinja2
+% \end{lstlisting}
+\item<2-> Thực hiện khai báo thư viện như sau:
 \medskip
 \begin{lstlisting}[language=Python]
     import tilearn as tl
     from tilearn import _plat as pl
 \end{lstlisting}
-
-Thư viện hỗ trợ phân tích dữ liệu:
-\medskip
-\begin{lstlisting}[language=Python]
-    import csv
-    import pandas as pd
-    from IPython.display import display
-    import matplotlib.pyplot as plt
-\end{lstlisting}
+\end{itemize}
 
 \end{frame}
+
+% \begin{frame}[fragile]{Giới thiệu về thư viện TiLearn}
+
+
+% Thư viện hỗ trợ phân tích dữ liệu:
+% \medskip
+% \begin{lstlisting}[language=Python]
+%     import csv
+%     import pandas as pd
+%     from IPython.display import display
+%     import matplotlib.pyplot as plt
+% \end{lstlisting}
+
+% \end{frame}
 
 
 \section{Chạy số liệu minh hoạ}
@@ -374,7 +376,7 @@ Cấu trúc tập tin được thiết lập như sau:
 \end{frame}
 
 \begin{frame}[fragile]{Chạy số liệu minh hoạ}
-Ta thực hiện hai báo đường dẫn dữ liệu như sau:
+\onslide<1->{Ta thực hiện hai báo đường dẫn dữ liệu như sau:}
 \begin{lstlisting}[language=Python]
     original = 'thuhoach2/data'
     backup = 'thuhoach2/data/backup'
@@ -382,12 +384,11 @@ Ta thực hiện hai báo đường dẫn dữ liệu như sau:
     list2 = 'thuhoach2/data/list2.csv'
     list3 = 'thuhoach2/data/list3.csv'
 \end{lstlisting}
-Tiếp theo, ta chọn dạng bài toán cho từng danh sách bằng cách thiết lập tham số \textbf{prec} như sau:
+\onslide<2->{Tiếp theo, ta chọn dạng bài toán cho từng danh sách bằng cách thiết lập tham số \textbf{prec} như sau:}
     
 \begin{itemize}
-\item \textbf{prec=0} cho bài toán không tồn tại ràng buộc thứ tự.
-\item \textbf{prec=1} cho bài toán tồn tại ràng buộc thứ tự.
-\end{itemize}
+\item<2-> \textbf{prec=0} cho bài toán không tồn tại ràng buộc thứ tự.
+\item<2-> \textbf{prec=1} cho bài toán tồn tại ràng buộc thứ tự.
 
 \begin{lstlisting}[language=Python]
     lists = [
@@ -396,17 +397,18 @@ Tiếp theo, ta chọn dạng bài toán cho từng danh sách bằng cách thi�
         pl.List(file_path=list3, prec=1),
     ]
 \end{lstlisting}
+\end{itemize}
 
 \end{frame}
 
 \begin{frame}[fragile]{Chạy số liệu minh hoạ}
-Ta chạy chương trình bằng lệnh sau:
+\onslide<1->{Ta chạy chương trình bằng lệnh sau:}
 \begin{lstlisting}[language=Python]
     schedule = tl.optimal_list(lists, original, backup)
     print(schedule)
 \end{lstlisting}
 
-{\scriptsize [['Job 14', 1.0, 0, 100, 0.9, 0.9], ['Job 2', 1.0, 0, 100, 0.84, 0.84], ['Job 12', 1.0, 0, 100, 0.39, 0.39], ['Job 13', 2.0, 0, 100, 0.57, 0.285], ['Job 4', 3.0, 0, 100, 0.79, 0.26333333333333336], ['Job 7', 4.0, 0, 100, 0.95, 0.2375], ['Job 16', 4.0, 0, 100, 0.7, 0.175], ['Job 17', 3.0, 0, 100, 0.95, 0.2357142857142857], ['Job 23', 4.0, 0, 100, 0.24, 0.06], ['Job 24', 1.0, 0, 100, 0.54, 0.156], ['Job 25', 2.0, 0, 100, 0.81, 0.22714285714285715], ['Job 15', 1.0, 0, 100, 0.22, 0.22], ['Job 26', 2.0, 0, 100, 0.41, 0.205], ['Job 10', 2.0, 0, 100, 0.4, 0.2], ['Job 18', 4.0, 0, 100, 0.49, 0.1225], ['Job 19', 1.0, 0, 100, 0.13, 0.124], ['Job 20', 5.0, 0, 100, 0.94, 0.156], ['Job 21', 1.0, 0, 100, 0.57, 0.19363636363636363], ['Job 5', 1.0, 0, 100, 0.17, 0.17], ['Job 6', 3.0, 0, 100, 0.5, 0.16666666666666666], ['Job 1', 4.0, 0, 100, 0.65, 0.1625], ['Job 3', 3.0, 0, 100, 0.46, 0.15333333333333335], ['Job 11', 4.0, 0, 100, 0.55, 0.1375], ['Job 22', 4.0, 0, 100, 0.47, 0.1175], ['Job 27', 5.0, 0, 100, 0.22, 0.044], ['Job 28', 2.0, 0, 100, 0.29, 0.07285714285714286], ['Job 29', 5.0, 0, 100, 0.65, 0.09666666666666668], ['Job 30', 4.0, 0, 100, 0.69, 0.115625], ['Job 9', 5.0, 0, 100, 0.52, 0.10400000000000001], ['Job 8', 2.0, 0, 100, 0.14, 0.07]]}
+\onslide<2->{{\scriptsize [['Job 14', 1.0, 0, 100, 0.9, 0.9], ['Job 2', 1.0, 0, 100, 0.84, 0.84], ['Job 12', 1.0, 0, 100, 0.39, 0.39], ['Job 13', 2.0, 0, 100, 0.57, 0.285], ['Job 4', 3.0, 0, 100, 0.79, 0.26333333333333336], ['Job 7', 4.0, 0, 100, 0.95, 0.2375], ['Job 16', 4.0, 0, 100, 0.7, 0.175], ['Job 17', 3.0, 0, 100, 0.95, 0.2357142857142857], ['Job 23', 4.0, 0, 100, 0.24, 0.06], ['Job 24', 1.0, 0, 100, 0.54, 0.156], ['Job 25', 2.0, 0, 100, 0.81, 0.22714285714285715], ['Job 15', 1.0, 0, 100, 0.22, 0.22], ['Job 26', 2.0, 0, 100, 0.41, 0.205], ['Job 10', 2.0, 0, 100, 0.4, 0.2], ['Job 18', 4.0, 0, 100, 0.49, 0.1225], ['Job 19', 1.0, 0, 100, 0.13, 0.124], ['Job 20', 5.0, 0, 100, 0.94, 0.156], ['Job 21', 1.0, 0, 100, 0.57, 0.19363636363636363], ['Job 5', 1.0, 0, 100, 0.17, 0.17], ['Job 6', 3.0, 0, 100, 0.5, 0.16666666666666666], ['Job 1', 4.0, 0, 100, 0.65, 0.1625], ['Job 3', 3.0, 0, 100, 0.46, 0.15333333333333335], ['Job 11', 4.0, 0, 100, 0.55, 0.1375], ['Job 22', 4.0, 0, 100, 0.47, 0.1175], ['Job 27', 5.0, 0, 100, 0.22, 0.044], ['Job 28', 2.0, 0, 100, 0.29, 0.07285714285714286], ['Job 29', 5.0, 0, 100, 0.65, 0.09666666666666668], ['Job 30', 4.0, 0, 100, 0.69, 0.115625], ['Job 9', 5.0, 0, 100, 0.52, 0.10400000000000001], ['Job 8', 2.0, 0, 100, 0.14, 0.07]]}}
 
 \end{frame}
 \section*{Trực quan hoá dữ liệu}
@@ -449,9 +451,11 @@ Từ đây, ta dễ dàng nhận thấy rằng các công việc có \textbf{th�
 \includegraphics[width=0.274\linewidth]{nt2.jpg}
 \end{figure}
 
-Trong quá trình xử lý, studio thường phải đối mặt với việc phân bổ thời gian và quản lý \textbf{nhiều dự án đồng thời}, dựa trên sự ưu tiên, độ phức tạp của từng dự án cũng như thời gian thi công.
+\begin{itemize}
+\item<1-> Trong quá trình xử lý, studio thường phải đối mặt với việc phân bổ thời gian và quản lý \textbf{nhiều dự án đồng thời}, dựa trên sự ưu tiên, độ phức tạp của từng dự án cũng như thời gian thi công.
 
-Việc áp dụng các \textbf{kỹ thuật lập lịch} giúp quản lý dữ liệu và lập kế hoạch hiệu quả hơn, đồng thời hỗ trợ theo dõi tiến độ và điều chỉnh khi cần thiết.
+\item<2-> Việc áp dụng các \textbf{kỹ thuật lập lịch} giúp quản lý dữ liệu và lập kế hoạch hiệu quả hơn, đồng thời hỗ trợ theo dõi tiến độ và điều chỉnh khi cần thiết.
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Giới thiệu về quy trình thiết kế}
@@ -471,9 +475,11 @@ Thông thường, một dự án thiết kế nội thất sẽ trải qua các 
 
 \begin{frame}{Giới thiệu về quy trình thiết kế}
     
-Các công đoạn trong một dự án cần được thực hiện theo thứ tự (hay \textbf{ràng buộc thứ tự}). Do đó, bài toán có thể được mô hình hóa dưới dạng bài toán $1|prec|\sum w_j C_j$.
+\begin{itemize}
+\item<1-> Các công đoạn trong một dự án cần được thực hiện theo thứ tự (hay \textbf{ràng buộc thứ tự}). Do đó, bài toán có thể được mô hình hóa dưới dạng bài toán $1|prec|\sum w_j C_j$.
 
-Ngoài ra, studio còn phải thực hiện các công việc khảo sát hiện trạng cho nhiều dự án khác nhau mà không yêu cầu thứ tự thực hiện (hay \textbf{không tồn tại ràng buộc thứ tự}). Trường hợp này có thể được mô hình hóa thành bài toán $1||\sum w_j C_j$.
+\item<2-> Ngoài ra, studio còn phải thực hiện các công việc khảo sát hiện trạng cho nhiều dự án khác nhau mà không yêu cầu thứ tự thực hiện (hay \textbf{không tồn tại ràng buộc thứ tự}). Trường hợp này có thể được mô hình hóa thành bài toán $1||\sum w_j C_j$.
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Giới thiệu về quy trình thiết kế}
@@ -631,7 +637,7 @@ Tiếp theo, ta chọn dạng bài toán cho từng danh sách bằng cách thi�
 \end{frame}
 
 \begin{frame}[fragile]{Chạy số liệu minh hoạ}
-Ta chạy chương trình bằng lệnh sau:
+\onslide<1->{Ta chạy chương trình bằng lệnh sau:}
 \begin{lstlisting}[language=Python]
 schedule = tl.optimal_list(lists_project,
                             original_project,
@@ -639,8 +645,8 @@ schedule = tl.optimal_list(lists_project,
 print(schedule)
 \end{lstlisting}
 
-{\scriptsize [['Project A - Phát triển ý tưởng', 4.0, 0, 200, 0.85, 0.2125], ['Project A - Quy hoạch không gian', 3.0, 0, 200, 0.8, 0.2357142857142857], ['Project C - Phát triển ý tưởng', 5.0, 0, 200, 0.85, 0.16999999999999998], ['Project C - Quy hoạch không gian', 2.0, 0, 200, 0.8, 0.2357142857142857], ['Project A - Phát triển thiết kế', 5.0, 0, 200, 0.75, 0.15], ['Project A - Lựa chọn vật liệu', 2.0, 0, 200, 0.7, 0.20714285714285713], ['Project A - Tính toán chi phí', 2.0, 0, 200, 0.6, 0.22777777777777775], ['Project A - Xây dựng', 10.0, 0, 200, 0.95, 0.095], ['Project A - Lắp đặt', 4.0, 0, 200, 0.7, 0.11785714285714285], ['Project A - Decor', 3.0, 0, 200, 0.85, 0.14705882352941177], ['Project A - Bàn giao', 1.0, 0, 200, 1.0, 0.19444444444444445], ['Project C - Phát triển thiết kế', 4.0, 0, 200, 0.75, 0.1875], ['Project C - Lựa chọn vật liệu', 6.0, 0, 200, 0.7, 0.11666666666666665], ['Project C - Tính toán chi phí', 1.0, 0, 200, 0.6, 0.1857142857142857], ['Khảo sát hiện trạng 1', 2.0, 0, 200, 0.33, 0.165], ['Khảo sát hiện trạng 6',
-}
+\onslide<2->{{\scriptsize [['Project A - Phát triển ý tưởng', 4.0, 0, 200, 0.85, 0.2125], ['Project A - Quy hoạch không gian', 3.0, 0, 200, 0.8, 0.2357142857142857], ['Project C - Phát triển ý tưởng', 5.0, 0, 200, 0.85, 0.16999999999999998], ['Project C - Quy hoạch không gian', 2.0, 0, 200, 0.8, 0.2357142857142857], ['Project A - Phát triển thiết kế', 5.0, 0, 200, 0.75, 0.15], ['Project A - Lựa chọn vật liệu', 2.0, 0, 200, 0.7, 0.20714285714285713], ['Project A - Tính toán chi phí', 2.0, 0, 200, 0.6, 0.22777777777777775], ['Project A - Xây dựng', 10.0, 0, 200, 0.95, 0.095], ['Project A - Lắp đặt', 4.0, 0, 200, 0.7, 0.11785714285714285], ['Project A - Decor', 3.0, 0, 200, 0.85, 0.14705882352941177], ['Project A - Bàn giao', 1.0, 0, 200, 1.0, 0.19444444444444445], ['Project C - Phát triển thiết kế', 4.0, 0, 200, 0.75, 0.1875], ['Project C - Lựa chọn vật liệu', 6.0, 0, 200, 0.7, 0.11666666666666665], ['Project C - Tính toán chi phí', 1.0, 0, 200, 0.6, 0.1857142857142857], ['Khảo sát hiện trạng 1', 2.0, 0, 200, 0.33, 0.165], ['Khảo sát hiện trạng 6',
+}}
     
 \end{frame}
 
@@ -689,7 +695,7 @@ Từ đó giúp tối ưu hoá quy trình dự án một cách hiệu quả.
 \begin{frame}
     \begin{block}{}
     \medskip
-    \center{\huge \it \textcolor[rgb]{0.50,0.30,1.0}{Cảm ơn mọi người đã quan tâm theo dõi!}}
+    \center{\huge \it \textcolor[rgb]{0.37, 0.150, 0.190}{Thanks for listening!}}
     \medskip
     \end{block}	
 \end{frame}    
