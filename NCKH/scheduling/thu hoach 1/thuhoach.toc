@@ -1,6 +1,6 @@
 \babel@toc {vietnamese}{}\relax 
 \contentsline {chapter}{Mục lục}{i}{Doc-Start}%
-\contentsline {chapter}{Danh mục các kí hiệu}{ii}{chapter*.2}%
+\contentsline {chapter}{Danh mục các kí hiệu}{iv}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Giới thiệu bài toán lập lịch cho máy đơn và thuật toán xử lý}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Khái quát về bài toán lập lịch}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Bài toán trạng thái tĩnh ($r_j = 0$)}{2}{section.1.2}%
