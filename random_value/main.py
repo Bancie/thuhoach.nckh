@@ -11,6 +11,6 @@ def to_csv(data, filename='output.csv'):
         writer.writerow(header)
         writer.writerows(data)
 
-data1 = list_random_with_order(10, 5, min_val=1, max_val=20)
+data1 = list_random_with_order(50, 5, min_val=1, max_val=20)
 
 to_csv(data1, 'data1.csv')
