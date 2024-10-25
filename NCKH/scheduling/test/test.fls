@@ -1,8 +1,8 @@
-PWD /Users/chibangnguyen/Documents/BigBrain/NCKH/scheduling/test
+PWD /Users/chibangnguyen/Documents/thuhoach.nckh/NCKH/scheduling/test
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/chibangnguyen/Documents/BigBrain/NCKH/scheduling/test/test.tex
+INPUT /Users/chibangnguyen/Documents/thuhoach.nckh/NCKH/scheduling/test/test.tex
 OUTPUT test.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls

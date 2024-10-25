@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  22 SEP 2024 19:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  24 OCT 2024 12:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/chibangnguyen/Documents/BigBrain/NCKH/scheduling/test/test.tex
-(/Users/chibangnguyen/Documents/BigBrain/NCKH/scheduling/test/test.tex
+**/Users/chibangnguyen/Documents/thuhoach.nckh/NCKH/scheduling/test/test.tex
+(/Users/chibangnguyen/Documents/thuhoach.nckh/NCKH/scheduling/test/test.tex
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -624,12 +624,12 @@ L3 programming layer <2023-11-09>
  ) 
 Here is how much of TeX's memory you used:
  16004 strings out of 474273
- 330814 string characters out of 5747713
+ 330829 string characters out of 5747713
  1926555 words of memory out of 5000000
  37926 multiletter control sequences out of 15000+600000
  563010 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,9n,107p,464b,880s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,9n,107p,469b,880s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb>
 Output written on test.pdf (2 pages, 38227 bytes).
 PDF statistics:
