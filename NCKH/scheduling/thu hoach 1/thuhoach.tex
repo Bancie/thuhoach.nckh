@@ -141,11 +141,11 @@
 		\\
 		$C_j$ & Thời điểm hoàn thành (completion time) của công việc thứ $j$. Được tính bằng công thức $C_j = S_j + p_j$. \\
 		\\
-		$C_{\max}$ & Thời gian hoàn thành tối đa (makespan) của toàn bộ công việc, được tính bằng công thức $C_{\max} = \underset{1 \leq j \leq n}{\max} C_j$. \\
+		$C_{\max}$ & Thời gian hoàn thành cực đại (makespan) của toàn bộ công việc, được tính bằng công thức $C_{\max} = \underset{1 \leq j \leq n}{\max} C_j$. \\
 		\\
 		$S_j$ & Thời điểm bắt đầu (starting time) của công việc thứ $j$, được định nghĩa bằng công thức $S_j = \max (C_{j-1}, r_j)$. \\
 		\\
-		$r_j$ & Thời điểm sẵn sàng (release time) của công việc thứ $j$. Nếu $r_j \neq 0$ thì công việc thứ $j$ sẽ không được phép bắt đầu trước thời điểm sẵn sàng $r_j$ ($S_j \geq r_j$), ngược lại, nếu $r_j = 0$ thì công việc thứ $j$ sẽ được phép bất đầu tại bất kỳ thời điểm nào. \\
+		$r_j$ & Thời điểm sẵn sàng (release time) hay thời điểm phát hành của công việc thứ $j$. Nếu $r_j \neq 0$ thì công việc thứ $j$ sẽ không được phép bắt đầu trước thời điểm sẵn sàng $r_j$ ($S_j \geq r_j$), ngược lại, nếu $r_j = 0$ thì công việc thứ $j$ sẽ được phép bất đầu tại bất kỳ thời điểm nào. \\
 		\\
 		$W_j$ & Thời gian chờ (waiting time) của công việc thứ $j$, tức khoảng thời gian kể từ thời điểm công việc đã sẵn sàng cho đến thời điểm bắt đầu công việc, được định nghĩa bằng công thức $W_j = S_j - r_j = C_j - p_j - r_j$. \\
 		\\
@@ -396,10 +396,10 @@ Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 	
 	\begin{equation}
 		\left[
-			\begin{aligned}
-				&L_j(S) & < & &L_j(S') \\
-				&L_k(S) & < & &L_j(S')
-			\end{aligned}
+			\begin{array}{c c c}
+				L_j(S) & < & L_j(S') \\
+				L_k(S) & < & L_j(S')
+			\end{array}
 		\right.
 	\end{equation}
 
@@ -408,17 +408,17 @@ Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 	\begin{equation*}
 		\Rightarrow
 		\left[
-			\begin{aligned}
-				&p_j - d_j & < & &p_k + + p_j - d_j \\
-				&p_j + p_k - d_k & < & &p_k + p_j - d_j
-			\end{aligned}
+			\begin{array}{c c c}
+				p_j - d_j & < & p_k + + p_j - d_j \\
+				p_j + p_k - d_k & < & p_k + p_j - d_j
+			\end{array}
 		\right.
 		\Leftrightarrow
 		\left[
-			\begin{aligned}
-				& p_k & > & & 0 \\
-				& d_k & > & & d_j
-			\end{aligned}
+			\begin{array}{c c c}
+				p_k & > & 0 \\
+				d_k & > & d_j
+			\end{array}
 		\right.
 	\end{equation*}
 
@@ -531,6 +531,150 @@ Ta nhận được
 \end{equation*}
 
 Vậy để tối thiểu hàm mục tiêu $T_{\max}$ thì ta cần sắp xếp công việc theo thứ tự $4-2-5-3-1$.
+
+\subsection{Thuật toán ưu tiên phát hành}
+
+\textit{Thuật toán ưu tiên phát hành}, viết tắt là \textit{ERD (Earliest Release Date)} là một trong những thuật toán phổ biến và hiệu quả trong lập lịch cho máy đơn với mục đích giúp tối thiểu hoá thời gian hoàn thành cực đại $C_{\max}$.
+
+Nguyên lý của thuật toán ưu tiên phát hành là ưu tiên xử lý các công việc có thời điểm phát hành nhỏ nhất, từ đó sắp xếp các công việc theo thứ tự từ thời điểm phát hành nhỏ nhất đến thời điểm phát hành lớn nhất. Mục đích là giúp đảm bảo các công việc có thời điểm phát hành nhỏ nhất được hoàn thành trước, hạn chế khả năng các công việc bị trễ, từ đó tối thiểu được thời gian hoàn thành cực đại $C_{\max}$.
+
+\subsubsection*{Tối thiểu thời gian hoàn thành cực đại ($1 \| C_{\max}$)}
+Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục tiêu $C_{\max}$ bằng cách sử dụng thuật toán ưu tiên phát hành.
+
+\begin{dl}
+	Thuật toán ưu tiên phát hành (ERD) là thuật toán tối ưu cho dạng bài toán $1 \| C_{\max}$.
+\end{dl}
+
+\begin{proof}
+	\begin{equation}
+		C_j(S) = S_j + p_j = \max ( C_{j-1} , r_j ) + p_j
+	\end{equation}
+
+	\begin{equation}
+		C_k(S) = S_k + p_k = \max (C_j , r_k ) + p_k
+	\end{equation}
+
+	\begin{equation}
+		C_k(S) = \max \left[ \max (C_{j-1} , r_j ) + p_j , r_k \right] + p_k
+	\end{equation}
+
+	\begin{equation}
+		C_k(S') = S_k + p_k = \max (C_{k-1} , r_k ) + p_k
+	\end{equation}
+
+	\begin{equation}
+		C_j(S') = S_j + p_j = \max (C_k , r_j ) + p_j
+	\end{equation}
+
+	\begin{equation}
+		C_j(S') = \max \left[ \max (C_{k-1} , r_k) + p_k , r_j \right] +p_j
+	\end{equation}
+
+	\begin{equation}
+		C_j(S') > C_k(S')
+	\end{equation}
+
+	\begin{equation}
+		r_j < r_k
+	\end{equation}
+
+	\begin{equation}
+		C_{\max}(S) < C_{\max}(S')
+	\end{equation}
+
+	\begin{equation}
+	\max \left[ C_j(S), C_k(S) \right] < \max \left[ C_k(S'), C_j(S') \right] 
+	\end{equation}
+
+	\begin{equation}
+		\left[
+			\begin{array}{c c c}
+				C_j(S) &<& C_j(S') \\
+				C_k(S) &<& C_j(S')
+			\end{array}
+		\right.
+	\end{equation}
+	
+	\begin{equation}
+		\left[
+			\begin{array}{c c c}
+				\max (C_{j-1}, r_j) + p_j &<& \max \left[ \max (C_{k-1}, r_k) + p_k, r_j \right] + p_j \\
+				\max \left[ \max (C_{j-1}, r_j) + p_j, r_k \right] + p_k &<& \max \left[ \max (C_{k-1}, r_k) + p_k, r_j \right] + p_j
+			\end{array}
+		\right.
+	\end{equation}
+	
+	\begin{equation}
+		\left[
+			\begin{array}{c c c}
+				\max (C_A, r_j) + p_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j \\
+				\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j
+			\end{array}
+		\right.
+	\end{equation}
+
+	\begin{equation}
+		\max (C_A, r_j) + p_j < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j
+	\end{equation}
+	
+	\begin{equation}
+		\max (C_A, r_j) < \max \left[ \max (C_A, r_k) + p_k, r_j \right]
+	\end{equation}
+
+	\begin{equation}
+		\left[
+			\begin{array}{c c c}
+				C_A &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] \\
+				r_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right]
+			\end{array}
+		\right.
+	\end{equation}
+
+	$C_A < \max \left[ \max (C_A, r_k) + p_k, r_j \right]$ hiển nhiên.
+	
+	\begin{equation}
+		\begin{array}{c c c c}
+			& r_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] \\
+			\Leftrightarrow & r_j &<& \max (C_A, r_k) + p_k
+		\end{array}
+	\end{equation}
+
+	$r_j < \max (C_A, r_k) + p_k$ hiển nhiên do $r_j<r_k$.
+
+	\begin{equation}
+		\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j
+	\end{equation}
+	
+	\begin{equation}
+		\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k < \max (C_A, r_k) + p_k + p_j
+	\end{equation}
+	
+	\begin{equation}
+		\max \left[ \max (C_A, r_j) + p_j, r_k \right] < \max (C_A, r_k) + p_j
+	\end{equation}
+
+	\begin{equation}
+		\left[
+			\begin{array}{c c c}
+				\max (C_A, r_j) + p_j &<& \max (C_A, r_k) + p_j \\
+				r_k &<& \max (C_A, r_k) + p_j
+			\end{array}
+		\right.
+	\end{equation}
+
+	$r_k < \max (C_A, r_k) + p_j$ hiển nhiên.
+ 
+	\begin{equation}
+		\begin{array}{c c c c}
+			& \max (C_A, r_j) + p_j &<& \max (C_A, r_k) + p_j \\
+			\Leftrightarrow & \max (C_A, r_j) &<& \max (C_A, r_k) \\
+			\Leftrightarrow & r_j &<& r_k \\
+		\end{array}
+	\end{equation}
+
+\end{proof}
+
+
 \subsection{Thuật toán thời gian xử lý ngắn nhất}
 Một cách tiếp cận tối ưu khác của thuật toán lập lịch cho máy đơn có thể kể đến là \textit{thuật toán thời gian xử lý ngắn nhất}, viết tắt là \textit{SPT (Shortest Process Time)} và \textit{thuật toán thời gian xử lý ngắn nhất có trọng số}, viết tắt là \textit{WSPT (Weighted Shortest Process Time)}.
 
