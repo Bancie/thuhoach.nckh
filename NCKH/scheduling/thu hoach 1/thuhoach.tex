@@ -139,7 +139,7 @@
 		\\
 		$d_j$ & Thời điểm đáo hạn (due date) của công việc thứ $j$. \\
 		\\
-		$C_j$ & Thời điểm hoàn thành (completion time) của công việc thứ $j$. \\
+		$C_j$ & Thời điểm hoàn thành (completion time) của công việc thứ $j$. Được tính bằng công thức $C_j = S_j + p_j$. \\
 		\\
 		$C_{\max}$ & Thời gian hoàn thành tối đa (makespan) của toàn bộ công việc, được tính bằng công thức $C_{\max} = \underset{1 \leq j \leq n}{\max} C_j$. \\
 		\\
@@ -303,6 +303,65 @@ Nguyên lý của thuật toán ưu tiên đáo hạn là ưu tiên xử lý cá
 
 \subsubsection*{Tối thiểu độ đáo hạn cực đại ($1 \| L_{\max}$)}
 Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục tiêu $L_{\max}$ bằng cách sử dụng thuật toán ưu tiên đáo hạn.
+
+\begin{dl}
+	Thuật toán ưu tiên đáo hạn (EDD) là thuật toán tối ưu cho dạng bài toán $1 \| L_{\max}$.
+\end{dl}
+
+\begin{proof}
+	\begin{equation}
+		d_j < d_k
+	\end{equation}
+	Ta gọi $S$ là chuỗi công việc trong đó tồn tại hai công việc liền kề $j - k$, ta đặc
+	
+	\begin{equation}
+		L_j(S) = p_j - d_j
+	\end{equation}
+
+	\begin{equation}
+		L_k(S) = p_j + p_k - d_k
+	\end{equation}
+
+	\begin{equation}
+		L_k(S') = p_k - d_k
+	\end{equation}
+
+	\begin{equation}
+		L_j(S') = p_k + p_j - d_j
+	\end{equation}
+
+	\begin{equation*}
+	\begin{array}{c c c}
+		L_{\max}(S) & < & L_{\max}(S') \\
+		\max \left[ L_j(S), L_k(S) \right] & < & \max \left[ L_k(S'), L_j(S') \right]
+	\end{array}
+	\end{equation*}
+	
+	\begin{equation*}
+		\left[
+			\begin{aligned}
+				&L_j(S) & < & &L_j(S') \\
+				&L_k(S) & < & &L_j(S')
+			\end{aligned}
+		\right.
+		\Leftrightarrow
+		\left[
+			\begin{aligned}
+				&p_j - d_j & < & &p_k + + p_j - d_j \\
+				&p_j + p_k - d_k & < & &p_k + p_j - d_j
+			\end{aligned}
+		\right.
+		\Leftrightarrow
+		\left[
+			\begin{aligned}
+				& p_k & > & & 0 \\
+				& d_k & > & & d_j
+			\end{aligned}
+		\right.
+	\end{equation*}
+
+	Vậy nếu muốn $L_{\max}(S) < L_{\max}(S')$ thì $d_k > d_j$ (đpcm).
+\end{proof}
 
 \begin{vd}
 Giả sử ta có dữ liệu ban đầu như sau \eqref{edd1}.
