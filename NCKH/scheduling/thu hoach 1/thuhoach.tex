@@ -309,42 +309,104 @@ Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 \end{dl}
 
 \begin{proof}
-	\begin{equation}
-		d_j < d_k
-	\end{equation}
-	Ta gọi $S$ là chuỗi công việc trong đó tồn tại hai công việc liền kề $j - k$, ta đặc
+
+	Ta gọi $S$ là chuỗi công việc trong đó tồn tại hai công việc liền kề $j - k$, trong đó công việc thứ $k$ có thời điểm bắt đầu sau công việc thứ $j$, tức phương án của bài toán lúc này là $j - k$. \eqref{jk_edd1}
 	
-	\begin{equation}
+	Do đó ta được
+
+	\begin{equation} \label{LjS}
 		L_j(S) = p_j - d_j
 	\end{equation}
 
-	\begin{equation}
-		L_k(S) = p_j + p_k - d_k
+	và
+
+	\begin{equation} \label{LkS}
+		L_k(S) = p_j + p_k - d_k.
 	\end{equation}
 
-	\begin{equation}
+	\begin{figure}[h!]
+		\centering
+		 \begin{tabular}{|c | c c c c c c c |} 
+		 \hline
+		 Công việc & 1 & 2 & $\ldots$ & $j$ & $k$ & $\ldots$ & $n$ \\
+		 \hline\hline
+		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_j$ & $p_k$ & $\ldots$ & $p_n$ \\
+		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_j$ & $C_k$ & $\ldots$ & $C_n$ \\
+		 \hline
+		 \end{tabular}
+	\caption{\label{jk_edd1}Phương án $j - k$ của bài toán.}
+	\end{figure}
+
+	Giả sử phương án từ chuỗi công việc $S$ thoả thuật toán EDD, tức là
+
+	\begin{equation} \label{dj<dk}
+		d_j < d_k.
+	\end{equation}
+
+	Giả sử ta cần sắp xếp lại vị trí hai công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được chuỗi công việc $S'$, lúc này phương án là $k - j$. \eqref{jk_edd2}
+
+	\begin{figure}[h!]
+		\centering
+		 \begin{tabular}{|c | c c c c c c c |} 
+		 \hline
+		 Công việc & 1 & 2 & $\ldots$ & $k$ & $j$ & $\ldots$ & $n$ \\
+		 \hline\hline
+		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_k$ & $p_j$ & $\ldots$ & $p_n$ \\
+		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_k$ & $C_j$ & $\ldots$ & $C_n$ \\
+		 \hline
+		 \end{tabular}
+	\caption{\label{jk_edd2}Phương án $k - j$ của bài toán.}
+	\end{figure}
+
+	Lúc này độ đáo hạn của hai công việc $j$ và $k$ trong chuỗi công việc $S'$ lần lượt là
+
+	\begin{equation} \label{LkS'}
 		L_k(S') = p_k - d_k
 	\end{equation}
 
-	\begin{equation}
-		L_j(S') = p_k + p_j - d_j
+	và
+
+	\begin{equation} \label{LjS'}
+		L_j(S') = p_k + p_j - d_j.
 	\end{equation}
 
-	\begin{equation*}
+	Từ \eqref{LjS'}, \eqref{LkS'} và \eqref{dj<dk} ta dễ dàng nhận thấy
+
+	\begin{equation} \label{L_jS'>J_kS'}
+		L_j(S') > L_k(S')
+	\end{equation}
+
+	Mục đích của thuật toán là tối thiểu độ đáo hạn cực đại, vậy nên
+
+	\begin{equation}
 	\begin{array}{c c c}
-		L_{\max}(S) & < & L_{\max}(S') \\
-		\max \left[ L_j(S), L_k(S) \right] & < & \max \left[ L_k(S'), L_j(S') \right]
+		L_{\max}(S) & < & L_{\max}(S')
 	\end{array}
-	\end{equation*}
+	\end{equation}
+
+	hay
+
+	\begin{equation} \label{edd_dk_max}
+		\begin{array}{c c c}
+			\max \left[ L_j(S), L_k(S) \right] & < & \max \left[ L_k(S'), L_j(S') \right].
+		\end{array}
+	\end{equation}
+
+	Từ \eqref{L_jS'>J_kS'}, ta có thể viết lại bất đẳng thức \eqref{edd_dk_max} như sau
 	
-	\begin{equation*}
+	\begin{equation}
 		\left[
 			\begin{aligned}
 				&L_j(S) & < & &L_j(S') \\
 				&L_k(S) & < & &L_j(S')
 			\end{aligned}
 		\right.
-		\Leftrightarrow
+	\end{equation}
+
+	Từ \eqref{LjS}, \eqref{LkS} và \eqref{LjS'}
+	
+	\begin{equation*}
+		\Rightarrow
 		\left[
 			\begin{aligned}
 				&p_j - d_j & < & &p_k + + p_j - d_j \\
@@ -496,7 +558,7 @@ Với $\frac{w_j}{p_j}$ (hay $\frac{p_j}{w_j}$), nếu bài toán chưa tối ư
 	\begin{equation} \label{S}
 		S = w_j C_j + w_k C_k = w_j(t+p_j) + w_k(t+p_j+p_k),
 	\end{equation}
-	trong đó công việc thứ $k$ có thời điểm bắt đầu sau công việc thứ $j$ và thời điểm bắt đầu xử lý công việc $j$ là $t$, tức phương án của bài toán lúc này là $j - k$. \eqref{jk1}
+	trong đó công việc thứ $k$ có thời điểm bắt đầu sau công việc thứ $j$ và thời điểm bắt đầu xử lý công việc $j$ là $t$, tức phương án của bài toán lúc này là $j - k$. \eqref{jk11}
 	
 	\begin{figure}[h!]
 		\centering
@@ -508,7 +570,7 @@ Với $\frac{w_j}{p_j}$ (hay $\frac{p_j}{w_j}$), nếu bài toán chưa tối ư
 		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_j$ & $C_k$ & $\ldots$ & $C_n$ \\
 		 \hline
 		 \end{tabular}
-	\caption{\label{jk1}Phương án $j - k$ của bài toán.}
+	\caption{\label{jk11}Phương án $j - k$ của bài toán.}
 	\end{figure}
 	
 	Giả sử phương án này thoả thuật toán WSPT, tức là
