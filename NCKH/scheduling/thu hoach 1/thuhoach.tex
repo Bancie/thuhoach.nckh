@@ -532,200 +532,64 @@ Ta nhận được
 
 Vậy để tối thiểu hàm mục tiêu $T_{\max}$ thì ta cần sắp xếp công việc theo thứ tự $4-2-5-3-1$.
 
-\subsection{Thuật toán ưu tiên phát hành}
 
-\textit{Thuật toán ưu tiên phát hành}, viết tắt là \textit{ERD (Earliest Release Date)} là một trong những thuật toán phổ biến và hiệu quả trong lập lịch cho máy đơn với mục đích giúp tối thiểu hoá thời gian hoàn thành cực đại $C_{\max}$.
 
-Nguyên lý của thuật toán ưu tiên phát hành là ưu tiên xử lý các công việc có thời điểm phát hành nhỏ nhất, từ đó sắp xếp các công việc theo thứ tự từ thời điểm phát hành nhỏ nhất đến thời điểm phát hành lớn nhất. Mục đích là giúp đảm bảo các công việc có thời điểm phát hành nhỏ nhất được hoàn thành trước, hạn chế khả năng các công việc bị trễ, từ đó tối thiểu được thời gian hoàn thành cực đại $C_{\max}$.
 
-\subsubsection*{Tối thiểu thời gian hoàn thành cực đại ($1 \| C_{\max}$)}
-Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục tiêu $C_{\max}$ bằng cách sử dụng thuật toán ưu tiên phát hành.
 
-\begin{dl}
-	Thuật toán ưu tiên phát hành (ERD) là thuật toán tối ưu cho dạng bài toán $1 \| C_{\max}$.
-\end{dl}
 
-\begin{proof}
-	Ta gọi $S$ là chuỗi công việc trong đó tồn tại hai công việc liền kề $j - k$, trong đó công việc thứ $k$ có thời điểm bắt đầu sau công việc thứ $j$, tức phương án của bài toán lúc này là $j - k$. \eqref{jk_erd1}
-	
-	Do đó ta được thời gian hoàn thành của công việc $j$ và $k$ trong chuỗi $S$ lần lượt là
-	
-	\begin{equation} \label{CjS_erd}
-		C_j(S) = S_j + p_j = \max ( C_{j-1} , r_j ) + p_j
-	\end{equation}
-	và
-	\begin{equation}
-		C_k(S) = S_k + p_k = \max (C_j , r_k ) + p_k
-	\end{equation}
-	từ \eqref{CjS_erd}
-	$\Rightarrow$
-	\begin{equation} \label{CkS_erd}
-		C_k(S) = \max \left[ \max (C_{j-1} , r_j ) + p_j , r_k \right] + p_k.
-	\end{equation}
 
-	\begin{figure}[h!]
-		\centering
-		 \begin{tabular}{|c | c c c c c c c |} 
-		 \hline
-		 Công việc & 1 & 2 & $\ldots$ & $j$ & $k$ & $\ldots$ & $n$ \\
-		 \hline\hline
-		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_j$ & $p_k$ & $\ldots$ & $p_n$ \\
-		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_j$ & $C_k$ & $\ldots$ & $C_n$ \\
-		 \hline
-		 \end{tabular}
-	\caption{\label{jk_erd1}Phương án $j - k$ của bài toán.}
-	\end{figure}
 
-	Giả sử phương án từ chuỗi công việc $S$ thoả thuật toán ERD, tức
-	
-	\begin{equation} \label{rj<rk}
-		r_j < r_k.
-	\end{equation}
 
-	Ta xét trường hợp sắp xếp lại vị trí hai công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được chuỗi công việc $S'$, từ đó phương án là $k - j$. \eqref{jk_erd2}
 
-	\begin{figure}[h!]
-		\centering
-		 \begin{tabular}{|c | c c c c c c c |} 
-		 \hline
-		 Công việc & 1 & 2 & $\ldots$ & $k$ & $j$ & $\ldots$ & $n$ \\
-		 \hline\hline
-		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_k$ & $p_j$ & $\ldots$ & $p_n$ \\
-		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_k$ & $C_j$ & $\ldots$ & $C_n$ \\
-		 \hline
-		 \end{tabular}
-	\caption{\label{jk_erd2}Phương án $k - j$ của bài toán.}
-	\end{figure}
 
-	Lúc này thời gian hoàn thành của hai công việc $k$ và $j$ trong chuỗi công việc $S'$ lần lượt là
-	
-	\begin{equation} \label{CkS'_erd}
-		C_k(S') = S_k + p_k = \max (C_{k-1} , r_k ) + p_k
-	\end{equation}
-	và
-	\begin{equation} \label{CjS'_erd}
-		C_j(S') = S_j + p_j = \max (C_k , r_j ) + p_j
-	\end{equation}
-	từ \eqref{CkS'_erd}
-	$\Rightarrow$
-	\begin{equation} \label{CjS'_erd}
-		C_j(S') = \max \left[ \max (C_{k-1} , r_k) + p_k , r_j \right] +p_j.
-	\end{equation}
 
-	Từ \eqref{rj<rk}, \eqref{CkS'_erd} và \eqref{CjS'_erd} và  ta dễ dàng nhận thấy
 
-	\begin{equation} \label{CjS'>CkS'_erd}
-		C_j(S') > C_k(S').
-	\end{equation}
 
-	Mục đích của thuật toán là tối thiểu thời gian hoàn thành cực đại, vậy nên
 
-	\begin{equation} \label{C<C}
-		C_{\max}(S) < C_{\max}(S')
-	\end{equation}
-	hay
-	\begin{equation} \label{max<max_erd}
-	\max \left[ C_j(S), C_k(S) \right] < \max \left[ C_k(S'), C_j(S') \right] 
-	\end{equation}
-	từ \eqref{CjS'>CkS'_erd}, bất đẳng thức \eqref{max<max_erd} có thể được viết lại như sau
-	\begin{equation}
-		\left[
-			\begin{array}{c c c}
-				C_j(S) &<& C_j(S') \\
-				C_k(S) &<& C_j(S')
-			\end{array}
-		\right.
-	\end{equation}
-	từ \eqref{CjS_erd}, \eqref{CkS_erd} và \eqref{CjS'_erd}
-	$\Rightarrow$
-	\begin{equation} \label{hbdt_erd}
-		\left[
-			\begin{array}{c c c}
-				\max (C_{j-1}, r_j) + p_j &<& \max \left[ \max (C_{k-1}, r_k) + p_k, r_j \right] + p_j \\
-				\max \left[ \max (C_{j-1}, r_j) + p_j, r_k \right] + p_k &<& \max \left[ \max (C_{k-1}, r_k) + p_k, r_j \right] + p_j
-			\end{array}
-		\right.
-	\end{equation}
-	ta đặt chuỗi các công việc phía trước hai công việc $j$ (trong chuỗi $S$) hay $k$ (trong chuỗi $S'$) là $A$.
-	
-	Từ đó, hệ bất đẳng thức \eqref{hbdt_erd} được viết lại thành
-	\begin{equation} \label{hbpt_erd_2}
-		\left[
-			\begin{array}{c c c}
-				\max (C_A, r_j) + p_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j \\
-				\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j
-			\end{array}
-		\right.
-	\end{equation}
 
-	Xét bất đẳng thức đầu tiên trong hệ \eqref{hbpt_erd_2}
 
-	\begin{equation}
-		\max (C_A, r_j) + p_j < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j,
-	\end{equation}
-	triệt tiêu $p_j$, ta được
-	\begin{equation}
-		\max (C_A, r_j) < \max \left[ \max (C_A, r_k) + p_k, r_j \right]
-	\end{equation}
-	hay
-	\begin{equation}
-		\left[
-			\begin{array}{c c c}
-				C_A &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] \\
-				r_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right].
-			\end{array}
-		\right.
-	\end{equation}
-	Ta có thể thấy rằng bất đẳng thức $C_A < \max \left[ \max (C_A, r_k) + p_k, r_j \right]$ là hiển nhiên.
-	Tiếp tục xét bất đẳng thức tiếp theo trong hệ
-	\begin{equation}
-			r_j < \max \left[ \max (C_A, r_k) + p_k, r_j \right],
-	\end{equation}
-	mà $r_j<r_k$ \eqref{rj<rk}, do đó
-	\begin{equation}
-			r_j < \max (C_A, r_k) + p_k.
-	\end{equation}
-	Dễ dàng nhận thấy $r_j < \max (C_A, r_k) + p_k$ là hiển nhiên (do $r_j<r_k$). Từ đây, ta có thể kết luận bất đẳng thức
-	\begin{equation*}
-		\max (C_A, r_j) + p_j < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j
-	\end{equation*}
-	trong hệ \eqref{hbpt_erd_2} thoả mãn.
 
-	Tiếp tục xét bất đẳng thức thứ hai trong hệ \eqref{hbpt_erd_2}
-	\begin{equation}
-		\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j,
-	\end{equation}
-	mà $r_j<r_k$ \eqref{rj<rk}, do đó
-	\begin{equation}
-		\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k < \max (C_A, r_k) + p_k + p_j,
-	\end{equation}
-	triệt tiêu $p_k$, ta được
-	\begin{equation}
-		\max \left[ \max (C_A, r_j) + p_j, r_k \right] < \max (C_A, r_k) + p_j
-	\end{equation}
-	hay
-	\begin{equation}
-		\left[
-			\begin{array}{c c c}
-				\max (C_A, r_j) + p_j &<& \max (C_A, r_k) + p_j \\
-				r_k &<& \max (C_A, r_k) + p_j.
-			\end{array}
-		\right.
-	\end{equation}
-	Dễ dàng nhận thấy bất đẳng thức $r_k < \max (C_A, r_k) + p_j$ là hiển nhiên. Ta xét bất đẳng thức còn lại
-	\begin{equation}
-			\max (C_A, r_j) + p_j < \max (C_A, r_k) + p_j,
-	\end{equation}
-	triệt tiêu $p_j$, ta được
-	\begin{equation}
-			\max (C_A, r_j) < \max (C_A, r_k),
-	\end{equation}
-	trong trường hợp $C_A \leq r_j$, ta có thể kết luận rằng
-	\begin{equation}
-			r_j < r_k
-	\end{equation}
 
-\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsection{Thuật toán thời gian xử lý ngắn nhất}
@@ -1866,6 +1730,8 @@ Ta gọi bài toán có áp dụng thuật toán ngắt quãng là bài toán $1
 
 % Do đó, quy trình thuật toán hoàn toàn tương tự, chỉ khác nhau ở cách xét cận dưới cho mỗi phương án chấp nhận được.
 
+\subsubsection*{Thuật toán nhánh cận}
+
 Một bài toán tương tự sử dụng thuật toán nhánh cận để giải quyết là bài toán tối thiểu thời gian hoàn thành cực đại, ký hiệu $1|r_j|C_{\max}$. Giống như bài toán tối thiểu độ dao hạn cực đại $1|r_j|L_{\max}$, bài toán $1|r_j|C_{\max}$ cũng áp dụng cùng một điều kiện nghiệm, nhưng cận dưới ở đây là giá trị $C_{\max}$ đối với mỗi phương án chấp nhận được. Do đó, quy trình thuật toán được thực hiện tương tự, với điểm khác biệt duy nhất là cách tính cận dưới cho mỗi phương án.
 
 \begin{vd} \label{vdrjcmax1}
@@ -2004,6 +1870,209 @@ Vậy phương án tối ưu của bài toán là $1-3-2$.
 \end{figure}
 
 \end{vd}
+
+\phantom{text}
+
+\subsubsection*{Thuật toán ưu tiên phát hành}
+
+\textit{Thuật toán ưu tiên phát hành}, viết tắt là \textit{ERD (Earliest Release Date)} là một trong những thuật toán phổ biến và hiệu quả trong lập lịch cho máy đơn với mục đích giúp tối thiểu hoá thời gian hoàn thành cực đại $C_{\max}$ tồn tại thời điểm phát hành $r_j$.
+
+Nguyên lý của thuật toán ưu tiên phát hành là ưu tiên xử lý các công việc có thời điểm phát hành nhỏ nhất, từ đó sắp xếp các công việc theo thứ tự từ thời điểm phát hành nhỏ nhất đến thời điểm phát hành lớn nhất. Mục đích là giúp đảm bảo các công việc có thời điểm phát hành nhỏ nhất được hoàn thành trước, hạn chế khả năng các công việc bị trễ, từ đó tối thiểu được thời gian hoàn thành cực đại $C_{\max}$.
+
+Với hàm mục tiêu là $C_{\max}$ kèm theo tồn tại thời điểm phát hành $r_j$, ta dễ dàng tối thiểu hàm mục tiêu $C_{\max}$ bằng cách sử dụng thuật toán ưu tiên phát hành.
+
+\begin{dl}
+	Thuật toán ưu tiên phát hành (ERD) là thuật toán tối ưu cho dạng bài toán $1 \| C_{\max}$.
+\end{dl}
+
+\begin{proof}
+	Ta gọi $S$ là chuỗi công việc trong đó tồn tại hai công việc liền kề $j - k$, trong đó công việc thứ $k$ có thời điểm bắt đầu sau công việc thứ $j$, tức phương án của bài toán lúc này là $j - k$. \eqref{jk_erd1}
+	
+	Do đó ta được thời gian hoàn thành của công việc $j$ và $k$ trong chuỗi $S$ lần lượt là
+	
+	\begin{equation} \label{CjS_erd}
+		C_j(S) = S_j + p_j = \max ( C_{j-1} , r_j ) + p_j
+	\end{equation}
+	và
+	\begin{equation}
+		C_k(S) = S_k + p_k = \max (C_j , r_k ) + p_k
+	\end{equation}
+	từ \eqref{CjS_erd}
+	$\Rightarrow$
+	\begin{equation} \label{CkS_erd}
+		C_k(S) = \max \left[ \max (C_{j-1} , r_j ) + p_j , r_k \right] + p_k.
+	\end{equation}
+
+	\begin{figure}[h!]
+		\centering
+		 \begin{tabular}{|c | c c c c c c c |} 
+		 \hline
+		 Công việc & 1 & 2 & $\ldots$ & $j$ & $k$ & $\ldots$ & $n$ \\
+		 \hline\hline
+		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_j$ & $p_k$ & $\ldots$ & $p_n$ \\
+		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_j$ & $C_k$ & $\ldots$ & $C_n$ \\
+		 \hline
+		 \end{tabular}
+	\caption{\label{jk_erd1}Phương án $j - k$ của bài toán.}
+	\end{figure}
+
+	Giả sử phương án từ chuỗi công việc $S$ thoả thuật toán ERD, tức
+	
+	\begin{equation} \label{rj<rk}
+		r_j < r_k.
+	\end{equation}
+
+	Ta xét trường hợp sắp xếp lại vị trí hai công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được chuỗi công việc $S'$, từ đó phương án là $k - j$. \eqref{jk_erd2}
+
+	\begin{figure}[h!]
+		\centering
+		 \begin{tabular}{|c | c c c c c c c |} 
+		 \hline
+		 Công việc & 1 & 2 & $\ldots$ & $k$ & $j$ & $\ldots$ & $n$ \\
+		 \hline\hline
+		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_k$ & $p_j$ & $\ldots$ & $p_n$ \\
+		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_k$ & $C_j$ & $\ldots$ & $C_n$ \\
+		 \hline
+		 \end{tabular}
+	\caption{\label{jk_erd2}Phương án $k - j$ của bài toán.}
+	\end{figure}
+
+	Lúc này thời gian hoàn thành của hai công việc $k$ và $j$ trong chuỗi công việc $S'$ lần lượt là
+	
+	\begin{equation} \label{CkS'_erd}
+		C_k(S') = S_k + p_k = \max (C_{k-1} , r_k ) + p_k
+	\end{equation}
+	và
+	\begin{equation} \label{CjS'_erd}
+		C_j(S') = S_j + p_j = \max (C_k , r_j ) + p_j
+	\end{equation}
+	từ \eqref{CkS'_erd}
+	$\Rightarrow$
+	\begin{equation} \label{CjS'_erd}
+		C_j(S') = \max \left[ \max (C_{k-1} , r_k) + p_k , r_j \right] +p_j.
+	\end{equation}
+
+	Từ \eqref{rj<rk}, \eqref{CkS'_erd} và \eqref{CjS'_erd} và  ta dễ dàng nhận thấy
+
+	\begin{equation} \label{CjS'>CkS'_erd}
+		C_j(S') > C_k(S').
+	\end{equation}
+
+	Mục đích của thuật toán là tối thiểu thời gian hoàn thành cực đại, vậy nên
+
+	\begin{equation} \label{C<C}
+		C_{\max}(S) < C_{\max}(S')
+	\end{equation}
+	hay
+	\begin{equation} \label{max<max_erd}
+	\max \left[ C_j(S), C_k(S) \right] < \max \left[ C_k(S'), C_j(S') \right] 
+	\end{equation}
+	từ \eqref{CjS'>CkS'_erd}, bất đẳng thức \eqref{max<max_erd} có thể được viết lại như sau
+	\begin{equation}
+		\left[
+			\begin{array}{c c c}
+				C_j(S) &<& C_j(S') \\
+				C_k(S) &<& C_j(S')
+			\end{array}
+		\right.
+	\end{equation}
+	từ \eqref{CjS_erd}, \eqref{CkS_erd} và \eqref{CjS'_erd}
+	$\Rightarrow$
+	\begin{equation} \label{hbdt_erd}
+		\left[
+			\begin{array}{c c c}
+				\max (C_{j-1}, r_j) + p_j &<& \max \left[ \max (C_{k-1}, r_k) + p_k, r_j \right] + p_j \\
+				\max \left[ \max (C_{j-1}, r_j) + p_j, r_k \right] + p_k &<& \max \left[ \max (C_{k-1}, r_k) + p_k, r_j \right] + p_j
+			\end{array}
+		\right.
+	\end{equation}
+	ta đặt chuỗi các công việc phía trước hai công việc $j$ (trong chuỗi $S$) hay $k$ (trong chuỗi $S'$) là $A$.
+	
+	Từ đó, hệ bất đẳng thức \eqref{hbdt_erd} được viết lại thành
+	\begin{equation} \label{hbpt_erd_2}
+		\left[
+			\begin{array}{c c c}
+				\max (C_A, r_j) + p_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j \\
+				\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j
+			\end{array}
+		\right.
+	\end{equation}
+
+	Xét bất đẳng thức đầu tiên trong hệ \eqref{hbpt_erd_2}
+
+	\begin{equation}
+		\max (C_A, r_j) + p_j < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j,
+	\end{equation}
+	triệt tiêu $p_j$, ta được
+	\begin{equation}
+		\max (C_A, r_j) < \max \left[ \max (C_A, r_k) + p_k, r_j \right]
+	\end{equation}
+	hay
+	\begin{equation}
+		\left[
+			\begin{array}{c c c}
+				C_A &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] \\
+				r_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right].
+			\end{array}
+		\right.
+	\end{equation}
+	Ta có thể thấy rằng bất đẳng thức $C_A < \max \left[ \max (C_A, r_k) + p_k, r_j \right]$ là hiển nhiên.
+	Tiếp tục xét bất đẳng thức tiếp theo trong hệ
+	\begin{equation}
+			r_j < \max \left[ \max (C_A, r_k) + p_k, r_j \right],
+	\end{equation}
+	mà $r_j<r_k$ \eqref{rj<rk}, do đó
+	\begin{equation}
+			r_j < \max (C_A, r_k) + p_k.
+	\end{equation}
+	Dễ dàng nhận thấy $r_j < \max (C_A, r_k) + p_k$ là hiển nhiên (do $r_j<r_k$). Từ đây, ta có thể kết luận bất đẳng thức
+	\begin{equation*}
+		\max (C_A, r_j) + p_j < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j
+	\end{equation*}
+	trong hệ \eqref{hbpt_erd_2} thoả mãn.
+
+	Tiếp tục xét bất đẳng thức thứ hai trong hệ \eqref{hbpt_erd_2}
+	\begin{equation}
+		\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j,
+	\end{equation}
+	mà $r_j<r_k$ \eqref{rj<rk}, do đó
+	\begin{equation}
+		\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k < \max (C_A, r_k) + p_k + p_j,
+	\end{equation}
+	triệt tiêu $p_k$, ta được
+	\begin{equation}
+		\max \left[ \max (C_A, r_j) + p_j, r_k \right] < \max (C_A, r_k) + p_j
+	\end{equation}
+	hay
+	\begin{equation}
+		\left[
+			\begin{array}{c c c}
+				\max (C_A, r_j) + p_j &<& \max (C_A, r_k) + p_j \\
+				r_k &<& \max (C_A, r_k) + p_j.
+			\end{array}
+		\right.
+	\end{equation}
+	Dễ dàng nhận thấy bất đẳng thức $r_k < \max (C_A, r_k) + p_j$ là hiển nhiên. Ta xét bất đẳng thức còn lại
+	\begin{equation}
+			\max (C_A, r_j) + p_j < \max (C_A, r_k) + p_j,
+	\end{equation}
+	triệt tiêu $p_j$, ta được
+	\begin{equation}
+			\max (C_A, r_j) < \max (C_A, r_k),
+	\end{equation}
+	trong trường hợp $C_A \leq r_j$, ta có thể kết luận rằng
+	\begin{equation}
+			r_j < r_k
+	\end{equation}
+
+	Vậy nếu muốn $C_{\max}(S) < C_{\max}(S')$ thì $r_j < r_k$. (đpcm)
+\end{proof}
+
+
+
+
+
+
 
 \section*{Trang chỉ mục / Phụ lục}
 \addcontentsline{toc}{section}{Phụ lục}
