@@ -337,13 +337,13 @@ Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 	\caption{\label{jk_edd1}Phương án $j - k$ của bài toán.}
 	\end{figure}
 
-	Giả sử phương án từ chuỗi công việc $S$ thoả thuật toán EDD, tức là
+	Giả sử phương án từ chuỗi công việc $S$ thoả thuật toán EDD, tức
 
 	\begin{equation} \label{dj<dk}
 		d_j < d_k.
 	\end{equation}
 
-	Giả sử ta cần sắp xếp lại vị trí hai công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được chuỗi công việc $S'$, từ đó phương án là $k - j$. \eqref{jk_edd2}
+	Ta xét trường hợp sắp xếp lại vị trí hai công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được chuỗi công việc $S'$, từ đó phương án là $k - j$. \eqref{jk_edd2}
 
 	\begin{figure}[h!]
 		\centering
@@ -370,7 +370,7 @@ Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 		L_j(S') = p_k + p_j - d_j.
 	\end{equation}
 
-	Từ \eqref{LjS'}, \eqref{LkS'} và \eqref{dj<dk} ta dễ dàng nhận thấy
+	Từ \eqref{dj<dk}, \eqref{LkS'} và \eqref{LjS'} ta dễ dàng nhận thấy
 
 	\begin{equation} \label{L_jS'>J_kS'}
 		L_j(S') > L_k(S')
@@ -392,7 +392,7 @@ Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 		\end{array}
 	\end{equation}
 
-	Từ \eqref{L_jS'>J_kS'}, ta có thể viết lại bất đẳng thức \eqref{edd_dk_max} như sau
+	Từ \eqref{L_jS'>J_kS'}, bất đẳng thức \eqref{edd_dk_max} có thể được viết lại như sau
 	
 	\begin{equation}
 		\left[
@@ -553,18 +553,14 @@ Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 	\begin{equation} \label{CjS_erd}
 		C_j(S) = S_j + p_j = \max ( C_{j-1} , r_j ) + p_j
 	\end{equation}
-
 	và
-
 	\begin{equation}
 		C_k(S) = S_k + p_k = \max (C_j , r_k ) + p_k
 	\end{equation}
-
-	Từ \eqref{CjS_erd}
+	từ \eqref{CjS_erd}
 	$\Rightarrow$
-
 	\begin{equation} \label{CkS_erd}
-		C_k(S) = \max \left[ \max (C_{j-1} , r_j ) + p_j , r_k \right] + p_k
+		C_k(S) = \max \left[ \max (C_{j-1} , r_j ) + p_j , r_k \right] + p_k.
 	\end{equation}
 
 	\begin{figure}[h!]
@@ -580,13 +576,13 @@ Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 	\caption{\label{jk_erd1}Phương án $j - k$ của bài toán.}
 	\end{figure}
 
-	Giả sử phương án từ chuỗi công việc $S$ thoả thuật toán ERD, tức là
+	Giả sử phương án từ chuỗi công việc $S$ thoả thuật toán ERD, tức
 	
 	\begin{equation} \label{rj<rk}
-		r_j < r_k
+		r_j < r_k.
 	\end{equation}
 
-	Giả sử ta cần sắp xếp lại vị trí hai công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được chuỗi công việc $S'$, từ đó phương án là $k - j$. \eqref{jk_erd2}
+	Ta xét trường hợp sắp xếp lại vị trí hai công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được chuỗi công việc $S'$, từ đó phương án là $k - j$. \eqref{jk_erd2}
 
 	\begin{figure}[h!]
 		\centering
@@ -606,24 +602,20 @@ Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 	\begin{equation} \label{CkS'_erd}
 		C_k(S') = S_k + p_k = \max (C_{k-1} , r_k ) + p_k
 	\end{equation}
-
 	và
-
 	\begin{equation} \label{CjS'_erd}
 		C_j(S') = S_j + p_j = \max (C_k , r_j ) + p_j
 	\end{equation}
-
-	Từ \eqref{CkS'_erd}
+	từ \eqref{CkS'_erd}
 	$\Rightarrow$
-
 	\begin{equation} \label{CjS'_erd}
-		C_j(S') = \max \left[ \max (C_{k-1} , r_k) + p_k , r_j \right] +p_j
+		C_j(S') = \max \left[ \max (C_{k-1} , r_k) + p_k , r_j \right] +p_j.
 	\end{equation}
 
-	Từ \eqref{CkS'_erd}, \eqref{CjS'_erd} và \eqref{rj<rk} ta dễ dàng nhận thấy
+	Từ \eqref{rj<rk}, \eqref{CkS'_erd} và \eqref{CjS'_erd} và  ta dễ dàng nhận thấy
 
 	\begin{equation} \label{CjS'>CkS'_erd}
-		C_j(S') > C_k(S')
+		C_j(S') > C_k(S').
 	\end{equation}
 
 	Mục đích của thuật toán là tối thiểu thời gian hoàn thành cực đại, vậy nên
@@ -631,15 +623,11 @@ Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 	\begin{equation} \label{C<C}
 		C_{\max}(S) < C_{\max}(S')
 	\end{equation}
-
 	hay
-
 	\begin{equation} \label{max<max_erd}
 	\max \left[ C_j(S), C_k(S) \right] < \max \left[ C_k(S'), C_j(S') \right] 
 	\end{equation}
-	
-	Từ \eqref{CjS'>CkS'_erd}, ta có thể viết lại bất đẳng thức \eqref{max<max_erd} như sau
-
+	từ \eqref{CjS'>CkS'_erd}, bất đẳng thức \eqref{max<max_erd} có thể được viết lại như sau
 	\begin{equation}
 		\left[
 			\begin{array}{c c c}
@@ -648,10 +636,8 @@ Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 			\end{array}
 		\right.
 	\end{equation}
-
-	Từ \eqref{CjS_erd}, \eqref{CkS_erd} và \eqref{CjS'_erd}
+	từ \eqref{CjS_erd}, \eqref{CkS_erd} và \eqref{CjS'_erd}
 	$\Rightarrow$
-	
 	\begin{equation} \label{hbdt_erd}
 		\left[
 			\begin{array}{c c c}
@@ -660,9 +646,9 @@ Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 			\end{array}
 		\right.
 	\end{equation}
-
-	Ta đặt chuỗi các công việc phía trước hai công việc $j$ và $k$ là $A$, từ đó ta có thể viết lại hệ bất đẳng thức \eqref{hbdt_erd} thành
+	ta đặt chuỗi các công việc phía trước hai công việc $j$ (trong chuỗi $S$) hay $k$ (trong chuỗi $S'$) là $A$.
 	
+	Từ đó, hệ bất đẳng thức \eqref{hbdt_erd} được viết lại thành
 	\begin{equation} \label{hbpt_erd_2}
 		\left[
 			\begin{array}{c c c}
@@ -672,64 +658,71 @@ Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 		\right.
 	\end{equation}
 
-	Xét bất phương trình đầu tiên trong hệ \eqref{hbpt_erd_2}
+	Xét bất đẳng thức đầu tiên trong hệ \eqref{hbpt_erd_2}
 
 	\begin{equation}
-		\begin{array}{c c c c}
-		& \max (C_A, r_j) + p_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j \\
-		\Leftrightarrow & \max (C_A, r_j) &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right]
-		\end{array}
+		\max (C_A, r_j) + p_j < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j,
 	\end{equation}
-
+	triệt tiêu $p_j$, ta được
+	\begin{equation}
+		\max (C_A, r_j) < \max \left[ \max (C_A, r_k) + p_k, r_j \right]
+	\end{equation}
+	hay
 	\begin{equation}
 		\left[
 			\begin{array}{c c c}
 				C_A &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] \\
-				r_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right]
+				r_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right].
 			\end{array}
 		\right.
 	\end{equation}
-
-	$C_A < \max \left[ \max (C_A, r_k) + p_k, r_j \right]$ hiển nhiên.
-	
+	Ta có thể thấy rằng bất đẳng thức $C_A < \max \left[ \max (C_A, r_k) + p_k, r_j \right]$ là hiển nhiên.
+	Tiếp tục xét bất đẳng thức tiếp theo trong hệ
 	\begin{equation}
-		\begin{array}{c c c c}
-			& r_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] \\
-			\Leftrightarrow & r_j &<& \max (C_A, r_k) + p_k
-		\end{array}
+			r_j < \max \left[ \max (C_A, r_k) + p_k, r_j \right],
 	\end{equation}
-
-	$r_j < \max (C_A, r_k) + p_k$ hiển nhiên do $r_j<r_k$.
-
+	mà $r_j<r_k$ \eqref{rj<rk}, do đó
 	\begin{equation}
-		\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j
+			r_j < \max (C_A, r_k) + p_k.
 	\end{equation}
-	
+	Dễ dàng nhận thấy $r_j < \max (C_A, r_k) + p_k$ là hiển nhiên (do $r_j<r_k$). Từ đây, ta có thể kết luận bất đẳng thức
+	\begin{equation*}
+		\max (C_A, r_j) + p_j < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j
+	\end{equation*}
+	trong hệ \eqref{hbpt_erd_2} thoả mãn.
+
+	Tiếp tục xét bất đẳng thức thứ hai trong hệ \eqref{hbpt_erd_2}
 	\begin{equation}
-		\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k < \max (C_A, r_k) + p_k + p_j
+		\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j,
 	\end{equation}
-	
+	mà $r_j<r_k$ \eqref{rj<rk}, do đó
+	\begin{equation}
+		\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k < \max (C_A, r_k) + p_k + p_j,
+	\end{equation}
+	triệt tiêu $p_k$, ta được
 	\begin{equation}
 		\max \left[ \max (C_A, r_j) + p_j, r_k \right] < \max (C_A, r_k) + p_j
 	\end{equation}
-
+	hay
 	\begin{equation}
 		\left[
 			\begin{array}{c c c}
 				\max (C_A, r_j) + p_j &<& \max (C_A, r_k) + p_j \\
-				r_k &<& \max (C_A, r_k) + p_j
+				r_k &<& \max (C_A, r_k) + p_j.
 			\end{array}
 		\right.
 	\end{equation}
-
-	$r_k < \max (C_A, r_k) + p_j$ hiển nhiên.
- 
+	Dễ dàng nhận thấy bất đẳng thức $r_k < \max (C_A, r_k) + p_j$ là hiển nhiên. Ta xét bất đẳng thức còn lại
 	\begin{equation}
-		\begin{array}{c c c c}
-			& \max (C_A, r_j) + p_j &<& \max (C_A, r_k) + p_j \\
-			\Leftrightarrow & \max (C_A, r_j) &<& \max (C_A, r_k) \\
-			\Leftrightarrow & r_j &<& r_k \\
-		\end{array}
+			\max (C_A, r_j) + p_j < \max (C_A, r_k) + p_j,
+	\end{equation}
+	triệt tiêu $p_j$, ta được
+	\begin{equation}
+			\max (C_A, r_j) < \max (C_A, r_k),
+	\end{equation}
+	trong trường hợp $C_A \leq r_j$, ta có thể kết luận rằng
+	\begin{equation}
+			r_j < r_k
 	\end{equation}
 
 \end{proof}
