@@ -404,9 +404,9 @@ Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 	\end{equation}
 
 	Từ \eqref{LjS}, \eqref{LkS} và \eqref{LjS'}
-	
+	$\Rightarrow$
+
 	\begin{equation*}
-		\Rightarrow
 		\left[
 			\begin{array}{c c c}
 				p_j - d_j & < & p_k + + p_j - d_j \\
@@ -561,9 +561,9 @@ Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 	\end{equation}
 
 	Từ \eqref{CjS_erd}
-	
-	\begin{equation}
-		\Rightarrow
+	$\Rightarrow$
+
+	\begin{equation} \label{CkS_erd}
 		C_k(S) = \max \left[ \max (C_{j-1} , r_j ) + p_j , r_k \right] + p_k
 	\end{equation}
 
@@ -614,9 +614,9 @@ Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 	\end{equation}
 
 	Từ \eqref{CkS'_erd}
+	$\Rightarrow$
 
-	\begin{equation}
-		\Rightarrow
+	\begin{equation} \label{CjS'_erd}
 		C_j(S') = \max \left[ \max (C_{k-1} , r_k) + p_k , r_j \right] +p_j
 	\end{equation}
 
@@ -648,8 +648,11 @@ Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 			\end{array}
 		\right.
 	\end{equation}
+
+	Từ \eqref{CjS_erd}, \eqref{CkS_erd} và \eqref{CjS'_erd}
+	$\Rightarrow$
 	
-	\begin{equation}
+	\begin{equation} \label{hbdt_erd}
 		\left[
 			\begin{array}{c c c}
 				\max (C_{j-1}, r_j) + p_j &<& \max \left[ \max (C_{k-1}, r_k) + p_k, r_j \right] + p_j \\
@@ -657,8 +660,10 @@ Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 			\end{array}
 		\right.
 	\end{equation}
+
+	Ta đặt chuỗi các công việc phía trước hai công việc $j$ và $k$ là $A$, từ đó ta có thể viết lại hệ bất đẳng thức \eqref{hbdt_erd} thành
 	
-	\begin{equation}
+	\begin{equation} \label{hbpt_erd_2}
 		\left[
 			\begin{array}{c c c}
 				\max (C_A, r_j) + p_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j \\
@@ -667,12 +672,13 @@ Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 		\right.
 	\end{equation}
 
+	Xét bất phương trình đầu tiên trong hệ \eqref{hbpt_erd_2}
+
 	\begin{equation}
-		\max (C_A, r_j) + p_j < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j
-	\end{equation}
-	
-	\begin{equation}
-		\max (C_A, r_j) < \max \left[ \max (C_A, r_k) + p_k, r_j \right]
+		\begin{array}{c c c c}
+		& \max (C_A, r_j) + p_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j \\
+		\Leftrightarrow & \max (C_A, r_j) &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right]
+		\end{array}
 	\end{equation}
 
 	\begin{equation}
