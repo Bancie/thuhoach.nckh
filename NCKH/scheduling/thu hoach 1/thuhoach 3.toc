@@ -6,9 +6,8 @@
 \contentsline {section}{\numberline {1.2}Bài toán trạng thái tĩnh ($r_j = 0$)}{2}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Thuật toán sắp xếp theo thứ tự công việc}{2}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}Thuật toán ưu tiên đáo hạn}{4}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Thuật toán ưu tiên phát hành}{7}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Thuật toán thời gian xử lý ngắn nhất}{9}{subsection.1.2.4}%
-\contentsline {section}{\numberline {1.3}Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}{18}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Bài toán tối thiểu độ đáo hạn cực đại $L_{\max }$}{22}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Bài toán tối thiểu thời gian hoàn thành cực đại $C_{\max }$}{27}{subsection.1.3.2}%
-\contentsline {section}{Phụ lục}{29}{figure.caption.46}%
+\contentsline {subsection}{\numberline {1.2.3}Thuật toán thời gian xử lý ngắn nhất}{6}{subsection.1.2.3}%
+\contentsline {section}{\numberline {1.3}Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}{15}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Bài toán tối thiểu độ đáo hạn cực đại $L_{\max }$}{19}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Bài toán tối thiểu thời gian hoàn thành cực đại $C_{\max }$}{24}{subsection.1.3.2}%
+\contentsline {section}{Phụ lục}{26}{figure.caption.42}%

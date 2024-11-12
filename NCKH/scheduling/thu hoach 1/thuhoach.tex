@@ -191,7 +191,7 @@ Tuỳ thuộc theo dạng bài toán yêu cầu mà ta sẽ có phương pháp t
 	\caption{Bảng liệt kê các dạng bài toán.}
 \end{figure}
 
- Ở phần thứ hai của chương (1.2.) sẽ giới thiệu các thuật toán lập lịch với giả định bài toán ở trạng thái tĩnh $(r_j = 0)$, tức tất cả các công việc đều có thể bắt đầu cùng lúc tại thời điểm $t = 0$. Trong đó, thuật toán sắp xếp theo thứ tự công việc là thuật toán cơ bản nhất. Tiếp theo là thuật toán ưu tiên đáo hạn (EDD - Earliest Due Date) và cuối cùng là thuật toán thời gian xử lý ngắn nhất tập trung vào việc tối thiểu hóa tổng thời gian hoàn thành (SPT - Shortest Process Time) và tổng thời gian hoàn thành có trọng số (WSPT - Weighted Shortest Process Time).
+ Ở phần thứ hai của mục \eqref{1.2.} sẽ giới thiệu các thuật toán lập lịch với giả định bài toán ở trạng thái tĩnh $(r_j = 0)$, tức tất cả các công việc đều có thể bắt đầu cùng lúc tại thời điểm $t = 0$. Trong đó, thuật toán sắp xếp theo thứ tự công việc là thuật toán cơ bản nhất. Tiếp theo là thuật toán ưu tiên đáo hạn (EDD - Earliest Due Date) và cuối cùng là thuật toán thời gian xử lý ngắn nhất tập trung vào việc tối thiểu hóa tổng thời gian hoàn thành (SPT - Shortest Process Time) và tổng thời gian hoàn thành có trọng số (WSPT - Weighted Shortest Process Time).
 
 Phần tiếp theo của chương (1.3.) sẽ xem xét các bài toán phức tạp hơn, nơi tồn tại các công việc có thời điểm sẵn sàng không đồng nhất $(r_j \neq 0)$. Điều này làm cho bài toán mang tính thực tế hơn trong các quy trình sản xuất khi các công việc thường có khoảng thời gian bắt đầu không đồng nhất tại thời điểm $t=0$. Trong đó, ta sẽ tập trung vào thuật toán chính là thuật toán nhánh cận (branch and bound) - một trong những phương pháp quan trọng giúp hỗ trợ xử lý hầu hết các bài toán có thời điểm sẵn sàng không đồng nhất. Cùng với đó là hai thuật toán bổ trợ khác, bao gồm: thuật toán không ngắt quãng (non-preemptive) và thuật toán ngắt quãng (preemptive). Trong đó thuật toán ngắt quãng cho ta sự linh hoạt cao hơn trong quá trình lập lịch.
 
@@ -199,7 +199,7 @@ Những thuật toán này sẽ giúp các nhà quản lý, các nhà phân tíc
 
 Phần lớn kiến thức của chương được tham khảo từ tài liệu \cite{minhhuy}, \cite{inbook}, \cite{pinedo2009planning}, \cite{PMBOK2013}, \cite{PostekZoccaAMPL2024}.
 
-\section{Bài toán trạng thái tĩnh ($r_j = 0$)}
+\section{Bài toán trạng thái tĩnh ($r_j = 0$)}\label{1.2.}
 Bài toán tĩnh trong lập lịch cho máy đơn là một trong những bài toán cơ bản và quan trọng trong lĩnh vực quản lý thời gian và tối ưu hóa quy trình. Đặc điểm của bài toán tĩnh là thời điểm sẵn sàng $r_j$ của các công việc đều đồng nhất tại $t=0$, hay $r_j = 0, \: \forall j=\overline{1,n}$ và ký hiệu $r_j$ lúc này không tồn tại trong trường $\beta$ của bài toán.
 
 Trong bối cảnh bài toán ở trạng thái tĩnh, thuật toán sắp xếp theo thứ tự công việc sẽ được trình bày như một cách cơ bản cho bước đầu tiếp cận các thuật toán lập lịch tối ưu hơn. Ở các thuật toán lập lịch tối ưu hơn, các công việc sẽ được sắp xếp sao cho tối thiểu hoá một hàm mục tiêu nhất định, trong đó bao gồm các dạng bài toán: Tối thiểu độ đáo hạn cực đại ($1\|L_{\max}$) hay độ trễ cực đại ($1\|T_{\max}$), tối thiểu tổng thời gian hoàn thành ($1\|\sum C_j$) hay tối thiểu tổng thời gian hoàn thành có trọng số ($1\|\sum w_j C_j$).
@@ -312,7 +312,7 @@ Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 
 	Ta gọi $S$ là chuỗi công việc trong đó tồn tại hai công việc liền kề $j - k$, trong đó công việc thứ $k$ có thời điểm bắt đầu sau công việc thứ $j$, tức phương án của bài toán lúc này là $j - k$. \eqref{jk_edd1}
 	
-	Do đó ta được
+	Do đó ta được độ đáo hạn của công việc $j$ và $k$ trong chuỗi $S$ lần lượt là
 
 	\begin{equation} \label{LjS}
 		L_j(S) = p_j - d_j
@@ -343,7 +343,7 @@ Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 		d_j < d_k.
 	\end{equation}
 
-	Giả sử ta cần sắp xếp lại vị trí hai công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được chuỗi công việc $S'$, lúc này phương án là $k - j$. \eqref{jk_edd2}
+	Giả sử ta cần sắp xếp lại vị trí hai công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được chuỗi công việc $S'$, từ đó phương án là $k - j$. \eqref{jk_edd2}
 
 	\begin{figure}[h!]
 		\centering
@@ -358,7 +358,7 @@ Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 	\caption{\label{jk_edd2}Phương án $k - j$ của bài toán.}
 	\end{figure}
 
-	Lúc này độ đáo hạn của hai công việc $j$ và $k$ trong chuỗi công việc $S'$ lần lượt là
+	Lúc này độ đáo hạn của hai công việc $k$ và $j$ trong chuỗi công việc $S'$ lần lượt là
 
 	\begin{equation} \label{LkS'}
 		L_k(S') = p_k - d_k
@@ -546,45 +546,99 @@ Với hàm mục tiêu là $C_{\max}$, ta dễ dàng tối thiểu hàm mục ti
 \end{dl}
 
 \begin{proof}
-	\begin{equation}
+	Ta gọi $S$ là chuỗi công việc trong đó tồn tại hai công việc liền kề $j - k$, trong đó công việc thứ $k$ có thời điểm bắt đầu sau công việc thứ $j$, tức phương án của bài toán lúc này là $j - k$. \eqref{jk_erd1}
+	
+	Do đó ta được thời gian hoàn thành của công việc $j$ và $k$ trong chuỗi $S$ lần lượt là
+	
+	\begin{equation} \label{CjS_erd}
 		C_j(S) = S_j + p_j = \max ( C_{j-1} , r_j ) + p_j
 	\end{equation}
+
+	và
 
 	\begin{equation}
 		C_k(S) = S_k + p_k = \max (C_j , r_k ) + p_k
 	\end{equation}
 
+	Từ \eqref{CjS_erd}
+	
 	\begin{equation}
+		\Rightarrow
 		C_k(S) = \max \left[ \max (C_{j-1} , r_j ) + p_j , r_k \right] + p_k
 	\end{equation}
 
-	\begin{equation}
-		C_k(S') = S_k + p_k = \max (C_{k-1} , r_k ) + p_k
-	\end{equation}
+	\begin{figure}[h!]
+		\centering
+		 \begin{tabular}{|c | c c c c c c c |} 
+		 \hline
+		 Công việc & 1 & 2 & $\ldots$ & $j$ & $k$ & $\ldots$ & $n$ \\
+		 \hline\hline
+		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_j$ & $p_k$ & $\ldots$ & $p_n$ \\
+		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_j$ & $C_k$ & $\ldots$ & $C_n$ \\
+		 \hline
+		 \end{tabular}
+	\caption{\label{jk_erd1}Phương án $j - k$ của bài toán.}
+	\end{figure}
 
-	\begin{equation}
-		C_j(S') = S_j + p_j = \max (C_k , r_j ) + p_j
-	\end{equation}
-
-	\begin{equation}
-		C_j(S') = \max \left[ \max (C_{k-1} , r_k) + p_k , r_j \right] +p_j
-	\end{equation}
-
-	\begin{equation}
-		C_j(S') > C_k(S')
-	\end{equation}
-
-	\begin{equation}
+	Giả sử phương án từ chuỗi công việc $S$ thoả thuật toán ERD, tức là
+	
+	\begin{equation} \label{rj<rk}
 		r_j < r_k
 	\end{equation}
 
+	Giả sử ta cần sắp xếp lại vị trí hai công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được chuỗi công việc $S'$, từ đó phương án là $k - j$. \eqref{jk_erd2}
+
+	\begin{figure}[h!]
+		\centering
+		 \begin{tabular}{|c | c c c c c c c |} 
+		 \hline
+		 Công việc & 1 & 2 & $\ldots$ & $k$ & $j$ & $\ldots$ & $n$ \\
+		 \hline\hline
+		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_k$ & $p_j$ & $\ldots$ & $p_n$ \\
+		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_k$ & $C_j$ & $\ldots$ & $C_n$ \\
+		 \hline
+		 \end{tabular}
+	\caption{\label{jk_erd2}Phương án $k - j$ của bài toán.}
+	\end{figure}
+
+	Lúc này thời gian hoàn thành của hai công việc $k$ và $j$ trong chuỗi công việc $S'$ lần lượt là
+	
+	\begin{equation} \label{CkS'_erd}
+		C_k(S') = S_k + p_k = \max (C_{k-1} , r_k ) + p_k
+	\end{equation}
+
+	và
+
+	\begin{equation} \label{CjS'_erd}
+		C_j(S') = S_j + p_j = \max (C_k , r_j ) + p_j
+	\end{equation}
+
+	Từ \eqref{CkS'_erd}
+
 	\begin{equation}
+		\Rightarrow
+		C_j(S') = \max \left[ \max (C_{k-1} , r_k) + p_k , r_j \right] +p_j
+	\end{equation}
+
+	Từ \eqref{CkS'_erd}, \eqref{CjS'_erd} và \eqref{rj<rk} ta dễ dàng nhận thấy
+
+	\begin{equation} \label{CjS'>CkS'_erd}
+		C_j(S') > C_k(S')
+	\end{equation}
+
+	Mục đích của thuật toán là tối thiểu thời gian hoàn thành cực đại, vậy nên
+
+	\begin{equation} \label{C<C}
 		C_{\max}(S) < C_{\max}(S')
 	\end{equation}
 
-	\begin{equation}
+	hay
+
+	\begin{equation} \label{max<max_erd}
 	\max \left[ C_j(S), C_k(S) \right] < \max \left[ C_k(S'), C_j(S') \right] 
 	\end{equation}
+	
+	Từ \eqref{CjS'>CkS'_erd}, ta có thể viết lại bất đẳng thức \eqref{max<max_erd} như sau
 
 	\begin{equation}
 		\left[
