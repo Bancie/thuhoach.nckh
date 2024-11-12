@@ -10,4 +10,4 @@
 \contentsline {section}{\numberline {1.3}Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}{16}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}Bài toán tối thiểu độ đáo hạn cực đại $L_{\max }$}{20}{subsection.1.3.1}%
 \contentsline {subsection}{\numberline {1.3.2}Bài toán tối thiểu thời gian hoàn thành cực đại $C_{\max }$}{25}{subsection.1.3.2}%
-\contentsline {section}{Phụ lục}{29}{equation.1.3.67}%
+\contentsline {section}{Phụ lục}{30}{equation.1.3.67}%
