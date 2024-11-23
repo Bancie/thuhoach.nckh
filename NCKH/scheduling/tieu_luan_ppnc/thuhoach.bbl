@@ -1,0 +1,27 @@
+\begin{thebibliography}{1}
+
+\bibitem{minhhuy}
+Le~Minh Huy.
+\newblock {\em Single Machine Scheduling}.
+
+\bibitem{inbook}
+Michael Pinedo.
+\newblock {\em Scheduling: Theory, Algorithms, And Systems}.
+\newblock 01 2008.
+
+\bibitem{pinedo2009planning}
+M.L. Pinedo.
+\newblock {\em Planning and Scheduling in Manufacturing and Services}.
+\newblock Springer series in operations research. Springer New York, 2009.
+
+\bibitem{PMBOK2013}
+PMI, editor.
+\newblock {\em A Guide to the Project Management Body of Knowledge ({PMBOK} Guide)}.
+\newblock Project Management Institute, Newtown Square, PA, 5 edition, 2013.
+
+\bibitem{PostekZoccaAMPL2024}
+Krzysztof Postek, Alessandro Zocca, Joaquim Gromicho, and Jeffrey Kantor.
+\newblock {\em Hands-On Mathematical Optimization with AMPL in Python}.
+\newblock Online, 2024.
+
+\end{thebibliography}
