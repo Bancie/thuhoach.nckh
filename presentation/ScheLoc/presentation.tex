@@ -1,0 +1,176 @@
+\documentclass[10pt]{beamer}
+\mode<presentation>
+\usepackage{beamerthemesplit}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{textpos}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{listings}
+
+
+% import citation package
+\usepackage{biblatex}
+\addbibresource{presentation.bib}
+\AtBeginBibliography{\small}
+
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary {datavisualization} 
+\pgfplotsset{compat=1.18, width = 7cm}
+\usetikzlibrary{patterns}
+\usetheme{Ilmenau} % AnnArbor, Ilmenau, Darmstadt, Dresden, CambridgeUS, Frankfurt, Singapore
+\newtheorem{dn}{Định nghĩa}[section]
+\newtheorem{dl}{Định lý}[section]
+\newtheorem{tc}{Tính chất}[section]
+\newtheorem{hq}{Hệ quả}[section]
+\newtheorem{bd}{Bổ đề}[section]
+\newtheorem{md}{Mệnh đề}[section]
+\newtheorem{vd}{Ví dụ}[section]
+\newtheorem{nx}{Nhận xét}[section]
+\newtheorem{cy}{Chú ý}[section]
+\newcommand{\dom}{\text{{\rm dom}}}
+\newcommand{\epi}{\text{{\rm epi}}}
+\newcommand{\Min}{\text{{\rm Min}}}
+\setbeamertemplate{theorems}[numbered]
+\setbeamertemplate{definitions}[numbered]
+\setbeamertemplate{footline}[frame number]
+\usepackage{algorithm}
+\usepackage{color}
+\usepackage{algorithmic}
+\usepackage{footmisc}
+\usepackage{indentfirst} 
+\usepackage{comment}
+\AtBeginEnvironment{proof}{%
+  \setbeamercolor{block title}{use=example text,fg=white,bg=example text.fg!75!black}
+  \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\usefonttheme{professionalfonts}
+\setbeamercolor{normal text}{bg=white,fg=black}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\beamertemplatetransparentcoveredhigh
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage[utf8]{vietnam}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+\definecolor{mSybilaRed}{HTML}{990000}
+
+\setbeamercolor{title separator}{
+  fg=mSybilaRed
+}
+
+\setbeamercolor{progress bar}{%
+  fg=mSybilaRed,
+  bg=mSybilaRed!90!black!30
+}
+
+\setbeamercolor{progress bar in section page}{
+  use=progress bar,
+  parent=progress bar
+}
+
+\setbeamercolor{alerted text}{%
+  fg=mSybilaRed
+}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode
+  \hbox{
+  \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}
+    \usebeamerfont{author in head/foot}\insertshorttitle
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}
+    \insertframenumber{} / \inserttotalframenumber
+  \end{beamercolorbox}
+  }
+}
+
+\title{Tích hợp Mô hình Lập lịch và Vị trí cho \\ Đơn Máy}
+
+
+% \titlegraphic{\hfill \includegraphics[height=1cm]{tilearn.png}}
+
+\date{\today}
+\author{Hướng dẫn: TS. Lê Minh Huy}
+% \institute{Sinh viên lớp: DTU1221, Khóa: 22 @ Trường Đại học Sài Gòn}
+
+%\title{Metropolis}
+\subtitle{Thực hiện: Nguyễn Chí Bằng}
+% \date{\today}
+%\date{}
+%\author{Matthias Vogelgesang}
+%\institute{Center for modern beamer themes}
+%\titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{NỘI DUNG}
+    \tableofcontents
+\end{frame}
+
+\section{Giới thiệu về bài toán ScheLoc}
+
+\section{Bài toán ScheLoc cho tập hai công việc}
+
+\begin{frame}[allowframebreaks, noframenumbering]
+    \nocite{*}
+    \printbibliography
+\end{frame}
+
+
+\begin{frame}
+    \begin{block}{}
+    \medskip
+    \center{\huge \it \textcolor[rgb]{0.37, 0.150, 0.190}{Thanks for listening!}}
+    \medskip
+    \end{block}	
+\end{frame}    
+\end{document}
