@@ -7,6 +7,7 @@
 \usepackage{textpos}
 \usepackage{pgfplots}
 \usepackage{tikz}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{hyperref}
 \usepackage{caption}
 \usepackage{listings}
@@ -165,6 +166,100 @@
 \end{frame}
 
 \begin{frame}{Mô hình bài toán ScheLoc}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        % Nodes
+        \node[draw, circle] (vi) at (0,0) {$v_i$};
+        \node[draw, circle] (vj) at (6,0) {$v_j$};
+        \filldraw [black] (3,0) circle (1pt);
+
+        
+        % Line with labels
+        \draw (vi) -- node[above] {$\alpha l_e$} (3,0) node[below, yshift=-2mm] {$x=(e,\alpha)$} (3,0);
+        \draw (3,0) -- node[above] {$(1-\alpha) l_e$} (vj);
+        
+        % Dotted continuation
+        \draw[dotted] (-1,0) -- (vi);
+        \draw[dotted] (vj) -- (7,0);
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance={20mm}, thick, main/.style = {draw, circle}, dis/.style = {}] 
+        \node[main] (1) {$v_1$};
+        \node[main] (2) [above right of=1] {$v_2$};
+        \node[main] (3) [below right of=1] {$v_3$}; 
+        \node[dis] (4) [above right of=3] {};
+        \node[main] (5) [above right of=4] {$v_4$}; 
+        \node[main] (6) [below right of=4] {$v_5$};
+        \node[main] (7) [below right of=5] {$v_6$};
+
+        \draw[->] (1) -- node[above left] {$4$} (2);
+        \draw[->] (2) -- node[above] {$3$} (5);
+        \draw[->] (5) -- node[above right] {$2$} (7);
+        \draw[->] (1) -- node[below left] {$3$} (3);
+        \draw[->] (3) -- node[below] {$3$} (6);
+        \draw[->] (6) -- node[below right] {$2$} (7);
+        \draw[->] (2) -- node[above right] {$2$} (6);
+    \end{tikzpicture} 
+    \caption{}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance={20mm}, thick, main/.style = {draw, circle}, dis/.style = {}] 
+        \node[main, color=LimeGreen, fill=LimeGreen, very thick, text=white] (1) {$v_1$};
+        \node[main] (2) [above right of=1] {$v_2$};
+        \node[main, color=LimeGreen, fill=LimeGreen, very thick, text=white] (3) [below right of=1] {$v_3$}; 
+        \node[dis] (4) [above right of=3] {};
+        \node[main] (5) [above right of=4] {$v_4$}; 
+        \node[main, color=LimeGreen, fill=LimeGreen, very thick, text=white] (6) [below right of=4] {$v_5$};
+        \node[main, color=LimeGreen, fill=LimeGreen, very thick, text=white] (7) [below right of=5] {$v_6$};
+
+        \draw[->] (1) -- node[above left] {$4$} (2);
+        \draw[->] (2) -- node[above] {$3$} (5);
+        \draw[->] (5) -- node[above right] {$2$} (7);
+        \draw[->, color=LimeGreen, fill=LimeGreen, very thick, text=black] (1) -- node[below left] {$3$} (3);
+        \draw[->, color=LimeGreen, fill=LimeGreen, very thick, text=black] (3) -- node[below] {$3$} (6);
+        \draw[->, color=LimeGreen, fill=LimeGreen, very thick, text=black] (6) -- node[below right] {$2$} (7);
+        \draw[->] (2) -- node[above right] {$2$} (6);
+    \end{tikzpicture} 
+    \caption{}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance={20mm}, thick, main/.style = {draw, circle}, dis/.style = {}] 
+        \node[main, color=Cerulean, fill=Cerulean, very thick, text=white] (1) {$v_1$};
+        \node[main, color=Cerulean, fill=Cerulean, very thick, text=white] (2) [above right of=1] {$v_2$};
+        \node[main] (3) [below right of=1] {$v_3$}; 
+        \node[dis] (4) [above right of=3] {};
+        \node[main, color=Cerulean, fill=Cerulean, very thick, text=white] (5) [above right of=4] {$v_4$}; 
+        \node[main] (6) [below right of=4] {$v_5$};
+        \node[main] (7) [below right of=5] {$v_6$};
+
+        \draw[->, color=Cerulean, fill=Cerulean, very thick, text=black] (1) -- node[above left] {$4$} (2);
+        \draw[->, color=Cerulean, fill=Cerulean, very thick, text=black] (2) -- node[above] {$3$} (5);
+        \draw[->] (5) -- node[above right] {$2$} (7);
+        \draw[->] (1) -- node[below left] {$3$} (3);
+        \draw[->] (3) -- node[below] {$3$} (6);
+        \draw[->] (6) -- node[below right] {$2$} (7);
+        \draw[->] (2) -- node[above right] {$2$} (6);
+    \end{tikzpicture} 
+    \caption{}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Tối thiểu thời gian hoàn thành cực đại $C_{\max}$}
