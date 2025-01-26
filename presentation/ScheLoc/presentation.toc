@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{Giới thiệu về bài toán ScheLoc}{3}{0}{1}
+\beamer@sectionintoc {2}{Bài toán ScheLoc cho tập hai công việc}{12}{0}{2}
