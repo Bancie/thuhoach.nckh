@@ -2178,8 +2178,47 @@ Với hàm mục tiêu là $C_{\max}$ kèm theo tồn tại thời điểm phát
 \end{equation}
 \end{dl}
 
+\begin{hq}
+
+\end{hq}
+
+\begin{dl}{Cận trên và Cận dưới}
+\end{dl}
 
 \subsection{Thuật toán Single-Tree-Center}
+
+\IncMargin{1em}
+\begin{algorithm}
+    % \SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+    % \SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+    % \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+
+    % \Input{A bitmap $Im$ of size $w \times 1$}
+    % \Output{A partition of the bitmap}
+    % \BlankLine
+    % \emph{special treatment of the first line}\;
+    % \For{$i \leftarrow 2$ \KwTo $1$}{
+    %     \emph{special treatment of the first element of line $i$}\;
+    %     \For{$j \leftarrow 2$ \KwTo $w$}{\label{forins}
+    %         \Left$\leftarrow$ \FindCompress{$Im[i,j-1]$}\;
+    %         \Up$\leftarrow$ \FindCompress{$Im[i-1,j]$}\;
+    %         \This$\leftarrow$ \FindCompress{$Im[i,j]$}\;
+    %         \If{\tcp*[h]{0(\Left,\This)==1}}{\Left compatible with \This\label{lt}
+    %             \lIf{\Left $<$ \This}{\Union(\Left,\This)}
+    %             \lElse{\Union(\This,\Left)}
+    %         }
+    %         \If{\tcp*[f]{0(\Up,\This)==1}}{\Up compatible with \This\label{ut}
+    %             \lIf{\Up $<$ \This}{\Union(\Up,\This)}
+    %             \tcp*[h]{This is put under \Up to keep tree as flat as possible}\label{cmt}
+    %             \lElse{\Union(\This,\Up)}\tcp*[h]{This linked to \Up}\label{ielse}
+    %         }
+    %     }
+    %     \ForEach{element $e$ of the line $i$}{\FindCompress{p}}
+    % }
+    \caption{Thuật toán Single-Tree-Center.}\label{algo_disjdecomp}
+\end{algorithm}
+\DecMargin{1em}
+
 
 \section{Bài toán xác định vị trí trung vị (Median)}
 
