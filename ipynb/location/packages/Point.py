@@ -39,3 +39,9 @@ class Local():
             return "Not Placed"
         else:
             return self.abstractAlpha(A, B)
+        
+    def HeadFun(self, A):
+        return self.distance(self.vertex_i, A)
+    
+    def TailFun(self, A):
+        return self.distance(self.vertex_j, A) + (1-self.distance(self.vertex_i, self.vertex_j))*self.distance(self.vertex_i, self.vertex_j)
