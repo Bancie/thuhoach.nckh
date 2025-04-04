@@ -6,13 +6,11 @@ from packages import ShortestPath
 
 class Local():
     
-    def __init__(self, sourceGraph, vertices, vertex_i, vertex_j, vertexA, vertexB):
+    def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
         self.sourceGraph = sourceGraph
         self.vertices = vertices
         self.vertex_i = vertex_i
         self.vertex_j = vertex_j
-        self.vertexA = vertexA
-        self.vertexB = vertexB
         
     def distance(self, src, dest):
         a = ShortestPath.Graph(self.vertices)
@@ -24,23 +22,9 @@ class Local():
         x = symbols('x')
         equation = Eq(x * self.distance(self.vertex_i, self.vertex_j) + self.distance(self.vertex_i, A), (1-x)*self.distance(self.vertex_i, self.vertex_j) + self.distance(self.vertex_j, B))
         return solve(equation, x)
+    
+    def BottleNeck(self, A, B):
+        return self.abstractAplha(A, B)
+    
+    def EquiPoint(self, A):
         
-        
-class BP(Local):
-    
-    def __init__(self, sourceGraph, vertices, vertex_i, vertex_j, vertexA):
-        super().__init__(sourceGraph, vertices, vertex_i, vertex_j, vertexA)
-    
-    def runBP(self):
-        return super().abstractAplha(self.vertexA, self.vertexA)
-        
-
-class EQ(Local):
-    
-    def __init__(self):
-        super().__init__()
-    
-    def run(self):
-        return super().abstractAplha(self.vertexA, self.vertexB)
-    
-    
