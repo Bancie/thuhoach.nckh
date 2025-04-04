@@ -30,7 +30,7 @@ class Graph():
 
     def dijkstra(self, src):
         dist = [1e7] * self.V
-        parent = [-1] * self.V  # Parent array to store shortest path tree
+        parent = [-1] * self.V
         dist[src] = 0
         sptSet = [False] * self.V
 
@@ -46,7 +46,6 @@ class Graph():
         self.printSolution(dist, parent, src)
 
     def getShortestPath(self, src, dest):
-        # This function returns the path from src to dest as a list
         dist = [1e7] * self.V
         parent = [-1] * self.V
         dist[src] = 0
@@ -61,7 +60,6 @@ class Graph():
                     dist[v] = dist[u] + self.graph[u][v]
                     parent[v] = u
 
-        # Reconstruct path
         path = []
         crawl = dest
         while crawl != -1:

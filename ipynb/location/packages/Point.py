@@ -18,13 +18,24 @@ class Local():
         path, distance = a.getShortestPath(ord(src) - 65, ord(dest) - 65)
         return distance
     
-    def abstractAplha(self, A, B):
+    def abstractAlpha(self, A, B):
         x = symbols('x')
-        equation = Eq(x * self.distance(self.vertex_i, self.vertex_j) + self.distance(self.vertex_i, A), (1-x)*self.distance(self.vertex_i, self.vertex_j) + self.distance(self.vertex_j, B))
-        return solve(equation, x)
-    
-    def BottleNeck(self, A, B):
-        return self.abstractAplha(A, B)
-    
-    def EquiPoint(self, A):
+        equation = Eq(
+            x * self.distance(self.vertex_i, self.vertex_j) + self.distance(self.vertex_i, A), 
+            (1 - x) * self.distance(self.vertex_i, self.vertex_j) + self.distance(self.vertex_j, B)
+        )
+        solution = solve(equation, x)
         
+        if solution:
+            return float(solution[0].evalf())
+        else:
+            return None
+    
+    def BottleNeck(self, A):
+        return self.abstractAlpha(A, A)
+    
+    def EquiPoint(self, A, B):
+        if self.abstractAlpha(A, B) > self.distance(self.vertex_i, self.vertex_j) or self.abstractAlpha(A, B) < 0:
+            return "Not Placed"
+        else:
+            return self.abstractAlpha(A, B)
