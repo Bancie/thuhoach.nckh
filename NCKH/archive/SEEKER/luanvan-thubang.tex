@@ -1,0 +1,125 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{vietnam}\usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
+\usepackage[top=3.5cm, bottom=3.0cm, left=3cm, right=3.0cm]{geometry} 
+\usepackage{color, fancyhdr, graphicx, wrapfig}
+\usepackage[unicode]{hyperref}
+\usepackage[vietnamese]{babel}
+\usepackage{titling}
+\usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
+\usepackage{subfigure}
+\usepackage{secdot}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx} 
+\usepackage{titling}
+\usepackage{secdot}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{array}
+\usetikzlibrary{calc}
+\usepackage{longtable}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{exscale,relsize,makeidx}
+\usepackage{color, fancyhdr, graphicx, wrapfig}
+\graphicspath{ {figures/} }
+\renewcommand{\listfigurename}{List of plots}
+\renewcommand{\listtablename}{List of Tables}
+\usepackage{amsmath}
+\usepackage{textpos}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{caption}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{datavisualization} 
+\pgfplotsset{compat=1.18, width = 7cm}
+\usetikzlibrary{patterns}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage[tikz]{ocgx2}
+\usepackage{xcolor}
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{changepage}
+\usepackage{float}
+\usepackage{pgfplotstable}
+\usepackage{pgfplots}
+\usepackage{blindtext}
+\usepackage{titlesec}
+\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{nccmath}
+\usetikzlibrary{calc}
+\usepackage{longtable}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{exscale,relsize,makeidx}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\newtheorem{dn}{Định nghĩa}
+\newtheorem{tc}{Tính chất}
+\newtheorem{dl}{Định lý}
+\newtheorem{md}{Mệnh đề}
+\newtheorem{bd}{Bổ đề}
+\newtheorem{hq}{Hệ quả}
+\newtheorem{nx}{Nhận xét}
+\newtheorem{vd}{Ví dụ}
+\newtheorem{cm}{Chứng minh}
+\newtheorem{cy}{Chú ý}
+\newtheorem{ttoan}{Thuật toán}
+\pagenumbering{roman}\pagestyle{plain}
+\renewcommand{\headrulewidth}{1,2pt} 			
+\renewcommand{\footrulewidth}{1,2pt}
+\newcommand{\dstc}[2]
+{
+	\newdimen\stringwidth\setbox0=\hbox{#1}
+	\stringwidth=\wd0
+	\hspace*{-\parindent}\hspace*{.5\textwidth}\hspace*{-.5\wd0}#1\hfill #2\bigskip
+}  
+\usepackage{scrextend}
+\fancyhf{}
+\lhead{}
+\chead{\thepage}
+\rhead{}
+\cfoot{}
+\rfoot{}
+\lfoot{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{1pt}
+\begin{document} 
+
+\addcontentsline{toc}{chapter}{Mục lục}
+\tableofcontents
+
+\pagenumbering{arabic} 
+ 
+\chapter{Giới thiệu}
+
+\chapter{Lý thuyết đám mây}
+
+\chapter{Thuật toán Seeker Optimization}
+
+\chapter{Tham số thuật toán}
+
+\chapter{Phân tích hội tụ}
+
+\chapter{Hàm tối ưu}
+
+\chapter{Phần mềm }
+
+\chapter*{Kết luận}
+\addcontentsline{toc}{chapter}{{\bf  Kết luận}\rm}
+\indent
+\thispagestyle{fancy}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{mybib}
+\end{document}
