@@ -18,6 +18,12 @@ class Local():
         path, distance = a.getShortestPath(ord(src) - 65, ord(dest) - 65)
         return distance
     
+    def distance(self, src, dest):
+        a = ShortestPath.Graph(self.vertices)
+        a.graph = self.sourceGraph
+        path, distance = a.getShortestPath(src, dest)
+        return distance
+    
     def abstractAlpha(self, A, B):
         x = symbols('x')
         equation = Eq(
