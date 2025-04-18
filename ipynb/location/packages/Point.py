@@ -7,6 +7,36 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+class FunctionPlotter:
+    
+    def __init__(self, lowerbound, upperbound, num_points):
+        self.x_range = (lowerbound, upperbound)
+        self.num_points = num_points
+        self.functions = []
+        self.labels = []
+        self.x = np.linspace(self.x_range[0], self.x_range[1], self.num_points)
+
+    def add_function(self, func, label):
+        self.functions.append(func)
+        self.labels.append(label)
+
+    def plot(self, title="Function Plot", xlabel="x", ylabel="y"):
+        
+        plt.figure(figsize=(10, 6))
+        
+        for func, label in zip(self.functions, self.labels):
+            y = func(self.x)
+            plt.plot(self.x, y, label=label)
+
+        plt.title(title)
+        plt.xlabel(xlabel)
+        plt.ylabel(ylabel)
+        plt.legend()
+        plt.grid(True)
+        plt.axhline(0, color='black', linewidth=0.5)
+        plt.axvline(0, color='black', linewidth=0.5)
+        plt.show()
+
 class Local():
     
     def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
@@ -54,36 +84,6 @@ class Local():
     
     def upperlm(self, A):
         return self.distance(self.vertex_j, A) + (1-self.distance(self.vertex_i, self.vertex_j))*self.distance(self.vertex_i, self.vertex_j)
-
-class FunctionPlotter:
-    
-    def __init__(self, lowerbound, upperbound, num_points):
-        self.x_range = (lowerbound, upperbound)
-        self.num_points = num_points
-        self.functions = []
-        self.labels = []
-        self.x = np.linspace(self.x_range[0], self.x_range[1], self.num_points)
-
-    def add_function(self, func, label):
-        self.functions.append(func)
-        self.labels.append(label)
-
-    def plot(self, title="Function Plot", xlabel="x", ylabel="y"):
-        
-        plt.figure(figsize=(10, 6))
-        
-        for func, label in zip(self.functions, self.labels):
-            y = func(self.x)
-            plt.plot(self.x, y, label=label)
-
-        plt.title(title)
-        plt.xlabel(xlabel)
-        plt.ylabel(ylabel)
-        plt.legend()
-        plt.grid(True)
-        plt.axhline(0, color='black', linewidth=0.5)
-        plt.axvline(0, color='black', linewidth=0.5)
-        plt.show()
 
 class LocalMinima:
     
