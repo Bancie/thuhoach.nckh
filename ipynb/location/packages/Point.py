@@ -9,7 +9,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from packages import ShortestPath
 
 class FunctionPlotter:
-    
+
     def __init__(self, lowerbound, upperbound, num_points):
         self.x_range = (lowerbound, upperbound)
         self.num_points = num_points
@@ -39,27 +39,27 @@ class FunctionPlotter:
         plt.show()
 
 class Local:
-    
+
     def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
         self.sourceGraph = sourceGraph
         self.vertices = vertices
         self.vertex_i = vertex_i
         self.vertex_j = vertex_j
-        
+
     @dispatch(str, str)
     def distance(self, src, dest):
         a = ShortestPath.Graph(self.vertices)
         a.graph = self.sourceGraph
         path, distance = a.getShortestPath(ord(src) - 65, ord(dest) - 65)
         return distance
-    
+
     @dispatch(int, int)
     def distance(self, src, dest):
         a = ShortestPath.Graph(self.vertices)
         a.graph = self.sourceGraph
         path, distance = a.getShortestPath(src, dest)
         return distance
-    
+
     def abstractAlpha(self, A, B):
         x = symbols('x')
         equation = Eq(
@@ -72,27 +72,53 @@ class Local:
             return float(solution[0].evalf())
         else:
             return None
-    
+
     def BottleNeck(self, A):
         return self.abstractAlpha(A, A)
-    
+
     def EquiPoint(self, A, B):
         if self.abstractAlpha(A, B) > self.distance(self.vertex_i, self.vertex_j) or self.abstractAlpha(A, B) < 0:
             return "Not Placed"
         else:
             return self.abstractAlpha(A, B)
-        
+
     def lowerlm(self, A):
         return self.distance(self.vertex_i, A)
-    
+
     def upperlm(self, A):
         return self.distance(self.vertex_j, A) + (1-self.distance(self.vertex_i, self.vertex_j))*self.distance(self.vertex_i, self.vertex_j)
 
+    def GeneralUpper(self):
+        i = 0
+        val = 0
+        while i < self.vertices:
+            if i == self.vertex_i:
+                i += 1
+                continue
+            else:
+                if self.upperlm(i) > val:
+                    val = self.upperlm(i)
+            i += 1
+        return val
+
+    def GeneralLower(self):
+        i = 0
+        val = 0
+        while i < self.vertices:
+            if i == self.vertex_i:
+                i += 1
+                continue
+            else:
+                if self.lowerlm(i) > val:
+                    val = self.lowerlm(i)
+            i += 1
+        return val
+
 class LocalMinima(Local):
-    
+
     def __init__(self):
         self.lines = []
-    
+
     def add_line(self, new_func):
         """
         Add a new function to the list of lines.
@@ -114,7 +140,7 @@ class LocalMinima(Local):
         4
         """
         self.lines.append(new_func)
-    
+
     def show_lines(self, x=0):
         """
         Prints the output of each stored function evaluated at a given x value.
@@ -134,10 +160,10 @@ class LocalMinima(Local):
                 print(f"Line {i}: f({x}) = {result}")
             except Exception as e:
                 print(f"Line {i}: Error evaluating function - {e}")
-    
+
     def upper_envelope(self, x):
         return max(f(x) for f in self.lines)
-    
+
     def intersect(self, f1, f2):
         a1 = f1(1) - f1(0)
         b1 = f1(0)
@@ -154,10 +180,10 @@ class LocalMinima(Local):
             if x is not None:
                 xs.append(x)
         return xs
-    
-    def showVal(self, _lowerBound, _upperBound):
+
+    def showVal(self, __lowerBound, _upperBound):
         
-        candidates = self.BreakpointList() + [_lowerBound, _upperBound]
+        candidates = self.BreakpointList() + [__lowerBound, _upperBound]
         
         min_val = float('inf')
         min_x = None
