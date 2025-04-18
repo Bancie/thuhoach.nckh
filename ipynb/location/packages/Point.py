@@ -1,4 +1,4 @@
-from packages import ShortestPath
+from multipledispatch import dispatch
 import numpy as np
 import matplotlib.pyplot as plt
 from itertools import combinations
@@ -6,6 +6,7 @@ from sympy import symbols, Eq, solve
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from packages import ShortestPath
 
 class FunctionPlotter:
     
@@ -37,7 +38,7 @@ class FunctionPlotter:
         plt.axvline(0, color='black', linewidth=0.5)
         plt.show()
 
-class Local():
+class Local:
     
     def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
         self.sourceGraph = sourceGraph
@@ -45,12 +46,14 @@ class Local():
         self.vertex_i = vertex_i
         self.vertex_j = vertex_j
         
+    @dispatch(str, str)
     def distance(self, src, dest):
         a = ShortestPath.Graph(self.vertices)
         a.graph = self.sourceGraph
         path, distance = a.getShortestPath(ord(src) - 65, ord(dest) - 65)
         return distance
     
+    @dispatch(int, int)
     def distance(self, src, dest):
         a = ShortestPath.Graph(self.vertices)
         a.graph = self.sourceGraph
@@ -85,7 +88,7 @@ class Local():
     def upperlm(self, A):
         return self.distance(self.vertex_j, A) + (1-self.distance(self.vertex_i, self.vertex_j))*self.distance(self.vertex_i, self.vertex_j)
 
-class LocalMinima:
+class LocalMinima(Local):
     
     def __init__(self):
         self.lines = []
