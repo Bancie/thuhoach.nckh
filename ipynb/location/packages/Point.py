@@ -187,3 +187,19 @@ class LocalMinima(Local):
                 min_x = x
         
         return min_val, min_x
+
+    def lineList(self):
+        for i in range(self.vertices):
+            if i==self.vertex_i or i==self.vertex_j:
+                continue
+            else:
+                self.add_line(lambda x, i=i:
+                    self.distance(i, self.vertex_i) + x * self.distance(self.vertex_i, self.vertex_j)
+                )
+            
+            if i==self.vertex_i or i==self.vertex_j:
+                continue
+            else:
+                self.add_line(lambda x, i=i:
+                    self.distance(i, self.vertex_j) + (1 - x) * self.distance(self.vertex_i, self.vertex_j)
+                )
