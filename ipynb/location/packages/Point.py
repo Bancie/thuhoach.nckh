@@ -189,7 +189,7 @@ class LocalMinima(Local):
                     self.distance(i, self.vertex_j) + (1 - x) * self.distance(self.vertex_i, self.vertex_j)
                 )
 
-    def showVal(self):
+    def IntervalValue(self):
 
         self.lineList()
         
