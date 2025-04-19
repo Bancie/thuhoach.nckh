@@ -82,6 +82,12 @@ class Local:
         else:
             return self.abstractAlpha(A, B)
 
+class LocalMinima(Local):
+
+    def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
+        super().__init__(sourceGraph, vertices, vertex_i, vertex_j)
+        self.lines = []
+
     def lowerlm(self, A):
         return self.distance(self.vertex_i, A)
 
@@ -113,11 +119,6 @@ class Local:
                     val = self.lowerlm(i)
             i += 1
         return val
-
-class LocalMinima(Local):
-
-    def __init__(self):
-        self.lines = []
 
     def add_line(self, new_func):
         """
