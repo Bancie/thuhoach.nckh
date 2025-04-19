@@ -109,10 +109,10 @@ class LocalMinima(Local, GlobalCenter):
         super().__init__(sourceGraph, vertices, vertex_i, vertex_j)
         self.lines = []
 
-    def lowerlm(self, A):
+    def upperlm(self, A):
         return self.distance(self.vertex_i, A)
 
-    def upperlm(self, A):
+    def lowerlm(self, A):
         return self.distance(self.vertex_j, A) + (1-self.distance(self.vertex_i, self.vertex_j))*self.distance(self.vertex_i, self.vertex_j)
 
     def BoundedValue(self, x):
@@ -123,12 +123,12 @@ class LocalMinima(Local, GlobalCenter):
                 i += 1
                 continue
             else:
-                if x == 'upper':
-                    if self.upperlm(i) > val:
-                        val = self.upperlm(i)
-                elif x == 'lower':
+                if x == 'lower':
                     if self.lowerlm(i) > val:
                         val = self.lowerlm(i)
+                elif x == 'upper':
+                    if self.upperlm(i) > val:
+                        val = self.upperlm(i)
             i += 1
         return val
         
@@ -226,7 +226,7 @@ class LocalMinima(Local, GlobalCenter):
                 min_x = x
         
         return min_val, min_x
-
+    
     def LocalMinima(self):
         local = []
         local.append(self.BoundedValue('upper'))
