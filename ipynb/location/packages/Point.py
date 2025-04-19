@@ -38,11 +38,32 @@ class FunctionPlotter:
         plt.axvline(0, color='black', linewidth=0.5)
         plt.show()
 
-class Local:
+class GlobalCenter():
 
-    def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
+    def __init__(self, sourceGraph, vertices):
         self.sourceGraph = sourceGraph
         self.vertices = vertices
+    
+    def GlobalSearch(self):
+        min_val = float('inf')
+        best_pair = None
+
+        for vertex_i, vertex_j in combinations(range(self.vertices), 2):
+            lm = LocalMinima(self.sourceGraph, self.vertices, vertex_i, vertex_j)
+            try:
+                val = lm.LocalMinima()
+                if val < min_val:
+                    min_val = val
+                    best_pair = (vertex_i, vertex_j)
+            except Exception as e:
+                print(f"Error with pair ({vertex_i}, {vertex_j}): {e}")
+        
+        return min_val, best_pair
+
+class Local(GlobalCenter):
+
+    def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
+        super().__init__(sourceGraph, vertices)
         self.vertex_i = vertex_i
         self.vertex_j = vertex_j
 
@@ -82,7 +103,7 @@ class Local:
         else:
             return self.abstractAlpha(A, B)
 
-class LocalMinima(Local):
+class LocalMinima(Local, GlobalCenter):
 
     def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
         super().__init__(sourceGraph, vertices, vertex_i, vertex_j)
@@ -213,4 +234,3 @@ class LocalMinima(Local):
         interval_min_val, _ = self.IntervalValue()
         local.append(interval_min_val)
         return min(local)
-
