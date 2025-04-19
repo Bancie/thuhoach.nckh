@@ -173,21 +173,6 @@ class LocalMinima(Local):
                 xs.append(x)
         return xs
 
-    def showVal(self, __lowerBound, _upperBound):
-        
-        candidates = self.BreakpointList() + [__lowerBound, _upperBound]
-        
-        min_val = float('inf')
-        min_x = None
-        
-        for x in candidates:
-            val = self.upper_envelope(x)
-            if val < min_val:
-                min_val = val
-                min_x = x
-        
-        return min_val, min_x
-
     def lineList(self):
         for i in range(self.vertices):
             if i==self.vertex_i or i==self.vertex_j:
@@ -203,3 +188,20 @@ class LocalMinima(Local):
                 self.add_line(lambda x, i=i:
                     self.distance(i, self.vertex_j) + (1 - x) * self.distance(self.vertex_i, self.vertex_j)
                 )
+
+    def showVal(self):
+
+        self.lineList()
+        
+        candidates = self.BreakpointList() + [0, self.distance(self.vertex_i, self.vertex_j)]
+        
+        min_val = float('inf')
+        min_x = None
+        
+        for x in candidates:
+            val = self.upper_envelope(x)
+            if val < min_val:
+                min_val = val
+                min_x = x
+        
+        return min_val, min_x
