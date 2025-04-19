@@ -94,7 +94,7 @@ class LocalMinima(Local):
     def upperlm(self, A):
         return self.distance(self.vertex_j, A) + (1-self.distance(self.vertex_i, self.vertex_j))*self.distance(self.vertex_i, self.vertex_j)
 
-    def GeneralUpper(self):
+    def BoundedValue(self, x):
         i = 0
         val = 0
         while i < self.vertices:
@@ -102,24 +102,15 @@ class LocalMinima(Local):
                 i += 1
                 continue
             else:
-                if self.upperlm(i) > val:
-                    val = self.upperlm(i)
+                if x == 'upper':
+                    if self.upperlm(i) > val:
+                        val = self.upperlm(i)
+                elif x == 'lower':
+                    if self.lowerlm(i) > val:
+                        val = self.lowerlm(i)
             i += 1
         return val
-
-    def GeneralLower(self):
-        i = 0
-        val = 0
-        while i < self.vertices:
-            if i == self.vertex_i:
-                i += 1
-                continue
-            else:
-                if self.lowerlm(i) > val:
-                    val = self.lowerlm(i)
-            i += 1
-        return val
-
+        
     def add_line(self, new_func):
         """
         Add a new function to the list of lines.
