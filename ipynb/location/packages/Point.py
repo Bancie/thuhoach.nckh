@@ -205,3 +205,11 @@ class LocalMinima(Local):
                 min_x = x
         
         return min_val, min_x
+
+    def LocalMinima(self):
+        local = []
+        local.append(self.BoundedValue('upper'))
+        local.append(self.BoundedValue('lower'))
+        interval_min_val, _ = self.IntervalValue()
+        local.append(interval_min_val)
+        return min(local)
