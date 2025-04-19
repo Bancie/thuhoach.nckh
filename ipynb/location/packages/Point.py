@@ -210,6 +210,10 @@ class LocalMinima(Local, GlobalCenter):
                     self.distance(i, self.vertex_j) + (1 - x) * self.distance(self.vertex_i, self.vertex_j)
                 )
 
+    def upperval(self):
+        self.lineList()
+        return self.upper_envelope(0)
+
     def IntervalValue(self):
 
         self.lineList()
