@@ -213,3 +213,4 @@ class LocalMinima(Local):
         interval_min_val, _ = self.IntervalValue()
         local.append(interval_min_val)
         return min(local)
+
