@@ -103,12 +103,11 @@ class Local(GlobalCenter):
         else:
             return self.abstractAlpha(A, B)
 
-class LocalMinima(Local, GlobalCenter):
-
+class BoundedLocalMin(Local, GlobalCenter):
+    
     def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
         super().__init__(sourceGraph, vertices, vertex_i, vertex_j)
-        self.lines = []
-
+    
     def upperlm(self, A):
         return self.distance(self.vertex_i, A)
 
@@ -131,7 +130,13 @@ class LocalMinima(Local, GlobalCenter):
                         val = self.upperlm(i)
             i += 1
         return val
-        
+
+class LocalMinima(Local, GlobalCenter):
+
+    def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
+        super().__init__(sourceGraph, vertices, vertex_i, vertex_j)
+        self.lines = []
+
     def add_line(self, new_func):
         """
         Add a new function to the list of lines.
@@ -209,10 +214,6 @@ class LocalMinima(Local, GlobalCenter):
                 self.add_line(lambda x, i=i:
                     self.distance(i, self.vertex_j) + (1 - x) * self.distance(self.vertex_i, self.vertex_j)
                 )
-
-    def upperval(self):
-        self.lineList()
-        return self.upper_envelope(0)
 
     def IntervalValue(self):
 
