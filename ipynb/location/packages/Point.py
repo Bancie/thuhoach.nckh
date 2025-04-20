@@ -49,7 +49,7 @@ class GlobalCenter():
         best_pair = None
 
         for vertex_i, vertex_j in combinations(range(self.vertices), 2):
-            lm = LocalMinima(self.sourceGraph, self.vertices, vertex_i, vertex_j)
+            lm = InLocalMin(self.sourceGraph, self.vertices, vertex_i, vertex_j)
             try:
                 val = lm.LocalMinima()
                 if val < min_val:
@@ -103,7 +103,7 @@ class Local(GlobalCenter):
         else:
             return self.abstractAlpha(A, B)
 
-class BoundedLocalMin(Local, GlobalCenter):
+class BoLocalMin(Local, GlobalCenter):
     
     def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
         super().__init__(sourceGraph, vertices, vertex_i, vertex_j)
@@ -131,7 +131,7 @@ class BoundedLocalMin(Local, GlobalCenter):
             i += 1
         return val
 
-class LocalMinima(Local, GlobalCenter):
+class InLocalMin(Local, GlobalCenter):
 
     def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
         super().__init__(sourceGraph, vertices, vertex_i, vertex_j)
@@ -231,8 +231,13 @@ class LocalMinima(Local, GlobalCenter):
                 min_x = x
         
         return min_val, min_x
+
+class LocalMinima(BoLocalMin, InLocalMin, GlobalCenter):
     
-    def LocalMinima(self):
+    def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
+        super().__init__(sourceGraph, vertices, vertex_i, vertex_j)
+    
+    def LocalMinVal(self):
         local = []
         local.append(self.BoundedValue('upper'))
         local.append(self.BoundedValue('lower'))
