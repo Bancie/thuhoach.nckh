@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.19)  14 MAY 2025 03:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.19)  14 MAY 2025 03:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2056,7 +2056,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [29]
 Ch\uhorn \ohorn ng 2.
-(./location/introduction.tex) (./location/center.tex) (./location/median.tex))
+(./location/introduction.tex) (./location/center/main.tex) (./location/median.tex))
 
 [30
 
@@ -2135,8 +2135,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 60BA3333CDDF974EFE544BCE7564C945;5591.
  ) 
 Here is how much of TeX's memory you used:
- 56012 strings out of 473190
- 1345240 string characters out of 5715800
+ 56013 strings out of 473190
+ 1345281 string characters out of 5715800
  1960552 words of memory out of 5000000
  78192 multiletter control sequences out of 15000+600000
  583632 words of font info for 94 fonts, out of 8000000 for 9000
