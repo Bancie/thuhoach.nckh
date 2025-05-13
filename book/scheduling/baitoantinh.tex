@@ -1,0 +1,970 @@
+\section{Bài toán trạng thái tĩnh ($r_j = 0$)}\label{1.2.}
+Bài toán tĩnh trong lập lịch cho máy đơn là một trong những bài toán cơ bản và quan trọng trong lĩnh vực quản lý thời gian và tối ưu hóa quy trình. Đặc điểm của bài toán tĩnh là thời điểm sẵn sàng $r_j$ của các công việc đều đồng nhất tại $t=0$, hay $r_j = 0, \: \forall j=\overline{1,n}$ và ký hiệu $r_j$ lúc này không tồn tại trong trường $\beta$ của bài toán.
+
+Trong bối cảnh bài toán ở trạng thái tĩnh, thuật toán sắp xếp theo thứ tự công việc sẽ được trình bày như một cách cơ bản cho bước đầu tiếp cận các thuật toán lập lịch tối ưu hơn. Ở các thuật toán lập lịch tối ưu hơn, các công việc sẽ được sắp xếp sao cho tối thiểu hoá một hàm mục tiêu nhất định, trong đó bao gồm các dạng bài toán: Tối thiểu độ đáo hạn cực đại ($1\|L_{\max}$) hay độ trễ cực đại ($1\|T_{\max}$), tối thiểu tổng thời gian hoàn thành ($1\|\sum C_j$) hay tối thiểu tổng thời gian hoàn thành có trọng số ($1\|\sum w_j C_j$).
+
+Bài toán tĩnh cung cấp một nền tảng lý thuyết vững chắc giúp phát triển các thuật toán xử lý những dạng bài toán lập lịch phức tạp hơn, đồng thời là bước đầu tiên và quan trọng trong việc nghiên cứu và ứng dụng các thuật toán tối ưu trong lĩnh vực quản lý thời gian và tối ưu hoá quy trình.
+\subsection{Thuật toán sắp xếp theo thứ tự công việc}
+Thuật toán sắp xếp theo thứ tự công việc trong lập lịch cho máy đơn là một thuật toán cơ bản và dễ hiểu. Bằng cách dựa trên số thứ tự công việc được định sẵn, nguyên lý của thuật toán là sắp xếp các công việc sao cho thứ tự của công việc được sắp theo hướng tăng dần hoặc giảm dần.
+
+\begin{vd}
+	Minh hoạ trường hợp bài toán với $n=4$ được sắp xếp theo thứ tự giảm dần \eqref{giamdan}.
+	
+	\begin{figure}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c |} 
+		\hline
+		Công việc ($j$) & 4 & 3 & 2 & 1 \\
+		\hline\hline
+		$p_j$ & 2 & 5 & 1 & 3 \\
+		$d_j$ & 6 & 9 & 8 & 3 \\
+		\hline
+	\end{tabular}
+	\caption{\label{giamdan} Trường hợp bài toán được sắp xếp theo thứ tự giảm dần.}
+	\end{figure}
+\end{vd}
+	
+\begin{vd}
+	Minh hoạ trường hợp bài toán với $n=4$ được sắp xếp theo thứ tự tăng dần \eqref{tangdan}.
+	\begin{figure}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c |} 
+		\hline
+		Công việc ($j$) & 1 & 2 & 3 & 4 \\
+		\hline\hline
+		$p_j$ & 3 & 1 & 5 & 2 \\
+		$d_j$ & 3 & 8 & 9 & 6 \\
+		\hline
+	\end{tabular}
+	\caption{\label{tangdan} Trường hợp bài toán được sắp xếp theo thứ tự tăng dần.}
+	\end{figure}
+
+	Xét \eqref{tangdan} và $p_j$ cho sẵn, ta có thể dễ dàng tính toán được các thông số $C_j, \: S_j, \: W_j, \: F_j, \: L_j, \: T_j, \: E_j$ và thu được bảng sau
+\begin{table}[h!]
+		\centering
+		 \begin{tabular}{|c || c c c c c c c c c c|}
+		 \hline
+		 Công việc ($j$) & $r_j$ & $p_j$ & $d_j$ & $C_j$ & $S_j$ & $W_j$ & $F_j$ & $L_j$ & $T_j$ & $E_j$ \\
+		 \hline
+		 1 & 0 & 3 & 3 & 3 & 0 & 0 & 3 & 0 & 0 & 0 \\
+		 \hline
+		 2 & 0 & 1 & 8 & 4 & 3 & 3 & 4 & -4 & 0 & 4 \\
+		 \hline
+		 3 & 0 & 5 & 9 & 9 & 4 & 4 & 9 & 0 & 0 & 0 \\
+		 \hline
+		 4 & 0 & 2 & 6 & 11 & 9 & 9 & 11 & 5 & 5 & 0 \\
+		 \hline
+		 \end{tabular}
+	\end{table}
+
+Vì bài toán ở trạng thái tĩnh nên hiển nhiên $r_j = 0, \: \forall j=\overline{1,4}$. Từ đây ta có thể xác định được
+\begin{equation*}
+C_{\max} = \sum_{j=1}^4 p_j = 11,
+\end{equation*}
+
+\begin{equation*}
+	L_{\max} = \max _{1 \leq j \leq 4} \{L_j, 0\} = 5,
+\end{equation*}
+và
+\begin{equation*}
+	T_{\max} = \max _{1 \leq j \leq 4} \{T_j, 0\} = 5.
+\end{equation*}
+
+Ta tính được trung bình thời gian chờ là
+\begin{equation*}
+\overline{W} = \frac{\sum_{j=1}^4 W_j}{4} = 4,
+\end{equation*}
+trung bình chu trình là
+\begin{equation*}
+\overline{F} = \frac{\sum_{j=1}^4 F_j}{4} = 6.75,
+\end{equation*}
+trung bình độ đáo hạn là
+\begin{equation*}
+\overline{L} = \frac{\sum_{j=1}^4 L_j}{4} = 0.25,
+\end{equation*}
+trung bình độ trễ là
+\begin{equation*}
+\overline{T} = \frac{\sum_{j=1}^4 T_j}{4} = 1.25,
+\end{equation*}
+và trung bình độ sớm là
+\begin{equation*}
+\overline{E} = \frac{\sum_{j=1}^4 E_j}{4} = 1.
+\end{equation*}
+\end{vd}
+
+Từ lý thuyết và ví dụ minh hoạ trên có thể thấy thuật toán sắp xếp theo thứ tự công việc không yêu cầu tính toán quá phức tạp. Tuy nhiên, còn tồn tại nhiều hạn chế, thuật toán sắp xếp theo thứ tự công việc không xem xét đến các yếu tố cần được tối ưu như độ đáo hạn, độ trễ hay thời gian hoàn thành, do đó có thể không đạt được điều kiện tối ưu như mong muốn và không mang lại hiệu quả cao trong ứng dụng.
+
+Do đó, ta sẽ tập trung vào các thuật toán có khả năng cải thiện mô hình hiệu quả hơn bằng cách tối thiểu độ đáo hạn cực đại $L_{\max}$ ( hay độ trễ cực đại $T_{\max}$) hoặc thuật toán giúp tối thiểu hoá tổng thời gian hoàn thành $\sum C$.
+\subsection{Thuật toán ưu tiên đáo hạn}
+\textit{Thuật toán ưu tiên đáo hạn}, viết tắt là \textit{EDD (Earliest Due Date)} là một trong những thuật toán phổ biến và hiệu quả trong lập lịch cho máy đơn với mục đích giúp tối thiểu hoá độ đáo hạn cực đại $L_{\max}$ hay độ trễ cực đại $T_{\max}$.
+
+Nguyên lý của thuật toán ưu tiên đáo hạn là ưu tiên xử lý các công việc có thời điểm đáo hạn nhỏ nhất, từ đó sắp xếp các công việc theo thứ tự từ thời điểm đáo hạn nhỏ nhất đến thời điểm đáo hạn lớn nhất. Mục đích là giúp đảm bảo các công việc có thời điểm đáo hạn nhỏ nhất được hoàn thành trước, hạn chế khả năng các công việc bị trễ, từ đó tối thiểu được độ đáo hạn cực đại $L_{\max}$ và độ trễ cực đại $T_{\max}$.
+
+\subsubsection*{Tối thiểu độ đáo hạn cực đại ($1 \| L_{\max}$)}
+Với hàm mục tiêu là $L_{\max}$, ta dễ dàng tối thiểu hàm mục tiêu $L_{\max}$ bằng cách sử dụng thuật toán ưu tiên đáo hạn.
+
+\begin{dl}
+	Thuật toán ưu tiên đáo hạn (EDD) là thuật toán tối ưu cho dạng bài toán $1 \| L_{\max}$.
+\end{dl}
+
+\begin{proof}
+
+	Ta gọi $S$ là chuỗi công việc trong đó tồn tại hai công việc liền kề $j - k$, trong đó công việc thứ $k$ có thời điểm bắt đầu sau công việc thứ $j$, tức phương án của bài toán lúc này là $j - k$. \eqref{jk_edd1}
+	
+	Do đó ta được độ đáo hạn của công việc $j$ và $k$ trong chuỗi $S$ lần lượt là
+
+	\begin{equation} \label{LjS}
+		L_j(S) = p_j - d_j
+	\end{equation}
+
+	và
+
+	\begin{equation} \label{LkS}
+		L_k(S) = p_j + p_k - d_k.
+	\end{equation}
+
+	\begin{figure}[h!]
+		\centering
+		 \begin{tabular}{|c | c c c c c c c |} 
+		 \hline
+		 Công việc & 1 & 2 & $\ldots$ & $j$ & $k$ & $\ldots$ & $n$ \\
+		 \hline\hline
+		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_j$ & $p_k$ & $\ldots$ & $p_n$ \\
+		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_j$ & $C_k$ & $\ldots$ & $C_n$ \\
+		 \hline
+		 \end{tabular}
+	\caption{\label{jk_edd1}Phương án $j - k$ của bài toán.}
+	\end{figure}
+
+	Giả sử phương án từ chuỗi công việc $S$ thoả thuật toán EDD, tức
+
+	\begin{equation} \label{dj<dk}
+		d_j < d_k.
+	\end{equation}
+
+	Ta xét trường hợp sắp xếp lại vị trí hai công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được chuỗi công việc $S'$, từ đó phương án là $k - j$. \eqref{jk_edd2}
+
+	\begin{figure}[h!]
+		\centering
+		 \begin{tabular}{|c | c c c c c c c |} 
+		 \hline
+		 Công việc & 1 & 2 & $\ldots$ & $k$ & $j$ & $\ldots$ & $n$ \\
+		 \hline\hline
+		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_k$ & $p_j$ & $\ldots$ & $p_n$ \\
+		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_k$ & $C_j$ & $\ldots$ & $C_n$ \\
+		 \hline
+		 \end{tabular}
+	\caption{\label{jk_edd2}Phương án $k - j$ của bài toán.}
+	\end{figure}
+
+	Lúc này độ đáo hạn của hai công việc $k$ và $j$ trong chuỗi công việc $S'$ lần lượt là
+
+	\begin{equation} \label{LkS'}
+		L_k(S') = p_k - d_k
+	\end{equation}
+
+	và
+
+	\begin{equation} \label{LjS'}
+		L_j(S') = p_k + p_j - d_j.
+	\end{equation}
+
+	Từ \eqref{dj<dk}, \eqref{LkS'} và \eqref{LjS'} ta dễ dàng nhận thấy
+
+	\begin{equation} \label{L_jS'>J_kS'}
+		L_j(S') > L_k(S')
+	\end{equation}
+
+	Mục đích của thuật toán là tối thiểu độ đáo hạn cực đại, vậy nên
+
+	\begin{equation}
+	\begin{array}{c c c}
+		L_{\max}(S) & < & L_{\max}(S')
+	\end{array}
+	\end{equation}
+
+	hay
+
+	\begin{equation} \label{edd_dk_max}
+		\begin{array}{c c c}
+			\max \left[ L_j(S), L_k(S) \right] & < & \max \left[ L_k(S'), L_j(S') \right].
+		\end{array}
+	\end{equation}
+
+	Từ \eqref{L_jS'>J_kS'}, bất đẳng thức \eqref{edd_dk_max} có thể được viết lại như sau
+	
+	\begin{equation}
+		\left[
+			\begin{array}{c c c}
+				L_j(S) & < & L_j(S') \\
+				L_k(S) & < & L_j(S')
+			\end{array}
+		\right.
+	\end{equation}
+
+	Từ \eqref{LjS}, \eqref{LkS} và \eqref{LjS'}
+	$\Rightarrow$
+
+	\begin{equation*}
+		\left[
+			\begin{array}{c c c}
+				p_j - d_j & < & p_k + + p_j - d_j \\
+				p_j + p_k - d_k & < & p_k + p_j - d_j
+			\end{array}
+		\right.
+		\Leftrightarrow
+		\left[
+			\begin{array}{c c c}
+				p_k & > & 0 \\
+				d_k & > & d_j
+			\end{array}
+		\right.
+	\end{equation*}
+
+	Vậy nếu muốn $L_{\max}(S) < L_{\max}(S')$ thì $d_k > d_j$ (đpcm).
+\end{proof}
+
+\begin{vd}
+Giả sử ta có dữ liệu ban đầu như sau \eqref{edd1}.
+\begin{figure}[h!]
+\centering
+	\begin{tabular}{|c | c c c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 2 & 3 & 4 & 5 \\
+	\hline\hline
+	$p_j$ & 8 & 10 & 15 & 9 & 5 \\
+	$d_j$ & 30 & 9 & 23 & 3 & 11 \\
+	\hline
+	\end{tabular}
+	\caption{\label{edd1} Dữ liệu ban đầu của bài toán minh hoạ thuật toán EDD.}
+\end{figure}
+
+Ta dễ dàng tìm được $C_j$ và $L_j$ \eqref{edd2}.
+\begin{figure}[h!]
+\centering
+	\begin{tabular}{|c | c c c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 2 & 3 & 4 & 5 \\
+	\hline\hline
+	$p_j$ & 8 & 10 & 15 & 9 & 5 \\
+	$C_j$ & 8 & 18 & 33 & 42 & 47 \\
+	$d_j$ & 30 & 9 & 23 & 3 & 11 \\
+	$L_j$ & -22 & 9 & 10 & 39 & 36 \\
+	\hline
+	\end{tabular}
+	\caption{\label{edd2} Dữ liệu bài toán minh hoạ thuật toán EDD.}
+\end{figure}
+
+Ta có
+\begin{equation*}
+	L_{\max} = \max _{1 \leq j \leq 5} \{L_j, 0\} = 39,
+\end{equation*}
+
+Sử dụng thuật toán ưu tiên đáo hạn (EDD) ta được \eqref{edd3}
+
+\begin{figure}[h!]
+\centering
+	\begin{tabular}{|c | c c c c c |} 
+	\hline
+	Công việc ($j$) & 4 & 2 & 5 & 3 & 1 \\
+	\hline\hline
+	$p_j$ & 9 & 10 & 5 & 15 & 8 \\
+	$C_j$ & 9 & 19 & 24 & 39 & 47 \\
+	$d_j$ & 3 & 9 & 11 & 23 & 30 \\
+	$L_j$ & 6 & 10 & 13 & 16 & 17 \\
+	\hline
+	\end{tabular}
+	\caption{\label{edd3} Dữ liệu bài toán sau khi áp dụng thuật toán EDD.}
+\end{figure}
+
+Kết quả là
+\begin{equation*}
+	L_{\max} = \max _{1 \leq j \leq 5} \{L_j, 0\} = 17.
+\end{equation*}
+
+Vậy để tối thiểu hàm mục tiêu $L_{\max}$ thì ta cần sắp xếp công việc theo thứ tự $4-2-5-3-1$.
+\end{vd}
+
+\subsubsection*{Tối thiểu độ trễ cực đại ($1 \| T_{\max}$)}
+Tương tự với hàm mục tiêu $L_{\max}$ với $T_{\max}=\underset{1 \leq j \leq n}{\max} (L_j,0)$, ta cũng dễ dàng tối thiểu hàm mục tiêu $T_{\max}$ bằng cách sử dụng thuật toán ưu tiên đáo hạn như sau, với dữ liệu ban đầu như ở trên, ta tính được
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 2 & 3 & 4 & 5 \\
+	\hline\hline
+	$p_j$ & 8 & 10 & 15 & 9 & 5 \\
+	$C_j$ & 8 & 18 & 33 & 42 & 47 \\
+	$d_j$ & 30 & 9 & 23 & 3 & 11 \\
+	$L_j$ & -22 & 9 & 10 & 39 & 36 \\
+	$T_j$ & 0 & 9 & 10 & 39 & 36 \\
+	\hline
+	\end{tabular}
+\end{table}
+Ta có
+\begin{equation*}
+	T_{\max} = \max _{1 \leq j \leq 5} \{T_j, 0\} = 39,
+\end{equation*}
+
+Trong khi đó, ta sử dụng thuật toán ưu tiên đáo hạn thì
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c c |} 
+	\hline
+	Công việc ($j$) & 4 & 2 & 5 & 3 & 1 \\
+	\hline\hline
+	$p_j$ & 9 & 10 & 5 & 15 & 8 \\
+	$C_j$ & 9 & 19 & 24 & 39 & 47 \\
+	$d_j$ & 3 & 9 & 11 & 23 & 30 \\
+	$L_j$ & 6 & 10 & 13 & 16 & 17 \\
+	$T_j$ & 6 & 10 & 13 & 16 & 17 \\
+	\hline
+	\end{tabular}
+\end{table}
+
+Ta nhận được
+\begin{equation*}
+	T_{\max} = \max _{1 \leq j \leq 5} \{T_j, 0\} = 17.
+\end{equation*}
+
+Vậy để tối thiểu hàm mục tiêu $T_{\max}$ thì ta cần sắp xếp công việc theo thứ tự $4-2-5-3-1$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Thuật toán thời gian xử lý ngắn nhất}
+Một cách tiếp cận tối ưu khác của thuật toán lập lịch cho máy đơn có thể kể đến là \textit{thuật toán thời gian xử lý ngắn nhất}, viết tắt là \textit{SPT (Shortest Process Time)} và \textit{thuật toán thời gian xử lý ngắn nhất có trọng số}, viết tắt là \textit{WSPT (Weighted Shortest Process Time)}.
+
+Ý tưởng của cả hai thuật toán là tập trung vào việc tối thiểu hoá trung bình thời gian chờ $\overline{W}$, đồng thời tối thiểu hoá tổng thời gian hoàn thành $\sum C_j$ hoặc $\sum w_j C_j$ nếu bài toán có tồn tại trọng số $w_j$, bằng cách ưu tiên các công việc có khoảng thời gian xử lý ngắn nhất sẽ được thực hiện trước. 
+
+\subsubsection*{Tối thiểu tổng thời gian hoàn thành ($1 \| \sum C_j$) và tổng thời gian hoàn thành có trọng số ($1 \| \sum w_j C_j$)}
+Ta có thể dễ dàng nhận thấy bài toán $1 \| \sum C_j$ chính là trường hợp đặc biệt của bài toán $1 \| \sum w_j C_j$ với trọng số $w_j=1$. Do đó đồng nghĩa thuật toán thời gian xử lý ngắn nhất chính là thuật toán thời gian xử lý ngắn nhất có trọng số $w_j=1$. Kể từ đây, ta chỉ cần tập trung vào bài toán $1\| \sum w_j C_j$.
+
+\begin{nx}[Quy tắc thời gian xử lý ngắn nhất có trọng số]
+Với $\frac{w_j}{p_j}$ (hay $\frac{p_j}{w_j}$), nếu bài toán chưa tối ưu thì việc sắp xếp các công việc theo thứ tự giảm dần (hay tăng dần) theo giá trị $\frac{w_j}{p_j}$ (hay $\frac{p_j}{w_j}$) sẽ giúp bài toán tối thiểu được hàm mục tiêu $\sum w_j C_j$.
+\end{nx}
+
+\begin{dl}
+	Thuật toán thời gian xử lý ngắn nhất và thuật toán thời gian xử lý ngắn nhất có trọng số lần lượt là thuật toán tối ưu cho dạng bài toán $1 \| \sum C_j$ và $1 \| \sum w_j C_j$.
+\end{dl}
+
+\begin{proof}
+
+\phantom{text}
+
+\begin{itemize}
+\item \textbf{Trường hợp công việc liền kề:}
+
+	Ta gọi tổng thời gian hoàn thành có trọng số của hai công việc liền kề $j-k$ là $S$, ta đặt
+	\begin{equation} \label{S}
+		S = w_j C_j + w_k C_k = w_j(t+p_j) + w_k(t+p_j+p_k),
+	\end{equation}
+	trong đó công việc thứ $k$ có thời điểm bắt đầu sau công việc thứ $j$ và thời điểm bắt đầu xử lý công việc $j$ là $t$, tức phương án của bài toán lúc này là $j - k$. \eqref{jk11}
+	
+	\begin{figure}[h!]
+		\centering
+		 \begin{tabular}{|c | c c c c c c c |} 
+		 \hline
+		 Công việc & 1 & 2 & $\ldots$ & $j$ & $k$ & $\ldots$ & $n$ \\
+		 \hline\hline
+		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_j$ & $p_k$ & $\ldots$ & $p_n$ \\
+		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_j$ & $C_k$ & $\ldots$ & $C_n$ \\
+		 \hline
+		 \end{tabular}
+	\caption{\label{jk11}Phương án $j - k$ của bài toán.}
+	\end{figure}
+	
+	Giả sử phương án này thoả thuật toán WSPT, tức là
+	\begin{equation}
+	\frac{w_j}{p_j} \leq \frac{w_k}{p_k}.
+	\end{equation}
+	
+	Giả sử ta cần sắp xếp lại vị trí 2 công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được
+	\begin{equation} \label{S'}
+		S' = w_k(t+p_k) + w_j(t+p_k+p_j)
+	\end{equation}
+	với phương án là $k-j$ và thu bảng công việc như sau
+	
+	\begin{figure}[h!]
+		\centering
+		 \begin{tabular}{|c | c c c c c c c |} 
+		 \hline
+		 Công việc & 1 & 2 & $\ldots$ & $k$ & $j$ & $\ldots$ & $n$ \\
+		 \hline\hline
+		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_k$ & $p_j$ & $\ldots$ & $p_n$ \\
+		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_k$ & $C_j$ & $\ldots$ & $C_n$ \\
+		 \hline
+		 \end{tabular}
+	\caption{Phương án $k - j$ của bài toán.}
+	\end{figure}
+
+	Mục đích của thuật toán là tối thiểu hoá tổng thời gian hoàn thành của bài toán, vậy nên
+	\begin{equation} \label{s>s'}
+		S > S'
+	\end{equation}
+	Từ \eqref{S}, \eqref{S'} và \eqref{s>s'} ta được
+        \begin{equation*}
+        \begin{array}{c c c c}
+		& w_j(t+p_j) + w_k(t+p_j+p_k) &>& w_k(t+p_k) + w_j(t+p_k+p_j) \\
+		\\
+		\Leftrightarrow & w_jt + w_jp_j + w_kt + w_k p_j + w_kp_k &>& w_k t + w_k p_k + w_j t + w_j p_k + w_j p_j \\
+		\\
+		\Leftrightarrow & w_k p_j &>& w_j p_k \\
+		\\
+		\Leftrightarrow & \scalebox{1.5}{$\frac{w_k}{p_k}$} &>& \scalebox{1.5}{$\frac{w_j}{p_j}$} \\
+        \end{array}
+        \end{equation*}
+		Vậy nếu muốn $S'<S$ thì \scalebox{1.3}{$\frac{w_j}{p_j}$} < \scalebox{1.3}{$\frac{w_k}{p_k}$} hay \scalebox{1.3}{$\frac{p_j}{w_j}$} > \scalebox{1.3}{$\frac{p_k}{w_k}$} (đpcm).
+
+\phantom{text}
+
+\item \textbf{Trường hợp công việc không liền kề:}
+
+Giả sử công việc thứ $k$ có thời điểm bắt đầu sau một dãy các công việc khác. Ta lấy công việc thứ $j$ là công việc cần xét, tức phương án của bài toán lúc này là $j \rightarrow j+1 \rightarrow \ldots \rightarrow k-1 \rightarrow k$. \eqref{jk1}
+
+\begin{figure}[h!]
+	\centering
+	 \begin{tabular}{|c | c c c c c c c c c c |} 
+	 \hline
+	 Công việc & 1 & 2 & $\ldots$ & $j$ & $j+1$ & $\ldots$ & $k-1$ & $k$ & $\ldots$ & $n$ \\
+	 \hline\hline
+	 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_j$ & $p_{j+1}$ & $\ldots$ & $p_{k-1}$ & $p_k$ & $\ldots$ & $p_n$ \\
+	 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_j$ & $C_{j+1}$ & $\ldots$ & $C_{k-1}$ & $C_k$ & $\ldots$ & $C_n$ \\
+	 \hline
+	 \end{tabular}
+\caption{\label{jk1}Phương án $j \rightarrow j+1 \rightarrow \ldots \rightarrow k-1 \rightarrow k$ của bài toán.}
+\end{figure}
+
+Từ chứng minh của công việc liền kề, ta thấy rằng, công việc $j$ và $j+1$ chỉ hoán đổi vị trí khi và chỉ khi $$\scalebox{1.3}{$\frac{w_{j+1}}{p_{j+1}}$} < \scalebox{1.3}{$\frac{w_j}{p_j}$}$$ hay $$\scalebox{1.3}{$\frac{p_j}{w_j}$} > \scalebox{1.3}{$\frac{p_{j+1}}{w_{j+1}}$}.$$
+
+Nếu tồn tại một công việc thứ 3, giả sử $j+2$, thì công việc $j$ và $j+2$ chỉ hoán đổi khi và chỉ khi $$\scalebox{1.3}{$\frac{w_{j+2}}{p_{j+2}}$} < \scalebox{1.3}{$\frac{w_{j+1}}{p_{j+1}}$} < \scalebox{1.3}{$\frac{w_j}{p_j}$}$$ hay $$\scalebox{1.3}{$\frac{p_j}{w_j}$} > \scalebox{1.3}{$\frac{p_{j+1}}{w_{j+1}}$} > \scalebox{1.3}{$\frac{p_{j+2}}{w_{j+2}}$}.$$
+
+Vậy hiển nhiên, chuỗi công việc $j \rightarrow j+1 \rightarrow \ldots \rightarrow k-1 \rightarrow k$ sẽ được sắp xếp theo chiều tăng dần dựa trên giá trị phân thức $\scalebox{1.3}{$\frac{p}{w}$}$ hoặc theo chiều giảm dần dựa trên phân thức $\scalebox{1.3}{$\frac{w}{p}$}$. (đpcm)
+
+\end{itemize}
+
+% \textbf{Trường hợp công việc không liền kề:}
+
+	% Ta gọi tổng thời gian hoàn thành có trọng số của hai công việc không liền kề $$j \rightarrow j+1 \rightarrow \ldots \rightarrow k-1 \rightarrow k$$ là $S$, ta đặt
+	% \begin{equation} \label{kolienke1}
+	% 	\begin{array}{c c c}
+	% 	S &=& w_j C_j + w_{j+1} C_{j+1} + \ldots + w_{k-1} C_{k-1} + w_k C_k \\
+	% 	&=& w_j(t+p_j) + w_{j+1} (t + p_j + p_{j+1}) + \ldots \\
+	% 	&& + w_{k-1}(t + p_j  + p_{j+1} + \ldots +p_{k-1}) \\
+	% 	&& + w_k(t + p_j + p_{j+1} + \ldots +p_{k-1} + p_k),
+	% 	\end{array}
+	% \end{equation}
+
+	
+	% Giả sử phương án này thoả thuật toán WSPT, tức là
+	% \begin{equation}
+	% \frac{w_j}{p_j} \leq \frac{w_k}{p_k}.
+	% \end{equation}
+	
+	% Giả sử ta cần sắp xếp lại vị trí 2 công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được
+	
+	% \begin{equation} \label{kolienke2}
+	% 	\begin{array}{c c c}
+	% 	S' &=& w_k C_k + w_{j+1} C_{j+1} + \ldots + w_{k-1} C_{k-1} + w_j C_j\\
+
+	% 	&=& w_k(t+p_k) + w_{j+1} (t + p_k + p_{j+1}) + \ldots \\
+	% 	&& + w_{k-1}(t + p_k  + p_{j+1} + \ldots +p_{k-1}) \\
+	% 	&& + w_j(t + p_k + p_{j+1} + \ldots +p_{k-1} + p_j),
+	% 	\end{array}
+	% \end{equation}
+	% với phương án là $k \rightarrow j+1 \rightarrow \ldots \rightarrow k-1 \rightarrow j$ và thu bảng công việc như sau
+	
+	% \begin{figure}[h!]
+	% 	\centering
+	% 	 \begin{tabular}{|c | c c c c c c c c c c |} 
+	% 	 \hline
+	% 	 Công việc & 1 & 2 & $\ldots$ & $k$ & $j+1$ & $\ldots$ & $k-1$ & $j$ & $\ldots$ & $n$ \\
+	% 	 \hline\hline
+	% 	 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_k$ & $p_{j+1}$ & $\ldots$ & $p_{k-1}$ & $p_j$ & $\ldots$ & $p_n$ \\
+	% 	 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_k$ & $C_{j+1}$ & $\ldots$ & $C_{k-1}$ & $C_j$ & $\ldots$ & $C_n$ \\
+	% 	 \hline
+	% 	 \end{tabular}
+	% \caption{Phương án $k \rightarrow j+1 \rightarrow \ldots \rightarrow k-1 \rightarrow j$ của bài toán.}
+	% \end{figure}
+
+	% Mục đích của thuật toán là tối thiểu hoá tổng thời gian hoàn thành của bài toán, vậy nên
+	% \begin{equation} \label{kolienke3}
+	% 	S > S'
+	% \end{equation}
+	% Từ \eqref{kolienke1}, \eqref{kolienke2} và \eqref{kolienke3} ta được
+    %     \begin{equation*}
+    %     \begin{array}{c c c c}
+	% 	& w_j(t+p_j) + w_{j+1} (t + p_j + p_{j+1}) + \ldots && w_k(t+p_k) + w_{j+1} (t + p_k + p_{j+1}) + \ldots \\
+	% 	& + w_{k-1}(t + p_j  + p_{j+1} + \ldots +p_{k-1}) &>& + w_{k-1}(t + p_k  + p_{j+1} + \ldots +p_{k-1})\\
+	% 	& + w_k(t + p_j + p_{j+1} + \ldots +p_{k-1} + p_k) &&  + w_j(t + p_k + p_{j+1} + \ldots +p_{k-1} + p_j)
+	% 	\\
+	% 	\Leftrightarrow & w_{j+1}p_j + \ldots + w_{k-1}p_j + &>& w_{j+1}p_k + \ldots + w_{k-1}p_k + \\
+	% 	& w_kp_j + w_kp_{j+1} + \ldots + w_kp_{k-1} && w_jp_k + w_jp_{j+1} + \ldots + w_jp_{k-1} \\
+    %     \end{array}
+    %     \end{equation*}
+	% 	\begin{equation*}
+	% 		\Leftrightarrow
+	% 		  \begin{cases}
+	% 			\begin{array}{c c c}
+	% 				w_k (p_{j+1}+\ldots + p_{k-1}) &>& w_j(p_{j+1}+\ldots + p_{k-1}) \\
+	% 				p_j(w_{j+1}+\ldots + w_{k-1}) &>& p_k (w_{j+1}+\ldots + w_{k-1}) \\
+	% 				w_kp_j &>& w_jp_k
+	% 			\end{array}
+	% 		  \end{cases}       
+	% 	  \end{equation*}
+	% 	\begin{equation*}
+	% 		\Leftrightarrow
+	% 		  \begin{cases}
+	% 			\begin{array}{c c c}
+	% 				w_k &>& w_j \\
+	% 				p_j &>& p_k \\
+	% 				w_kp_j &>& w_jp_k
+	% 			\end{array}
+	% 		  \end{cases}       
+	% 	  \end{equation*}
+		
+	% 	Ta luôn ưu tiên công việc có mức độ ưu tiên (tức trọng số $w$) lớn nhất và thời gian xử lý $p$ nhỏ nhất nên $p_j > p_k$ và $w_k > w_j$ là luôn đúng.
+		
+	% 	Ta có $p_u > 0$, $ p_k>0$, $p_j > 0$, $w_u>0$, $w_j>0$, $w_k >0$, vậy
+	% 	\begin{equation}
+	% 		\scalebox{1.5}{$\frac{w_k}{p_k}$} > \scalebox{1.5}{$\frac{w_j}{p_j}$} \text{ (đpcm).}
+	% 	\end{equation}
+\end{proof}
+
+\begin{vd}[Tối thiểu tổng thời gian hoàn thành có trọng số ($1 \| \sum w_j C_j$)]
+Ta có bảng công việc sau \eqref{vdwspt}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 2 & 3 & 4 \\
+	\hline\hline
+	$p_j$ & 12 & 4 & 9 & 10 \\
+	$C_j$ & 12 & 16 & 25 & 35 \\
+	$W_j$ & 0 & 12 & 16 & 25 \\
+	\hline
+	\end{tabular}
+\caption{\label{vdwspt} Dữ liệu bài toán minh hoạ thuật toán WSPT.}
+\end{figure}
+
+Từ đây ta có
+\begin{equation*}
+\overline{W}=\frac{\sum_{j=1}^{4}W_j}{4} = 13.25.
+\end{equation*}
+Áp dụng quy tắc quá trình ngắn nhất có trọng số với trọng số $w_j=1$, ta được bảng công việc sau
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c |} 
+	\hline
+	Công việc ($j$) & 2 & 3 & 4 & 1 \\
+	\hline\hline
+	$p_j$ & 4 & 9 & 10 & 12 \\
+	$C_j$ & 4 & 13 & 23 & 35 \\
+	$W_j$ & 0 & 4 & 13 & 23 \\
+	\hline
+	\end{tabular}
+\end{table}
+
+Ta có
+\begin{equation*}
+\overline{W}=\frac{\sum_{j=1}^{4}W_j}{4} = 10.
+\end{equation*}
+
+Vậy để tối thiểu hàm mục tiêu $\sum w_j C_j$ thì ta cần sắp xếp công việc theo thứ tự $2-3-4-1$.
+\end{vd}
+
+\subsubsection*{Tối thiểu tổng thời gian hoàn thành có trọng số với ràng buộc có thứ tự ($1 | prec | \sum w_j C_j$)}
+Bài toán tối thiểu tổng thời gian hoàn thành có trọng số với ràng buộc có thứ tự, ký hiệu là $1|prec|\sum w_j C_j$, là một trong những bài toán quan trọng trong lý thuyết lập lịch cho máy đơn và là bài toán mở rộng thêm ràng buộc có thứ tự của bài toán tối thiểu tổng thời gian hoàn thành có trọng số thông thường.
+
+Bài toán $1|prec|\sum w_j C_j$ tồn tại những công việc đòi hỏi phải hoàn thành trước khi công việc khác được bắt đầu, hay còn gọi là công việc tiền nhiệm (predecessor) và công việc kế nhiệm (successor). Ở đây, ta chỉ quan tâm dạng dây chuyền (chains), tức trường hợp bài toán có mỗi công việc tồn tại tối đa một tiền nhiệm và một kế nhiệm.
+
+\begin{dn}
+Cho một tập hợp gồm $n$ công việc ($\{J_1, J_2, …, J_n\}$) cần được xử lý trên một máy đơn thì lúc này ta nhận được hệ số $p$ ($p$-factor) được định nghĩa bằng công thức sau
+\begin{equation}
+	\underset{1 \leq j \leq n}{\text{hệ số }p} = \frac{\sum_{j=1}^n w_j}{\sum_{j=1}^n p_j}
+\end{equation}
+\end{dn}
+
+Giả sử trên tập hợp gồm $n$ công việc ($\{J_1, J_2, …, J_n\}$), trong đó tồn tại dây chuyền $I$ với
+\begin{equation*}
+1 - 2 - \ldots - k,
+\end{equation*}
+và dây chuyền $II$ với
+\begin{equation*}
+k+1 - k+2 - \ldots - n.
+\end{equation*}
+Thì ta nhận được hệ số $p$ của dây chuyền $I$ là
+\begin{equation}
+	\underset{1 \leq j \leq k}{\text{hệ số }p} = \frac{\sum_{j=1}^k w_j}{\sum_{j=1}^k p_j},
+\end{equation}
+và hệ số $p$ của dây chuyền $II$ là
+\begin{equation}
+	\underset{k+1 \leq j \leq n}{\text{hệ số }p} = \frac{\sum_{j=k+1}^n w_j}{\sum_{j=k+1}^n p_j}.
+\end{equation}
+Từ đây, ta có định lý sau
+\begin{dl} \label{daychuyen}
+	Nếu $\underset{1 \leq j \leq k}{\text{hệ số }p} > \underset{k+1 \leq j \leq n}{\text{hệ số }p}$ thì thuật toán sắp xếp tối ưu của bài toán sẽ bắt đầu từ dây chuyền $I$ rồi đến dây chuyền $II$ và ngược lại.
+\end{dl}
+
+\begin{proof}
+	Đặt $S_I$ là tổng thời gian hoàn thành có trọng số của dây chuyền thứ $I$ với
+	\begin{equation}
+		S_I = w_1 p_1 + w_2 p_2 + \ldots + w_k \sum_{j=1}^k p_j,
+	\end{equation}
+	và $S_{II}$ là tổng thời gian hoàn thành có trọng số của dây chuyền thứ $II$ với
+	\begin{equation}
+		S_{II} = w_{k+1} \sum_{j=1}^{k+1} p_j + \ldots + w_n \sum_{j=1}^{n} p_j.
+	\end{equation}
+	Ta gọi tổng thời gian hoàn thành có trọng số ban đầu là $S_A$ với
+	\begin{equation} \label{SA}
+		S_A = S_I + S_{II} = w_1 p_1 + w_2 (p_1 + p_2) + \ldots + w_k \sum_{j=1}^k p_j + w_{k+1} \sum_{j=1}^{k+1} p_j + w_{k+2} \sum_{j=1}^{k+2} p_j + \ldots + w_n \sum_{j=1}^{n} p_j
+	\end{equation}
+	Hoán đổi vị trí của $S_I$ và $S_{II}$ trên sơ đồ Gantt ta được
+	\begin{equation}
+		S_I^{'} = w_{k+1} p_{k+1} + w_{k+2}(p_{k+1} + p_{k+2}) + \ldots + w_n \sum_{j=k+1}^{n} p_j,
+	\end{equation}
+	và
+	\begin{equation}
+		S_{II}^{'} = w_1(\sum_{j=k+1}^{n}p_j+p_1) + w_2(\sum_{j=k+1}^{n}p_j+p_1+p_2) + \ldots + w_k\sum_{j=1}^{n} p_j.
+	\end{equation}
+	Ta gọi tổng thời gian hoàn thành có trọng số sau khi hoán đổi là $S_B$ với
+	\begin{equation} \label{SB}
+		\begin{array}{c c c}
+		S_B &=& S_I^{'} + S_{II}^{'} \\
+		&=& w_{k+1} p_{k+1} + w_{k+2}(p_{k+1} + p_{k+2}) + \ldots + w_n \sum_{j=k+1}^{n} p_j \\
+		&& + w_1(\sum_{j=k+1}^{n}p_j+p_1) + w_2(\sum_{j=k+1}^{n}p_j+p_1+p_2) + \ldots + w_k\sum_{j=1}^{n} p_j
+		\end{array}
+	\end{equation}
+	Giả sử ta xét trường hợp
+	\begin{equation} \label{SA<SB}
+		S_A < S_B
+	\end{equation}
+	Từ \eqref{SA}, \eqref{SB} và \eqref{SA<SB} ta được
+	\begin{equation*}
+	\begin{array}{c c c c}
+	& w_1 p_1 + w_2 (p_1 + p_2)  && w_{k+1} p_{k+1} + w_{k+2}(p_{k+1} + p_{k+2}) \\
+
+	& + \ldots + w_k \sum_{j=1}^k p_j + w_{k+1} \sum_{j=1}^{k+1} p_j &<& + \ldots + w_n \sum_{j=k+1}^{n} p_j \\
+	
+	&+ w_{k+2} \sum_{j=1}^{k+2} p_j  + \ldots + w_n \sum_{j=1}^{n} p_j && + w_1(\sum_{j=k+1}^{n}p_j+p_1) \\
+
+	&&& + w_2(\sum_{j=k+1}^{n}p_j+p_1+p_2)\\
+
+	&&& + \ldots + w_k\sum_{j=1}^{n} p_j \\
+	\\
+	\Leftrightarrow & -(w_1 \sum_{j=k+1}^{n}p_j + \ldots + w_k \sum_{j=k+1}^{n}p_j) &<& 0 \\
+	&+ w_{k+1} \sum_{j=1}^{k}p_j + \ldots + w_n \sum_{j=1}^{k}p_j && \\
+	\\
+	\Leftrightarrow & -(\sum_{j=1}^{k}w_j \sum_{j=k+1}^{n}p_j) + \sum_{j=k+1}^{n}w_j\sum_{j=1}^{k}p_j &<& 0 \\
+	\\
+	\Leftrightarrow & \sum_{j=k+1}^{n}w_j\sum_{j=1}^{k}p_j &<& \sum_{j=1}^{k}w_j \sum_{j=k+1}^{n}p_j \\
+	\\
+	\Leftrightarrow & \scalebox{1.5}{$\frac{\sum_{j=k+1}^{n}w_j}{\sum_{j=k+1}^{n}p_j}$} &<& \scalebox{1.5}{$\frac{\sum_{j=1}^{k}w_j}{\sum_{j=1}^{k}p_j}$} \\
+	\\
+	\Leftrightarrow & \underset{k+1 \leq j \leq n}{\text{hệ số }p} &<& \underset{1 \leq j \leq k}{\text{hệ số }p} \\
+	\end{array}
+	\end{equation*}
+	Tương tự, xét trường hợp $S_A > S_B$ ta được $\underset{k+1 \leq j \leq n}{\text{hệ số }p} > \underset{1 \leq j \leq k}{\text{hệ số }p}$ (đpcm).
+\end{proof}
+
+Do đặc tính của bài toán $1|prec|\sum w_jC_j$ cho phép ta có thể chuyển giao qua lại giữa các dây chuyền miễn vẫn đảm bảo ràng buộc thứ tự của các công việc. Từ đặc tính này ta có thể cải thiện định lý \eqref{daychuyen} giúp cho ra giải pháp tối ưu hơn.
+
+Ý tưởng cải thiện là tiếp tục phân nhỏ các dây chuyền sẵn có, từ đó tìm ra hệ số $p$ tối ưu trên mỗi dây chuyền, đánh giá các giá trị của hệ số $p$ tối ưu sẽ giúp ta chuyển giao qua lại giữa các dây chuyền một cách hiệu quả từ đó tối thiểu hoá thời gian hoàn thành.
+
+\begin{dn}[Hệ số $p$ tối ưu]
+Ta gọi $\underset{1 \leq j \leq l^*}{\text{hệ số }p}$ là hệ số $p$ tối ưu của dây chuyền $1-2-\ldots -k$, ký hiệu $p(1,\ldots,k)$, được định nghĩa bằng công thức sau
+\begin{equation}
+	\underset{1 \leq j \leq l^*}{\text{hệ số }p}= \frac{\sum_{j=1}^{l^*}w_j}{\sum_{j=1}^{l^*}p_j} = \underset{1 \leq l \leq k}{\max}\Biggl(\frac{\sum_{j=1}^{l}w_j}{\sum_{j=1}^{l}p_j}\Biggl).
+\end{equation}
+Tương tự với các dây chuyền còn lại.
+\end{dn}
+
+Giả sử trên tập hợp gồm $n$ công việc ($\{J_1, J_2, …, J_n\}$), trong đó tồn tại dây chuyền $I$ với
+\begin{equation*}
+1 - 2 - \ldots - k
+\end{equation*}
+và dây chuyền $II$ với
+\begin{equation*}
+k+1 - k+2 - \ldots - n.
+\end{equation*}
+Ta có định lý sau
+\begin{dl}[Tính bất định]
+	Nếu ta xác định được $p(1,\ldots,k)$ từ dây chuyền $I$ thì $1,\ldots,l^*$ chính là chuỗi công việc tối ưu của dây chuyền $I$ và chuỗi kế nhiệm phải là chuỗi công việc $p(k+1,\ldots,n)$ của dây chuyền $II$. 
+\end{dl}
+
+\begin{proof}
+	Giả sử ta có dây chuyền $S$ có thứ tự công việc là 
+	\begin{equation*}
+	1,\ldots,u,v,u+1,\ldots,l^*
+	\end{equation*}
+	trong đó $v$ là phần tử của dây chuyền khác.
+	Ta có dây chuyền $S'$ với chuỗi công việc
+	\begin{equation*}
+		v,1,\ldots,l^*
+	\end{equation*}
+	và $S''$ với chuỗi công việc
+	\begin{equation*}
+		1,\ldots,l^*,v
+	\end{equation*}
+	Do ta có $1,\ldots,u,u+1,\ldots,l^*$ là chuỗi công việc tối ưu, vì thế
+	\begin{equation} \label{1}
+		\sum_{j=1}^{u}\biggl(\frac{w_j}{p_j}\biggl) > \sum_{j=u+1}^{l^*}\biggl(\frac{w_j}{p_j}\biggl)
+	\end{equation}
+	TH1.
+	Nếu $S' < S$ và $S''>S$ thì lần lượt có các bất đẳng thức sau
+	\begin{equation} \label{2}
+		\frac{w_v}{p_v} > \sum_{j=1}^{u}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	và
+	\begin{equation} \label{3}
+		\frac{w_v}{p_v} > \sum_{j=u+1}^{l^*}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	Từ \eqref{1}, \eqref{2} và \eqref{3} ta được
+	\begin{equation}
+		\frac{w_v}{p_v} > \sum_{j=1}^{u}\biggl(\frac{w_j}{p_j}\biggl) > \sum_{j=u+1}^{l^*}\biggl(\frac{w_j}{p_j}\biggl) \quad \text{(thoả).}
+	\end{equation}
+	TH2.
+	Nếu $S' > S$ và $S'' < S$ thì lần lượt có các bất đẳng thức sau
+	\begin{equation} \label{4}
+		\frac{w_v}{p_v} < \sum_{j=1}^{u}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	và
+	\begin{equation} \label{5}
+		\frac{w_v}{p_v} < \sum_{j=u+1}^{l^*}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	Từ \eqref{1}, \eqref{4} và \eqref{5} ta được
+	\begin{equation}
+		 \sum_{j=1}^{u}\biggl(\frac{w_j}{p_j}\biggl) > \sum_{j=u+1}^{l^*}\biggl(\frac{w_j}{p_j}\biggl) > \frac{w_v}{p_v} \quad \text{(thoả).}
+	\end{equation}
+	TH3.
+	Nếu $S' > S$ và $S'' > S$ thì lần lượt có các bất đẳng thức sau
+	\begin{equation} \label{6}
+		\frac{w_v}{p_v} < \sum_{j=1}^{u}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	và
+	\begin{equation} \label{7}
+		\frac{w_v}{p_v} > \sum_{j=u+1}^{l^*}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	Từ \eqref{1}, \eqref{6} và \eqref{7} $\implies$ vô lý. \\
+	TH4.
+	Nếu $S' < S$ và $S'' < S$ thì lần lượt có các bất đẳng thức sau
+	\begin{equation} \label{8}
+		\frac{w_v}{p_v} > \sum_{j=1}^{u}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	và
+	\begin{equation} \label{9}
+		\frac{w_v}{p_v} < \sum_{j=u+1}^{l^*}\biggl(\frac{w_j}{p_j}\biggr)
+	\end{equation}
+	Từ \eqref{1}, \eqref{8} và \eqref{9} $\implies$ vô lý. \\
+	Vậy luôn tồn tại $S'<S$ hoặc $S''<S$ (đpcm).
+\end{proof}
+
+\begin{vd}[Tối thiểu tổng thời gian hoàn thành có trọng số với ràng buộc có thứ tự ($1 | prec | \sum w_j C_j$)]
+Ta có bảng công việc sau \eqref{vdwsptpre}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tabular}{|c | c c c | c c |} 
+	\hline
+	Công việc ($j$) & 1 & 2 & 3 & 4 & 5 \\
+	\hline\hline
+	$p_j$ & 5 & 18 & 19 & 3 & 14 \\
+	$w_j$ & 13 & 14 & 6 & 7 & 10 \\
+	\hline
+	\end{tabular}
+\caption{\label{vdwsptpre} Dữ liệu minh hoạ bài toán $1 | prec | \sum w_j C_j$.}
+\end{figure}
+
+Trong đó dây chuyền thứ $I$ là $$1-2-3$$ và dây chuyền thứ $II$ là $$4-5.$$
+ta xác định hệ số $p$ của dây chuyền thứ nhất bằng công thức $$\text{Hệ số }p=\frac{\sum w_j}{\sum p_j}$$
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c c |} 
+	\hline
+	Chuỗi $I$ & 1 & 1-2 & 1-2-3 \\
+	\hline\hline
+	Hệ số $p$ & 2.6 & 1.17 & 0.78 \\
+	\hline
+	\end{tabular}
+\end{table}
+Ta có chuỗi $I$ có $$
+	\underset{1 \leq j \leq l^*}{\text{hệ số }p}= \frac{\sum_{j=1}^{l^*}w_j}{\sum_{j=1}^{l^*}p_j} = \underset{1 \leq l \leq k}{\max}\Biggl(\frac{\sum_{j=1}^{l}w_j}{\sum_{j=1}^{l}p_j}\Biggl)=2.6.$$
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c |} 
+	\hline
+	Chuỗi $II$ & 4 & 4-5 \\
+	\hline\hline
+	Hệ số $p$ & 2.33 & 1 \\
+	\hline
+	\end{tabular}
+\end{table}
+Ta có chuỗi $II$ có $$
+	\underset{1 \leq j \leq l^*}{\text{hệ số }p}= \frac{\sum_{j=1}^{l^*}w_j}{\sum_{j=1}^{l^*}p_j} = \underset{1 \leq l \leq k}{\max}\Biggl(\frac{\sum_{j=1}^{l}w_j}{\sum_{j=1}^{l}p_j}\Biggl)=2.33.$$
+
+Vì $2.6>2.3$ nên ta chọn chuỗi $I$ với công việc 1.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c |} 
+	\hline
+	Chuỗi $I$ & 2 & 2-3 \\
+	\hline\hline
+	Hệ số $p$ & 0.77 & 0.54 \\
+	\hline
+	\end{tabular}
+\end{table}
+Ta có chuỗi $I$ có $$
+	\underset{1 \leq j \leq l^*}{\text{hệ số }p}= \frac{\sum_{j=1}^{l^*}w_j}{\sum_{j=1}^{l^*}p_j} = \underset{1 \leq l \leq k}{\max}\Biggl(\frac{\sum_{j=1}^{l}w_j}{\sum_{j=1}^{l}p_j}\Biggl)=0.77.$$
+
+Tiếp tục so với chuỗi $II$ ta có $2.33>0.77$ nên ta chọn chuỗi $II$ với 4.
+Ta được chuỗi $$1-4-\ldots-\ldots-\ldots$$
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c |} 
+	\hline
+	Chuỗi $II$ & 5 \\
+	\hline\hline
+	Hệ số $p$ & 0.71 \\
+	\hline
+	\end{tabular}
+\end{table}
+
+Ta có chuỗi $II$ có $$
+	\underset{1 \leq j \leq l^*}{\text{hệ số }p}= \frac{\sum_{j=1}^{l^*}w_j}{\sum_{j=1}^{l^*}p_j} = \underset{1 \leq l \leq k}{\max}\Biggl(\frac{\sum_{j=1}^{l}w_j}{\sum_{j=1}^{l}p_j}\Biggl)=0.71.$$
+
+Ta so với chuỗi $I$ được $0.77>0.71$ nên ta chọn chuỗi $I$ với 2. Ta được chuỗi $$1-4-2-\ldots-\ldots$$
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c |} 
+	\hline
+	Chuỗi $I$ & 3 \\
+	\hline\hline
+	Hệ số $p$ & 0.31 \\
+	\hline
+	\end{tabular}
+\end{table}
+Ta so với chuỗi $II$ được $0.71>0.31$ nên ta chọn chuỗi $II$ với 5. Ta được chuỗi $$1-4-2-5-\ldots$$
+
+Vì không còn công việc nào nên vị trí cuối cùng là công việc 3.
+
+Vậy phương án tối ưu của bài toán là $$1-4-2-5-3$$
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 4 & 2 & 5 & 3 \\
+	\hline\hline
+	$p_j$ & 5 & 3 & 18 & 14 & 19 \\
+	$C_j$ & 5 & 8 & 26 & 40 & 59 \\
+	$w_j$ & 13 & 7 & 14 & 10 & 6 \\
+	$W_j$ & 0 & 5 & 8 & 26 & 40 \\
+	\hline
+	\end{tabular}
+\end{table}
+
+Và trung bình thời gian chờ
+\begin{equation*}
+\overline{W} = \frac{\sum_{j=1}^5 W_j}{5} = 15.8.
+\end{equation*}
+
+\end{vd}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

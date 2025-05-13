@@ -1,0 +1,53 @@
+\section{Khái quát về bài toán lập lịch}
+Vấn đề lập lịch hay còn gọi là quản lý thời gian và tối ưu hoá quy trình là một lĩnh vực quan trọng trong \textit{Vận trù học (Operation research)} giúp ra quyết định phân bổ thời gian hợp lý và được sử dụng thường xuyên trong nhiều ngành công nghiệp sản xuất, dịch vụ, khoa học máy tính và trí tuệ nhân tạo. Động cơ của lĩnh vực lập lịch liên quan đến việc phân bổ tài nguyên cho các nhiệm vụ trong các khoảng thời gian nhất định nhằm tối ưu hóa một hàm mục tiêu cụ thể.
+
+Mục tiêu của lập lịch rất đa dạng, tuỳ theo nhu cầu của nhà lập lịch, mục tiêu có thể là giảm thiểu thời gian hoàn thành của công việc cuối cùng hoặc giảm thiểu số lượng công việc bị trễ so với thời điểm đáo hạn tương ứng của chúng, cả hai là thuật toán cốt lõi sẽ được tập trung trong mục 1.2.
+
+Tuỳ thuộc theo dạng bài toán yêu cầu mà ta sẽ có phương pháp tiếp cận và xử lý khác nhau. Ở đây ta chỉ tập trung xử lý cái bài toán cho máy đơn ($\alpha = 1$), các dạng bài toán được chia theo bảng bên dưới
+\begin{figure}[h!]
+	\centering
+	\begin{tabular}{| c || c| c c c c |} 
+	\hline
+	&&& $\gamma$ && \\
+	\hline\hline
+	&& $C_{\max}$ & $L_{\max}$ & $T_{\max}$ & $\sum w_j C_j$ \\
+	\hline
+	& $\varnothing$ & $1\|C_{\max}$ & $1\|L_{\max}$ & $1\|T_{\max}$ & $1\|\sum w_j C_j$ \\
+	$\beta$ & $prec$ & \phantom{} & $\phantom{}$&$\phantom{}$ & $1|prec|\sum w_j C_j$ \\
+	& $r_j$ & $1|r_j|C_{\max}$ &$1|r_j|L_{\max}$ &$\phantom{}$ &$\phantom{}$ \\
+	& $r_j, prmp$ & \phantom{} &$1|r_j, prmp|L_{\max}$&$\phantom{}$&$\phantom{}$ \\
+	\hline
+	\end{tabular}
+	\caption{Bảng liệt kê các dạng bài toán.}
+\end{figure}
+
+ Ở phần thứ hai của mục \eqref{1.2.} sẽ giới thiệu các thuật toán lập lịch với giả định bài toán ở trạng thái tĩnh $(r_j = 0)$, tức tất cả các công việc đều có thể bắt đầu cùng lúc tại thời điểm $t = 0$. Trong đó, thuật toán sắp xếp theo thứ tự công việc là thuật toán cơ bản nhất. Tiếp theo là thuật toán ưu tiên đáo hạn (EDD - Earliest Due Date) và cuối cùng là thuật toán thời gian xử lý ngắn nhất tập trung vào việc tối thiểu hóa tổng thời gian hoàn thành (SPT - Shortest Process Time) và tổng thời gian hoàn thành có trọng số (WSPT - Weighted Shortest Process Time).
+
+Phần tiếp theo của chương (1.3.) sẽ xem xét các bài toán phức tạp hơn, nơi tồn tại các công việc có thời điểm sẵn sàng không đồng nhất $(r_j \neq 0)$. Điều này làm cho bài toán mang tính thực tế hơn trong các quy trình sản xuất khi các công việc thường có khoảng thời gian bắt đầu không đồng nhất tại thời điểm $t=0$. Trong đó, ta sẽ tập trung vào thuật toán chính là thuật toán nhánh cận (branch and bound) - một trong những phương pháp quan trọng giúp hỗ trợ xử lý hầu hết các bài toán có thời điểm sẵn sàng không đồng nhất. Cùng với đó là hai thuật toán bổ trợ khác, bao gồm: thuật toán không ngắt quãng (non-preemptive) và thuật toán ngắt quãng (preemptive). Trong đó thuật toán ngắt quãng cho ta sự linh hoạt cao hơn trong quá trình lập lịch.
+
+Những thuật toán này sẽ giúp các nhà quản lý, các nhà phân tích nghiệp vụ hay chuyên gia tối ưu hóa quy trình tìm được những giải pháp hiệu quả giúp cải thiện hiệu suất và giảm thiểu chi phí trong quá trình sản xuất một cách tối ưu.
+
+Phần lớn kiến thức của chương được tham khảo từ tài liệu \cite{minhhuy}, \cite{inbook}, \cite{pinedo2009planning}, \cite{PMBOK2013}, \cite{PostekZoccaAMPL2024}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
