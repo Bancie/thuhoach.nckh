@@ -1,0 +1,177 @@
+\begin{vd}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[thick, main/.style = {draw, circle}, dis/.style = {}] 
+        % Manual positions
+        \node[main] (1) at (-4, 0) {$v_1$};
+        \node[main] (2) at (0, 1.5) {$v_2$};
+        \node[main] (3) at (0, -1.5) {$v_3$}; 
+        \node[main] (4) at (4, 0) {$v_4$};  % symmetric middle right
+        
+        % Edges with weights
+        \draw[-] (1) -- node[above left] {$42$} (2);
+        \draw[-] (1) -- node[above right] {$53$} (3);
+        \draw[-] (2) -- node[right] {$39$} (3);
+        \draw[-] (2) -- node[above right] {$30$} (4);
+        \draw[-] (3) -- node[above left] {$35$} (4);
+    \end{tikzpicture} 
+    \caption{Hình 2.1}
+\end{figure}
+
+\begin{equation*}
+    D =
+    \begin{Vmatrix}
+        0 & 42 & 53 & 72 \\
+        42 & 0 & 39 & 30 \\
+        53 & 39 & 0 & 35 \\
+        72 & 30 & 35 & 0
+    \end{Vmatrix}.
+\end{equation*}
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[scale=0.9]
+    \begin{axis}[
+        width=15cm,
+        height=10cm,
+        xlabel={$x$},
+        ylabel={$F_j(x)$},
+        legend pos=south east,
+        axis lines=left,
+        clip=true,
+        xmin=0, xmax=42,
+        ymin=20, ymax=75,
+        enlarge y limits={abs=5},
+    ]
+
+    % Plot f1: y = x + 53 (0 to 14)
+    \addplot[
+        domain=0:14,
+        samples=100,
+        line width=3pt,
+        orange
+    ] {x + 53};
+    \addlegendentry{$f_1(x)$}
+
+    % Plot f2: y = -x + 81 (14 to 42)
+    \addplot[
+        domain=14:42,
+        samples=100,
+        line width=3pt,
+        blue
+    ] {-x + 81};
+    \addlegendentry{$f_2(x)$}
+
+    % Intersection point
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(14, 67)};
+
+    % Node label
+    \node at (axis cs:14,67) [xshift=0pt, yshift=15pt] {$(14,\ 67)$};
+
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Intersection of $f_1(x) = x + 53$ and $f_2(x) = -x + 81$}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[scale=0.9]
+    \begin{axis}[
+        width=15cm,
+        height=10cm,
+        xlabel={$x$},
+        ylabel={$F_j(x)$},
+        legend pos=south east,
+        axis lines=left,
+        clip=true,
+        xmin=0, xmax=39,
+        ymin=30, ymax=75,
+        enlarge y limits={abs=5},
+    ]
+
+    \addplot[
+        domain=0:25,
+        samples=100,
+        line width=3pt,
+        orange
+    ] {x + 42};
+    \addlegendentry{$f_1(x)$}
+
+    \addplot[
+        domain=25:42,
+        samples=100,
+        line width=3pt,
+        blue
+    ] {-x + 92};
+    \addlegendentry{$f_2(x)$}
+
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(25, 67)};
+
+    \node at (axis cs:25,67) [xshift=0pt, yshift=15pt] {$(25,\ 67)$};
+
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Intersection of $f_1(x) = x + 53$ and $f_2(x) = -x + 81$}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[scale=0.9]
+    \begin{axis}[
+        width=15cm,
+        height=10cm,
+        xlabel={$x$},
+        ylabel={$F_j(x)$},
+        legend pos=south east,
+        axis lines=left,
+        clip=true,
+        xmin=0, xmax=53,
+        ymin=30, ymax=75,
+        enlarge y limits={abs=5},
+    ]
+
+    \addplot[
+        domain=0:25,
+        samples=100,
+        line width=3pt,
+        orange
+    ] {x + 42};
+    \addlegendentry{$f_1(x)$}
+
+    \addplot[
+        domain=25:42,
+        samples=100,
+        line width=3pt,
+        blue
+    ] {-x + 92};
+    \addlegendentry{$f_2(x)$}
+
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(25, 67)};
+
+    \node at (axis cs:25,67) [xshift=0pt, yshift=15pt] {$(25,\ 67)$};
+
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Intersection of $f_1(x) = x + 53$ and $f_2(x) = -x + 81$}
+\end{figure}
+
+
+
+\end{vd}
