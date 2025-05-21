@@ -42,8 +42,16 @@
         axis lines=left,
         clip=true,
         xmin=0, xmax=42,
-        ymin=20, ymax=75,
-        enlarge y limits={abs=5},
+        ymin=0, ymax=80,
+        enlarge y limits={abs=0},
+        legend style={
+            font=\scriptsize,
+            cells={anchor=west},
+            /tikz/every even column/.append style={column sep=0.5em},
+            inner xsep=3pt,
+            inner ysep=3pt,
+            % draw=none
+        },
     ]
 
         % f1(x): thin first (not in legend)
@@ -92,6 +100,30 @@
         red,
         forget plot
     ] {42 - x + 30};
+    
+    \addplot[
+        domain=40.5:42,
+        samples=100,
+        line width=3pt,
+        ForestGreen
+    ] {x};
+    \addlegendentry{$d(v_1,x)$}
+    
+    \addplot[
+        domain=0:40.5,
+        samples=100,
+        line width=1.5pt,
+        ForestGreen,
+        forget plot
+    ] {x};
+    
+    \addplot[
+        domain=0:42,
+        samples=100,
+        line width=1.5pt,
+        MidnightBlue
+    ] {42-x};
+    \addlegendentry{$d(v_2,x)$}
 
     % Intersection point
     \addplot[
@@ -126,6 +158,27 @@
     % Node label
     \node at (axis cs:9.5,62.5) [xshift=0pt, yshift=-25pt] {$(9.5,\ 62.5)$};
 
+    % Intersection point
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(40.5, 40.5)};
+
+    % Node label
+    \node at (axis cs:40.5,40.5) [xshift=-40pt, yshift=0pt] {\scriptsize $(40.5,\ 40.5)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(42, 42)};
+
+    % Node label
+    \node at (axis cs:42,42) [xshift=-20pt, yshift=15pt] {$(42,\ 42)$};
+
     \end{axis}
     \end{tikzpicture}
     \caption{$B_1$}
@@ -143,8 +196,16 @@
         axis lines=left,
         clip=true,
         xmin=0, xmax=39,
-        ymin=30, ymax=75,
-        enlarge y limits={abs=5},
+        ymin=0, ymax=75,
+        enlarge y limits={abs=0},
+        legend style={
+            font=\scriptsize,
+            cells={anchor=west},
+            /tikz/every even column/.append style={column sep=0.5em},
+            inner xsep=3pt,
+            inner ysep=3pt,
+            % draw=none
+        },
     ]
 
     \addplot[
@@ -178,6 +239,22 @@
         red
     ] {39 - x + 35};
     \addlegendentry{$f_2(x)$ của $d(v_4,x)$}
+    
+    \addplot[
+        domain=0:42,
+        samples=100,
+        line width=1.5pt,
+        ForestGreen
+    ] {x};
+    \addlegendentry{$d(v_2,x)$}
+    
+    \addplot[
+        domain=0:42,
+        samples=100,
+        line width=1.5pt,
+        MidnightBlue
+    ] {39-x};
+    \addlegendentry{$d(v_3,x)$}
 
     \addplot[
         only marks,
@@ -193,9 +270,18 @@
         mark=*,
         mark size=3pt,
         black
-    ] coordinates {(22, 52)};
+    ] coordinates {(0, 42)};
 
-    \node at (axis cs:22,52) [xshift=0pt, yshift=15pt] {$(22,\ 52)$};
+    \node at (axis cs:0,42) [xshift=25pt, yshift=25pt] {$(0,\ 42)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(39, 53)};
+
+    \node at (axis cs:39,53) [xshift=-25pt, yshift=-15pt] {$(39,\ 53)$};
 
     \end{axis}
     \end{tikzpicture}
@@ -214,8 +300,16 @@
         axis lines=left,
         clip=true,
         xmin=0, xmax=53,
-        ymin=30, ymax=82,
-        enlarge y limits={abs=5},
+        ymin=0, ymax=90,
+        enlarge y limits={abs=0},
+        legend style={
+            font=\scriptsize,
+            cells={anchor=west},
+            /tikz/every even column/.append style={column sep=0.5em},
+            inner xsep=3pt,
+            inner ysep=3pt,
+            % draw=none
+        },
     ]
 
     \addplot[
@@ -234,12 +328,20 @@
     \addlegendentry{$f_1(x)$ của $d(v_2,x)$}
 
     \addplot[
-        domain=25:53,
+        domain=25:46,
         samples=100,
         line width=3pt,
         blue
     ] {53 - x + 39};
     \addlegendentry{$f_2(x)$ của $d(v_2,x)$}
+    
+    \addplot[
+        domain=46:53,
+        samples=100,
+        line width=1.5pt,
+        blue,
+        forget plot
+    ] {53 - x + 39};
     
     \addplot[
         domain=0:8,
@@ -263,6 +365,30 @@
         forget plot
     ] {53 - x + 35};
     \addlegendentry{$f_2(x)$ của $d(v_4,x)$}
+    
+    \addplot[
+        domain=0:46,
+        samples=100,
+        line width=1.5pt,
+        ForestGreen
+    ] {x};
+    \addlegendentry{$d(v_1,x)$}
+    
+    \addplot[
+        domain=46:53,
+        samples=100,
+        line width=3pt,
+        ForestGreen,
+        forget plot
+    ] {x};
+    
+    \addplot[
+        domain=0:53,
+        samples=100,
+        line width=1.5pt,
+        MidnightBlue
+    ] {53-x};
+    \addlegendentry{$d(v_3,x)$}
 
     \addplot[
         only marks,
@@ -290,6 +416,34 @@
     ] coordinates {(23, 65)};
 
     \node at (axis cs:23,65) [xshift=0pt, yshift=-25pt] {$(23,\ 65)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(46, 46)};
+
+    \node at (axis cs:46,46) [xshift=0pt, yshift=20pt] {$(46,\ 46)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(0, 72)};
+
+    \node at (axis cs:0,72) [xshift=25pt, yshift=-15pt] {$(0,\ 72)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(53, 53)};
+
+    \node at (axis cs:53,53) [xshift=-20pt, yshift=20pt] {$(53,\ 53)$};
+
     \end{axis}
     \end{tikzpicture}
     \caption{$B_3$}
@@ -309,8 +463,16 @@
         axis lines=left,
         clip=true,
         xmin=0, xmax=35,
-        ymin=30, ymax=82,
-        enlarge y limits={abs=5},
+        ymin=0, ymax=90,
+        enlarge y limits={abs=0},
+        legend style={
+            font=\scriptsize,
+            cells={anchor=west},
+            /tikz/every even column/.append style={column sep=0.5em},
+            inner xsep=3pt,
+            inner ysep=3pt,
+            % draw=none
+        },
     ]
 
     \addplot[
@@ -329,6 +491,38 @@
     ] {35 - x + 72};
     \addlegendentry{$f_2(x)$ của $d(v_1,x)$}
     
+    \addplot[
+        domain=0:13,
+        samples=100,
+        line width=1.5pt,
+        brown
+    ] {x + 39};
+    \addlegendentry{$f_1(x)$ của $d(v_2,x)$}
+
+    \addplot[
+        domain=13:35,
+        samples=100,
+        line width=1.5pt,
+        red
+    ] {35 - x + 30};
+    \addlegendentry{$f_2(x)$ của $d(v_2,x)$}
+    
+    \addplot[
+        domain=0:35,
+        samples=100,
+        line width=1.5pt,
+        ForestGreen
+    ] {x};
+    \addlegendentry{$d(v_3,x)$}
+    
+    \addplot[
+        domain=0:35,
+        samples=100,
+        line width=1.5pt,
+        MidnightBlue
+    ] {35-x};
+    \addlegendentry{$d(v_4,x)$}
+
 
     \addplot[
         only marks,
@@ -338,6 +532,24 @@
     ] coordinates {(27, 80)};
 
     \node at (axis cs:27,80) [xshift=0pt, yshift=15pt] {$(27,\ 80)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(0, 53)};
+
+    \node at (axis cs:0,53) [xshift=25, yshift=25] {$(0,\ 53)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(35, 72)};
+
+    \node at (axis cs:35,72) [xshift=-25pt, yshift=-15pt] {$(35,\ 72)$};
 
     \end{axis}
     \end{tikzpicture}
@@ -356,83 +568,78 @@
         legend pos=south east,
         axis lines=left,
         clip=true,
-        xmin=0, xmax=53,
-        ymin=30, ymax=82,
-        enlarge y limits={abs=5},
+        xmin=0, xmax=30,
+        ymin=0, ymax=90,
+        enlarge y limits={abs=0},
+        legend style={
+            font=\scriptsize,
+            cells={anchor=west},
+            /tikz/every even column/.append style={column sep=0.5em},
+            inner xsep=3pt,
+            inner ysep=3pt,
+            % draw=none
+        },
     ]
 
     \addplot[
-        domain=23:25,
-        samples=100,
-        line width=3pt,
-        orange
-    ] {x + 42};
-    \addplot[
-        domain=0:23,
-        samples=100,
-        line width=1.5pt,
-        orange,
-        forget plot
-    ] {x + 42};
-    \addlegendentry{$f_1(x)$ của $d(v_2,x)$}
-
-    \addplot[
-        domain=25:53,
+        domain=0:30,
         samples=100,
         line width=3pt,
         blue
-    ] {53 - x + 39};
-    \addlegendentry{$f_2(x)$ của $d(v_2,x)$}
+    ] {30 - x + 42};
+    \addlegendentry{$f_2(x)$ của $d(v_1,x)$}
     
     \addplot[
-        domain=0:8,
-        samples=100,
-        line width=3pt,
-        red
-    ] {x + 72};
-    \addlegendentry{$f_1(x)$ của $d(v_4,x)$}
-    
-    \addplot[
-        domain=8:23,
-        samples=100,
-        line width=3pt,
-        brown
-    ] {53 - x + 35};
-    \addplot[
-        domain=23:53,
+        domain=0:17,
         samples=100,
         line width=1.5pt,
-        brown,
-        forget plot
-    ] {53 - x + 35};
-    \addlegendentry{$f_2(x)$ của $d(v_4,x)$}
+        red
+    ] {x + 35};
+    \addlegendentry{$f_1(x)$ của $d(v_3,x)$}
+    
+    \addplot[
+        domain=17:30,
+        samples=100,
+        line width=1.5pt,
+        brown
+    ] {30 - x + 39};
+    \addlegendentry{$f_2(x)$ của $d(v_3,x)$}
+    
+    \addplot[
+        domain=0:35,
+        samples=100,
+        line width=1.5pt,
+        ForestGreen
+    ] {x};
+    \addlegendentry{$d(v_4,x)$}
+    
+    \addplot[
+        domain=0:35,
+        samples=100,
+        line width=1.5pt,
+        MidnightBlue
+    ] {30-x};
+    \addlegendentry{$d(v_2,x)$}
+
 
     \addplot[
         only marks,
         mark=*,
         mark size=3pt,
         black
-    ] coordinates {(25, 67)};
+    ] coordinates {(0, 72)};
 
-    \node at (axis cs:25,67) [xshift=0pt, yshift=15pt] {$(25,\ 67)$};
-
-    \addplot[
-        only marks,
-        mark=*,
-        mark size=3pt,
-        black
-    ] coordinates {(8, 80)};
-
-    \node at (axis cs:8,80) [xshift=0pt, yshift=15pt] {$(8,\ 80)$};
+    \node at (axis cs:0,72) [xshift=25pt, yshift=15pt] {$(0,\ 72)$};
     
     \addplot[
         only marks,
         mark=*,
         mark size=3pt,
         black
-    ] coordinates {(23, 65)};
+    ] coordinates {(30, 42)};
 
-    \node at (axis cs:23,65) [xshift=0pt, yshift=-25pt] {$(23,\ 65)$};
+    \node at (axis cs:30,42) [xshift=-20pt, yshift=25pt] {$(30,\ 42)$};
+
     \end{axis}
     \end{tikzpicture}
     \caption{$B_5$}
