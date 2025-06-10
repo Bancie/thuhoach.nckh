@@ -15,5 +15,5 @@
 \contentsline {section}{\numberline {2.2}Bài toán xác định vị trí trung tâm ($k$-center)}{30}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Đơn vị trí ($1$-center)}{30}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Đa vị trí ($k$-center)}{31}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}Bài toán xác định vị trí trung vị (Median)}{31}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Bài toán xác định vị trí trung vị ($k$-median)}{31}{section.2.3}%
 \contentsline {section}{Phụ lục}{31}{section.2.3}%
