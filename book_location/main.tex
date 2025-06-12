@@ -52,6 +52,8 @@
 \usepackage[tikz]{ocgx2}
 \usepackage[dvipsnames]{xcolor}
 \definecolor{steal}{RGB}{70,130,180}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
 \usepackage{blindtext}
 \usepackage{multicol}
 \usepackage{subcaption}
@@ -117,8 +119,8 @@
     \today
     \end{titlepage}
 
-\thispagestyle{empty} % Removes header and footer
-\mbox{}
+% \thispagestyle{empty} % Removes header and footer
+% \mbox{}
 
 	\addcontentsline{toc}{chapter}{Mục lục}
 	\tableofcontents
@@ -140,9 +142,37 @@
 \chapter{Giới thiệu bài toán xác định Vị trí tối ưu}
 \section{Khái quát về bài toán xác định vị trí tối ưu}
 
-Bài toán xác định vị trí tối ưu (Location Problem) là một nhánh quan trọng trong lĩnh vực vận trù học và tối ưu hóa, mục tiêu của bài toán là tìm ra vị trí đặt một hoặc nhiều cơ sở (như nhà máy, kho bãi, trạm phân phối, cửa hàng,\ldots) sao cho một tiêu chí nào đó được tối ưu, chẳng hạn như chi phí vận chuyển, thời gian phục vụ, khoảng cách hoặc độ bao phủ. Bài toán này có nhiều biến thể tùy vào mục tiêu, ràng buộc và dữ liệu thực tế, tiêu biểu như bài toán đặt kho (Facility Location Problem), bài toán đặt trạm dịch vụ (Service Location Problem) hay bài toán trung tâm (Center/Median Problem). Việc giải quyết hiệu quả bài toán không chỉ giúp doanh nghiệp tối ưu hóa chi phí mà còn nâng cao hiệu suất phục vụ và khả năng cạnh tranh.
+Bài toán xác định vị trí tối ưu (Location Problem) là một nhánh quan trọng trong lĩnh vực vận trù học và tối ưu hóa, mục tiêu của bài toán là tìm ra vị trí đặt một hoặc nhiều cơ sở (như nhà máy, kho bãi, trạm phân phối, cửa hàng,...) sao cho một tiêu chí nào đó được tối ưu, chẳng hạn như chi phí vận chuyển, thời gian phục vụ, khoảng cách,... Việc giải quyết hiệu quả bài toán không chỉ giúp doanh nghiệp tối ưu hóa chi phí mà còn nâng cao hiệu suất phục vụ và khả năng cạnh tranh.
 
-\section{Bài toán xác định vị trí trung tâm ($k$-center)}
+Bài toán có nhiều biến thể tùy thuộc vào hàm mục tiêu, ràng buộc và dữ liệu thực tế, ở đây ta tập trung vào hai dạng bài toán cơ bản. Giả sử ta có mạng lưới \eqref{mangluoivd}, mục tiêu là tìm vị trí phù hợp đặt vào bất kỳ đâu trên mạng lưới (trên nút hoặc kể cả cạnh), sao cho hàm mục tiêu cụ thể được tối ưu.
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[main/.style = {draw, circle, thick, minimum size=1cm}]
+        % Nodes
+        \node[main] (4) at (0,0) {4};
+        \node[main] (1) at (-2,2) {1};
+        \node[main] (2) at (1.5,2) {2};
+        \node[main] (3) at (2,0.5) {3};
+        \node[main] (5) at (0,-2) {5};
+        \node[main] (6) at (-2.2,-3) {6};
+        
+        % Edges
+        \draw[-] (4) -- (1);
+        \draw[-] (4) -- (2);
+        \draw[-] (4) -- (3);
+        \draw[-] (4) -- (5);
+        \draw[-] (5) -- (6);
+    \end{tikzpicture}
+    \caption{\label{mangluoivd} Đồ thị cây với nút gốc tại nút 4.}
+\end{figure}
+
+Với bài toán xác định vị trí trung tâm ($k$-center), ta sẽ tìm hiểu cách đặt một hay nhiều vị trí trên mạng lưới sao cho tối thiểu khoảng cách tối đa \eqref{kcenter} và bài toán xác định vị trí trung vị ($k$-median) với hàm mục tiêu tối thiểu một hàm tổng.
+
+Phần lớn kiến thức của chương được tìm hiểu từ tài liệu .
+
+\section{Bài toán xác định vị trí trung tâm ($k$-center)} \label{kcenter}
 \subsection{Đơn vị trí ($1$-center)}
 \subsection*{Thuật toán Minimax}
 \subsection*{Thuật toán Single-Center}
@@ -181,7 +211,7 @@ Bài toán xác định vị trí tối ưu (Location Problem) là một nhánh 
 
 \begin{figure}[h!]
     \centering
-    \begin{tikzpicture}[scale=0.9]
+    \begin{tikzpicture}[scale=0.7]
     \begin{axis}[
         width=15cm,
         height=10cm,
@@ -335,7 +365,7 @@ Bài toán xác định vị trí tối ưu (Location Problem) là một nhánh 
 
 \begin{figure}[h!]
     \centering
-    \begin{tikzpicture}[scale=0.9]
+    \begin{tikzpicture}[scale=0.7]
     \begin{axis}[
         width=15cm,
         height=10cm,
@@ -439,7 +469,7 @@ Bài toán xác định vị trí tối ưu (Location Problem) là một nhánh 
 
 \begin{figure}[h!]
     \centering
-    \begin{tikzpicture}[scale=0.9]
+    \begin{tikzpicture}[scale=0.7]
     \begin{axis}[
         width=15cm,
         height=10cm,
@@ -602,7 +632,7 @@ Bài toán xác định vị trí tối ưu (Location Problem) là một nhánh 
 
 \begin{figure}[h!]
     \centering
-    \begin{tikzpicture}[scale=0.9]
+    \begin{tikzpicture}[scale=0.7]
     \begin{axis}[
         width=15cm,
         height=10cm,
@@ -708,7 +738,7 @@ Bài toán xác định vị trí tối ưu (Location Problem) là một nhánh 
 
 \begin{figure}[h!]
     \centering
-    \begin{tikzpicture}[scale=0.9]
+    \begin{tikzpicture}[scale=0.7]
     \begin{axis}[
         width=15cm,
         height=10cm,
