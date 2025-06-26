@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.19)  12 JUN 2025 19:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.19)  14 JUN 2025 14:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1637,7 +1637,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 176.
 
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <5> on input line 361.
+(Font)              <5> on input line 362.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1652,19 +1652,19 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 837.
+(hyperref)                removing `math shift' on input line 838.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 837.
+(hyperref)                removing `math shift' on input line 838.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 839.
+(hyperref)                removing `math shift' on input line 840.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 839.
+(hyperref)                removing `math shift' on input line 840.
 
 (./main.bbl
 
@@ -1714,7 +1714,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,19n,107p,1658b,2391s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb>
-Output written on main.pdf (8 pages, 180998 bytes).
+Output written on main.pdf (8 pages, 181122 bytes).
 PDF statistics:
  179 PDF objects out of 1000 (max. 8388607)
  144 compressed objects within 2 object streams
