@@ -1,0 +1,554 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{bajalinov2013linear}{book}{}
+      \name{author}{1}{}{%
+        {{hash=8e10c0c249fed6817418417291b250c8}{%
+           family={Bajalinov},
+           familyi={B\bibinitperiod},
+           given={E.B.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer US}%
+      }
+      \strng{namehash}{8e10c0c249fed6817418417291b250c8}
+      \strng{fullhash}{8e10c0c249fed6817418417291b250c8}
+      \strng{bibnamehash}{8e10c0c249fed6817418417291b250c8}
+      \strng{authorbibnamehash}{8e10c0c249fed6817418417291b250c8}
+      \strng{authornamehash}{8e10c0c249fed6817418417291b250c8}
+      \strng{authorfullhash}{8e10c0c249fed6817418417291b250c8}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Applied Optimization}
+      \field{title}{Linear-Fractional Programming Theory, Methods, Applications and Software}
+      \field{year}{2013}
+    \endentry
+    \entry{phanhoangchon}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1476e7a00a5827af39f113a7dce16e4b}{%
+           family={Chơn},
+           familyi={C\bibinitperiod},
+           given={Phan\bibnamedelima Hoàng},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{1476e7a00a5827af39f113a7dce16e4b}
+      \strng{fullhash}{1476e7a00a5827af39f113a7dce16e4b}
+      \strng{bibnamehash}{1476e7a00a5827af39f113a7dce16e4b}
+      \strng{authorbibnamehash}{1476e7a00a5827af39f113a7dce16e4b}
+      \strng{authornamehash}{1476e7a00a5827af39f113a7dce16e4b}
+      \strng{authorfullhash}{1476e7a00a5827af39f113a7dce16e4b}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{journaltitle}{Giáo trình Đại số tuyến tính}
+      \field{volume}{Đại học Sài Gòn}
+      \field{year}{2022}
+      \true{nocite}
+    \endentry
+    \entry{conforti2014integer}{book}{}
+      \name{author}{3}{}{%
+        {{hash=5094b2b8e1c97f839a7e85ba7d41bc38}{%
+           family={Conforti},
+           familyi={C\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=eb8acdf1602217167aa505c73f89c72b}{%
+           family={Cornuejols},
+           familyi={C\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c0734c835f52a0a0a054ae6efdb954cf}{%
+           family={Zambelli},
+           familyi={Z\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{3328333a74dbbec58b84a9bb124d124a}
+      \strng{fullhash}{3328333a74dbbec58b84a9bb124d124a}
+      \strng{bibnamehash}{3328333a74dbbec58b84a9bb124d124a}
+      \strng{authorbibnamehash}{3328333a74dbbec58b84a9bb124d124a}
+      \strng{authornamehash}{3328333a74dbbec58b84a9bb124d124a}
+      \strng{authorfullhash}{3328333a74dbbec58b84a9bb124d124a}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9783319110097}
+      \field{series}{Graduate Texts in Mathematics}
+      \field{title}{Integer Programming}
+      \field{year}{2014}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://books.google.com.vn/books?id=QdAMswEACAAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.vn/books?id=QdAMswEACAAJ
+      \endverb
+    \endentry
+    \entry{dantzig1997linear}{book}{}
+      \name{author}{2}{}{%
+        {{hash=4bce1f3879abcf7be7f0dc11f79b8d7f}{%
+           family={Dantzig},
+           familyi={D\bibinitperiod},
+           given={G.B.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=ab816d569695385b13638573a04cf080}{%
+           family={Thapa},
+           familyi={T\bibinitperiod},
+           given={M.N.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{3de8ae55af652d1b74164ffdf7604862}
+      \strng{fullhash}{3de8ae55af652d1b74164ffdf7604862}
+      \strng{bibnamehash}{3de8ae55af652d1b74164ffdf7604862}
+      \strng{authorbibnamehash}{3de8ae55af652d1b74164ffdf7604862}
+      \strng{authornamehash}{3de8ae55af652d1b74164ffdf7604862}
+      \strng{authorfullhash}{3de8ae55af652d1b74164ffdf7604862}
+      \field{extraname}{1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780387986135}
+      \field{series}{Linear Programming}
+      \field{title}{Linear Programming 2: 2: Theory and Extensions}
+      \field{year}{1997}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://books.google.com.vn/books?id=qUvXMT0OPZwC
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.vn/books?id=qUvXMT0OPZwC
+      \endverb
+    \endentry
+    \entry{dantzig97}{book}{}
+      \name{author}{2}{}{%
+        {{hash=212fe65a17e797b6dbce0c3731498b2c}{%
+           family={Dantzig},
+           familyi={D\bibinitperiod},
+           given={George\bibnamedelima B.},
+           giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=44317f857d08c583209fa20be3865e56}{%
+           family={Thapa},
+           familyi={T\bibinitperiod},
+           given={Mukund\bibnamedelima Narain},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{4a392f6853341de68348b6bc09f82ad1}
+      \strng{fullhash}{4a392f6853341de68348b6bc09f82ad1}
+      \strng{bibnamehash}{4a392f6853341de68348b6bc09f82ad1}
+      \strng{authorbibnamehash}{4a392f6853341de68348b6bc09f82ad1}
+      \strng{authornamehash}{4a392f6853341de68348b6bc09f82ad1}
+      \strng{authorfullhash}{4a392f6853341de68348b6bc09f82ad1}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0387948333 9780387948331 0387986138 9780387986135}
+      \field{series}{Springer Series in Operations Research and Financial Engineering}
+      \field{title}{Linear Programming 1: Introduction}
+      \field{year}{1997}
+      \true{nocite}
+      \keyw{linear_programming textbook}
+    \endentry
+    \entry{Deza_2023}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=bdf2fb6f75303e64db29b2dced29d4b4}{%
+           family={Deza},
+           familyi={D\bibinitperiod},
+           given={Arnaud},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b8988d1ea46d2dd0a3f35567920f2478}{%
+           family={Khalil},
+           familyi={K\bibinitperiod},
+           given={Elias\bibnamedelima B.},
+           giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {International Joint Conferences on Artificial Intelligence Organization}%
+      }
+      \strng{namehash}{4deb1ffafdb9ad524685fd5f5e90e8a5}
+      \strng{fullhash}{4deb1ffafdb9ad524685fd5f5e90e8a5}
+      \strng{bibnamehash}{4deb1ffafdb9ad524685fd5f5e90e8a5}
+      \strng{authorbibnamehash}{4deb1ffafdb9ad524685fd5f5e90e8a5}
+      \strng{authornamehash}{4deb1ffafdb9ad524685fd5f5e90e8a5}
+      \strng{authorfullhash}{4deb1ffafdb9ad524685fd5f5e90e8a5}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Thirty-Second International Joint Conference on Artificial Intelligence}
+      \field{month}{8}
+      \field{series}{IJCAI-2023}
+      \field{title}{Machine Learning for Cutting Planes in Integer Programming: A Survey}
+      \field{year}{2023}
+    \endentry
+    \entry{huudien}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6f6fa5b51978ab2c6b2f6ed21df7d38a}{%
+           family={Điển},
+           familyi={Đ\bibinitperiod},
+           given={Nguyễn\bibnamedelima Hữu},
+           giveni={N\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{6f6fa5b51978ab2c6b2f6ed21df7d38a}
+      \strng{fullhash}{6f6fa5b51978ab2c6b2f6ed21df7d38a}
+      \strng{bibnamehash}{6f6fa5b51978ab2c6b2f6ed21df7d38a}
+      \strng{authorbibnamehash}{6f6fa5b51978ab2c6b2f6ed21df7d38a}
+      \strng{authornamehash}{6f6fa5b51978ab2c6b2f6ed21df7d38a}
+      \strng{authorfullhash}{6f6fa5b51978ab2c6b2f6ed21df7d38a}
+      \field{sortinit}{Đ}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{journaltitle}{Giáo trình Tối ưu tuyến tính và Ứng dụng}
+      \field{volume}{NXB ĐHQG Hà Nội}
+      \true{nocite}
+    \endentry
+    \entry{eiselt2007linear}{book}{}
+      \name{author}{2}{}{%
+        {{hash=e60056d4a6b1783d3dbe39a9081f3e49}{%
+           family={Eiselt},
+           familyi={E\bibinitperiod},
+           given={H.A.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=75c2241474f9ee49ebb40035faf401f8}{%
+           family={Sandblom},
+           familyi={S\bibinitperiod},
+           given={C.L.},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{6b980b3926eb51945d347ea3f2875101}
+      \strng{fullhash}{6b980b3926eb51945d347ea3f2875101}
+      \strng{bibnamehash}{6b980b3926eb51945d347ea3f2875101}
+      \strng{authorbibnamehash}{6b980b3926eb51945d347ea3f2875101}
+      \strng{authornamehash}{6b980b3926eb51945d347ea3f2875101}
+      \strng{authorfullhash}{6b980b3926eb51945d347ea3f2875101}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9783540736714}
+      \field{title}{Linear Programming and its Applications}
+      \field{year}{2007}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://books.google.com.ec/books?id=pCMCdycl2kMC
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.ec/books?id=pCMCdycl2kMC
+      \endverb
+    \endentry
+    \entry{inbook}{inbook}{}
+      \name{author}{1}{}{%
+        {{hash=2152ffdcf6138b22adb75bb06a1b15c1}{%
+           family={Gomory},
+           familyi={G\bibinitperiod},
+           given={Ralph},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{2152ffdcf6138b22adb75bb06a1b15c1}
+      \strng{fullhash}{2152ffdcf6138b22adb75bb06a1b15c1}
+      \strng{bibnamehash}{2152ffdcf6138b22adb75bb06a1b15c1}
+      \strng{authorbibnamehash}{2152ffdcf6138b22adb75bb06a1b15c1}
+      \strng{authornamehash}{2152ffdcf6138b22adb75bb06a1b15c1}
+      \strng{authorfullhash}{2152ffdcf6138b22adb75bb06a1b15c1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-540-68274-5}
+      \field{journaltitle}{50 Years of Integer Programming 1958-2008: From the Early Years to the State-of-the-Art}
+      \field{month}{01}
+      \field{title}{Outline of an Algorithm for Integer Solutions to Linear Programs and An Algorithm for the Mixed Integer Problem}
+      \field{year}{2010}
+      \true{nocite}
+      \field{pages}{77\bibrangedash 103}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1007/978-3-540-68279-0_4
+      \endverb
+    \endentry
+    \entry{jünger200950}{book}{}
+      \name{author}{8}{}{%
+        {{hash=a1efd19a5579e37a9b9f4955ac66b664}{%
+           family={Jünger},
+           familyi={J\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d59b1e141a4450a3d62b13cec387e81f}{%
+           family={Liebling},
+           familyi={L\bibinitperiod},
+           given={T.M.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=bf8072c500bbc6e0ccc3cab765481ec1}{%
+           family={Naddef},
+           familyi={N\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=b9d73ddcb91b232ae6ddde26d72e2c7e}{%
+           family={Nemhauser},
+           familyi={N\bibinitperiod},
+           given={G.L.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=f822f6e2e7831e42a3f94f39ecd193b8}{%
+           family={Pulleyblank},
+           familyi={P\bibinitperiod},
+           given={W.R.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=f02aa44fcb84ad0b1ea846f266bf6791}{%
+           family={Reinelt},
+           familyi={R\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=577d1ebe8792695a92993bcbc4e5e35b}{%
+           family={Rinaldi},
+           familyi={R\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=e4a90d33c20880c276bd58892255cb63}{%
+           family={Wolsey},
+           familyi={W\bibinitperiod},
+           given={L.A.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{3c809df5ed48d0e399c12a920b1d526d}
+      \strng{fullhash}{1b18660cb0e84dac77d1e6d7c936a742}
+      \strng{bibnamehash}{3c809df5ed48d0e399c12a920b1d526d}
+      \strng{authorbibnamehash}{3c809df5ed48d0e399c12a920b1d526d}
+      \strng{authornamehash}{3c809df5ed48d0e399c12a920b1d526d}
+      \strng{authorfullhash}{1b18660cb0e84dac77d1e6d7c936a742}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9783540682790}
+      \field{title}{50 Years of Integer Programming 1958-2008: From the Early Years to the State-of-the-Art}
+      \field{year}{2009}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://books.google.com.vn/books?id=bUJc_weiYfkC
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.vn/books?id=bUJc_weiYfkC
+      \endverb
+    \endentry
+    \entry{Land1960AnAM}{article}{}
+      \name{author}{2}{}{%
+        {{hash=93266366065c373b488e4b50b0e4e101}{%
+           family={Land},
+           familyi={L\bibinitperiod},
+           given={Ailsa\bibnamedelima H.},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=7ee2ab51d23470c0b0975a86a70ae7df}{%
+           family={Doig},
+           familyi={D\bibinitperiod},
+           given={Alison\bibnamedelima G.},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e2562e16a03256e71cc4fa103c4b3a1}
+      \strng{fullhash}{4e2562e16a03256e71cc4fa103c4b3a1}
+      \strng{bibnamehash}{4e2562e16a03256e71cc4fa103c4b3a1}
+      \strng{authorbibnamehash}{4e2562e16a03256e71cc4fa103c4b3a1}
+      \strng{authornamehash}{4e2562e16a03256e71cc4fa103c4b3a1}
+      \strng{authorfullhash}{4e2562e16a03256e71cc4fa103c4b3a1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{title}{An Automatic Method of Solving Discrete Programming Problems}
+      \field{volume}{28}
+      \field{year}{1960}
+      \true{nocite}
+      \field{pages}{497}
+      \range{pages}{1}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:35442133
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:35442133
+      \endverb
+    \endentry
+    \entry{lay2003linear}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0de690fe0477e25c6800a44f35fe5835}{%
+           family={Lay},
+           familyi={L\bibinitperiod},
+           given={D.C.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Education}%
+      }
+      \strng{namehash}{0de690fe0477e25c6800a44f35fe5835}
+      \strng{fullhash}{0de690fe0477e25c6800a44f35fe5835}
+      \strng{bibnamehash}{0de690fe0477e25c6800a44f35fe5835}
+      \strng{authorbibnamehash}{0de690fe0477e25c6800a44f35fe5835}
+      \strng{authornamehash}{0de690fe0477e25c6800a44f35fe5835}
+      \strng{authorfullhash}{0de690fe0477e25c6800a44f35fe5835}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9788177583335}
+      \field{title}{Linear Algebra and Its Applications}
+      \field{year}{2003}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://books.google.com.vn/books?id=v8Zls26Y0wkC
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.vn/books?id=v8Zls26Y0wkC
+      \endverb
+    \endentry
+    \entry{nguyễn1996tối}{book}{}
+      \name{author}{1}{}{%
+        {{hash=dd1e26e8a83e48571bd8930c624db31d}{%
+           family={Nguyễn},
+           familyi={N\bibinitperiod},
+           given={{Đ}.N.},
+           giveni={Đ\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Giáo dục}%
+      }
+      \strng{namehash}{dd1e26e8a83e48571bd8930c624db31d}
+      \strng{fullhash}{dd1e26e8a83e48571bd8930c624db31d}
+      \strng{bibnamehash}{dd1e26e8a83e48571bd8930c624db31d}
+      \strng{authorbibnamehash}{dd1e26e8a83e48571bd8930c624db31d}
+      \strng{authornamehash}{dd1e26e8a83e48571bd8930c624db31d}
+      \strng{authorfullhash}{dd1e26e8a83e48571bd8930c624db31d}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Tối ưu hoá: Quy hoạch tuyến tính và rời rạc}
+      \field{year}{1996}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://books.google.com.vn/books?id=MNBrAQAACAAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.vn/books?id=MNBrAQAACAAJ
+      \endverb
+    \endentry
+    \entry{rao2009engineering}{book}{}
+      \name{author}{1}{}{%
+        {{hash=fa78be6982b583fdb8885520384a53d6}{%
+           family={Rao},
+           familyi={R\bibinitperiod},
+           given={S.S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{fa78be6982b583fdb8885520384a53d6}
+      \strng{fullhash}{fa78be6982b583fdb8885520384a53d6}
+      \strng{bibnamehash}{fa78be6982b583fdb8885520384a53d6}
+      \strng{authorbibnamehash}{fa78be6982b583fdb8885520384a53d6}
+      \strng{authornamehash}{fa78be6982b583fdb8885520384a53d6}
+      \strng{authorfullhash}{fa78be6982b583fdb8885520384a53d6}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780470183526}
+      \field{title}{Engineering Optimization: Theory and Practice}
+      \field{year}{2009}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://books.google.com.vn/books?id=YNt34dvnQLEC
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.vn/books?id=YNt34dvnQLEC
+      \endverb
+    \endentry
+    \entry{taquangson}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c0531c6ae6ae48b8e1f8d2cc8899852b}{%
+           family={Sơn},
+           familyi={S\bibinitperiod},
+           given={Tạ\bibnamedelima Quang},
+           giveni={T\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{c0531c6ae6ae48b8e1f8d2cc8899852b}
+      \strng{fullhash}{c0531c6ae6ae48b8e1f8d2cc8899852b}
+      \strng{bibnamehash}{c0531c6ae6ae48b8e1f8d2cc8899852b}
+      \strng{authorbibnamehash}{c0531c6ae6ae48b8e1f8d2cc8899852b}
+      \strng{authornamehash}{c0531c6ae6ae48b8e1f8d2cc8899852b}
+      \strng{authorfullhash}{c0531c6ae6ae48b8e1f8d2cc8899852b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{journaltitle}{Bài giảng Quy hoạch tuyến tính}
+      \field{volume}{Đại học Sài Gòn}
+      \field{year}{2023}
+      \true{nocite}
+    \endentry
+    \entry{buithetam}{article}{}
+      \name{author}{1}{}{%
+        {{hash=57ee0f3a51bf735e3fb7bb9cb46b48d3}{%
+           family={Tâm},
+           familyi={T\bibinitperiod},
+           given={Bùi\bibnamedelima Thế},
+           giveni={B\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{57ee0f3a51bf735e3fb7bb9cb46b48d3}
+      \strng{fullhash}{57ee0f3a51bf735e3fb7bb9cb46b48d3}
+      \strng{bibnamehash}{57ee0f3a51bf735e3fb7bb9cb46b48d3}
+      \strng{authorbibnamehash}{57ee0f3a51bf735e3fb7bb9cb46b48d3}
+      \strng{authornamehash}{57ee0f3a51bf735e3fb7bb9cb46b48d3}
+      \strng{authorfullhash}{57ee0f3a51bf735e3fb7bb9cb46b48d3}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{journaltitle}{Quy hoạch rời rạc}
+      \field{volume}{NXB Hà Nội}
+      \field{year}{2008}
+      \true{nocite}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

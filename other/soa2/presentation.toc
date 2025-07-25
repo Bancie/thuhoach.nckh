@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Giới thiệu}{3}{0}{1}
+\beamer@sectionintoc {2}{Lý thuyết đám mây}{10}{0}{2}
+\beamer@sectionintoc {3}{Thuật toán Seeker Optimization}{18}{0}{3}
+\beamer@sectionintoc {7}{Phân tích hội tụ}{49}{0}{4}
+\beamer@sectionintoc {8}{Ứng dụng thực tế và những hạn chế}{52}{0}{5}

@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Giới thiệu và Đặt vấn đề}{7}{0}{1}
+\beamer@sectionintoc {2}{Phương pháp Gomory}{20}{0}{2}
+\beamer@sectionintoc {5}{Phương pháp Land-Doig}{38}{0}{3}
+\beamer@sectionintoc {7}{Kết luận và Hướng phát triển}{66}{0}{4}

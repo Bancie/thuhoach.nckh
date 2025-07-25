@@ -1,0 +1,16 @@
+\frametitle{Thuật toán SOA}
+\begin{algorithm}[H]
+\caption{Thuật toán SOA}
+\begin{algorithmic}[1]
+  \STATE $t \gets 0$
+  \STATE Khởi tạo $s$ vị trí ban đầu ngẫu nhiên và phân bố đều trong không gian tìm kiếm;
+  \REPEAT
+    \STATE Đánh giá từng cá thể;
+    \FOR{mỗi cá thể $i$}
+      \STATE Tính $d_i(t)$ và $\alpha_i(t)$
+      \STATE Cập nhật $x_{ij}(t+1) = x_{ij}(t) + \alpha_{ij}(t)d_{ij}(t)$
+    \ENDFOR
+    \STATE $t \gets t+1$
+  \UNTIL{thoả điều kiện dừng;}
+\end{algorithmic}
+\end{algorithm}
