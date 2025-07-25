@@ -1,40 +1,40 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.1)  26 JAN 2025 10:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  25 JUL 2025 14:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/chibangnguyen/Documents/thuhoach.nckh/NCKH/scheduling/thu hoach 1/thuhoach"
-(/Users/chibangnguyen/Documents/thuhoach.nckh/NCKH/scheduling/thu hoach 1/thuhoach.tex
-LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-02-20>
-(/usr/local/texlive/2024/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2023/05/17 v1.4n Standard LaTeX document class
-(/usr/local/texlive/2024/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+**/Users/chibangnguyen/Documents/thuhoach.nckh/NCKH/scheduling/tieu_luan_ppnc/thuhoach
+(/Users/chibangnguyen/Documents/thuhoach.nckh/NCKH/scheduling/tieu_luan_ppnc/thuhoach.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2024/06/29 v1.4n Standard LaTeX document class
+(/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count188
-\c@chapter=\count189
-\c@section=\count190
-\c@subsection=\count191
-\c@subsubsection=\count192
-\c@paragraph=\count193
-\c@subparagraph=\count194
-\c@figure=\count195
-\c@table=\count196
-\abovecaptionskip=\skip48
-\belowcaptionskip=\skip49
-\bibindent=\dimen140
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/vntex/vietnam.sty
+\c@part=\count196
+\c@chapter=\count197
+\c@section=\count198
+\c@subsection=\count199
+\c@subsubsection=\count266
+\c@paragraph=\count267
+\c@subparagraph=\count268
+\c@figure=\count269
+\c@table=\count270
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/vntex/vietnam.sty
 Package: vietnam 2009/07/12 v1.3 support for Vietnamese
- (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
- (/usr/local/texlive/2024/texmf-dist/tex/latex/vntex/t5enc.def
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/vntex/t5enc.def
 File: t5enc.def 2006/11/21 v1.4 Vietnamese T5 encoding
 Now handling font encoding T5 ...
 ... processing UTF-8 mapping file for font encoding T5
- (/usr/local/texlive/2024/texmf-dist/tex/latex/vntex/t5enc.dfu
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/vntex/t5enc.dfu
 File: t5enc.dfu 2006/08/19 v1.1 UTF8 support for Vietnamese
    defining Unicode char U+00AB (decimal 171)
    defining Unicode char U+00BB (decimal 187)
@@ -188,1097 +188,1100 @@ File: t5enc.dfu 2006/08/19 v1.1 UTF8 support for Vietnamese
    defining Unicode char U+203A (decimal 8250)
    defining Unicode char U+2423 (decimal 9251)
 ))
-LaTeX Font Info:    Trying to load font information for T5+cmr on input line 112.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/vntex/t5cmr.fd
+LaTeX Font Info:    Trying to load font information for T5+cmr on input line 116.
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/vntex/t5cmr.fd
 File: t5cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2021/02/14 v1.3d Input encoding file
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/vntex/vncaps.tex
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/vntex/vncaps.tex
 File: vncaps.tex 2006/06/07 v1.1 Captions in Vietnamese
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2023/05/13 v2.17o AMS math features
-\@mathmargin=\skip50
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/11/05 v2.17t AMS math features
+\@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amstext.sty
+(/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks19
-\ex@=\dimen141
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
+\ex@=\dimen142
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen142
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
+\pmbraise@=\dimen143
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count197
-LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count198
-\leftroot@=\count199
-LaTeX Info: Redefining \overline on input line 399.
-LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count266
-\DOTSCASE@=\count267
-LaTeX Info: Redefining \ldots on input line 496.
-LaTeX Info: Redefining \dots on input line 499.
-LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box51
-\strutbox@=\box52
-LaTeX Info: Redefining \big on input line 722.
-LaTeX Info: Redefining \Big on input line 723.
-LaTeX Info: Redefining \bigg on input line 724.
-LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen143
-LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count268
-LaTeX Info: Redefining \bmod on input line 905.
-LaTeX Info: Redefining \pmod on input line 910.
-LaTeX Info: Redefining \smash on input line 940.
-LaTeX Info: Redefining \relbar on input line 970.
-LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count269
-\dotsspace@=\muskip16
-\c@parentequation=\count270
-\dspbrk@lvl=\count271
+\inf@bad=\count271
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count272
+\leftroot@=\count273
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count274
+\DOTSCASE@=\count275
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen144
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count276
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count277
+\dotsspace@=\muskip17
+\c@parentequation=\count278
+\dspbrk@lvl=\count279
 \tag@help=\toks20
-\row@=\count272
-\column@=\count273
-\maxfields@=\count274
+\row@=\count280
+\column@=\count281
+\maxfields@=\count282
 \andhelp@=\toks21
-\eqnshift@=\dimen144
-\alignsep@=\dimen145
-\tagshift@=\dimen146
-\tagwidth@=\dimen147
-\totwidth@=\dimen148
-\lineht@=\dimen149
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
 \@envbody=\toks22
-\multlinegap=\skip51
-\multlinetaggap=\skip52
+\multlinegap=\skip52
+\multlinetaggap=\skip53
 \mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks24
 \thm@bodyfont=\toks25
 \thm@headfont=\toks26
 \thm@notefont=\toks27
 \thm@headpunct=\toks28
-\thm@preskip=\skip53
-\thm@postskip=\skip54
-\thm@headsep=\skip55
+\thm@preskip=\skip54
+\thm@postskip=\skip55
+\thm@headsep=\skip56
 \dth@everypar=\toks29
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/latexsym.sty
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amscd.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/amsmath/amscd.sty
 Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
 \athelp@=\toks30
-\minaw@=\dimen150
-\bigaw@=\dimen151
-\minCDarrowwidth=\dimen152
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/enumerate.sty
+\minaw@=\dimen151
+\bigaw@=\dimen152
+\minCDarrowwidth=\dimen153
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
 \@enLab=\toks31
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks32
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2022/02/03 v1.0f TeX engine tests
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-\Gm@cnth=\count275
-\Gm@cntv=\count276
-\c@Gm@tempcnt=\count277
-\Gm@bindingoffset=\dimen153
-\Gm@wd@mp=\dimen154
-\Gm@odd@mp=\dimen155
-\Gm@even@mp=\dimen156
-\Gm@layoutwidth=\dimen157
-\Gm@layoutheight=\dimen158
-\Gm@layouthoffset=\dimen159
-\Gm@layoutvoffset=\dimen160
+\Gm@cnth=\count283
+\Gm@cntv=\count284
+\c@Gm@tempcnt=\count285
+\Gm@bindingoffset=\dimen154
+\Gm@wd@mp=\dimen155
+\Gm@odd@mp=\dimen156
+\Gm@even@mp=\dimen157
+\Gm@layoutwidth=\dimen158
+\Gm@layoutheight=\dimen159
+\Gm@layouthoffset=\dimen160
+\Gm@layoutvoffset=\dimen161
 \Gm@dimlist=\toks33
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2024/06/23 v1.3e Standard LaTeX Color (DPC)
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
-\f@nch@headwidth=\skip56
-\f@nch@O@elh=\skip57
-\f@nch@O@erh=\skip58
-\f@nch@O@olh=\skip59
-\f@nch@O@orh=\skip60
-\f@nch@O@elf=\skip61
-\f@nch@O@erf=\skip62
-\f@nch@O@olf=\skip63
-\f@nch@O@orf=\skip64
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+\f@nch@headwidth=\skip57
+\f@nch@offset@elh=\skip58
+\f@nch@offset@erh=\skip59
+\f@nch@offset@olh=\skip60
+\f@nch@offset@orh=\skip61
+\f@nch@offset@elf=\skip62
+\f@nch@offset@erf=\skip63
+\f@nch@offset@olf=\skip64
+\f@nch@offset@orf=\skip65
+\f@nch@height=\skip66
+\f@nch@footalignment=\skip67
+\f@nch@widthL=\skip68
+\f@nch@widthC=\skip69
+\f@nch@widthR=\skip70
+\@temptokenb=\toks34
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 107.
+Package graphics Info: Driver file: pdftex.def on input line 106.
 )
-\Gin@req@height=\dimen161
-\Gin@req@width=\dimen162
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen163
-\WF@size=\dimen164
-\c@WF@wrappedlines=\count278
-\WF@box=\box53
-\WF@everypar=\toks34
+\Gin@req@height=\dimen162
+\Gin@req@width=\dimen163
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen164
+\WF@size=\dimen165
+\c@WF@wrappedlines=\count286
+\WF@box=\box54
+\WF@everypar=\toks35
 Package: wrapfig 2003/01/31  v 3.6
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
- (/usr/local/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/hycolor/hycolor.sty
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/auxhook/auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/nameref.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
- (/usr/local/texlive/2024/texmf-dist/tex/latex/refcount/refcount.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count279
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count280
+\c@section@level=\count287
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count288
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
-\@linkdim=\dimen165
-\Hy@linkcounter=\count281
-\Hy@pagecounter=\count282
- (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+\@linkdim=\dimen166
+\Hy@linkcounter=\count289
+\Hy@pagecounter=\count290
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/intcalc/intcalc.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count283
- (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+\Hy@SavedSpaceFactor=\count291
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `unicode' set `true' on input line 4062.
-Package hyperref Info: Hyper figures OFF on input line 4179.
-Package hyperref Info: Link nesting OFF on input line 4184.
-Package hyperref Info: Hyper index ON on input line 4187.
-Package hyperref Info: Plain pages OFF on input line 4194.
-Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Option `unicode' set `true' on input line 4040.
+Package hyperref Info: Hyper figures OFF on input line 4157.
+Package hyperref Info: Link nesting OFF on input line 4162.
+Package hyperref Info: Hyper index ON on input line 4165.
+Package hyperref Info: Plain pages OFF on input line 4172.
+Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4446.
-\c@Hy@tempcnt=\count284
- (/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip17
+Package hyperref Info: Bookmarks ON on input line 4424.
+\c@Hy@tempcnt=\count292
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4784.
-\XeTeXLinkMargin=\dimen166
- (/usr/local/texlive/2024/texmf-dist/tex/generic/bitset/bitset.sty
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen167
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count285
-\Field@Width=\dimen167
-\Fld@charsize=\dimen168
-Package hyperref Info: Hyper figures OFF on input line 6063.
-Package hyperref Info: Link nesting OFF on input line 6068.
-Package hyperref Info: Hyper index ON on input line 6071.
-Package hyperref Info: backreferencing OFF on input line 6078.
-Package hyperref Info: Link coloring OFF on input line 6083.
-Package hyperref Info: Link coloring with OCG OFF on input line 6088.
-Package hyperref Info: PDF/A mode OFF on input line 6093.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+\Fld@menulength=\count293
+\Field@Width=\dimen168
+\Fld@charsize=\dimen169
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count286
-\c@Item=\count287
-\c@Hfootnote=\count288
+\Hy@abspage=\count294
+\c@Item=\count295
+\c@Hfootnote=\count296
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
- (/usr/local/texlive/2024/texmf-dist/tex/latex/base/atveryend-ltx.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-11-05 v7.01l Hyperref driver for pdfTeX
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count289
-\c@bookmark@seq@number=\count290
- (/usr/local/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+\Fld@listcount=\count297
+\c@bookmark@seq@number=\count298
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip65
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2024/02/07 v24.2 The Babel package
-\babel@savecnt=\count291
-\U@D=\dimen169
-\l@unhyphenated=\language89
- (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/txtbabel.def)
+\Hy@SectionHShift=\skip71
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2025/02/14 v25.4 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
+\babel@savecnt=\count299
+\U@D=\dimen170
+\l@unhyphenated=\language90
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count292
- (/usr/local/texlive/2024/texmf-dist/tex/generic/babel-vietnamese/vietnamese.ldf
+\bbl@dirlevel=\count300
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/babel-vietnamese/vietnamese.ldf
 Language: vietnamese 
- Loading definitions for the Vietnamese font encoding (/usr/local/texlive/2024/texmf-dist/tex/latex/vntex/t5enc.def
+ Loading definitions for the Vietnamese font encoding (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/vntex/t5enc.def
 File: t5enc.def 2006/11/21 v1.4 Vietnamese T5 encoding
 LaTeX Font Info:    Redeclaring font encoding T5 on input line 75.
 )
 Package babel Info: Making " an active character on input line 147.
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/locale/vi/babel-vietnamese.tex
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/babel/locale/vi/babel-vietnamese.tex
 Package babel Info: Importing font and identification data for vietnamese
 (babel)             from babel-vi.ini. Reported on input line 11.
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/titling/titling.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
-\thanksmarkwidth=\skip66
-\thanksmargin=\skip67
-\droptitle=\skip68
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/subfigure/subfigure.sty
+\thanksmarkwidth=\skip72
+\thanksmargin=\skip73
+\droptitle=\skip74
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
-\subfigtopskip=\skip69
-\subfigcapskip=\skip70
-\subfigcaptopadj=\dimen170
-\subfigbottomskip=\skip71
-\subfigcapmargin=\dimen171
-\subfiglabelskip=\skip72
-\c@subfigure=\count293
-\c@lofdepth=\count294
-\c@subtable=\count295
-\c@lotdepth=\count296
+\subfigtopskip=\skip75
+\subfigcapskip=\skip76
+\subfigcaptopadj=\dimen171
+\subfigbottomskip=\skip77
+\subfigcapmargin=\dimen172
+\subfiglabelskip=\skip78
+\c@subfigure=\count301
+\c@lofdepth=\count302
+\c@subtable=\count303
+\c@lotdepth=\count304
 
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(/usr/local/texlive/2024/texmf-dist/tex/latex/subfigure/subfigure.cfg)
-\subfig@top=\skip73
-\subfig@bottom=\skip74
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/secdot/secdot.sty
+(/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip79
+\subfig@bottom=\skip80
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/secdot/secdot.sty
 Package: secdot 2000/06/20 v1.0 section numbers with dots
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/tree-dvips/tree-dvips.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tree-dvips/tree-dvips.sty
 tree-dvips version .91 of May 16, 1995
-\nodemargin=\dimen172
-\treelinewidth=\dimen173
-\dashlength=\dimen174
-\arrowwidth=\dimen175
-\arrowlength=\dimen176
-\arrowinset=\dimen177
-\pos@t=\toks35
-\pos@b=\toks36
-\pos@l=\toks37
-\pos@r=\toks38
-\pos@tl=\toks39
-\pos@tr=\toks40
-\pos@bl=\toks41
-\pos@br=\toks42
-\@arrow=\count297
-\@tempdimc=\dimen178
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/qtree/qtree.sty
+\nodemargin=\dimen173
+\treelinewidth=\dimen174
+\dashlength=\dimen175
+\arrowwidth=\dimen176
+\arrowlength=\dimen177
+\arrowinset=\dimen178
+\pos@t=\toks36
+\pos@b=\toks37
+\pos@l=\toks38
+\pos@r=\toks39
+\pos@tl=\toks40
+\pos@tr=\toks41
+\pos@bl=\toks42
+\pos@br=\toks43
+\@arrow=\count305
+\@tempdimc=\dimen179
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/qtree/qtree.sty
 Package: 2008/12/12 v.3.1bQtree: tree-drawing for linguistics
 Package: qtree 2008/12/12 v.3.1bQtree: tree-drawing for linguistics
-(/usr/local/texlive/2024/texmf-dist/tex/latex/pict2e/pict2e.sty
+(/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pict2e/pict2e.sty
 Package: pict2e 2020/09/30 v0.4b Improved picture commands (HjG,RN,JT)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/pict2e/pict2e.cfg
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pict2e/pict2e.cfg
 File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
 )
 Package pict2e Info: Driver file: pdftex.def on input line 112.
 Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 114.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/pict2e/p2e-pdftex.def
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pict2e/p2e-pdftex.def
 File: p2e-pdftex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
 )
-\pIIe@GRAPH=\toks43
-\@arclen=\dimen179
-\@arcrad=\dimen180
-\pIIe@tempdima=\dimen181
-\pIIe@tempdimb=\dimen182
-\pIIe@tempdimc=\dimen183
-\pIIe@tempdimd=\dimen184
-\pIIe@tempdime=\dimen185
-\pIIe@tempdimf=\dimen186
+\pIIe@GRAPH=\toks44
+\@arclen=\dimen180
+\@arcrad=\dimen181
+\pIIe@tempdima=\dimen182
+\pIIe@tempdimb=\dimen183
+\pIIe@tempdimc=\dimen184
+\pIIe@tempdimd=\dimen185
+\pIIe@tempdime=\dimen186
+\pIIe@tempdimf=\dimen187
 )
-\c@treecount=\count298
-\c@branchcount=\count299
-\parentbox=\box54
-\treebox=\box55
-\treeboxone=\box56
-\treeboxtwo=\box57
-\treeboxthree=\box58
-\treeboxfour=\box59
-\treeboxfive=\box60
-\treeboxsix=\box61
-\treeboxseven=\box62
-\treeboxeight=\box63
-\treeboxnine=\box64
-\treeboxten=\box65
-\treeboxeleven=\box66
-\treeboxtwelve=\box67
-\treeboxthirteen=\box68
-\treeboxfourteen=\box69
-\treeboxfifteen=\box70
-\treeboxsixteen=\box71
-\treeboxseventeen=\box72
-\treeboxeighteen=\box73
-\treeboxnineteen=\box74
-\treeboxtwenty=\box75
-\treeoffsetone=\skip75
-\treeoffsettwo=\skip76
-\treeoffsetthree=\skip77
-\treeoffsetfour=\skip78
-\treeoffsetfive=\skip79
-\treeoffsetsix=\skip80
-\treeoffsetseven=\skip81
-\treeoffseteight=\skip82
-\treeoffsetnine=\skip83
-\treeoffsetten=\skip84
-\treeoffseteleven=\skip85
-\treeoffsettwelve=\skip86
-\treeoffsetthirteen=\skip87
-\treeoffsetfourteen=\skip88
-\treeoffsetfifteen=\skip89
-\treeoffsetsixteen=\skip90
-\treeoffsetseventeen=\skip91
-\treeoffseteighteen=\skip92
-\treeoffsetnineteen=\skip93
-\treeoffsettwenty=\skip94
-\treeshiftone=\skip95
-\treeshifttwo=\skip96
-\treeshiftthree=\skip97
-\treeshiftfour=\skip98
-\treeshiftfive=\skip99
-\treeshiftsix=\skip100
-\treeshiftseven=\skip101
-\treeshifteight=\skip102
-\treeshiftnine=\skip103
-\treeshiftten=\skip104
-\treeshifteleven=\skip105
-\treeshifttwelve=\skip106
-\treeshiftthirteen=\skip107
-\treeshiftfourteen=\skip108
-\treeshiftfifteen=\skip109
-\treeshiftsixteen=\skip110
-\treeshiftseventeen=\skip111
-\treeshifteighteen=\skip112
-\treeshiftnineteen=\skip113
-\treeshifttwenty=\skip114
-\treewidthone=\skip115
-\treewidthtwo=\skip116
-\treewidththree=\skip117
-\treewidthfour=\skip118
-\treewidthfive=\skip119
-\treewidthsix=\skip120
-\treewidthseven=\skip121
-\treewidtheight=\skip122
-\treewidthnine=\skip123
-\treewidthten=\skip124
-\treewidtheleven=\skip125
-\treewidthtwelve=\skip126
-\treewidththirteen=\skip127
-\treewidthfourteen=\skip128
-\treewidthfifteen=\skip129
-\treewidthsixteen=\skip130
-\treewidthseventeen=\skip131
-\treewidtheighteen=\skip132
-\treewidthnineteen=\skip133
-\treewidthtwenty=\skip134
-\daughteroffsetone=\skip135
-\daughteroffsettwo=\skip136
-\daughteroffsetthree=\skip137
-\daughteroffsetfour=\skip138
-\branchwidthone=\skip139
-\branchwidthtwo=\skip140
-\branchwidththree=\skip141
-\branchwidthfour=\skip142
-\parentoffset=\skip143
-\treeoffset=\skip144
-\daughteroffset=\skip145
-\branchwidth=\skip146
-\parentwidth=\skip147
-\treewidth=\skip148
-\qta=\toks44
-\qtb=\toks45
-\nbranches=\count300
-\qroofx=\count301
-\qroofy=\count302
-\@qrscratchbox=\box76
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/booktabs/booktabs.sty
+\c@treecount=\count306
+\c@branchcount=\count307
+\parentbox=\box55
+\treebox=\box56
+\treeboxone=\box57
+\treeboxtwo=\box58
+\treeboxthree=\box59
+\treeboxfour=\box60
+\treeboxfive=\box61
+\treeboxsix=\box62
+\treeboxseven=\box63
+\treeboxeight=\box64
+\treeboxnine=\box65
+\treeboxten=\box66
+\treeboxeleven=\box67
+\treeboxtwelve=\box68
+\treeboxthirteen=\box69
+\treeboxfourteen=\box70
+\treeboxfifteen=\box71
+\treeboxsixteen=\box72
+\treeboxseventeen=\box73
+\treeboxeighteen=\box74
+\treeboxnineteen=\box75
+\treeboxtwenty=\box76
+\treeoffsetone=\skip81
+\treeoffsettwo=\skip82
+\treeoffsetthree=\skip83
+\treeoffsetfour=\skip84
+\treeoffsetfive=\skip85
+\treeoffsetsix=\skip86
+\treeoffsetseven=\skip87
+\treeoffseteight=\skip88
+\treeoffsetnine=\skip89
+\treeoffsetten=\skip90
+\treeoffseteleven=\skip91
+\treeoffsettwelve=\skip92
+\treeoffsetthirteen=\skip93
+\treeoffsetfourteen=\skip94
+\treeoffsetfifteen=\skip95
+\treeoffsetsixteen=\skip96
+\treeoffsetseventeen=\skip97
+\treeoffseteighteen=\skip98
+\treeoffsetnineteen=\skip99
+\treeoffsettwenty=\skip100
+\treeshiftone=\skip101
+\treeshifttwo=\skip102
+\treeshiftthree=\skip103
+\treeshiftfour=\skip104
+\treeshiftfive=\skip105
+\treeshiftsix=\skip106
+\treeshiftseven=\skip107
+\treeshifteight=\skip108
+\treeshiftnine=\skip109
+\treeshiftten=\skip110
+\treeshifteleven=\skip111
+\treeshifttwelve=\skip112
+\treeshiftthirteen=\skip113
+\treeshiftfourteen=\skip114
+\treeshiftfifteen=\skip115
+\treeshiftsixteen=\skip116
+\treeshiftseventeen=\skip117
+\treeshifteighteen=\skip118
+\treeshiftnineteen=\skip119
+\treeshifttwenty=\skip120
+\treewidthone=\skip121
+\treewidthtwo=\skip122
+\treewidththree=\skip123
+\treewidthfour=\skip124
+\treewidthfive=\skip125
+\treewidthsix=\skip126
+\treewidthseven=\skip127
+\treewidtheight=\skip128
+\treewidthnine=\skip129
+\treewidthten=\skip130
+\treewidtheleven=\skip131
+\treewidthtwelve=\skip132
+\treewidththirteen=\skip133
+\treewidthfourteen=\skip134
+\treewidthfifteen=\skip135
+\treewidthsixteen=\skip136
+\treewidthseventeen=\skip137
+\treewidtheighteen=\skip138
+\treewidthnineteen=\skip139
+\treewidthtwenty=\skip140
+\daughteroffsetone=\skip141
+\daughteroffsettwo=\skip142
+\daughteroffsetthree=\skip143
+\daughteroffsetfour=\skip144
+\branchwidthone=\skip145
+\branchwidthtwo=\skip146
+\branchwidththree=\skip147
+\branchwidthfour=\skip148
+\parentoffset=\skip149
+\treeoffset=\skip150
+\daughteroffset=\skip151
+\branchwidth=\skip152
+\parentwidth=\skip153
+\treewidth=\skip154
+\qta=\toks45
+\qtb=\toks46
+\nbranches=\count308
+\qroofx=\count309
+\qroofy=\count310
+\@qrscratchbox=\box77
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen187
-\lightrulewidth=\dimen188
-\cmidrulewidth=\dimen189
-\belowrulesep=\dimen190
-\belowbottomsep=\dimen191
-\aboverulesep=\dimen192
-\abovetopsep=\dimen193
-\cmidrulesep=\dimen194
-\cmidrulekern=\dimen195
-\defaultaddspace=\dimen196
-\@cmidla=\count303
-\@cmidlb=\count304
-\@aboverulesep=\dimen197
-\@belowrulesep=\dimen198
-\@thisruleclass=\count305
-\@lastruleclass=\count306
-\@thisrulewidth=\dimen199
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgfgantt/pgfgantt.sty
-Package: pgfgantt 2018/01/10 v5.0 Draw Gantt diagrams with TikZ
- (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks46
-\pgfutil@tempdima=\dimen256
-\pgfutil@tempdimb=\dimen257
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box77
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+\heavyrulewidth=\dimen188
+\lightrulewidth=\dimen189
+\cmidrulewidth=\dimen190
+\belowrulesep=\dimen191
+\belowbottomsep=\dimen192
+\aboverulesep=\dimen193
+\abovetopsep=\dimen194
+\cmidrulesep=\dimen195
+\cmidrulekern=\dimen196
+\defaultaddspace=\dimen197
+\@cmidla=\count311
+\@cmidlb=\count312
+\@aboverulesep=\dimen198
+\@belowrulesep=\dimen199
+\@thisruleclass=\count313
+\@lastruleclass=\count314
+\@thisrulewidth=\dimen256
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgfgantt/pgfgantt.sty
+Package: pgfgantt 2024/06/19 v5.0a Draw Gantt diagrams with TikZ
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks47
+\pgfutil@tempdima=\dimen257
+\pgfutil@tempdimb=\dimen258
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box78
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
 Package: pgf 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks47
-\pgfkeys@temptoks=\toks48
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks49
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks48
+\pgfkeys@temptoks=\toks49
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks50
 ))
-\pgf@x=\dimen258
-\pgf@y=\dimen259
-\pgf@xa=\dimen260
-\pgf@ya=\dimen261
-\pgf@xb=\dimen262
-\pgf@yb=\dimen263
-\pgf@xc=\dimen264
-\pgf@yc=\dimen265
-\pgf@xd=\dimen266
-\pgf@yd=\dimen267
+\pgf@x=\dimen259
+\pgf@y=\dimen260
+\pgf@xa=\dimen261
+\pgf@ya=\dimen262
+\pgf@xb=\dimen263
+\pgf@yb=\dimen264
+\pgf@xc=\dimen265
+\pgf@yc=\dimen266
+\pgf@xd=\dimen267
+\pgf@yd=\dimen268
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count307
-\c@pgf@countb=\count308
-\c@pgf@countc=\count309
-\c@pgf@countd=\count310
-\t@pgf@toka=\toks50
-\t@pgf@tokb=\toks51
-\t@pgf@tokc=\toks52
-\pgf@sys@id@count=\count311
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+\c@pgf@counta=\count315
+\c@pgf@countb=\count316
+\c@pgf@countc=\count317
+\c@pgf@countd=\count318
+\t@pgf@toka=\toks51
+\t@pgf@tokb=\toks52
+\t@pgf@tokc=\toks53
+\pgf@sys@id@count=\count319
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
 Driver file for pgf: pgfsys-pdftex.def
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
-))) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+))) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count312
-\pgfsyssoftpath@bigbuffer@items=\count313
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+\pgfsyssoftpath@smallbuffer@items=\count320
+\pgfsyssoftpath@bigbuffer@items=\count321
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
-LaTeX Info: Redefining \color on input line 758.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
-Package xcolor Info: Model `RGB' extended on input line 1366.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+LaTeX Info: Redefining \color on input line 762.
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen268
-\pgfmath@count=\count314
-\pgfmath@box=\box78
-\pgfmath@toks=\toks53
-\pgfmath@stack@operand=\toks54
-\pgfmath@stack@operation=\toks55
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count315
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen269
+\pgfmath@count=\count322
+\pgfmath@box=\box79
+\pgfmath@toks=\toks54
+\pgfmath@stack@operand=\toks55
+\pgfmath@stack@operation=\toks56
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count323
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen269
-\pgf@picmaxx=\dimen270
-\pgf@picminy=\dimen271
-\pgf@picmaxy=\dimen272
-\pgf@pathminx=\dimen273
-\pgf@pathmaxx=\dimen274
-\pgf@pathminy=\dimen275
-\pgf@pathmaxy=\dimen276
-\pgf@xx=\dimen277
-\pgf@xy=\dimen278
-\pgf@yx=\dimen279
-\pgf@yy=\dimen280
-\pgf@zx=\dimen281
-\pgf@zy=\dimen282
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+\pgf@picminx=\dimen270
+\pgf@picmaxx=\dimen271
+\pgf@picminy=\dimen272
+\pgf@picmaxy=\dimen273
+\pgf@pathminx=\dimen274
+\pgf@pathmaxx=\dimen275
+\pgf@pathminy=\dimen276
+\pgf@pathmaxy=\dimen277
+\pgf@xx=\dimen278
+\pgf@xy=\dimen279
+\pgf@yx=\dimen280
+\pgf@yy=\dimen281
+\pgf@zx=\dimen282
+\pgf@zy=\dimen283
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen283
-\pgf@path@lasty=\dimen284
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+\pgf@path@lastx=\dimen284
+\pgf@path@lasty=\dimen285
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen285
-\pgf@shorten@start@additional=\dimen286
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+\pgf@shorten@end@additional=\dimen286
+\pgf@shorten@start@additional=\dimen287
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box79
-\pgf@hbox=\box80
-\pgf@layerbox@main=\box81
-\pgf@picture@serial@count=\count316
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+\pgfpic=\box80
+\pgf@hbox=\box81
+\pgf@layerbox@main=\box82
+\pgf@picture@serial@count=\count324
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen287
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+\pgflinewidth=\dimen288
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen288
-\pgf@pt@y=\dimen289
-\pgf@pt@temp=\dimen290
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+\pgf@pt@x=\dimen289
+\pgf@pt@y=\dimen290
+\pgf@pt@temp=\dimen291
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen291
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+\pgfarrowsep=\dimen292
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen292
-\pgf@sys@shading@range@num=\count317
-\pgf@shadingcount=\count318
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+\pgf@max=\dimen293
+\pgf@sys@shading@range@num=\count325
+\pgf@shadingcount=\count326
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box82
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+\pgfexternal@startupbox=\box83
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+))) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box83
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+\pgfnodeparttextbox=\box84
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen293
-\pgf@nodesepend=\dimen294
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+\pgf@nodesepstart=\dimen294
+\pgf@nodesepend=\dimen295
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen295
-\pgffor@skip=\dimen296
-\pgffor@stack=\toks56
-\pgffor@toks=\toks57
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+\pgffor@iter=\dimen296
+\pgffor@skip=\dimen297
+\pgffor@stack=\toks57
+\pgffor@toks=\toks58
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count319
-\pgfplotmarksize=\dimen297
+\pgf@plot@mark@count=\count327
+\pgfplotmarksize=\dimen298
 )
-\tikz@lastx=\dimen298
-\tikz@lasty=\dimen299
-\tikz@lastxsaved=\dimen300
-\tikz@lastysaved=\dimen301
-\tikz@lastmovetox=\dimen302
-\tikz@lastmovetoy=\dimen303
-\tikzleveldistance=\dimen304
-\tikzsiblingdistance=\dimen305
-\tikz@figbox=\box84
-\tikz@figbox@bg=\box85
-\tikz@tempbox=\box86
-\tikz@tempbox@bg=\box87
-\tikztreelevel=\count320
-\tikznumberofchildren=\count321
-\tikznumberofcurrentchild=\count322
-\tikz@fig@count=\count323
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+\tikz@lastx=\dimen299
+\tikz@lasty=\dimen300
+\tikz@lastxsaved=\dimen301
+\tikz@lastysaved=\dimen302
+\tikz@lastmovetox=\dimen303
+\tikz@lastmovetoy=\dimen304
+\tikzleveldistance=\dimen305
+\tikzsiblingdistance=\dimen306
+\tikz@figbox=\box85
+\tikz@figbox@bg=\box86
+\tikz@tempbox=\box87
+\tikz@tempbox@bg=\box88
+\tikztreelevel=\count328
+\tikznumberofchildren=\count329
+\tikznumberofcurrentchild=\count330
+\tikz@fig@count=\count331
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count324
-\pgfmatrixcurrentcolumn=\count325
-\pgf@matrix@numberofcolumns=\count326
+\pgfmatrixcurrentrow=\count332
+\pgfmatrixcurrentcolumn=\count333
+\pgf@matrix@numberofcolumns=\count334
 )
-\tikz@expandcount=\count327
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+\tikz@expandcount=\count335
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+))) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\arrowsize=\dimen306
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+\arrowsize=\dimen307
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@layerbox@background=\box88
-\pgf@layerboxsaved@background=\box89
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+\pgf@layerbox@background=\box89
+\pgf@layerboxsaved@background=\box90
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
 File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
 File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
 File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfcalendar.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfcalendar.code.tex
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgf/utilities/pgfcalendar.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/utilities/pgfcalendar.code.tex
 File: pgfcalendar.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfcalendarcurrentjulian=\count328
-\pgf@cal@easter@Y=\count329
-\pgf@cal@easter@G=\count330
-\pgf@cal@easter@C=\count331
-\pgf@cal@easter@X=\count332
-\pgf@cal@easter@Z=\count333
-\pgf@cal@easter@D=\count334
-\pgf@cal@easter@E=\count335
-\pgf@cal@easter@N=\count336
-\pgf@cal@easter@M=\count337
-\pgf@cal@easter@julianday=\count338
+\pgfcalendarcurrentjulian=\count336
+\pgf@cal@easter@Y=\count337
+\pgf@cal@easter@G=\count338
+\pgf@cal@easter@C=\count339
+\pgf@cal@easter@X=\count340
+\pgf@cal@easter@Z=\count341
+\pgf@cal@easter@D=\count342
+\pgf@cal@easter@E=\count343
+\pgf@cal@easter@N=\count344
+\pgf@cal@easter@M=\count345
+\pgf@cal@easter@julianday=\count346
 ))
-\gtt@currentline=\count339
-\gtt@lasttitleline=\count340
-\gtt@currgrid=\count341
-\gtt@chartwidth=\count342
-\gtt@lasttitleslot=\count343
-\gtt@elementid=\count344
-\gtt@today@slot=\count345
-\gtt@startjulian=\count346
-\gtt@endjulian=\count347
-\gtt@chartid=\count348
-\gtt@vrule@slot=\count349
-\gtt@calendar@slots=\count350
-\gtt@calendar@weeknumber=\count351
-\gtt@calendar@startofweek=\count352
-\gtt@left@slot=\count353
-\gtt@right@slot=\count354
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/tabularx.sty
-Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty
-Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen307
-\ar@mcellbox=\box90
-\extrarowheight=\dimen308
-\NC@list=\toks58
-\extratabsurround=\skip149
-\backup@length=\skip150
-\ar@cellbox=\box91
+\gtt@currentline=\count347
+\gtt@lasttitleline=\count348
+\gtt@currgrid=\count349
+\gtt@chartwidth=\count350
+\gtt@lasttitleslot=\count351
+\gtt@elementid=\count352
+\gtt@today@slot=\count353
+\gtt@startjulian=\count354
+\gtt@endjulian=\count355
+\gtt@chartid=\count356
+\gtt@vrule@slot=\count357
+\gtt@calendar@slots=\count358
+\gtt@calendar@weeknumber=\count359
+\gtt@calendar@startofweek=\count360
+\gtt@left@slot=\count361
+\gtt@right@slot=\count362
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen308
+\ar@mcellbox=\box91
+\extrarowheight=\dimen309
+\NC@list=\toks59
+\extratabsurround=\skip155
+\backup@length=\skip156
+\ar@cellbox=\box92
 )
-\TX@col@width=\dimen309
-\TX@old@table=\dimen310
-\TX@old@col=\dimen311
-\TX@target=\dimen312
-\TX@delta=\dimen313
-\TX@cols=\count355
-\TX@ftn=\toks59
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/ltablex/ltablex.sty
+\TX@col@width=\dimen310
+\TX@old@table=\dimen311
+\TX@old@col=\dimen312
+\TX@target=\dimen313
+\TX@delta=\dimen314
+\TX@cols=\count363
+\TX@ftn=\toks60
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/ltablex/ltablex.sty
 Package: ltablex 2014/08/13 v1.1 Modified tabularx
- (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
-\LTleft=\skip151
-\LTright=\skip152
-\LTpre=\skip153
-\LTpost=\skip154
-\LTchunksize=\count356
-\LTcapwidth=\dimen314
-\LT@head=\box92
-\LT@firsthead=\box93
-\LT@foot=\box94
-\LT@lastfoot=\box95
-\LT@gbox=\box96
-\LT@cols=\count357
-\LT@rows=\count358
-\c@LT@tables=\count359
-\c@LT@chunks=\count360
-\LT@p@ftn=\toks60
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/enumitem/enumitem.sty
-Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip155
-\enit@outerparindent=\dimen315
-\enit@toks=\toks61
-\enit@inbox=\box97
-\enit@count@id=\count361
-\enitdp@description=\count362
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/forest/forest.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
+\LTleft=\skip157
+\LTright=\skip158
+\LTpre=\skip159
+\LTpost=\skip160
+\LTchunksize=\count364
+\LTcapwidth=\dimen315
+\LT@head=\box93
+\LT@firsthead=\box94
+\LT@foot=\box95
+\LT@lastfoot=\box96
+\LT@gbox=\box97
+\LT@cols=\count365
+\LT@rows=\count366
+\c@LT@tables=\count367
+\c@LT@chunks=\count368
+\LT@p@ftn=\toks61
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip161
+\enit@outerparindent=\dimen316
+\enit@toks=\toks62
+\enit@inbox=\box98
+\enit@count@id=\count369
+\enitdp@description=\count370
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/forest/forest.sty
 Package: forest 2017/07/14 v2.1.5 Drawing (linguistic) trees
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
 File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
 File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
 File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
 File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+
+(/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
 File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
 File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
 File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
 File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodepartlowerbox=\box98
-\pgfnodeparttwobox=\box99
-\pgfnodepartthreebox=\box100
-\pgfnodepartfourbox=\box101
-\pgfnodeparttwentybox=\box102
-\pgfnodepartnineteenbox=\box103
-\pgfnodeparteighteenbox=\box104
-\pgfnodepartseventeenbox=\box105
-\pgfnodepartsixteenbox=\box106
-\pgfnodepartfifteenbox=\box107
-\pgfnodepartfourteenbox=\box108
-\pgfnodepartthirteenbox=\box109
-\pgfnodeparttwelvebox=\box110
-\pgfnodepartelevenbox=\box111
-\pgfnodeparttenbox=\box112
-\pgfnodepartninebox=\box113
-\pgfnodeparteightbox=\box114
-\pgfnodepartsevenbox=\box115
-\pgfnodepartsixbox=\box116
-\pgfnodepartfivebox=\box117
-))) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex
+\pgfnodepartlowerbox=\box99
+\pgfnodeparttwobox=\box100
+\pgfnodepartthreebox=\box101
+\pgfnodepartfourbox=\box102
+\pgfnodeparttwentybox=\box103
+\pgfnodepartnineteenbox=\box104
+\pgfnodeparteighteenbox=\box105
+\pgfnodepartseventeenbox=\box106
+\pgfnodepartsixteenbox=\box107
+\pgfnodepartfifteenbox=\box108
+\pgfnodepartfourteenbox=\box109
+\pgfnodepartthirteenbox=\box110
+\pgfnodeparttwelvebox=\box111
+\pgfnodepartelevenbox=\box112
+\pgfnodeparttenbox=\box113
+\pgfnodepartninebox=\box114
+\pgfnodeparteightbox=\box115
+\pgfnodepartsevenbox=\box116
+\pgfnodepartsixbox=\box117
+\pgfnodepartfivebox=\box118
+))) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex
 File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
-\pgf@intersect@solutions=\count363
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+\pgf@intersect@solutions=\count371
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgfopts/pgfopts.sty
 Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
-\pgfopts@list@add@a@toks=\toks62
-\pgfopts@list@add@b@toks=\toks63
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/elocalloc/elocalloc.sty
+\pgfopts@list@add@a@toks=\toks63
+\pgfopts@list@add@b@toks=\toks64
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/elocalloc/elocalloc.sty
 Package: elocalloc 2016/12/15 v0.03 local allocation for LaTeX 2015+ (DPC)
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/environ/environ.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
- (/usr/local/texlive/2024/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2024-02-20 L3 programming layer (loader) 
- (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count364
-\l__pdf_internal_box=\box118
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2025-01-18 L3 programming layer (loader) 
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count372
+\l__pdf_internal_box=\box119
 ))
-Package: xparse 2024-02-18 L3 Experimental document command parser
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/inlinedef/inlinedef.sty
+Package: xparse 2024-08-16 L3 Experimental document command parser
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/inlinedef/inlinedef.sty
 Package: inlinedef 2008/07/10 v1.0 Inlined expansions within definitions
-\ID@toks=\toks64
-\ID@count=\count365
+\ID@toks=\toks65
+\ID@count=\count373
 )
-\ID@usercommands=\toks65
-\safeloop@depth=\count366
-\safeRKloop@depth=\count367
-\forest@temp@dimen=\dimen316
-\forest@temp@count=\count368
-\forest@n=\count369
-\forest@temp@global@count=\count370
-\forest@temp@toks=\toks66
-\forest@temparray@M=\count371
-\forest@temparray@N=\count372
-\forest@global@temparray@M=\count373
-\forest@global@temparray@N=\count374
-\forest@isnum@count=\count375
-\forest@isdim@nonintpart=\count376
-\forest@isdim@dimen=\dimen317
-\forest@sort@m=\count377
-\forest@sort@k=\count378
-\forest@sort@p=\count379
-\bracket@content=\toks67
-\bracket@afterthought=\toks68
-\forest@node@maxid=\count380
-\forest@process@left@M=\count381
-\forest@process@left@N=\count382
-\forest@process@right@M=\count383
-\forest@process@right@N=\count384
-\forest@process@saved@M=\count385
-\forest@process@saved@N=\count386
-\forest@process@result@M=\count387
-\forest@process@result@N=\count388
-\forest@process@n=\count389
-\forest@nodewalk@branch@toks=\toks69
-\forest@nodewalk@shortsteps@resolution=\toks70
-\forest@do@dynamics=\toks71
-\forest@box=\box119
-\forest@xg=\dimen318
-\forest@yg=\dimen319
-\forest@xs=\dimen320
-\forest@ys=\dimen321
-\forest@pi@toks=\toks72
-\forest@segment@toks=\toks73
-\forest@PIi@toks=\toks74
-\forest@PIii@toks=\toks75
+\ID@usercommands=\toks66
+\safeloop@depth=\count374
+\safeRKloop@depth=\count375
+\forest@temp@dimen=\dimen317
+\forest@temp@count=\count376
+\forest@n=\count377
+\forest@temp@global@count=\count378
+\forest@temp@toks=\toks67
+\forest@temparray@M=\count379
+\forest@temparray@N=\count380
+\forest@global@temparray@M=\count381
+\forest@global@temparray@N=\count382
+\forest@isnum@count=\count383
+\forest@isdim@nonintpart=\count384
+\forest@isdim@dimen=\dimen318
+\forest@sort@m=\count385
+\forest@sort@k=\count386
+\forest@sort@p=\count387
+\bracket@content=\toks68
+\bracket@afterthought=\toks69
+\forest@node@maxid=\count388
+\forest@process@left@M=\count389
+\forest@process@left@N=\count390
+\forest@process@right@M=\count391
+\forest@process@right@N=\count392
+\forest@process@saved@M=\count393
+\forest@process@saved@N=\count394
+\forest@process@result@M=\count395
+\forest@process@result@N=\count396
+\forest@process@n=\count397
+\forest@nodewalk@branch@toks=\toks70
+\forest@nodewalk@shortsteps@resolution=\toks71
+\forest@do@dynamics=\toks72
+\forest@box=\box120
+\forest@xg=\dimen319
+\forest@yg=\dimen320
+\forest@xs=\dimen321
+\forest@ys=\dimen322
+\forest@pi@toks=\toks73
+\forest@segment@toks=\toks74
+\forest@PIi@toks=\toks75
+\forest@PIii@toks=\toks76
 \forest@copy@in=\read4
 \forest@copy@out=\write4
-\forest@externalize@max@outer@n=\count390
-\forest@externalize@inner@n=\count391
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/tikz-qtree/tikz-qtree.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/tikz-qtree/pgftree.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/tikz-qtree/pgfsubpic.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/tikz-qtree/pgfsubpic.tex
-\pgf@subpicminx=\dimen322
-\pgf@subpicminy=\dimen323
-\pgf@subpicmaxx=\dimen324
-\pgf@subpicmaxy=\dimen325
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/tikz-qtree/pgftree.tex
-\levelsep=\dimen326
-\subtreesep=\dimen327
-\smuggle@levelsep=\dimen328
-\smuggle@subtreesep=\dimen329
-\this@levelsep=\dimen330
-\this@subtreesep=\dimen331
-\pgftree@childx=\dimen332
-\pgftree@savechildx=\dimen333
-\pgftree@childy=\dimen334
-\pgftree@savechildy=\dimen335
-\pgftree@childi=\count392
-\pgftree@savechildi=\count393
-\pgftree@level=\count394
-\pgftree@depth=\dimen336
-\pgf@subpic@hbox@children=\box120
-\pgf@subpic@minx@children=\dimen337
-\pgf@subpic@miny@children=\dimen338
-\pgf@subpic@maxx@children=\dimen339
-\pgf@subpic@maxy@children=\dimen340
-\pgftree@lastchildx=\dimen341
-\pgftree@lastchildy=\dimen342
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/tikz-qtree/tikz-qtree.tex
-\@result=\toks76
-\child@list=\toks77
-\root@node=\toks78
-))
-(/usr/local/texlive/2024/texmf-dist/tex/latex/tools/indentfirst.sty
+\forest@externalize@max@outer@n=\count398
+\forest@externalize@inner@n=\count399
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tikz-qtree/tikz-qtree.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tikz-qtree/pgftree.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tikz-qtree/pgfsubpic.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tikz-qtree/pgfsubpic.tex
+\pgf@subpicminx=\dimen323
+\pgf@subpicminy=\dimen324
+\pgf@subpicmaxx=\dimen325
+\pgf@subpicmaxy=\dimen326
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tikz-qtree/pgftree.tex
+\levelsep=\dimen327
+\subtreesep=\dimen328
+\smuggle@levelsep=\dimen329
+\smuggle@subtreesep=\dimen330
+\this@levelsep=\dimen331
+\this@subtreesep=\dimen332
+\pgftree@childx=\dimen333
+\pgftree@savechildx=\dimen334
+\pgftree@childy=\dimen335
+\pgftree@savechildy=\dimen336
+\pgftree@childi=\count400
+\pgftree@savechildi=\count401
+\pgftree@level=\count402
+\pgftree@depth=\dimen337
+\pgf@subpic@hbox@children=\box121
+\pgf@subpic@minx@children=\dimen338
+\pgf@subpic@miny@children=\dimen339
+\pgf@subpic@maxx@children=\dimen340
+\pgf@subpic@maxy@children=\dimen341
+\pgftree@lastchildx=\dimen342
+\pgftree@lastchildy=\dimen343
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tikz-qtree/tikz-qtree.tex
+\@result=\toks77
+\child@list=\toks78
+\root@node=\toks79
+)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/exscale.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/base/exscale.sty
 Package: exscale 2018/09/24 v2.1i Standard LaTeX package exscale
 LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 57.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 57.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 57.
-\big@size=\dimen343
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/relsize/relsize.sty
+\big@size=\dimen344
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/makeidx.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/textpos/textpos.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/textpos/textpos.sty
 Package: textpos 2022/07/23 v1.10.1
 Package textpos Info: choosing support for LaTeX3 on input line 60.
-\TP@textbox=\box121
-\TPHorizModule=\dimen344
-\TPVertModule=\dimen345
-\TP@margin=\dimen346
-\TP@absmargin=\dimen347
+\TP@textbox=\box122
+\TPHorizModule=\dimen345
+\TPVertModule=\dimen346
+\TP@margin=\dimen347
+\TP@absmargin=\dimen348
 
 Grid set 16 x 16 = 37.34424pt x 52.81541pt
-\TPboxrulesize=\dimen348
-\TP@tbargs=\toks79
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+\TPboxrulesize=\dimen349
+\TP@tbargs=\toks80
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks80
-\t@pgfplots@tokb=\toks81
-\t@pgfplots@tokc=\toks82
-\pgfplots@tmpa=\dimen349
-\c@pgfplots@coordindex=\count395
-\c@pgfplots@scanlineindex=\count396
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks81
+\t@pgfplots@tokb=\toks82
+\t@pgfplots@tokc=\toks83
+\pgfplots@tmpa=\dimen350
+\c@pgfplots@coordindex=\count403
+\c@pgfplots@scanlineindex=\count404
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex
 Package pgfplots: loading complementary utilities for your pgf version...
-\t@pgf@toka=\toks83
-\t@pgf@tokb=\toks84
-\t@pgf@tokc=\toks85
-(/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count397
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
-\c@pgfplotstable@counta=\count398
-\t@pgfplotstable@a=\toks86
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count399
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen350
-\pgfdecoratedremainingdistance=\dimen351
-\pgfdecoratedinputsegmentcompleteddistance=\dimen352
-\pgfdecoratedinputsegmentremainingdistance=\dimen353
-\pgf@decorate@distancetomove=\dimen354
-\pgf@decorate@repeatstate=\count400
-\pgfdecorationsegmentamplitude=\dimen355
-\pgfdecorationsegmentlength=\dimen356
+\t@pgf@toka=\toks84
+\t@pgf@tokb=\toks85
+\t@pgf@tokc=\toks86
+(/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count405
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count406
+\t@pgfplotstable@a=\toks87
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count407
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen351
+\pgfdecoratedremainingdistance=\dimen352
+\pgfdecoratedinputsegmentcompleteddistance=\dimen353
+\pgfdecoratedinputsegmentremainingdistance=\dimen354
+\pgf@decorate@distancetomove=\dimen355
+\pgf@decorate@repeatstate=\count408
+\pgfdecorationsegmentamplitude=\dimen356
+\pgfdecorationsegmentlength=\dimen357
 )
-\tikz@lib@dec@box=\box122
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count401
-\pgfplots@xmin@reg=\dimen357
-\pgfplots@xmax@reg=\dimen358
-\pgfplots@ymin@reg=\dimen359
-\pgfplots@ymax@reg=\dimen360
-\pgfplots@zmin@reg=\dimen361
-\pgfplots@zmax@reg=\dimen362
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
+\tikz@lib@dec@box=\box123
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count409
+\pgfplots@xmin@reg=\dimen358
+\pgfplots@xmax@reg=\dimen359
+\pgfplots@ymin@reg=\dimen360
+\pgfplots@ymax@reg=\dimen361
+\pgfplots@zmin@reg=\dimen362
+\pgfplots@zmax@reg=\dimen363
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
 File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+))) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen363
-\captionmargin=\dimen364
-\caption@leftmargin=\dimen365
-\caption@rightmargin=\dimen366
-\caption@width=\dimen367
-\caption@indent=\dimen368
-\caption@parindent=\dimen369
-\caption@hangindent=\dimen370
+\caption@tempdima=\dimen364
+\captionmargin=\dimen365
+\caption@leftmargin=\dimen366
+\caption@rightmargin=\dimen367
+\caption@width=\dimen368
+\caption@indent=\dimen369
+\caption@parindent=\dimen370
+\caption@hangindent=\dimen371
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count402
-\c@continuedfloat=\count403
+\c@caption@flags=\count410
+\c@continuedfloat=\count411
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/ltcaption.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: subfigure package is loaded.
 Package caption Info: wrapfig package is loaded.
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/datavisualization/tikzlibrarydatavisualization.code.tex
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/datavisualization/tikzlibrarydatavisualization.code.tex
 File: tikzlibrarydatavisualization.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduledatavisualization.code.tex
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledatavisualization.code.tex
 File: pgfmoduledatavisualization.code.tex 2023-01-15 v3.1.10 (3.1.10)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleoo.code.tex
-\pgfoo@objectcount=\count404
-\pgfoothis@count=\count405
-\pgfoo@toks=\toks87
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleoo.code.tex
+\pgfoo@objectcount=\count412
+\pgfoothis@count=\count413
+\pgfoo@toks=\toks88
 )
-\pgf@lib@dv@cache@count=\count406
-\pgf@lib@dv@cache@count=\count407
+\pgf@lib@dv@cache@count=\count414
+\pgf@lib@dv@cache@count=\count415
 )
-\tikzdvvisualizercounter=\count408
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/ocgx2/ocgx2.sty
-Package: ocgx2 2022/12/16 v0.56 ports`ocgx'functionalitytodvips+ps2pdf,xelatexanddvipdfmx
- (/usr/local/texlive/2024/texmf-dist/tex/latex/ocgx2/ocgbase.sty
-Package: ocgbase 2022/08/04 v0.22 support package for ocgx2.sty
- (/usr/local/texlive/2024/texmf-dist/tex/latex/media9/pdfbase.sty
-Package: pdfbase 2022/08/04 v0.55 driver independent access to low-level PDF features
-\g_pbs_page_int=\count409
-\g_pbs_oc_int=\count410
-)
-\g_ocgbase_nd_int=\count411
-)
-\l_ocgxii_vp_cnt_int=\count412
-\l_ocgxii_ve_cnt_int=\count413
-\g_ocgxii_page_int=\count414
-\g_ocgxii_widcount_int=\count415
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/blindtext/blindtext.sty
+\tikzdvvisualizercounter=\count416
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/ocgx2/ocgx2.sty
+Package: ocgx2 2024/09/16 v0.60 ports `ocgx' functionality to dvips+ps2pdf, xelatex and dvipdfmx
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/ocgx2/ocgbase.sty
+Package: ocgbase 2024/09/15 v0.24 support package for ocgx2.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/media9/pdfbase.sty
+Package: pdfbase 2024/09/16 v0.59 driver independent access to low-level PDF features
+\g_pbs_page_int=\count417
+\g_pbs_oc_int=\count418
+))
+\l_ocgxii_vp_cnt_int=\count419
+\l_ocgxii_ve_cnt_int=\count420
+\g_ocgxii_page_int=\count421
+\g_ocgxii_widcount_int=\count422
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
- (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/xspace.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count416
-\c@Blindtext=\count417
-\c@blind@countparstart=\count418
-\blind@countxx=\count419
-\blindtext@numBlindtext=\count420
-\blind@countyy=\count421
-\c@blindlist=\count422
-\c@blindlistlevel=\count423
-\c@blindlist@level=\count424
-\blind@listitem=\count425
-\c@blind@listcount=\count426
-\c@blind@levelcount=\count427
-\blind@mathformula=\count428
-\blind@Mathformula=\count429
-\c@blind@randomcount=\count430
-\c@blind@randommax=\count431
-\c@blind@pangramcount=\count432
-\c@blind@pangrammax=\count433
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
-\c@tracingmulticols=\count434
-\mult@box=\box123
-\multicol@leftmargin=\dimen371
-\c@unbalance=\count435
-\c@collectmore=\count436
-\doublecol@number=\count437
-\multicoltolerance=\count438
-\multicolpretolerance=\count439
-\full@width=\dimen372
-\page@free=\dimen373
-\premulticols=\dimen374
-\postmulticols=\dimen375
-\multicolsep=\skip156
-\multicolbaselineskip=\skip157
-\partial@page=\box124
-\last@line=\box125
-\mc@boxedresult=\box126
-\maxbalancingoverflow=\dimen376
-\mult@rightbox=\box127
-\mult@grightbox=\box128
-\mult@firstbox=\box129
-\mult@gfirstbox=\box130
-\@tempa=\box131
+\c@blindtext=\count423
+\c@Blindtext=\count424
+\c@blind@countparstart=\count425
+\blind@countxx=\count426
+\blindtext@numBlindtext=\count427
+\blind@countyy=\count428
+\c@blindlist=\count429
+\c@blindlistlevel=\count430
+\c@blindlist@level=\count431
+\blind@listitem=\count432
+\c@blind@listcount=\count433
+\c@blind@levelcount=\count434
+\blind@mathformula=\count435
+\blind@Mathformula=\count436
+\c@blind@randomcount=\count437
+\c@blind@randommax=\count438
+\c@blind@pangramcount=\count439
+\c@blind@pangrammax=\count440
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
+\c@tracingmulticols=\count441
+\mult@box=\box124
+\multicol@leftmargin=\dimen372
+\c@unbalance=\count442
+\c@collectmore=\count443
+\doublecol@number=\count444
+\multicoltolerance=\count445
+\multicolpretolerance=\count446
+\full@width=\dimen373
+\page@free=\dimen374
+\premulticols=\dimen375
+\postmulticols=\dimen376
+\multicolsep=\skip162
+\multicolbaselineskip=\skip163
+\partial@page=\box125
+\last@line=\box126
+\mc@boxedresult=\box127
+\maxbalancingoverflow=\dimen377
+\mult@rightbox=\box128
+\mult@grightbox=\box129
+\mult@firstbox=\box130
+\mult@gfirstbox=\box131
 \@tempa=\box132
 \@tempa=\box133
 \@tempa=\box134
@@ -1314,104 +1317,105 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \@tempa=\box164
 \@tempa=\box165
 \@tempa=\box166
-\c@minrows=\count440
-\c@columnbadness=\count441
-\c@finalcolumnbadness=\count442
-\last@try=\dimen377
-\multicolovershoot=\dimen378
-\multicolundershoot=\dimen379
-\mult@nat@firstbox=\box167
-\colbreak@box=\box168
-\mc@col@check@num=\count443
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/subcaption.sty
+\@tempa=\box167
+\c@minrows=\count447
+\c@columnbadness=\count448
+\c@finalcolumnbadness=\count449
+\last@try=\dimen378
+\multicolovershoot=\dimen379
+\multicolundershoot=\dimen380
+\mult@nat@firstbox=\box168
+\colbreak@box=\box169
+\mc@col@check@num=\count450
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 LaTeX Info: Redefining \subref on input line 189.
 Package subcaption Info: The counter `subfigure' was already defined by
 (subcaption)             an unknown document class or package on input line 238.
 Package subcaption Info: The counter `subtable' was already defined by
 (subcaption)             an unknown document class or package on input line 238.
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/changepage/changepage.sty
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/changepage/changepage.sty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count444
-\cp@tempcnt=\count445
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
+\c@cp@cntr=\count451
+\cp@tempcnt=\count452
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count446
-\float@exts=\toks88
-\float@box=\box169
-\@float@everytoks=\toks89
-\@floatcapt=\box170
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgfplots/pgfplotstable.sty (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+\c@float@type=\count453
+\float@exts=\toks89
+\float@box=\box170
+\@float@everytoks=\toks90
+\@floatcapt=\box171
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/pgfplots/pgfplotstable.sty (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplotstable 2021/05/15 v1.18.1 Table typesetting and Pretty-printing (1.18.1)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.code.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.coltype.code.tex))) (/usr/local/texlive/2024/texmf-dist/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2023/10/27 v2.16 Sectioning titles
-\ttl@box=\box171
-\beforetitleunit=\skip158
-\aftertitleunit=\skip159
-\ttl@plus=\dimen380
-\ttl@minus=\dimen381
-\ttl@toksa=\toks90
-\titlewidth=\dimen382
-\titlewidthlast=\dimen383
-\titlewidthfirst=\dimen384
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/mathtools/mathtools.sty
-Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
- (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/calc.sty
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.code.tex (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.coltype.code.tex))) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box172
+\beforetitleunit=\skip164
+\aftertitleunit=\skip165
+\ttl@plus=\dimen381
+\ttl@minus=\dimen382
+\ttl@toksa=\toks91
+\titlewidth=\dimen383
+\titlewidthlast=\dimen384
+\titlewidthfirst=\dimen385
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count447
-\calc@Bcount=\count448
-\calc@Adimen=\dimen385
-\calc@Bdimen=\dimen386
-\calc@Askip=\skip160
-\calc@Bskip=\skip161
+\calc@Acount=\count454
+\calc@Bcount=\count455
+\calc@Adimen=\dimen386
+\calc@Bdimen=\dimen387
+\calc@Askip=\skip166
+\calc@Bskip=\skip167
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count449
-\calc@Cskip=\skip162
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/mathtools/mhsetup.sty
+\calc@Ccount=\count456
+\calc@Cskip=\skip168
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count450
-\l_MT_multwidth_dim=\dimen387
-\origjot=\skip163
-\l_MT_shortvdotswithinadjustabove_dim=\dimen388
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen389
-\l_MT_above_intertext_sep=\dimen390
-\l_MT_below_intertext_sep=\dimen391
-\l_MT_above_shortintertext_sep=\dimen392
-\l_MT_below_shortintertext_sep=\dimen393
-\xmathstrut@box=\box172
-\xmathstrut@dim=\dimen394
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/ncctools/nccmath.sty
+\g_MT_multlinerow_int=\count457
+\l_MT_multwidth_dim=\dimen388
+\origjot=\skip169
+\l_MT_shortvdotswithinadjustabove_dim=\dimen389
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen390
+\l_MT_above_intertext_sep=\dimen391
+\l_MT_below_intertext_sep=\dimen392
+\l_MT_above_shortintertext_sep=\dimen393
+\l_MT_below_shortintertext_sep=\dimen394
+\xmathstrut@box=\box173
+\xmathstrut@dim=\dimen395
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/ncctools/nccmath.sty
 Package: nccmath 2006/01/20 v1.3 Additional Math Commands (NCC)
-\NCC@fracrulewidth=\dimen395
+\NCC@fracrulewidth=\dimen396
 )
-\c@dn=\count451
-\c@tc=\count452
-\c@dl=\count453
-\c@md=\count454
-\c@bd=\count455
-\c@hq=\count456
-\c@nx=\count457
-\c@vd=\count458
-\c@cm=\count459
-\c@cy=\count460
-\c@ttoan=\count461
- (/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrextend.sty
-Package: scrextend 2023/07/07 v3.41 KOMA-Script package (extend other classes with features of KOMA-Script classes)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
-Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrlogo.sty
-Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
+\c@dn=\count458
+\c@tc=\count459
+\c@dl=\count460
+\c@md=\count461
+\c@bd=\count462
+\c@hq=\count463
+\c@nx=\count464
+\c@vd=\count465
+\c@cm=\count466
+\c@cy=\count467
+\c@ttoan=\count468
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/koma-script/scrextend.sty
+Package: scrextend 2024/10/24 v3.43 KOMA-Script package (extend other classes with features of KOMA-Script classes)
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2024/10/24 v3.43 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2024/10/24 v3.43 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2024/10/24 v3.43 KOMA-Script package (file load hooks)
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2024/10/24 v3.43 KOMA-Script package (using LaTeX hooks)
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2024/10/24 v3.43 KOMA-Script package (logo)
 )))
-Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
-Already applied: [0000/00/00] Usage of raw or classic option list on input line 368.
+Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
 ))
 
 LaTeX Warning: Command \@footnotemark  has changed.
@@ -1482,23 +1486,23 @@ LaTeX Font Info:    ... okay on input line 103.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count462
-\scratchdimen=\dimen396
-\scratchbox=\box173
-\nofMPsegments=\count463
-\nofMParguments=\count464
-\everyMPshowfont=\toks91
-\MPscratchCnt=\count465
-\MPscratchDim=\dimen397
-\MPnumerator=\count466
-\makeMPintoPDFobject=\count467
-\everyMPtoPDFconversion=\toks92
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+\scratchcounter=\count469
+\scratchdimen=\dimen397
+\scratchbox=\box174
+\nofMPsegments=\count470
+\nofMParguments=\count471
+\everyMPshowfont=\toks92
+\MPscratchCnt=\count472
+\MPscratchDim=\dimen398
+\MPnumerator=\count473
+\makeMPintoPDFobject=\count474
+\everyMPtoPDFconversion=\toks93
+) (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 103.
@@ -1511,19 +1515,23 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
-\caption@adjustwidth@hsize=\dimen398
-\caption@adjustwidth@linewidth=\dimen399
+\caption@adjustwidth@hsize=\dimen399
+\caption@adjustwidth@linewidth=\dimen400
 Package caption Info: float package is loaded.
 Package caption Info: scrextend package is loaded.
-\caption@addmargin@hsize=\dimen400
-\caption@addmargin@linewidth=\dimen401
+\caption@addmargin@hsize=\dimen401
+\caption@addmargin@linewidth=\dimen402
 Package caption Info: End \AtBeginDocument code.
+
+
 [1
 
 
 Non-PDF special ignored!
 <special> header=tree-dvips91.pro
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -1532,42 +1540,49 @@ l.124 	\tableofcontents
 LaTeX Font Info:    External font `cmex7' loaded for size
 (Font)              <6> on input line 5.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 5.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ulasy.fd
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ))
 \tf@toc=\write6
 \openout6 = `thuhoach.toc'.
 
- [2
 
-] [3]
+
+[2
+
+]
+
+[3]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4
 
 ]
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5]
 Ch\uhorn \ohorn ng 1.
+
+
 [1
 
 ]
@@ -1587,10 +1602,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [2]
@@ -1599,10 +1616,12 @@ Overfull \hbox (56.85274pt too wide) in paragraph at lines 243--260
  []
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3]
@@ -1610,10 +1629,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4]
@@ -1627,10 +1648,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5]
@@ -1641,37 +1664,43 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6]
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[8{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[8{/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [9]
@@ -1682,10 +1711,12 @@ LaTeX Warning: Command \textellipsis invalid in math mode on input line 843.
 LaTeX Warning: Command \textellipsis invalid in math mode on input line 849.
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10]
@@ -1699,10 +1730,12 @@ Overfull \hbox (12.25912pt too wide) detected at line 927
  []
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11]
@@ -1710,18 +1743,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 LaTeX Warning: Command \textellipsis invalid in math mode on input line 943.
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [12]
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [13]
@@ -1729,10 +1765,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14]
@@ -1740,10 +1778,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15]
@@ -1776,10 +1816,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [16]
@@ -1787,26 +1829,29 @@ LaTeX Font Info:    External font `cmex7' loaded for size
 (Font)              <7> on input line 1234.
 
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [17]
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [18]
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19]
@@ -1827,10 +1872,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1303.
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [20]
@@ -1838,26 +1885,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [21]
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [22]
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [23]
@@ -1866,10 +1917,12 @@ Overfull \hbox (17.60931pt too wide) in paragraph at lines 1708--1709
  []
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [24]
@@ -1893,10 +1946,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [25]
@@ -1904,34 +1959,39 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [26]
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [27]
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [28]
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [29]
@@ -1946,55 +2006,177 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 (./thuhoach.bbl
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [30]
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [31]
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[32]) [33
+[32])
+
+[33
 
 ] (./thuhoach.aux)
  ***********
-LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-02-20>
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
  ***********
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `thuhoach.out' has not changed.
-(rerunfilecheck)             Checksum: 933080D022C0DE556EFEB6DC4C41D5B9;3191.
+
+Package rerunfilecheck Warning: File `thuhoach.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thuhoach.out':
+(rerunfilecheck)             Before: 933080D022C0DE556EFEB6DC4C41D5B9;3191
+(rerunfilecheck)             After:  2BD84F1C13FC3F192E9E9F6AA83A4530;3189.
  ) 
 Here is how much of TeX's memory you used:
- 54762 strings out of 474116
- 1323079 string characters out of 5743682
- 1989187 words of memory out of 5000000
- 76095 multiletter control sequences out of 15000+600000
- 582864 words of font info for 94 fonts, out of 8000000 for 9000
+ 55093 strings out of 473190
+ 1343468 string characters out of 5704335
+ 1935289 words of memory out of 5000000
+ 77282 multiletter control sequences out of 15000+600000
+ 583632 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 129i,14n,119p,1678b,1846s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb>
-Output written on thuhoach.pdf (39 pages, 348518 bytes).
+ 129i,14n,119p,1679b,1846s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{equation.1.3.55} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.3.54} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.3.45} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.3.52} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.3.50} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.3.49} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.3.46} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.3.47} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.3.43} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.3.42} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.3.41} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.3.40} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.3.38} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.3.37} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.35} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.34} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.33} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.32} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.30} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.29} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.27} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.26} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.25} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.23} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.22} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.19} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.13} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.12} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.10} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.2} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.1} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.8} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.6} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.5} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.4} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.2.3} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{equation.1.3.67} has been referenced but does not exist, replaced by a fixed one
+
+</opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb>
+Output written on thuhoach.pdf (39 pages, 346355 bytes).
 PDF statistics:
- 652 PDF objects out of 1000 (max. 8388607)
- 565 compressed objects within 6 object streams
- 191 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 701 PDF objects out of 1000 (max. 8388607)
+ 612 compressed objects within 7 object streams
+ 228 named destinations out of 1000 (max. 500000)
+ 115 words of extra memory for PDF output out of 10000 (max. 10000000)
 
