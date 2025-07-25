@@ -1,0 +1,936 @@
+\section{Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}
+Bài toán lập lịch máy đơn với thời điểm sẵn sàng không đồng nhất là một dạng bài toán có ràng buộc phức tạp nhưng lại vô cùng quan trọng trong thực tế. Trong dạng này, mỗi công việc có một thời điểm sẵn sàng $r_j$ khác nhau, tức các công việc lúc này không thể được sắp xếp một cách tự do mà phải thoả điều kiện sao cho thời điểm bắt đầu công việc thứ $j$ không được sớm hơn thời điểm sẵn sàng cho trước. Điều này thêm vào một lớp phức tạp cho quá trình lập lịch, đòi hỏi phải xem xét không chỉ thứ tự thực hiện các công việc mà còn cả thời điểm bắt đầu sao cho khả thi.
+
+Tồn tại một thuật toán giúp tiếp cận bài toán một cách hiệu quả, đó là thuật toán nhánh cận (branch and bound) cùng với hai thuật toán hậu phân nhánh, đó là thuật toán không ngắt quãng (non-preemptive) và thuật toán ngắt quãng (preemptive). Trong đó, thuật toán ngắt quãng cho thấy sự hiệu quả và linh hoạt hơn khi áp dụng vào thực tiễn, cũng như đưa ra giải pháp tối ưu hơn.
+
+\subsection*{Thuật toán không ngắt quãng}
+Nguyên lý của \textit{thuật toán không ngắt quãng (non-preemptive)} dựa trên thuật toán ưu tiên đáo hạn và xử lý các thời điểm sẵn sàng $r_j$ bằng các quãng nghỉ nhàn rỗi, từ đó cộng dồn và làm tăng tổng thời gian hoàn thành $C_{\max}$.
+
+Ưu điểm của thuật toán là dễ triển khai và đơn giản nhưng nhược điểm và hạn chế của thuật toán khiến cho tổng thời gian hoàn thành $C_{\max}$ tăng, từ đó giảm hiệu suất tổng thể.
+\begin{vd} \label{kongatquang}
+Minh hoạ trường hợp bài toán toán với $n=4$ áp dụng thuật toán không ngắt quãng.
+Ta có bảng công việc \eqref{vdnonprmp}
+
+\begin{figure}[h!]
+	\centering
+		\begin{tabular}{|c | c c c c |} 
+		\hline
+		Công việc ($j$) & 1 & 2 & 3 & 4 \\
+		\hline\hline
+		$p_j$ & 3 & 1 & 5 & 2 \\
+		\hline
+		$d_j$ & 3 & 8 & 9 & 6 \\
+		\hline
+		$r_j$ & 0 & 7 & 3 & 3 \\
+		\hline
+		\end{tabular}
+\caption{\label{vdnonprmp} Dữ liệu minh hoạ bài toán không ngắt quãng.}
+\end{figure}
+
+Sử dụng thuật toán ưu tiên đáo hạn ta được phương án \eqref{vdnonprmp2}
+\begin{figure}[h!]
+	\centering
+		\begin{tabular}{|c | c c c c |} 
+		\hline
+		Công việc ($j$) & 1 & 4 & 2 & 3 \\
+		\hline\hline
+		$p_j$ & 3 & 2 & 1 & 5 \\
+		\hline
+		$C_j$ & 3 & 5 & 6 & 11 \\
+		\hline
+		$d_j$ & 3 & 6 & 8 & 9 \\
+		\hline
+		$r_j$ & 0 & 3 & 7 & 3 \\
+		\hline
+		$L_j$ & 0 & -1 & -2 & 2 \\
+		\hline
+		\end{tabular}
+\caption{\label{vdnonprmp2} Dữ liệu minh hoạ bài toán không ngắt quãng.}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\begin{ganttchart}[
+    hgrid,
+    vgrid,
+    y unit title=.5cm,
+    title/.style={draw=none, fill=none},
+    include title in canvas=false
+]{0}{11}
+\gantttitlelist{0,...,11}{1} \\
+\ganttmilestone{$r_1$}{0} \\
+\ganttlinkedbar{$J_1$}{1}{3} \\
+\ganttlinkedmilestone{$r_3,\:r_4$}{3} \\
+\ganttlinkedbar{$J_4$}{4}{5} \\
+\ganttlinkedbar{$J_2$}{6}{6} \\
+\ganttlinkedmilestone{$r_2$}{7} \\
+\ganttlinkedbar{$J_3$}{7}{11}
+\end{ganttchart}
+\caption{\label{ganttnonprmp} Sơ đồ Gantt của bài toán khi chưa áp dụng thuật toán không ngắt quãng.}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\begin{ganttchart}[
+    hgrid,
+    vgrid,
+    y unit title=.5cm,
+    title/.style={draw=none, fill=none},
+    include title in canvas=false
+]{0}{13}
+\gantttitlelist{0,...,13}{1} \\
+\ganttmilestone{$r_1$}{0} \\
+\ganttlinkedbar{$J_1$}{1}{3} \\
+\ganttlinkedmilestone{$r_3,\:r_4$}{3} \\
+\ganttlinkedbar{$J_4$}{4}{5} \\
+\ganttlinkedmilestone{$r_2$}{7} \\
+\ganttlinkedbar{$J_2$}{8}{8} \\
+\ganttlinkedbar{$J_3$}{9}{13}
+\ganttvrule{}{7}
+\ganttvrule{}{5}
+\end{ganttchart}
+\caption{\label{ganttnonprmp2} Sơ đồ Gantt của bài toán khi đã áp dụng thuật toán không ngắt quãng.}
+\end{figure}
+\end{vd}
+
+Từ ví dụ minh hoạ ta có thể thấy, công việc thứ $2$ được bắt đầu ở thời điểm $7$, trong khi đó khoảng thời gian từ $5$ đến $7$ trống và cộng dồn khiến $C_{\max}$ từ $11$ tăng lên $13$ và $L_{\max}$ tăng từ $2$ lên $4$. \eqref{ganttnonprmp} \eqref{ganttnonprmp2}
+
+\subsection*{Thuật toán ngắt quãng ($1|prmp|\gamma$)}
+\textit{Thuật toán ngắt quãng (preemptive)} là một thuật toán cho phép tạm dừng công việc hiện tại để thực hiện một công việc khác có độ ưu tiên cao hơn. Sau khi công việc ưu tiên cao được hoàn thành, công việc bị tạm dừng sẽ tiếp tục được xử lý từ điểm dừng đã được ghi nhớ trước đó.
+
+Thuật toán này cải thiện điểm hạn chế của thuật toán không ngắt quãng bằng cách cho phép các công việc khác có thể lắp đầy khoảng thời gian rỗi, từ đó giúp tối thiểu hoá tổng thời gian hoàn thành hay độ đáo hạn cực đại và mang lại nhiều ứng dụng trong thực tiễn, nơi công việc có thể được sắp xếp một cách linh hoạt.
+
+Từ ví dụ \eqref{kongatquang}, ta có thể áp dụng thuật toán ngắt quãng để cải thiện giải pháp như sau
+\begin{itemize}
+\item $t=0:$ Công việc thứ 1 sẵn sàng, bắt đầu xử lý tại $t=0$ và hoàn thành công việc tại thời điểm $t=3$.
+\item $t=3:$ Công việc thứ 3 và 4 sẵn sàng, vì 4 có thứ tự ưu tiên cao hơn nên công việc thứ 4 bắt đầu xử lý tại $t=3$ và hoàn thành công việc tại $t=5$.
+\item $t=5:$ Lúc này đến công việc thứ 2 nhưng vì thời điểm sẵn sàng $r_2=7$ vì thế ta bỏ qua và tiếp tục công việc có mức độ ưu tiên tiếp theo. Công việc thứ 1 và thứ 4 đã hoàn thành, công việc ưu tiên tiếp theo là công việc thứ 3. Công việc thứ 3 bắt đầu xử lý tại $t=5$ và tạm dừng tại $t=7$ nhường chỗ cho công việc có mức độ ưu tiên cao hơn là công việc thứ 2.
+\item $t=7:$ Công việc thứ 2 sẵn sàng, bắt đầu xử lý tại $t=7$ và hoàn thành tại $t=8$.
+\item $t=8:$ công việc thứ 2 đã hoàn thành, ta tiếp tục xử lý công việc thứ 3, vì công việc thứ 3 đã bắt đầu tại $t=5$ và tạm dừng tại $t=7$, vậy còn lại 3 đơn vị thời gian cần xử lý còn lại. Ta bắt đầu công việc thứ 3 tại $t=8$ và hoàn thành công việc thứ 3 tại $t=11$.
+\item $t=11:$ Tất cả công việc đã hoàn thành và thuật toán dừng.
+\end{itemize}
+
+Lúc này giải pháp tối ưu của bài toán là $C_{\max}=11$ và $L_{\max}=2$, mang lại kết quả tối ưu hơn thuật toán không ngắt quãng với $C_{\max}=13$ và $L_{\max}=4$. \eqref{ganttprmp}
+\begin{figure}[h!]
+\centering
+\begin{ganttchart}[
+    hgrid,
+    vgrid,
+    y unit title=.5cm,
+    title/.style={draw=none, fill=none},
+    include title in canvas=false
+]{0}{11}
+\gantttitlelist{0,...,11}{1} \\
+\ganttmilestone{$r_1$}{0} \\
+\ganttlinkedbar{$J_1$}{1}{3} \\
+\ganttlinkedmilestone{$r_3,\:r_4$}{3} \\
+\ganttlinkedbar{$J_4$}{4}{5} \\
+\ganttlinkedbar{$J_3$}{6}{7} \\
+\ganttlinkedmilestone{$r_2$}{7} \\
+\ganttlinkedbar{$J_2$}{8}{8} \\
+\ganttlinkedbar{$J_3$}{9}{11}
+\ganttvrule{}{7}
+\ganttvrule{}{5}
+\end{ganttchart}
+\caption{\label{ganttprmp}Sơ đồ Gantt của bài toán khi đã áp dụng thuật toán không ngắt quãng.}
+\end{figure}
+
+\subsection*{Thuật toán nhánh cận}
+\textit{Thuật toán nhánh cận (branch and bound)} là một khung thuật toán sử dụng cấu trúc cây để xử lý bài toán bằng cách phân nhánh thành các bài toán con và duyệt qua từng bài toán. Về mặt ý tưởng, xuất phát từ giải pháp ban đầu, thuật toán sẽ mở rộng các nhánh thành tập con các bài toán, từ đó liệt kê các phương án khả thi và loại bỏ các phương án không khả thi để thu được phương án tối ưu cuối cùng.
+
+Cụ thể trong lĩnh vực lập lịch, thuật toán nhánh cận được áp dụng để xử lý lớp bài toán có ràng buộc $r_j$ không đồng nhất. Trong những bài toán này, việc sắp xếp các công việc sao cho tối ưu một hàm cụ thể (chẳng hạn như độ đáo hạn cực đại hoặc thời gian hoàn thành cực đại) đòi hỏi phải xem xét nhiều khả năng mà công việc có thể được sắp xếp. Tuy nhiên, do số lượng công việc có thể rất lớn, cụ thể, số cách sắp xếp tăng theo giai thừa của $n$ công việc $(n!)$. Ví dụ, với $10$ công việc, sẽ có đến $10! = 3,628,800$ phương án sắp xếp khác nhau.
+
+Có thể thấy, với số lượng công việc lớn, số lượng phương án khả thi trở nên khổng lồ và rất khó kiểm soát nếu không có một thuật toán loại trừ hiệu quả. Do đó, thuật toán nhánh cận giúp phân tích và loại bỏ các phương án không khả thi bằng điều kiện đã được chứng minh trước đó kết hợp với \textit{cận dưới (lower bound)}. Trong đó, cận dưới là một mục tiêu tối ưu của bài toán được xác định, giúp so sánh sự ưu tiên giữa các nhánh và cũng là một nhân tố quan trọng giúp cải thiện độ phức tạp tính toán một cách hiệu quả. Từ đó giúp thu hẹp không gian nghiệm và tối ưu hóa hiệu quả tính toán.
+
+% Giả sử ta có công việc 1, 2 và 3 cần được sắp xếp, bên dưới là hình minh hoạ cách mà thuật toán nhánh cận hoạt động.
+
+Giả sử ta có ba công việc 1, 2 và 3 cần được sắp xếp. Thuật toán nhánh cận sẽ duyệt qua các tổ hợp phương án khác nhau bằng cách phân nhánh và loại trừ những phương án không khả thi. Dưới đây là hình minh họa về cách thuật toán hoạt động \eqref{bab1}.
+
+\begin{figure}[h!]
+	\centering
+	\begin{forest} for tree={
+		edge path={\noexpand\path[\forestoption{edge}] (\forestOve{\forestove{@parent}}{name}.parent anchor) -- +(0,-12pt)-| (\forestove{name}.child anchor)\forestoption{edge label};}
+	}
+	[{$***$ ($L_b^{(0)}$).}
+		[{$1***$ ($L_{b_0}^{(1)}=7$).}
+			[{$123$ ($L_{b_0}^{(2)} =7$).}]
+			[{\textbf{132 ($L_{b_1}^{(2)} =5$).}}]
+		]
+		[{$2***$ ($L_{b_1}^{(1)} =$ 10).}]
+		[$3***$]
+	]
+	\end{forest}
+\caption{\label{bab1}Minh hoạ thuật toán nhánh cận.}
+\end{figure}
+
+
+\subsection{Bài toán tối thiểu độ đáo hạn cực đại $L_{\max}$}
+
+Bài toán $1|r_j|L_{\max}$ về cơ bản là phiên bản mở rộng của bài toán $1||L_{\max}$ mà ta đã xử lý trước đó, với sự khác biệt là có thêm ràng buộc về thời điểm sẵn sàng không đồng nhất $r_j$ tại thời điểm $t=0$. Đây là một bài toán quan trọng, đóng vai trò nền tảng cho các bài toán đa máy (multi-machine) mà ta sẽ tìm hiểu sau này. Cùng với đó, bài toán $1|r_j|L_{\max}$ cũng là một trong những bài toán mà thuật toán nhánh cận được áp dụng một cách hiệu quả.
+
+Như đã thảo luận trước đó, cốt lõi của thuật toán nhánh cận nằm ở việc phân chia bài toán thành các bài toán con nhỏ hơn, từ đó duyệt qua các phương án khả thi, đồng thời loại bỏ những phương án không khả thi. Do đó, để giải quyết bài toán $1|r_j|L_{\max}$ một cách hiệu quả, ta cần một kỹ thuật duyệt các bài toán con sao cho tối ưu hóa quá trình tìm kiếm phương án tối ưu. Sau đây, ta sẽ đi sâu vào phương pháp duyệt và phân tích cách thức áp dụng phương pháp duyệt để thu được phương án tối ưu cho bài toán $1|r_j|L_{\max}$.
+
+\subsubsection*{Phương pháp duyệt}
+
+Ứng với $n$ công việc ta có $n! = n \times (n-1) \times (n-2) \times (n-3) \ldots 3 \times 2 \times 1$ phương án sắp xếp. Do đó, xuất phát từ đỉnh cây, ta gọi cấp 0, chứa 0 nút; cấp 1 chứa $n$ nút; cấp 2 chứa $n \times (n-1)$ nút; cấp $k$ chứa $n \times (n-1) \times (n-2) \times (n-3) \ldots (n-k+1)$ nút và cấp $n$ chứa $n \times (n-1) \times (n-2) \times (n-3) \ldots 3 \times 2 \times 1$ nút.
+
+\begin{cy}
+Ta ký hiệu $J_i^{(r)}$ là bài toán (hay phương án) nằm ở nút thứ $i$ của cấp thứ $r$, trong đó, nút thứ $i$ được tính bắt đầu từ trái sang phải trên cấu trúc cây, với $i, n \in \mathbb{N}$.
+\end{cy}
+
+Vậy đồng nghĩa ở cấp $k$, ta có $k$ công việc đã được sắp xếp
+
+\begin{equation*}
+j_1,\ldots ,j_k.
+\end{equation*}
+Do đó, ta cần xác định công việc $j_{k+1}$ sao cho tối thiểu quá trình phân nhánh. Gọi $J^{'}$ là danh sách công việc chưa được sắp xếp ngoại trừ công việc $j_{k+1}$,
+
+\begin{equation*}
+J^{'} = \{j_{k+2},\ldots , j_{n}\}
+\end{equation*}
+và $l \in J^{'}$. Từ đây ta thu được định lý sau
+
+\begin{dl}[Điều kiện nghiệm]
+	Với $l \in J^{'}$, phương án $J_i^{(r)}$ là phương án chấp nhận được khi và chỉ khi $r_{j_{k+1}}$ thoả điều kiện sau,
+	\begin{equation} \label{dllmax1}
+		r_{j_{k+1}} < \underset{l \in J^{'}}{\min} (\underset{l \in J^{'}}{\max} (t, r_l) + p_l)
+	\end{equation}
+\end{dl}
+
+\begin{proof}
+
+\phantom{}
+
+Để danh sách công việc được tối ưu, tức không có bất kỳ công việc nào trễ hạn, độ đáo hạn phải luôn nhỏ hơn hoặc bằng 0. Do đó,
+
+\begin{equation*}
+	L_l \leq 0,
+\end{equation*}
+mà ta có $L_l = C_l - d_l$, nên
+\begin{equation*}
+	C_l - d_l \leq 0,
+\end{equation*}
+hay
+\begin{equation} \label{lmax1}
+	C_l \leq d_l.
+\end{equation}
+
+Do thuật toán EDD sắp xếp công việc có thời điểm đáo hạn từ nhỏ đến lớn, vậy công việc tiếp theo cần thực hiện phải là 
+\begin{equation} \label{lmax2}
+\underset{l \in J^{'}}{\min} (d_l).
+\end{equation}
+
+Từ \eqref{lmax1} và \eqref{lmax2}, ta được
+
+\begin{equation}
+	\underset{l \in J^{'}}{\min} (C_l) \leq \underset{l \in J^{'}}{\min} (d_l).
+\end{equation}
+
+Hiển nhiên, thời điểm hoàn thành của công việc tiếp theo, $\underset{l \in J^{'}}{\min}(C_l)$, luôn phải lớn hơn thời điểm xuất phát của công việc trước đó là $r_{j_{k+1}}$, hay
+\begin{equation} \label{lmax3}
+	\underset{l \in J^{'}}{\min} (C_l) > r_{j_{k+1}}.
+\end{equation}
+
+Mặt khác, ta có thể viết $C_l$ dưới dạng sau
+\begin{equation} \label{lmax4}
+	C_l = \underset{l \in J^{'}}{\max} (t, r_l) + p_l.
+\end{equation}
+
+Từ \eqref{lmax3} và \eqref{lmax4}, ta được
+
+\begin{equation} \label{lmax5}
+	r_{j_{k+1}} < \underset{l \in J^{'}}{\min} (\underset{l \in J^{'}}{\max} (t, r_l) + p_l)
+\end{equation}
+
+Vậy để phương án $J_i^{(r)}$ là phương án chấp nhận được, $r_{j_{k+1}}$ phải thoả điều kiện \eqref{lmax5}. (đpcm)
+\end{proof}
+
+\begin{dn}[Cận dưới]
+	Với mỗi bài toán $J_i^{(r)}$ nếu thoả điều kiện nghiệm thì luôn tồn tại một phương án chấp nhận được có giá trị tối ưu được gọi là cận dưới của bài toán $J_i^{(r)}$, ký hiệu $L_{b_i}^{(r)}$.
+\end{dn}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \subsubsection*{Sơ đồ thuật toán}
+% Ta gọi nút ban đầu (nút gốc) tại cấp 0 là $J^{(0)}$, tương ứng với mỗi phương án tối ưu $J_i^{(r)}$ ứng với mỗi nút
+
+% Ta gọi phương án $J_i^{(r)}$ có nút ban đầu là $N_0$, tương ứng mỗi bài toán tối ưu tuyến tính thông thường $(P_i)$ ứng với mỗi nút $N_i$ trên sơ đồ nhánh và $\mathcal{L}$ là danh sách chứa các nút được lập thông qua lý thuyết xác định cận và lý thuyết nghiệm.
+
+% Ta đánh dấu giá trị tối ưu tốt nhất và nghiệm tối ưu tốt nhất của bài toán lần lượt là $z^*$ và $(x^*,y^*)$.
+
+% \begin{ttoan}[Nhánh cận]
+% \setlength{\parindent}{4em}
+% \noindent \\
+% \noindent \textbf{Bước 1. Thiết lập}
+% Đặt $\mathcal{L}:=\{ N_0^{(1)} \}$, $J^*=J_0^{(1)}$.
+
+% % $z^*=z_p$ và $(x^*,y^*)=(x,y)$. 
+
+% \noindent \textbf{Bước 2. Kiểm tra} 
+% Nếu $\mathcal{L} = \emptyset$ thì phương án tối ưu của bài toán là $(x^*,y^*)$, giá trị  tối ưu là $z^*$ và thoả điểu kiện nghiệm thì bài toán được giải, nếu không thoả điều kiện nghiệm ta gọi bài toán không giải được. 
+% Trường hợp $\mathcal{L} \neq \emptyset$, chuyển sang bước 3.
+
+% \noindent \textbf{Bước 3. Chọn nút} 
+% Chọn nút $N_i$ từ danh sách $\mathcal{L}$ và xoá khỏi $\mathcal{L}$ sau đó chuyển sang  bước 4. 
+
+% \noindent \textbf{Bước 4. Xác định cận}  
+% Giải bài toán $(P_i)$, nếu bài toán vô nghiệm hoặc $z_i \leq z^*$, quay  lại bước 2, nếu không, chuyển sang bước 5.
+
+% \noindent \textbf{Bước 5. Gọt nghiệm} 
+% Nếu tồn tại $x^{(i)} \notin Z^n_+$, ta thêm nút $N_{i+1}, \ldots , N_{k}$ vào $\mathcal{L}$ và quay  về bước 2. 
+% Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_+$, ta đặt $z_i = z^*$,  $(x^{(i)},y^{(i)}) = (x^*,y^*)$ và quay lại bước 2.
+% \end{ttoan}
+
+% \begin{figure}
+% \center
+% \begin{tikzpicture}[scale=0.33, every node/.style={scale=0.8}, node distance=3cm]
+% % Define styles
+% \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=red!30]
+% \tikzstyle{process} = [rectangle, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=orange!30]
+% \tikzstyle{decision} = [diamond, aspect=2, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=green!30]
+% \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=blue!30]
+% \tikzstyle{arrow} = [thick,->,>=stealth,line width=0.2pt]
+% % Place nodes
+% \node (start) [startstop, xshift=13cm] {Bắt đầu};
+% \node (b0) [io, below of=start] {$\mathcal{L}:=\{N_0 \}$ \\ $z^*=z_p$ \\ $(x^*,y^*)=(x,y)$};
+% \node (b1) [decision, below of=b0] {$\mathcal{L} = \emptyset$?};
+% \node (b2) [process, below of=b1] {Chọn $N_i$ từ $\mathcal{L}$ \\ và xoá khỏi $\mathcal{L}$};
+% \node (b3) [process, below of=b2] {Giải $(P_i)$};
+% \node (b4) [decision, below of=b3] {Vô nghiệm?};
+% \node (b5) [decision, below of=b4] {$\exists x^{(i)} \notin Z^n_+$?};
+% \node (b6) [io, right of=b5, node distance = 5cm] {$z_i = z^*$, \\ $(x^{(i)},y^i) = (x,y)$};
+% \node (b7) [io, below of=b5] {Thêm \\ $N_{i1}, \ldots , N_{ik}$ \\ vào $\mathcal{L}$};
+% \node (stop) [startstop, below of=b7] {Kết thúc};
+% % Draw arrows
+% \draw [arrow] (start) -- (b0);
+% \draw [arrow] (b0) -- (b1);
+% \draw [arrow] (b1) -- node[anchor=west] {no} (b2);
+% \draw [arrow] (b2) -- (b3);
+% \draw [arrow] (b3) -- (b4);
+% \draw [arrow] (b4) -- node[anchor=west] {no} (b5);
+% \draw [arrow] (b5) -- node[anchor=south] {no} (b6);
+% \draw [arrow] (b5) -- node[anchor=west] {yes} (b7);
+% \draw [arrow] (b4) --node[anchor=south] {yes} (40,-36.32) |- (b1);
+% \draw [arrow] (b6) |- (b1);
+% \draw [arrow] (b7) -- (50,-51) |- (b1);
+% \draw [arrow] (b7) -- (stop);
+% \draw [arrow] (b1) -- node[anchor=south] {yes} (20,-14.51) |- (stop);
+% \end{tikzpicture}
+% \caption{Minh hoạ lưu đồ giải thuật của thuật toán nhánh cận.}
+% \end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{vd}
+Ta có bảng công việc sau \eqref{vdlmax1}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 2 & 3 & 4 \\
+	\hline\hline
+	$p_j$ & 4 & 2 & 6 & 5 \\
+	$r_j$ & 0 & 1 & 3 & 5 \\
+	$d_j$ & 8 & 12 & 11 & 10 \\
+	\hline
+	\end{tabular}
+\caption{\label{vdlmax1} Dữ liệu minh hoạ bài toán $1 | r_j | L_{\max}$.}
+\end{figure}
+
+Bằng cách áp dụng thuật toán nhánh cận, ta thu được sơ đồ cây cấp 1 như sau \eqref{vdlmax2}
+
+
+\begin{figure}[h!]
+	\centering
+	\begin{forest} for tree={
+		edge path={\noexpand\path[\forestoption{edge}] (\forestOve{\forestove{@parent}}{name}.parent anchor) -- +(0,-12pt)-| (\forestove{name}.child anchor)\forestoption{edge label};}
+	}
+	[{$****$}
+		[$1***$
+		]
+		[$2***$]
+		[$3***$]
+		[$4***$]
+	]
+	\end{forest}
+\caption{\label{vdlmax2} Sơ đồ cây cấp 1.}
+\end{figure}
+
+Ở phương án $J_0^{(1)}$ $(1***)$ có $r_{j_{k+1}} = r_1 = 0$, áp dụng phương pháp duyệt, ta xét điều kiện nghiệm
+
+\begin{figure}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 2 & 3 & 4 \\
+	\hline\hline
+	$p_j$ & 4 & 2 & 6 & 5 \\
+	$r_j$ & 0 & 1 & 3 & 5 \\
+	$d_j$ & 8 & 12 & 11 & 10 \\
+	$\underset{l \in J^{'}}{\max} (t, r_l) + p_l$ & & 3 & 9 & 10 \\ 
+	\hline
+	\end{tabular}
+\caption{\label{vdlmax00} Bảng dữ liệu $\underset{l \in J^{'}}{\max} (t, r_l) + p_l$ cho phương án $J_0^{(1)}$.}
+\end{figure}
+
+Từ bảng \eqref{vdlmax00}, ta được
+\begin{equation*}
+\underset{l \in J^{'}}{\min} (\underset{l \in J^{'}}{\max} (t, r_l) + p_l) = 3 > r_{j_{k+1}},
+\end{equation*}
+vậy phương án $J_0^{(1)}$ thoả điều kiện nghiệm.
+
+Tương tự, ở phương án $J_1^{(1)}$ $(2***)$ có $r_{j_{k+1}} = r_2 = 1$, xét điều kiện nghiệm ta được
+
+\begin{equation*}
+\underset{l \in J^{'}}{\min} (\underset{l \in J^{'}}{\max} (t, r_l) + p_l) = 4 > r_{j_{k+1}},
+\end{equation*}
+vậy phương án $J_1^{(1)}$ thoả điều kiện.
+
+
+Ở phương án $J_2^{(1)}$ $(3***)$ có $r_{j_{k+1}} = r_3 = 3$, xét điều kiện nghiệm ta được
+
+\begin{equation*}
+\underset{l \in J^{'}}{\min} (\underset{l \in J^{'}}{\max} (t, r_l) + p_l) = 3 = r_{j_{k+1}},
+\end{equation*}
+vậy phương án $J_2^{(1)}$ không thoả điều kiện.
+
+Tương tự, ở phương án $J_3^{(1)}$ $(4***)$ có $r_{j_{k+1}} = r_4 = 5$, xét điều kiện nghiệm ta được
+
+\begin{equation*}
+\underset{l \in J^{'}}{\min} (\underset{l \in J^{'}}{\max} (t, r_l) + p_l) = 3 < r_{j_{k+1}},
+\end{equation*}
+vậy phương án $J_3^{(1)}$ không thoả điều kiện.
+
+Ta giữ lại các phương án thoả điều kiện nghiệm, gồm phương án $J_0^{(1)}$, $J_1^{(1)}$. Từ đây, ta tiếp tục xét cận dưới của các phương án.
+
+Ở phương án $J_0^{(1)}$, áp dụng thuật toán EDD, ta thu được
+
+\begin{figure}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 4 & 3 & 2 \\
+	\hline\hline
+	$p_j$ & 4 & 5 & 6 & 2 \\
+	$r_j$ & 0 & 5 & 3 & 1 \\
+	$d_j$ & 8 & 10 & 11 & 12 \\
+	$L_{\max}$ & -4 & -1 & 4 & 5 \\ 
+	\hline
+	\end{tabular}
+\caption{\label{eddj01} Bảng dữ liệu thuật toán EDD cho phương án $J_0^{(1)}$.}
+\end{figure}
+
+Từ bảng \eqref{eddj01}, cận dưới của phương án $J_0^{(1)}$ là $L_{b_0}^{(1)} = 5$.
+
+Tương tự, ở phương án $J_1^{(1)}$
+
+\begin{figure}[h!]
+	\centering
+	\begin{tabular}{|c | c c c c |} 
+	\hline
+	Công việc ($j$) & 2 & 1 & 4 & 3 \\
+	\hline\hline
+	$p_j$ & 2 & 4 & 5 & 6 \\
+	$r_j$ & 1 & 0 & 5 & 3 \\
+	$d_j$ & 12 & 8 & 10 & 11 \\
+	$L_{\max}$ & -10 & -2 & 1 & 6 \\ 
+	\hline
+	\end{tabular}
+\caption{\label{eddj11} Bảng dữ liệu thuật toán EDD cho phương án $J_1^{(1)}$.}
+\end{figure}
+
+Từ \eqref{eddj11}, cận dưới của phương án $J_1^{(1)}$ là $L_{b_1}^{(1)} = 6$.
+
+Từ đây, ta dễ dàng loại trừ phương án $J_1^{(1)}$ do $L_{b_0}^{(1)} < L_{b_1}^{(1)}$ \eqref{treelmax1} và tiếp tục phân nhánh với gốc nằm ở phương án $J_0^{(1)}$.
+
+\begin{figure}[h!]
+	\centering
+	\begin{forest} for tree={
+		edge path={\noexpand\path[\forestoption{edge}] (\forestOve{\forestove{@parent}}{name}.parent anchor) -- +(0,-12pt)-| (\forestove{name}.child anchor)\forestoption{edge label};}
+	}
+	[{$****$ ($L_b^{(0)}$).}
+		[{$1***$ ($L_{b_0}^{(1)} =$ 5).}
+		]
+		[{$2***$ ($L_{b_1}^{(1)} =$ 6).}]
+		[$3***$]
+		[$4***$]
+	]
+	\end{forest}
+\caption{\label{treelmax1} Sơ đồ cây cấp 1 với cận dưới.}
+\end{figure}
+
+
+Vì công việc 1 đã được sắp, do đó $t=4$.
+
+Phương án $J_0^{(2)}$ $(12**)$ có $r_{j_{k+1}} = r_2 = 1$, xét điều kiện nghiệm ta được
+
+\begin{equation*}
+\underset{l \in J^{'}}{\min} (\underset{l \in J^{'}}{\max} (t, r_l) + p_l) = 10 > r_{j_{k+1}},
+\end{equation*}
+vậy phương án $J_0^{(2)}$ thoả điều kiện, tương tự, ta thu được $L_{b_0}^{(2)} = 6$.
+
+Phương án $J_1^{(2)}$ $(13**)$ có $r_{j_{k+1}} = r_3 = 3$, xét điều kiện nghiệm ta được
+
+\begin{equation*}
+\underset{l \in J^{'}}{\min} (\underset{l \in J^{'}}{\max} (t, r_l) + p_l) = 6 > r_{j_{k+1}},
+\end{equation*}
+vậy phương án $J_1^{(2)}$ thoả điều kiện, tương tự, ta thu được $L_{b_1}^{(2)} = 5$.
+
+Phương án $J_2^{(2)}$ $(14**)$ có $r_{j_{k+1}} = r_4 = 5$, xét điều kiện nghiệm ta được
+
+\begin{equation*}
+\underset{l \in J^{'}}{\min} (\underset{l \in J^{'}}{\max} (t, r_l) + p_l) = 6 > r_{j_{k+1}},
+\end{equation*}
+vậy phương án $J_2^{(2)}$ thoả điều kiện, tương tự, ta thu được $L_{b_2}^{(2)} = 5$.
+
+Từ đây, ta dễ dàng loại trừ phương án $J_0^{(2)}$ \eqref{treelmax2} và tiếp tục phân nhánh với gốc nằm ở phương án $J_1^{(2)}$ và $J_2^{(2)}$.
+
+
+\begin{figure}[h!]
+	\centering
+	\begin{forest} for tree={
+		edge path={\noexpand\path[\forestoption{edge}] (\forestOve{\forestove{@parent}}{name}.parent anchor) -- +(0,-12pt)-| (\forestove{name}.child anchor)\forestoption{edge label};}
+	}
+	[{$****$ ($L_b^{(0)}$).}
+		[{$1***$ ($L_{b_0}^{(1)} =$ 5).}
+			[{$12**$ ($L_{b_0}^{(2)} =$ 6).}]
+			[{$13**$ ($L_{b_1}^{(2)} =$ 5).}
+			]
+			[{$14**$ ($L_{b_2}^{(2)} =$ 5).}
+			]
+		]
+		[{$2***$ ($L_{b_1}^{(1)} =$ 6).}]
+		[$3***$]
+		[$4***$]
+	]
+	\end{forest}
+\caption{\label{treelmax2} Sơ đồ cây cấp 2 với cận dưới.}
+\end{figure}
+
+Thực hiện thuật toán tương tự, ta được $J_0^{(3)}$, $J_1^{(3)}$, $J_2^{(3)}$ và $J_3^{(3)}$ đều thoả điều kiện nghiệm với cận dưới lần lượt là $7,5,5,6$. \eqref{treelmax3}
+
+\begin{figure}[h!]
+	\centering
+	\begin{forest} for tree={
+		edge path={\noexpand\path[\forestoption{edge}] (\forestOve{\forestove{@parent}}{name}.parent anchor) -- +(0,-12pt)-| (\forestove{name}.child anchor)\forestoption{edge label};}
+	}
+	[{$****$ ($L_b^{(0)}$).}
+		[{$1***$ ($L_{b_0}^{(1)} =$ 5).}
+			[{$12**$ ($L_{b_0}^{(2)} =$ 6).}]
+			[{$13**$ ($L_{b_1}^{(2)} =$ 5).}
+				[{$1324$ ($L_{b_0}^{(3)} =$ 7).}]
+				[{\textbf{1342 ($L_{b_1}^{(3)} =$ 5).}}]
+			]
+			[{$14**$ ($L_{b_2}^{(2)} =$ 5).}
+				[{$1432$ ($L_{b_2}^{(3)} =$ 5).}]
+				[{$1423$ ($L_{b_3}^{(3)} =$ 6).}]
+			]
+		]
+		[{$2***$ ($L_{b_1}^{(1)} =$ 6).}]
+		[$3***$]
+		[$4***$]
+	]
+	\end{forest}
+\caption{\label{treelmax3} Sơ đồ cây cấp 3 với cận dưới.}
+\end{figure}
+
+
+Loại trừ phương án $J_0^{(3)}$ và phương án $J_3^{(3)}$. Ta áp dụng thuật toán không ngắt quãng, ở phương án $J_1^{(3)}$ ta có $C_{\max _1}^{(3)} = 17$ \eqref{gantcmax13}, phương án $J_2^{(3)}$ có $C_{\max _2}^{(3)} = 18$ \eqref{gantcmax23}. Từ đây ta thu được phương án tối ưu là phương án $J_1^{(3)}$ do $C_{\max _1}^{(3)} < C_{\max _2}^{(3)}$.
+
+Vậy phương án tối ưu của bài toán là $1-3-4-2$.
+
+Áp dụng thuật toán ngắt quãng cho phương án $J_3^{(3)}$, ta được sơ đồ \eqref{gantcmax23prmp}. Từ đây, nếu áp dụng thuật toán ngắt quãng, ta có thể thu một trong hai phương án $J_0^{(3)}$ hay $J_3^{(3)}$ đều tối ưu.
+
+\end{vd}
+
+Ta gọi bài toán có áp dụng thuật toán ngắt quãng là bài toán $1|prmp|L_{\max}$. Bài toán $1|prmp|L_{\max}$ đơn giản là bài toán $1|r_j|L_{\max}$, trong đó, ta mở rộng việc áp dụng thuật toán ngắt quãng để thu được phương án tối ưu.
+
+% \Tree [.CP [[.{***} {which car} ] {\ldots}] .a ]
+
+\subsection{Bài toán tối thiểu thời gian hoàn thành cực đại $C_{\max}$}
+
+% Một bài toán tương tự cũng sử dụng thuật toán nhánh cận để xử lý mà ta không thể bỏ qua là bài toán tối thiểu thời gian hoàn thành cực đại, ký hiệu $1|r_j|C_{\max}$.
+
+% Tương tự với bài toán tối thiểu độ đáo hạn cực đại $1|r_j|L_{\max}$, bài toán $1|r_j|C_{\max}$ cũng áp dụng điều kiện nghiệm tương tự nhưng cận dưới giờ đây được thay bằng giá trị $C_{\max}$ cho mỗi phương án chấp nhận được đã thu được.
+
+% Do đó, quy trình thuật toán hoàn toàn tương tự, chỉ khác nhau ở cách xét cận dưới cho mỗi phương án chấp nhận được.
+
+\subsubsection*{Thuật toán nhánh cận}
+
+Một bài toán tương tự sử dụng thuật toán nhánh cận để giải quyết là bài toán tối thiểu thời gian hoàn thành cực đại, ký hiệu $1|r_j|C_{\max}$. Giống như bài toán tối thiểu độ dao hạn cực đại $1|r_j|L_{\max}$, bài toán $1|r_j|C_{\max}$ cũng áp dụng cùng một điều kiện nghiệm, nhưng cận dưới ở đây là giá trị $C_{\max}$ đối với mỗi phương án chấp nhận được. Do đó, quy trình thuật toán được thực hiện tương tự, với điểm khác biệt duy nhất là cách tính cận dưới cho mỗi phương án.
+
+\begin{vd} \label{vdrjcmax1}
+Ta có bảng công việc sau \eqref{vdcmax1}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tabular}{|c | c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 2 & 3 \\
+	\hline\hline
+	$p_j$ & 3 & 2 & 4 \\
+	$r_j$ & 3 & 7 & 5 \\
+	$d_j$ & 8 & 12 & 11 \\
+	\hline
+	\end{tabular}
+\caption{\label{vdcmax1} Dữ liệu minh hoạ bài toán $1 | r_j | C_{\max}$.}
+\end{figure}
+
+
+
+Bằng cách áp dụng thuật toán nhánh cận, ta thu được sơ đồ cây cấp 1 như sau \eqref{vdlmax2}
+
+
+\begin{figure}[h!]
+	\centering
+	\begin{forest} for tree={
+		edge path={\noexpand\path[\forestoption{edge}] (\forestOve{\forestove{@parent}}{name}.parent anchor) -- +(0,-12pt)-| (\forestove{name}.child anchor)\forestoption{edge label};}
+	}
+	[{$***$}
+		[$1**$
+		]
+		[$2**$]
+		[$3**$]
+	]
+	\end{forest}
+\caption{\label{vdlmax2} Sơ đồ cây cấp 1.}
+\end{figure}
+
+Ở phương án $J_0^{(1)}$ $(1**)$ có $r_{j_{k+1}} = r_1 = 3$, áp dụng phương pháp duyệt, ta xét điều kiện nghiệm
+
+\begin{figure}[h!]
+	\centering
+	\begin{tabular}{|c | c c c |} 
+	\hline
+	Công việc ($j$) & 1 & 3 & 2 \\
+	\hline\hline
+	$p_j$ & 3 & 4 & 2 \\
+	$r_j$ & 3 & 5 & 7 \\
+	$d_j$ & 8 & 11 & 12 \\
+	$\underset{l \in J^{'}}{\max} (t, r_l) + p_l$ & & 9 & 9 \\ 
+	\hline
+	\end{tabular}
+\caption{\label{vdcmax00} Bảng dữ liệu $\underset{l \in J^{'}}{\max} (t, r_l) + p_l$ cho phương án $J_0^{(1)}$.}
+\end{figure}
+
+Từ bảng \eqref{vdcmax00}, ta được
+\begin{equation*}
+\underset{l \in J^{'}}{\min} (\underset{l \in J^{'}}{\max} (t, r_l) + p_l) = 9 > r_{j_{k+1}},
+\end{equation*}
+vậy phương án $J_0^{(1)}$ thoả điều kiện nghiệm.
+
+Tương tự, ở phương án $J_1^{(1)}$ $(2**)$ có $r_{j_{k+1}} = r_2 = 7$, xét điều kiện nghiệm ta được
+
+\begin{equation*}
+\underset{l \in J^{'}}{\min} (\underset{l \in J^{'}}{\max} (t, r_l) + p_l) = 6 < r_{j_{k+1}},
+\end{equation*}
+vậy phương án $J_1^{(1)}$ không thoả điều kiện.
+
+
+Ở phương án $J_2^{(1)}$ $(3**)$ có $r_{j_{k+1}} = r_3 = 5$, xét điều kiện nghiệm ta được
+
+\begin{equation*}
+\underset{l \in J^{'}}{\min} (\underset{l \in J^{'}}{\max} (t, r_l) + p_l) = 6 > r_{j_{k+1}},
+\end{equation*}
+vậy phương án $J_2^{(1)}$ thoả điều kiện.
+
+Ta giữ lại các phương án thoả điều kiện nghiệm, gồm phương án $J_0^{(1)}$, $J_2^{(1)}$. Từ đây, ta tiếp tục xét cận dưới của các phương án.
+
+Ở phương án $J_0^{(1)}$, áp dụng thuật toán EDD, ta thu được danh sách công việc là $1-3-2$. Tiếp tục áp dụng thuật toán không ngắt quãng, ta được $C_{\max} = 12$ (xem sơ đồ \eqref{gantcmax23-cmax}), vậy ta thu được cận dưới $L_{b_0}^{(1)} = 12$. Tương tự với phương án $J_1^{(1)}$, ta thu được cận dưới $L_{b_1}^{(1)} = 14$.
+
+Từ đây, ta dễ dàng loại trừ phương án $J_1^{(1)}$ do $L_{b_0}^{(1)} < L_{b_1}^{(1)}$ và tiếp tục phân nhánh với gốc nằm ở phương án $J_0^{(1)}$. \eqref{vdcmaxcap1canduoi}
+
+Thực hiện thuật toán tương tự, ta được $J_0^{(2)}$ và $J_1^{(2)}$ đều thoả điều kiện nghiệm với cận dưới lần lượt là $13,12$. \eqref{vdcmaxcap2canduoi}
+
+Vậy phương án tối ưu của bài toán là $1-3-2$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[h!]
+	\centering
+	\begin{forest} for tree={
+		edge path={\noexpand\path[\forestoption{edge}] (\forestOve{\forestove{@parent}}{name}.parent anchor) -- +(0,-12pt)-| (\forestove{name}.child anchor)\forestoption{edge label};}
+	}
+	[{$***$ ($L_b^{(0)}$).}
+		[{$1**$ ($L_{b_0}^{(1)} =$ 12).}
+		]
+		[$2**$]
+		[{$3**$ ($L_{b_1}^{(1)} =$ 14).}]
+	]
+	\end{forest}
+\caption{\label{vdcmaxcap1canduoi} Sơ đồ cây cấp 1 với cận dưới.}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\begin{forest} for tree={
+		edge path={\noexpand\path[\forestoption{edge}] (\forestOve{\forestove{@parent}}{name}.parent anchor) -- +(0,-12pt)-| (\forestove{name}.child anchor)\forestoption{edge label};}
+	}
+	[{$***$ ($L_b^{(0)}$).}
+		[{$1**$ ($L_{b_0}^{(1)} =$ 12).}
+			[{$123$ ($L_{b_0}^{(2)} =$ 13).}]
+			[{\textbf{132 ($L_{b_1}^{(2)} =$ 12).}}]
+		]
+		[$2**$]
+		[{$3**$ ($L_{b_1}^{(1)} =$ 14).}]
+	]
+	\end{forest}
+\caption{\label{vdcmaxcap2canduoi} Sơ đồ cây cấp 2 với cận dưới.}
+\end{figure}
+
+\end{vd}
+
+\phantom{text}
+
+\subsubsection*{Thuật toán ưu tiên phát hành}
+
+\textit{Thuật toán ưu tiên phát hành}, viết tắt là \textit{ERD (Earliest Release Date)} là một trong những thuật toán phổ biến và hiệu quả trong lập lịch cho máy đơn với mục đích giúp tối thiểu hoá thời gian hoàn thành cực đại $C_{\max}$ tồn tại thời điểm phát hành $r_j$.
+
+Nguyên lý của thuật toán ưu tiên phát hành là ưu tiên xử lý các công việc có thời điểm phát hành nhỏ nhất, từ đó sắp xếp các công việc theo thứ tự từ thời điểm phát hành nhỏ nhất đến thời điểm phát hành lớn nhất. Mục đích là giúp đảm bảo các công việc có thời điểm phát hành nhỏ nhất được hoàn thành trước, hạn chế khả năng các công việc bị trễ, từ đó tối thiểu được thời gian hoàn thành cực đại $C_{\max}$.
+
+Với hàm mục tiêu là $C_{\max}$ kèm theo tồn tại thời điểm phát hành $r_j$, ta dễ dàng tối thiểu hàm mục tiêu $C_{\max}$ bằng cách sử dụng thuật toán ưu tiên phát hành.
+
+\begin{dl}
+	Thuật toán ưu tiên phát hành (ERD) là thuật toán tối ưu cho dạng bài toán $1 | r_j | C_{\max}$.
+\end{dl}
+
+\begin{proof}
+	Ta gọi $S$ là chuỗi công việc trong đó tồn tại hai công việc liền kề $j - k$, trong đó công việc thứ $k$ có thời điểm bắt đầu sau công việc thứ $j$, tức phương án của bài toán lúc này là $j - k$. \eqref{jk_erd1}
+	
+	Do đó ta được thời gian hoàn thành của công việc $j$ và $k$ trong chuỗi $S$ lần lượt là
+	
+	\begin{equation} \label{CjS_erd}
+		C_j(S) = S_j + p_j = \max ( C_{j-1} , r_j ) + p_j
+	\end{equation}
+	và
+	\begin{equation}
+		C_k(S) = S_k + p_k = \max (C_j , r_k ) + p_k
+	\end{equation}
+	từ \eqref{CjS_erd}
+	$\Rightarrow$
+	\begin{equation} \label{CkS_erd}
+		C_k(S) = \max \left[ \max (C_{j-1} , r_j ) + p_j , r_k \right] + p_k.
+	\end{equation}
+
+	\begin{figure}[h!]
+		\centering
+		 \begin{tabular}{|c | c c c c c c c |} 
+		 \hline
+		 Công việc & 1 & 2 & $\ldots$ & $j$ & $k$ & $\ldots$ & $n$ \\
+		 \hline\hline
+		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_j$ & $p_k$ & $\ldots$ & $p_n$ \\
+		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_j$ & $C_k$ & $\ldots$ & $C_n$ \\
+		 \hline
+		 \end{tabular}
+	\caption{\label{jk_erd1}Phương án $j - k$ của bài toán.}
+	\end{figure}
+
+	Giả sử phương án từ chuỗi công việc $S$ thoả thuật toán ERD, tức
+	
+	\begin{equation} \label{rj<rk}
+		r_j < r_k.
+	\end{equation}
+
+	Ta xét trường hợp sắp xếp lại vị trí hai công việc này bằng cách tráo đổi vị trí với nhau thì ta nhận được chuỗi công việc $S'$, từ đó phương án là $k - j$. \eqref{jk_erd2}
+
+	\begin{figure}[h!]
+		\centering
+		 \begin{tabular}{|c | c c c c c c c |} 
+		 \hline
+		 Công việc & 1 & 2 & $\ldots$ & $k$ & $j$ & $\ldots$ & $n$ \\
+		 \hline\hline
+		 $p$ & $p_1$ & $p_2$ & $\ldots$ & $p_k$ & $p_j$ & $\ldots$ & $p_n$ \\
+		 $C$ & $C_1$ & $C_2$ & $\ldots$ & $C_k$ & $C_j$ & $\ldots$ & $C_n$ \\
+		 \hline
+		 \end{tabular}
+	\caption{\label{jk_erd2}Phương án $k - j$ của bài toán.}
+	\end{figure}
+
+	Lúc này thời gian hoàn thành của hai công việc $k$ và $j$ trong chuỗi công việc $S'$ lần lượt là
+	
+	\begin{equation} \label{CkS'_erd}
+		C_k(S') = S_k + p_k = \max (C_{k-1} , r_k ) + p_k
+	\end{equation}
+	và
+	\begin{equation} \label{CjS'_erd}
+		C_j(S') = S_j + p_j = \max (C_k , r_j ) + p_j
+	\end{equation}
+	từ \eqref{CkS'_erd}
+	$\Rightarrow$
+	\begin{equation} \label{CjS'_erd}
+		C_j(S') = \max \left[ \max (C_{k-1} , r_k) + p_k , r_j \right] +p_j.
+	\end{equation}
+
+	Từ \eqref{rj<rk}, \eqref{CkS'_erd} và \eqref{CjS'_erd} và  ta dễ dàng nhận thấy
+
+	\begin{equation} \label{CjS'>CkS'_erd}
+		C_j(S') > C_k(S').
+	\end{equation}
+
+	Mục đích của thuật toán là tối thiểu thời gian hoàn thành cực đại, vậy nên
+
+	\begin{equation} \label{C<C}
+		C_{\max}(S) < C_{\max}(S')
+	\end{equation}
+	hay
+	\begin{equation} \label{max<max_erd}
+	\max \left[ C_j(S), C_k(S) \right] < \max \left[ C_k(S'), C_j(S') \right] 
+	\end{equation}
+	từ \eqref{CjS'>CkS'_erd}, bất đẳng thức \eqref{max<max_erd} có thể được viết lại như sau
+	\begin{equation}
+		\left[
+			\begin{array}{c c c}
+				C_j(S) &<& C_j(S') \\
+				C_k(S) &<& C_j(S')
+			\end{array}
+		\right.
+	\end{equation}
+	từ \eqref{CjS_erd}, \eqref{CkS_erd} và \eqref{CjS'_erd}
+	$\Rightarrow$
+	\begin{equation} \label{hbdt_erd}
+		\left[
+			\begin{array}{c c c}
+				\max (C_{j-1}, r_j) + p_j &<& \max \left[ \max (C_{k-1}, r_k) + p_k, r_j \right] + p_j \\
+				\max \left[ \max (C_{j-1}, r_j) + p_j, r_k \right] + p_k &<& \max \left[ \max (C_{k-1}, r_k) + p_k, r_j \right] + p_j
+			\end{array}
+		\right.
+	\end{equation}
+	ta đặt chuỗi các công việc phía trước hai công việc $j$ (trong chuỗi $S$) hay $k$ (trong chuỗi $S'$) là $A$.
+	
+	Từ đó, hệ bất đẳng thức \eqref{hbdt_erd} được viết lại thành
+	\begin{equation} \label{hbpt_erd_2}
+		\left[
+			\begin{array}{c c c}
+				\max (C_A, r_j) + p_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j \\
+				\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j
+			\end{array}
+		\right.
+	\end{equation}
+
+	Xét bất đẳng thức đầu tiên trong hệ \eqref{hbpt_erd_2}
+
+	\begin{equation}
+		\max (C_A, r_j) + p_j < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j,
+	\end{equation}
+	triệt tiêu $p_j$, ta được
+	\begin{equation}
+		\max (C_A, r_j) < \max \left[ \max (C_A, r_k) + p_k, r_j \right]
+	\end{equation}
+	hay
+	\begin{equation}
+		\left[
+			\begin{array}{c c c}
+				C_A &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right] \\
+				r_j &<& \max \left[ \max (C_A, r_k) + p_k, r_j \right].
+			\end{array}
+		\right.
+	\end{equation}
+	Ta có thể thấy rằng bất đẳng thức $C_A < \max \left[ \max (C_A, r_k) + p_k, r_j \right]$ là hiển nhiên.
+	Tiếp tục xét bất đẳng thức tiếp theo trong hệ
+	\begin{equation}
+			r_j < \max \left[ \max (C_A, r_k) + p_k, r_j \right],
+	\end{equation}
+	mà $r_j<r_k$ \eqref{rj<rk}, do đó
+	\begin{equation}
+			r_j < \max (C_A, r_k) + p_k.
+	\end{equation}
+	Dễ dàng nhận thấy $r_j < \max (C_A, r_k) + p_k$ là hiển nhiên (do $r_j<r_k$). Từ đây, ta có thể kết luận bất đẳng thức
+	\begin{equation*}
+		\max (C_A, r_j) + p_j < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j
+	\end{equation*}
+	trong hệ \eqref{hbpt_erd_2} thoả mãn.
+
+	Tiếp tục xét bất đẳng thức thứ hai trong hệ \eqref{hbpt_erd_2}
+	\begin{equation}
+		\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k < \max \left[ \max (C_A, r_k) + p_k, r_j \right] + p_j,
+	\end{equation}
+	mà $r_j<r_k$ \eqref{rj<rk}, do đó
+	\begin{equation}
+		\max \left[ \max (C_A, r_j) + p_j, r_k \right] + p_k < \max (C_A, r_k) + p_k + p_j,
+	\end{equation}
+	triệt tiêu $p_k$, ta được
+	\begin{equation}
+		\max \left[ \max (C_A, r_j) + p_j, r_k \right] < \max (C_A, r_k) + p_j
+	\end{equation}
+	hay
+	\begin{equation}
+		\left[
+			\begin{array}{c c c}
+				\max (C_A, r_j) + p_j &<& \max (C_A, r_k) + p_j \\
+				r_k &<& \max (C_A, r_k) + p_j.
+			\end{array}
+		\right.
+	\end{equation}
+	Dễ dàng nhận thấy bất đẳng thức $r_k < \max (C_A, r_k) + p_j$ là hiển nhiên. Ta xét bất đẳng thức còn lại
+	\begin{equation}
+			\max (C_A, r_j) + p_j < \max (C_A, r_k) + p_j,
+	\end{equation}
+	triệt tiêu $p_j$, ta được
+	\begin{equation}
+			\max (C_A, r_j) < \max (C_A, r_k),
+	\end{equation}
+	trong trường hợp $C_A \leq r_j$, ta có thể kết luận rằng
+	\begin{equation}
+			r_j < r_k
+	\end{equation}
+
+	Vậy nếu muốn $C_{\max}(S) < C_{\max}(S')$ thì $r_j < r_k$. (đpcm)
+\end{proof}
+
+\phantom{text}
+
+\phantom{text}

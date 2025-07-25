@@ -1,0 +1,302 @@
+\documentclass[10pt]{beamer}
+\mode<presentation>
+\usepackage{beamerthemesplit}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{textpos}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{listings}
+
+
+% import citation package
+\usepackage{biblatex}
+\addbibresource{presentation.bib}
+\AtBeginBibliography{\small}
+
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary {datavisualization} 
+\pgfplotsset{compat=1.18, width = 7cm}
+\usetikzlibrary{patterns}
+\usetheme{Ilmenau} % AnnArbor, Ilmenau, Darmstadt, Dresden, CambridgeUS, Frankfurt, Singapore
+\newtheorem{dn}{Định nghĩa}[section]
+\newtheorem{dl}{Định lý}[section]
+\newtheorem{tc}{Tính chất}[section]
+\newtheorem{hq}{Hệ quả}[section]
+\newtheorem{bd}{Bổ đề}[section]
+\newtheorem{md}{Mệnh đề}[section]
+\newtheorem{vd}{Ví dụ}[section]
+\newtheorem{nx}{Nhận xét}[section]
+\newtheorem{cy}{Chú ý}[section]
+\newcommand{\dom}{\text{{\rm dom}}}
+\newcommand{\epi}{\text{{\rm epi}}}
+\newcommand{\Min}{\text{{\rm Min}}}
+\setbeamertemplate{theorems}[numbered]
+\setbeamertemplate{definitions}[numbered]
+\setbeamertemplate{footline}[frame number]
+\usepackage{algorithm}
+\usepackage{color}
+\usepackage{algorithmic}
+\usepackage{footmisc}
+\usepackage{indentfirst} 
+\usepackage{comment}
+\AtBeginEnvironment{proof}{%
+  \setbeamercolor{block title}{use=example text,fg=white,bg=example text.fg!75!black}
+  \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\usefonttheme{professionalfonts}
+\setbeamercolor{normal text}{bg=white,fg=black}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\beamertemplatetransparentcoveredhigh
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage[utf8]{vietnam}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+\definecolor{mSybilaRed}{HTML}{990000}
+
+\setbeamercolor{title separator}{
+  fg=mSybilaRed
+}
+
+\setbeamercolor{progress bar}{%
+  fg=mSybilaRed,
+  bg=mSybilaRed!90!black!30
+}
+
+\setbeamercolor{progress bar in section page}{
+  use=progress bar,
+  parent=progress bar
+}
+
+\setbeamercolor{alerted text}{%
+  fg=mSybilaRed
+}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode
+  \hbox{
+  \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}
+    \usebeamerfont{author in head/foot}\insertshorttitle
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}
+    \insertframenumber{} / \inserttotalframenumber
+  \end{beamercolorbox}
+  }
+}
+
+\title{Tích hợp Mô hình Vị trí và Lập lịch (ScheLoc) cho Đơn Máy}
+
+
+% \titlegraphic{\hfill \includegraphics[height=1cm]{tilearn.png}}
+
+\date{\today}
+\author{Hướng dẫn: TS. Lê Minh Huy}
+% \institute{Sinh viên lớp: DTU1221, Khóa: 22 @ Trường Đại học Sài Gòn}
+
+%\title{Metropolis}
+\subtitle{Thực hiện: Nguyễn Chí Bằng}
+% \date{\today}
+%\date{}
+%\author{Matthias Vogelgesang}
+%\institute{Center for modern beamer themes}
+%\titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{NỘI DUNG}
+    \tableofcontents
+\end{frame}
+
+\section{Giới thiệu về bài toán ScheLoc}
+
+\begin{frame}{Giới thiệu về bài toán ScheLoc}
+\end{frame}
+
+\begin{frame}{Thuật toán tìm đường đi ngắn nhất}
+\end{frame}
+
+\begin{frame}
+    
+\end{frame}
+
+\begin{frame}{Mô hình bài toán ScheLoc}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        % Nodes
+        \node[draw, circle] (vi) at (0,0) {$v_i$};
+        \node[draw, circle] (vj) at (6,0) {$v_j$};
+        \filldraw [black] (3,0) circle (1pt);
+
+        
+        % Line with labels
+        \draw (vi) -- node[above] {$\alpha l_e$} (3,0) node[below, yshift=-2mm] {$x=(e,\alpha)$} (3,0);
+        \draw (3,0) -- node[above] {$(1-\alpha) l_e$} (vj);
+        
+        % Dotted continuation
+        \draw[dotted] (-1,0) -- (vi);
+        \draw[dotted] (vj) -- (7,0);
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance={20mm}, thick, main/.style = {draw, circle}, dis/.style = {}] 
+        \node[main] (1) {$v_1$};
+        \node[main] (2) [above right of=1] {$v_2$};
+        \node[main] (3) [below right of=1] {$v_3$}; 
+        \node[dis] (4) [above right of=3] {};
+        \node[main] (5) [above right of=4] {$v_4$}; 
+        \node[main] (6) [below right of=4] {$v_5$};
+        \node[main] (7) [below right of=5] {$v_6$};
+
+        \draw[->] (1) -- node[above left] {$4$} (2);
+        \draw[->] (2) -- node[above] {$3$} (5);
+        \draw[->] (5) -- node[above right] {$2$} (7);
+        \draw[->] (1) -- node[below left] {$3$} (3);
+        \draw[->] (3) -- node[below] {$3$} (6);
+        \draw[->] (6) -- node[below right] {$2$} (7);
+        \draw[->] (2) -- node[above right] {$2$} (6);
+    \end{tikzpicture} 
+    \caption{}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance={20mm}, thick, main/.style = {draw, circle}, dis/.style = {}] 
+        \node[main, color=LimeGreen, fill=LimeGreen, very thick, text=white] (1) {$v_1$};
+        \node[main] (2) [above right of=1] {$v_2$};
+        \node[main, color=LimeGreen, fill=LimeGreen, very thick, text=white] (3) [below right of=1] {$v_3$}; 
+        \node[dis] (4) [above right of=3] {};
+        \node[main] (5) [above right of=4] {$v_4$}; 
+        \node[main, color=LimeGreen, fill=LimeGreen, very thick, text=white] (6) [below right of=4] {$v_5$};
+        \node[main, color=LimeGreen, fill=LimeGreen, very thick, text=white] (7) [below right of=5] {$v_6$};
+
+        \draw[->] (1) -- node[above left] {$4$} (2);
+        \draw[->] (2) -- node[above] {$3$} (5);
+        \draw[->] (5) -- node[above right] {$2$} (7);
+        \draw[->, color=LimeGreen, fill=LimeGreen, very thick, text=black] (1) -- node[below left] {$3$} (3);
+        \draw[->, color=LimeGreen, fill=LimeGreen, very thick, text=black] (3) -- node[below] {$3$} (6);
+        \draw[->, color=LimeGreen, fill=LimeGreen, very thick, text=black] (6) -- node[below right] {$2$} (7);
+        \draw[->] (2) -- node[above right] {$2$} (6);
+    \end{tikzpicture} 
+    \caption{}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance={20mm}, thick, main/.style = {draw, circle}, dis/.style = {}] 
+        \node[main, color=Cerulean, fill=Cerulean, very thick, text=white] (1) {$v_1$};
+        \node[main, color=Cerulean, fill=Cerulean, very thick, text=white] (2) [above right of=1] {$v_2$};
+        \node[main] (3) [below right of=1] {$v_3$}; 
+        \node[dis] (4) [above right of=3] {};
+        \node[main, color=Cerulean, fill=Cerulean, very thick, text=white] (5) [above right of=4] {$v_4$}; 
+        \node[main] (6) [below right of=4] {$v_5$};
+        \node[main] (7) [below right of=5] {$v_6$};
+
+        \draw[->, color=Cerulean, fill=Cerulean, very thick, text=black] (1) -- node[above left] {$4$} (2);
+        \draw[->, color=Cerulean, fill=Cerulean, very thick, text=black] (2) -- node[above] {$3$} (5);
+        \draw[->] (5) -- node[above right] {$2$} (7);
+        \draw[->] (1) -- node[below left] {$3$} (3);
+        \draw[->] (3) -- node[below] {$3$} (6);
+        \draw[->] (6) -- node[below right] {$2$} (7);
+        \draw[->] (2) -- node[above right] {$2$} (6);
+    \end{tikzpicture} 
+    \caption{}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Tối thiểu thời gian hoàn thành cực đại $C_{\max}$}
+\end{frame}
+
+\section{Bài toán ScheLoc cho tập hai công việc}
+
+\begin{frame}{Cơ sở lý thuyết và ký hiệu}
+\end{frame}
+
+\begin{frame}{Trường hợp $\pi(1)=1$ và  $\pi(2) = 2$}
+\end{frame}
+
+\begin{frame}{Trường hợp $\pi(1)=2$ và  $\pi(2) = 1$}
+\end{frame}
+
+\begin{frame}{Nghiệm tối ưu của bài toán}
+\end{frame}
+
+\begin{frame}
+\end{frame}
+
+\begin{frame}[allowframebreaks, noframenumbering]
+    \nocite{*}
+    \printbibliography
+\end{frame}
+
+
+\begin{frame}
+    \begin{block}{}
+    \medskip
+    \center{\huge \it \textcolor[rgb]{0.37, 0.150, 0.190}{Thanks for listening!}}
+    \medskip
+    \end{block}	
+\end{frame}    
+\end{document}
