@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from itertools import combinations
 from sympy import symbols, Eq, solve
+from scipy.optimize import fsolve
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -16,18 +17,22 @@ class FunctionPlotter:
         self.functions = []
         self.labels = []
         self.x = np.linspace(self.x_range[0], self.x_range[1], self.num_points)
+        self.intersections = []  # To store intersection points to be plotted later
 
     def add_function(self, func, label):
         self.functions.append(func)
         self.labels.append(label)
 
     def plot(self, title="Function Plot", xlabel="x", ylabel="y"):
-        
         plt.figure(figsize=(10, 6))
-        
+
         for func, label in zip(self.functions, self.labels):
             y = func(self.x)
             plt.plot(self.x, y, label=label)
+
+        for (x, y) in self.intersections:
+            plt.scatter(x, y, color='red', zorder=5)
+            plt.annotate(f"({x:.2f}, {y:.2f})", (x, y), textcoords="offset points", xytext=(5, 5), fontsize=9)
 
         plt.title(title)
         plt.xlabel(xlabel)
@@ -37,6 +42,25 @@ class FunctionPlotter:
         plt.axhline(0, color='black', linewidth=0.5)
         plt.axvline(0, color='black', linewidth=0.5)
         plt.show()
+
+    def find_intersection(self, index1, index2, guess=0.0):
+        if index1 >= len(self.functions) or index2 >= len(self.functions):
+            print("Invalid indices.")
+            return None
+
+        f1 = self.functions[index1]
+        f2 = self.functions[index2]
+
+        def diff(x):
+            return f1(x) - f2(x)
+
+        x_intersection = fsolve(diff, guess)[0]
+        y_intersection = f1(x_intersection)
+
+        print(f"Intersection at x = {x_intersection:.4f}, y = {y_intersection:.4f}")
+
+        self.intersections.append((x_intersection, y_intersection))
+        return x_intersection, y_intersection
 
 class GlobalCenter():
 
@@ -49,7 +73,7 @@ class GlobalCenter():
         best_pair = None
 
         for vertex_i, vertex_j in combinations(range(self.vertices), 2):
-            lm = LocalMinima(self.sourceGraph, self.vertices, vertex_i, vertex_j)
+            lm = InLocalMin(self.sourceGraph, self.vertices, vertex_i, vertex_j)
             try:
                 val = lm.LocalMinima()
                 if val < min_val:
@@ -103,16 +127,15 @@ class Local(GlobalCenter):
         else:
             return self.abstractAlpha(A, B)
 
-class LocalMinima(Local, GlobalCenter):
-
+class BoLocalMin(Local, GlobalCenter):
+    
     def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
         super().__init__(sourceGraph, vertices, vertex_i, vertex_j)
-        self.lines = []
-
-    def lowerlm(self, A):
+    
+    def upperlm(self, A):
         return self.distance(self.vertex_i, A)
 
-    def upperlm(self, A):
+    def lowerlm(self, A):
         return self.distance(self.vertex_j, A) + (1-self.distance(self.vertex_i, self.vertex_j))*self.distance(self.vertex_i, self.vertex_j)
 
     def BoundedValue(self, x):
@@ -123,15 +146,21 @@ class LocalMinima(Local, GlobalCenter):
                 i += 1
                 continue
             else:
-                if x == 'upper':
-                    if self.upperlm(i) > val:
-                        val = self.upperlm(i)
-                elif x == 'lower':
+                if x == 'lower':
                     if self.lowerlm(i) > val:
                         val = self.lowerlm(i)
+                elif x == 'upper':
+                    if self.upperlm(i) > val:
+                        val = self.upperlm(i)
             i += 1
         return val
-        
+
+class InLocalMin(Local, GlobalCenter):
+
+    def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
+        super().__init__(sourceGraph, vertices, vertex_i, vertex_j)
+        self.lines = []
+
     def add_line(self, new_func):
         """
         Add a new function to the list of lines.
@@ -227,7 +256,12 @@ class LocalMinima(Local, GlobalCenter):
         
         return min_val, min_x
 
-    def LocalMinima(self):
+class LocalMinima(BoLocalMin, InLocalMin, GlobalCenter):
+    
+    def __init__(self, sourceGraph, vertices, vertex_i, vertex_j):
+        super().__init__(sourceGraph, vertices, vertex_i, vertex_j)
+    
+    def LocalMinVal(self):
         local = []
         local.append(self.BoundedValue('upper'))
         local.append(self.BoundedValue('lower'))

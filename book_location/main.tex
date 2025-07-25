@@ -1,0 +1,850 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{vietnam}\usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
+\usepackage[top=3.5cm, bottom=3.0cm, left=3cm, right=3.0cm]{geometry} 
+\usepackage{color, fancyhdr, graphicx, wrapfig}
+\usepackage[unicode]{hyperref}
+\usepackage[vietnamese]{babel}
+\usepackage{titling}
+\usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
+\usepackage{subfigure}
+\usepackage{algorithm2e}
+\usepackage{secdot}
+\usepackage{graphicx}
+\usepackage{tree-dvips}
+\usepackage{qtree}
+\usepackage{booktabs}
+\usepackage{pgfgantt}
+\usepackage{tabularx}
+\usepackage{ltablex}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx} 
+\usepackage{titling}
+\usepackage{secdot}
+\usepackage{enumitem}
+\usepackage{forest}
+\usepackage{tikz-qtree}
+\usepackage{array}
+\usetikzlibrary{calc}
+\usepackage{longtable}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{exscale,relsize,makeidx}
+\usepackage{color, fancyhdr, graphicx, wrapfig}
+\graphicspath{ {figures/} }
+
+\renewcommand{\listfigurename}{List of plots}
+\renewcommand{\listtablename}{List of Tables}
+\usepackage{amsmath}
+\usepackage{textpos}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{caption}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{datavisualization} 
+\pgfplotsset{compat=1.18, width = 7cm}
+\usetikzlibrary{patterns}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage[tikz]{ocgx2}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{steal}{RGB}{70,130,180}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{subcaption}
+\usepackage{changepage}
+\usepackage{float}
+\usepackage{pgfplotstable}
+\usepackage{blindtext}
+\usepackage{titlesec}
+\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{nccmath}
+\usetikzlibrary{calc}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{exscale,relsize,makeidx}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\newtheorem{dn}{Định nghĩa}
+\newtheorem{tc}{Tính chất}
+\newtheorem{dl}{Định lý}
+\newtheorem{md}{Mệnh đề}
+\newtheorem{bd}{Bổ đề}
+\newtheorem{hq}{Hệ quả}
+\newtheorem{nx}{Nhận xét}
+\newtheorem{vd}{Ví dụ}
+\newtheorem{cm}{Chứng minh}
+\newtheorem{cy}{Chú ý}
+\newtheorem{ttoan}{Thuật toán}
+\pagenumbering{roman}\pagestyle{plain}
+\renewcommand{\headrulewidth}{1,2pt} 			
+\renewcommand{\footrulewidth}{1,2pt}
+\newcommand{\dstc}[2]
+{
+	\newdimen\stringwidth\setbox0=\hbox{#1}
+	\stringwidth=\wd0
+	\hspace*{-\parindent}\hspace*{.5\textwidth}\hspace*{-.5\wd0}#1\hfill #2\bigskip
+}  
+\usepackage{scrextend}
+\fancyhf{}
+\lhead{}
+\chead{\thepage}
+\rhead{}
+\cfoot{}
+\rfoot{}
+\lfoot{}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{1pt}
+\begin{document} 
+    \begin{titlepage}
+	\centering
+    \phantom{}\par
+	\vspace{3cm}
+	{\LARGE\textbf{FACILITY LOCATION OPTIMIZATION}\par}
+	\vspace{1cm}
+	\rule{5cm}{0.5pt}\par
+	\vspace{1cm}
+		{\LARGE\textbf{THUẬT TOÁN TÌM VỊ TRÍ TỐI ƯU}\par}
+	\vspace{1cm}
+	\Large\textbf{Nguyễn Chí Bằng}\par		
+	\vspace{1cm}
+	\Large{GVHD: TS. Lê Minh Huy}\par		
+	\vspace{1cm}
+    \today
+    \end{titlepage}
+
+% \thispagestyle{empty} % Removes header and footer
+% \mbox{}
+
+	\addcontentsline{toc}{chapter}{Mục lục}
+	\tableofcontents
+
+	\thispagestyle{empty} % Removes header and footer
+	\mbox{}
+
+	\chapter*{Danh mục ký hiệu và ý nghĩa}
+	\thispagestyle{fancy}
+	\addcontentsline{toc}{chapter}{Danh mục các kí hiệu}
+	\begin{tabularx}{\linewidth}{ c  X }
+		$J_{ij}$ & Công việc (job) thứ $j$ được xử lý trên máy thứ $i$, trong trường hợp đơn máy thì $i=1$, kể từ đây ta chỉ ký hiệu $J_j$. \\
+		\\
+		$p_j$ & Khoảng thời gian xử lý (processing time) của công việc thứ $j$ hay quá trình của công việc thứ $j$, tức từ thời điểm bắt đầu xử lý công việc đến thời điểm hoàn thành công việc. \\
+	\end{tabularx}
+\newpage
+\pagenumbering{arabic} 
+
+\chapter{Giới thiệu bài toán xác định Vị trí tối ưu}
+\section{Khái quát về bài toán xác định vị trí tối ưu}
+
+Bài toán xác định vị trí tối ưu (Location Problem) là một nhánh quan trọng trong lĩnh vực vận trù học và tối ưu hóa, mục tiêu của bài toán là tìm ra vị trí đặt một hoặc nhiều cơ sở (như nhà máy, kho bãi, trạm phân phối, cửa hàng,...) sao cho một tiêu chí nào đó được tối ưu, chẳng hạn như chi phí vận chuyển, thời gian phục vụ, khoảng cách,... Việc giải quyết hiệu quả bài toán không chỉ giúp doanh nghiệp tối ưu hóa chi phí mà còn nâng cao hiệu suất phục vụ và khả năng cạnh tranh.
+
+Bài toán có nhiều biến thể tùy thuộc vào hàm mục tiêu, ràng buộc và dữ liệu thực tế, ở đây ta tập trung vào hai dạng bài toán cơ bản. Giả sử ta có mạng lưới \eqref{mangluoivd}, mục tiêu là tìm vị trí phù hợp đặt vào bất kỳ đâu trên mạng lưới (trên nút hoặc kể cả cạnh), sao cho hàm mục tiêu cụ thể được tối ưu.
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[main/.style = {draw, circle, thick, minimum size=1cm}]
+        % Nodes
+        \node[main] (4) at (0,0) {4};
+        \node[main] (1) at (-2,2) {1};
+        \node[main] (2) at (1.5,2) {2};
+        \node[main] (3) at (2,0.5) {3};
+        \node[main] (5) at (0,-2) {5};
+        \node[main] (6) at (-2.2,-3) {6};
+        
+        % Edges
+        \draw[-] (4) -- (1);
+        \draw[-] (4) -- (2);
+        \draw[-] (4) -- (3);
+        \draw[-] (4) -- (5);
+        \draw[-] (5) -- (6);
+    \end{tikzpicture}
+    \caption{\label{mangluoivd} Đồ thị cây với nút gốc tại nút 4.}
+\end{figure}
+
+Với bài toán xác định vị trí trung tâm ($k$-center), ta sẽ tìm hiểu cách đặt một hay nhiều vị trí trên mạng lưới sao cho tối thiểu khoảng cách tối đa \eqref{kcenter} và bài toán xác định vị trí trung vị ($k$-median) với hàm mục tiêu tối thiểu một hàm tổng.
+
+Phần lớn kiến thức của chương được tìm hiểu từ tài liệu.
+
+\section{Bài toán xác định vị trí trung tâm ($k$-center)} \label{kcenter}
+\subsection{Đơn vị trí ($1$-center)}
+\subsection*{Thuật toán Minimax}
+
+\subsection*{Thuật toán Single-Center}
+
+\begin{vd}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[thick, main/.style = {draw, circle}, dis/.style = {}] 
+        % Manual positions
+        \node[main] (1) at (-4, 0) {$v_1$};
+        \node[main] (2) at (0, 1.5) {$v_2$};
+        \node[main] (3) at (0, -1.5) {$v_3$}; 
+        \node[main] (4) at (4, 0) {$v_4$};  % symmetric middle right
+        
+        % Edges with weights
+        \draw[-] (1) -- node[above left] {$42$} (2);
+        \draw[-] (1) -- node[above right] {$53$} (3);
+        \draw[-] (2) -- node[right] {$39$} (3);
+        \draw[-] (2) -- node[above right] {$30$} (4);
+        \draw[-] (3) -- node[above left] {$35$} (4);
+    \end{tikzpicture} 
+    \caption{Hình 2.1}
+\end{figure}
+
+\begin{equation*}
+    D =
+    \begin{Vmatrix}
+        0 & 42 & 53 & 72 \\
+        42 & 0 & 39 & 30 \\
+        53 & 39 & 0 & 35 \\
+        72 & 30 & 35 & 0
+    \end{Vmatrix}.
+\end{equation*}
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[scale=0.7]
+    \begin{axis}[
+        width=15cm,
+        height=10cm,
+        xlabel={$x$},
+        ylabel={$F_j(x)$},
+        legend pos=south east,
+        axis lines=left,
+        clip=true,
+        xmin=0, xmax=42,
+        ymin=0, ymax=80,
+        enlarge y limits={abs=0},
+        legend style={
+            font=\scriptsize,
+            cells={anchor=west},
+            /tikz/every even column/.append style={column sep=0.5em},
+            inner xsep=3pt,
+            inner ysep=3pt,
+            % draw=none
+        },
+    ]
+
+        % f1(x): thin first (not in legend)
+    \addplot[
+        domain=0:9.5,
+        samples=100,
+        line width=1.5pt,
+        orange,
+        forget plot
+    ] {x + 53};
+
+    % f1(x): thick after (this one goes in legend)
+    \addplot[
+        domain=9.5:14,
+        samples=100,
+        line width=3pt,
+        orange
+    ] {x + 53};
+    \addlegendentry{$f_1(x)$ của $d(v_3,x)$}
+
+
+    % f2(x) for v3
+    \addplot[
+        domain=14:42,
+        samples=100,
+        line width=3pt,
+        blue
+    ] {42 - x + 39};
+    \addlegendentry{$f_2(x)$ của $d(v_3,x)$}
+
+
+    % f2(x) for v4: thick first (in legend)
+    \addplot[
+        domain=0:9.5,
+        samples=100,
+        line width=3pt,
+        red
+    ] {42 - x + 30};
+    \addlegendentry{$f_2(x)$ của $d(v_4,x)$}
+
+    % f2(x): thin tail (not in legend)
+    \addplot[
+        domain=9.5:42,
+        samples=100,
+        line width=1.5pt,
+        red,
+        forget plot
+    ] {42 - x + 30};
+    
+    \addplot[
+        domain=40.5:42,
+        samples=100,
+        line width=3pt,
+        ForestGreen
+    ] {x};
+    \addlegendentry{$d(v_1,x)$}
+    
+    \addplot[
+        domain=0:40.5,
+        samples=100,
+        line width=1.5pt,
+        ForestGreen,
+        forget plot
+    ] {x};
+    
+    \addplot[
+        domain=0:42,
+        samples=100,
+        line width=1.5pt,
+        MidnightBlue
+    ] {42-x};
+    \addlegendentry{$d(v_2,x)$}
+
+    % Intersection point
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(14, 67)};
+
+    % Node label
+    \node at (axis cs:14,67) [xshift=0pt, yshift=15pt] {$(14,\ 67)$};
+    
+    % Intersection point
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(0, 72)};
+
+    % Node label
+    \node at (axis cs:0,72) [xshift=25pt, yshift=10pt] {$(0,\ 72)$};
+    
+    % Intersection point
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(9.5, 62.5)};
+
+    % Node label
+    \node at (axis cs:9.5,62.5) [xshift=0pt, yshift=-25pt] {$(9.5,\ 62.5)$};
+
+    % Intersection point
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(40.5, 40.5)};
+
+    % Node label
+    \node at (axis cs:40.5,40.5) [xshift=-40pt, yshift=0pt] {\scriptsize $(40.5,\ 40.5)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(42, 42)};
+
+    % Node label
+    \node at (axis cs:42,42) [xshift=-20pt, yshift=15pt] {$(42,\ 42)$};
+
+    \end{axis}
+    \end{tikzpicture}
+    \caption{$B_1$}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[scale=0.7]
+    \begin{axis}[
+        width=15cm,
+        height=10cm,
+        xlabel={$x$},
+        ylabel={$F_j(x)$},
+        legend pos=south east,
+        axis lines=left,
+        clip=true,
+        xmin=0, xmax=39,
+        ymin=0, ymax=75,
+        enlarge y limits={abs=0},
+        legend style={
+            font=\scriptsize,
+            cells={anchor=west},
+            /tikz/every even column/.append style={column sep=0.5em},
+            inner xsep=3pt,
+            inner ysep=3pt,
+            % draw=none
+        },
+    ]
+
+    \addplot[
+        domain=0:25,
+        samples=100,
+        line width=3pt,
+        orange
+    ] {x + 42};
+    \addlegendentry{$f_1(x)$ của $d(v_1,x)$}
+
+    \addplot[
+        domain=25:42,
+        samples=100,
+        line width=3pt,
+        blue
+    ] {-x + 92};
+    \addlegendentry{$f_2(x)$ của $d(v_1,x)$}
+    
+    \addplot[
+        domain=0:22,
+        samples=100,
+        line width=1.5pt,
+        brown
+    ] {x + 30};
+    \addlegendentry{$f_1(x)$ của $d(v_4,x)$}
+    
+    \addplot[
+        domain=22:42,
+        samples=100,
+        line width=1.5pt,
+        red
+    ] {39 - x + 35};
+    \addlegendentry{$f_2(x)$ của $d(v_4,x)$}
+    
+    \addplot[
+        domain=0:42,
+        samples=100,
+        line width=1.5pt,
+        ForestGreen
+    ] {x};
+    \addlegendentry{$d(v_2,x)$}
+    
+    \addplot[
+        domain=0:42,
+        samples=100,
+        line width=1.5pt,
+        MidnightBlue
+    ] {39-x};
+    \addlegendentry{$d(v_3,x)$}
+
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(25, 67)};
+
+    \node at (axis cs:25,67) [xshift=0pt, yshift=15pt] {$(25,\ 67)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(0, 42)};
+
+    \node at (axis cs:0,42) [xshift=25pt, yshift=25pt] {$(0,\ 42)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(39, 53)};
+
+    \node at (axis cs:39,53) [xshift=-25pt, yshift=-15pt] {$(39,\ 53)$};
+
+    \end{axis}
+    \end{tikzpicture}
+    \caption{$B_2$}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[scale=0.7]
+    \begin{axis}[
+        width=15cm,
+        height=10cm,
+        xlabel={$x$},
+        ylabel={$F_j(x)$},
+        legend pos=south east,
+        axis lines=left,
+        clip=true,
+        xmin=0, xmax=53,
+        ymin=0, ymax=90,
+        enlarge y limits={abs=0},
+        legend style={
+            font=\scriptsize,
+            cells={anchor=west},
+            /tikz/every even column/.append style={column sep=0.5em},
+            inner xsep=3pt,
+            inner ysep=3pt,
+            % draw=none
+        },
+    ]
+
+    \addplot[
+        domain=23:25,
+        samples=100,
+        line width=3pt,
+        orange
+    ] {x + 42};
+    \addplot[
+        domain=0:23,
+        samples=100,
+        line width=1.5pt,
+        orange,
+        forget plot
+    ] {x + 42};
+    \addlegendentry{$f_1(x)$ của $d(v_2,x)$}
+
+    \addplot[
+        domain=25:46,
+        samples=100,
+        line width=3pt,
+        blue
+    ] {53 - x + 39};
+    \addlegendentry{$f_2(x)$ của $d(v_2,x)$}
+    
+    \addplot[
+        domain=46:53,
+        samples=100,
+        line width=1.5pt,
+        blue,
+        forget plot
+    ] {53 - x + 39};
+    
+    \addplot[
+        domain=0:8,
+        samples=100,
+        line width=3pt,
+        red
+    ] {x + 72};
+    \addlegendentry{$f_1(x)$ của $d(v_4,x)$}
+    
+    \addplot[
+        domain=8:23,
+        samples=100,
+        line width=3pt,
+        brown
+    ] {53 - x + 35};
+    \addplot[
+        domain=23:53,
+        samples=100,
+        line width=1.5pt,
+        brown,
+        forget plot
+    ] {53 - x + 35};
+    \addlegendentry{$f_2(x)$ của $d(v_4,x)$}
+    
+    \addplot[
+        domain=0:46,
+        samples=100,
+        line width=1.5pt,
+        ForestGreen
+    ] {x};
+    \addlegendentry{$d(v_1,x)$}
+    
+    \addplot[
+        domain=46:53,
+        samples=100,
+        line width=3pt,
+        ForestGreen,
+        forget plot
+    ] {x};
+    
+    \addplot[
+        domain=0:53,
+        samples=100,
+        line width=1.5pt,
+        MidnightBlue
+    ] {53-x};
+    \addlegendentry{$d(v_3,x)$}
+
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(25, 67)};
+
+    \node at (axis cs:25,67) [xshift=0pt, yshift=15pt] {$(25,\ 67)$};
+
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(8, 80)};
+
+    \node at (axis cs:8,80) [xshift=0pt, yshift=15pt] {$(8,\ 80)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(23, 65)};
+
+    \node at (axis cs:23,65) [xshift=0pt, yshift=-25pt] {$(23,\ 65)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(46, 46)};
+
+    \node at (axis cs:46,46) [xshift=0pt, yshift=20pt] {$(46,\ 46)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(0, 72)};
+
+    \node at (axis cs:0,72) [xshift=25pt, yshift=-15pt] {$(0,\ 72)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(53, 53)};
+
+    \node at (axis cs:53,53) [xshift=-20pt, yshift=20pt] {$(53,\ 53)$};
+
+    \end{axis}
+    \end{tikzpicture}
+    \caption{$B_3$}
+\end{figure}
+
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[scale=0.7]
+    \begin{axis}[
+        width=15cm,
+        height=10cm,
+        xlabel={$x$},
+        ylabel={$F_j(x)$},
+        legend pos=south east,
+        axis lines=left,
+        clip=true,
+        xmin=0, xmax=35,
+        ymin=0, ymax=90,
+        enlarge y limits={abs=0},
+        legend style={
+            font=\scriptsize,
+            cells={anchor=west},
+            /tikz/every even column/.append style={column sep=0.5em},
+            inner xsep=3pt,
+            inner ysep=3pt,
+            % draw=none
+        },
+    ]
+
+    \addplot[
+        domain=0:27,
+        samples=100,
+        line width=3pt,
+        orange
+    ] {x + 53};
+    \addlegendentry{$f_1(x)$ của $d(v_1,x)$}
+
+    \addplot[
+        domain=27:35,
+        samples=100,
+        line width=3pt,
+        blue
+    ] {35 - x + 72};
+    \addlegendentry{$f_2(x)$ của $d(v_1,x)$}
+    
+    \addplot[
+        domain=0:13,
+        samples=100,
+        line width=1.5pt,
+        brown
+    ] {x + 39};
+    \addlegendentry{$f_1(x)$ của $d(v_2,x)$}
+
+    \addplot[
+        domain=13:35,
+        samples=100,
+        line width=1.5pt,
+        red
+    ] {35 - x + 30};
+    \addlegendentry{$f_2(x)$ của $d(v_2,x)$}
+    
+    \addplot[
+        domain=0:35,
+        samples=100,
+        line width=1.5pt,
+        ForestGreen
+    ] {x};
+    \addlegendentry{$d(v_3,x)$}
+    
+    \addplot[
+        domain=0:35,
+        samples=100,
+        line width=1.5pt,
+        MidnightBlue
+    ] {35-x};
+    \addlegendentry{$d(v_4,x)$}
+
+
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(27, 80)};
+
+    \node at (axis cs:27,80) [xshift=0pt, yshift=15pt] {$(27,\ 80)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(0, 53)};
+
+    \node at (axis cs:0,53) [xshift=25, yshift=25] {$(0,\ 53)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(35, 72)};
+
+    \node at (axis cs:35,72) [xshift=-25pt, yshift=-15pt] {$(35,\ 72)$};
+
+    \end{axis}
+    \end{tikzpicture}
+    \caption{$B_4$}
+\end{figure}
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[scale=0.7]
+    \begin{axis}[
+        width=15cm,
+        height=10cm,
+        xlabel={$x$},
+        ylabel={$F_j(x)$},
+        legend pos=south east,
+        axis lines=left,
+        clip=true,
+        xmin=0, xmax=30,
+        ymin=0, ymax=90,
+        enlarge y limits={abs=0},
+        legend style={
+            font=\scriptsize,
+            cells={anchor=west},
+            /tikz/every even column/.append style={column sep=0.5em},
+            inner xsep=3pt,
+            inner ysep=3pt,
+            % draw=none
+        },
+    ]
+
+    \addplot[
+        domain=0:30,
+        samples=100,
+        line width=3pt,
+        blue
+    ] {30 - x + 42};
+    \addlegendentry{$f_2(x)$ của $d(v_1,x)$}
+    
+    \addplot[
+        domain=0:17,
+        samples=100,
+        line width=1.5pt,
+        red
+    ] {x + 35};
+    \addlegendentry{$f_1(x)$ của $d(v_3,x)$}
+    
+    \addplot[
+        domain=17:30,
+        samples=100,
+        line width=1.5pt,
+        brown
+    ] {30 - x + 39};
+    \addlegendentry{$f_2(x)$ của $d(v_3,x)$}
+    
+    \addplot[
+        domain=0:35,
+        samples=100,
+        line width=1.5pt,
+        ForestGreen
+    ] {x};
+    \addlegendentry{$d(v_4,x)$}
+    
+    \addplot[
+        domain=0:35,
+        samples=100,
+        line width=1.5pt,
+        MidnightBlue
+    ] {30-x};
+    \addlegendentry{$d(v_2,x)$}
+
+
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(0, 72)};
+
+    \node at (axis cs:0,72) [xshift=25pt, yshift=15pt] {$(0,\ 72)$};
+    
+    \addplot[
+        only marks,
+        mark=*,
+        mark size=3pt,
+        black
+    ] coordinates {(30, 42)};
+
+    \node at (axis cs:30,42) [xshift=-20pt, yshift=25pt] {$(30,\ 42)$};
+
+    \end{axis}
+    \end{tikzpicture}
+    \caption{$B_5$}
+\end{figure}
+
+
+
+\end{vd}
+
+\subsection*{Thuật toán Heuristic}
+
+% Thuật toán ưu tiên duyệt xa nhất (Farthest-first traversal)
+
+% \subsection{Thuật toán Metaheuristic}
+
+\subsection{Đa vị trí ($k$-center)}
+
+\section{Bài toán xác định vị trí trung vị ($k$-median)}
+
+% \chapter{Ứng dụng thuật toán Lập lịch trong xử lý bài toán xác định Vị trí tối ưu cho Đơn máy}
+
+\section*{Trang chỉ mục / Phụ lục}
+\addcontentsline{toc}{section}{Phụ lục}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{tailieu}
+\end{document}
