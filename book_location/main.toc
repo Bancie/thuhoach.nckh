@@ -5,6 +5,4 @@
 \contentsline {section}{\numberline {1.1}Khái quát về bài toán xác định vị trí tối ưu}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Bài toán xác định vị trí trung tâm ($k$-center)}{2}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Đơn vị trí ($1$-center)}{2}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Đa vị trí ($k$-center)}{3}{subsection.1.2.2}%
-\contentsline {section}{\numberline {1.3}Bài toán xác định vị trí trung vị ($k$-median)}{3}{section.1.3}%
-\contentsline {section}{Phụ lục}{3}{section.1.3}%
+\contentsline {section}{Phụ lục}{3}{figure.caption.9}%

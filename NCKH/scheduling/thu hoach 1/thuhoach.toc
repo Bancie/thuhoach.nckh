@@ -1,0 +1,13 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {chapter}{Mục lục}{i}{Doc-Start}%
+\contentsline {chapter}{Danh mục các kí hiệu}{iv}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Giới thiệu bài toán lập lịch cho máy đơn và thuật toán xử lý}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Khái quát về bài toán lập lịch}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Bài toán trạng thái tĩnh ($r_j = 0$)}{2}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Thuật toán sắp xếp theo thứ tự công việc}{2}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Thuật toán ưu tiên đáo hạn}{4}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Thuật toán thời gian xử lý ngắn nhất}{7}{subsection.1.2.3}%
+\contentsline {section}{\numberline {1.3}Bài toán có thời điểm sẵn sàng không đồng nhất ($r_j \neq 0$)}{16}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Bài toán tối thiểu độ đáo hạn cực đại $L_{\max }$}{20}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Bài toán tối thiểu thời gian hoàn thành cực đại $C_{\max }$}{25}{subsection.1.3.2}%
+\contentsline {section}{Phụ lục}{30}{equation.1.3.67}%
