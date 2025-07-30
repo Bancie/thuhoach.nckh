@@ -4,6 +4,7 @@
 
 Covering problem
 
+
 -----------
 
 Central place theory
