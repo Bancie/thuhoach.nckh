@@ -123,3 +123,5 @@ Desktop.ini
 # Add any personal files/folders you want Git to ignore below:
 # notes/
 # local_config.yaml
+
+*.json
