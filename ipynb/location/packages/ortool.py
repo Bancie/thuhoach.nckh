@@ -1,6 +1,6 @@
 from ortools.linear_solver import pywraplp
 
-class programing_sovler():
+class programing_const():
     def __init__(self, obj_coeffs, constraint_co_leq, bounds_leq, constraint_co_eq, bounds_eq, num_vars, num_constraints_leq, num_constraints_eq):
         self.obj_coeffs = obj_coeffs
         self.constraint_co_leq = constraint_co_leq
@@ -28,17 +28,28 @@ class programing_sovler():
 
         return data
 
-    def integer_solve(self):
+    def solver(self,is_maximization=True, is_integer=False):
         data = self.create_data_model()
-        solver = pywraplp.Solver.CreateSolver("SCIP")
+        if is_integer:
+            solver = pywraplp.Solver.CreateSolver("SAT")
+        else:
+            solver = pywraplp.Solver.CreateSolver("GLOP")
+            
         if not solver:
             return
 
         infinity = solver.infinity()
+        
         x = {}
-        for j in range(data["num_vars"]):
-            x[j] = solver.IntVar(0, infinity, "x[%i]" % j)
-        print("Number of variables =", solver.NumVariables())
+        
+        if is_integer:
+            for j in range(data["num_vars"]):
+                x[j] = solver.NumVar(0, infinity, "x[%i]" % j)
+            print("Number of variables =", solver.NumVariables())
+        else:
+            for j in range(data["num_vars"]):
+                x[j] = solver.IntVar(0, infinity, "x[%i]" % j)
+            print("Number of variables =", solver.NumVariables())
 
         for i in range(data['num_constraints_leq']):
             constraint_expr = [data['constraint_co_leqeffs_leq'][i][j] * x[j] for j in range(data['num_vars'])]
@@ -51,18 +62,31 @@ class programing_sovler():
         objective = solver.Objective()
         for j in range(data["num_vars"]):
             objective.SetCoefficient(x[j], data["obj_coeffs"][j])
-        objective.SetMaximization()
+        if is_maximization:
+            objective.SetMaximization()
+        else:
+            objective.SetMinimization()
 
         print(f"Solving with {solver.SolverVersion()}")
         status = solver.Solve()
 
-        if status == pywraplp.Solver.OPTIMAL:
-            print("Objective value =", solver.Objective().Value())
-            for j in range(data["num_vars"]):
-                print(x[j].name(), " = ", x[j].solution_value())
-            print()
-            print(f"Problem solved in {solver.wall_time():d} milliseconds")
-            print(f"Problem solved in {solver.iterations():d} iterations")
-            print(f"Problem solved in {solver.nodes():d} branch-and-bound nodes")
+        if is_integer:
+            if status == pywraplp.Solver.OPTIMAL:
+                print("Objective value =", solver.Objective().Value())
+                for j in range(data["num_vars"]):
+                    print(x[j].name(), " = ", x[j].solution_value())
+                print()
+                print(f"Problem solved in {solver.wall_time():d} milliseconds")
+                print(f"Problem solved in {solver.iterations():d} iterations")
+                print(f"Problem solved in {solver.nodes():d} branch-and-bound nodes")
+            else:
+                print("The problem does not have an optimal solution.")
         else:
-            print("The problem does not have an optimal solution.")
+            if status == pywraplp.Solver.OPTIMAL:
+                print("Objective value =", solver.Objective().Value())
+                for j in range(data["num_vars"]):
+                    print(x[j].name(), " = ", x[j].solution_value())
+                print()
+                print(f"Problem solved in {solver.wall_time():d} milliseconds")
+            else:
+                print("The problem does not have an optimal solution.")
