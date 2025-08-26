@@ -73,8 +73,21 @@ class programing_const():
         if is_integer:
             if status == pywraplp.Solver.OPTIMAL:
                 print("Objective value =", solver.Objective().Value())
+                # x values
                 for j in range(data["num_vars"]):
                     print(x[j].name(), " = ", x[j].solution_value())
+                
+                print()
+                size = self.num_constraints_eq-1
+                print("Solution matrix:")
+                for i in range(size):
+                    row_vals = []
+                    for j in range(size):
+                        idx = i * size + j
+                        row_vals.append(f"{x[idx].solution_value()}")
+                        # row_vals.append(f"{x[idx].name()}={x[idx].solution_value()}")
+                    print(row_vals)              
+
                 print()
                 print(f"Problem solved in {solver.wall_time():d} milliseconds")
                 print(f"Problem solved in {solver.iterations():d} iterations")
