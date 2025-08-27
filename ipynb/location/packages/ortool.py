@@ -1,9 +1,9 @@
 from ortools.linear_solver import pywraplp
+import numpy as np
 
 class programing_const():
-    def __init__(self, cost_matrix, obj_coeffs, constraint_co_leq, bounds_leq, constraint_co_eq, bounds_eq, num_vars, num_constraints_leq, num_constraints_eq):
+    def __init__(self, cost_matrix, constraint_co_leq, bounds_leq, constraint_co_eq, bounds_eq, num_vars, num_constraints_leq, num_constraints_eq):
         self.cost_matrix = cost_matrix
-        self.obj_coeffs = obj_coeffs
         self.constraint_co_leq = constraint_co_leq
         self.bounds_leq = bounds_leq
         self.constraint_co_eq = constraint_co_eq
@@ -20,7 +20,7 @@ class programing_const():
         data["constraint_co_leqeffs_eq"] = self.constraint_co_eq
         data["bounds_eq"] = self.bounds_eq
         
-        data["obj_coeffs"] = self.obj_coeffs
+        data["obj_coeffs"] = np.array(self.cost_matrix).flatten().tolist()
         data["num_vars"] = self.num_vars
 
         data["num_constraints_leq"] = self.num_constraints_leq
