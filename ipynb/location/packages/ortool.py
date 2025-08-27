@@ -1,7 +1,8 @@
 from ortools.linear_solver import pywraplp
 
 class programing_const():
-    def __init__(self, obj_coeffs, constraint_co_leq, bounds_leq, constraint_co_eq, bounds_eq, num_vars, num_constraints_leq, num_constraints_eq):
+    def __init__(self, cost_matrix, obj_coeffs, constraint_co_leq, bounds_leq, constraint_co_eq, bounds_eq, num_vars, num_constraints_leq, num_constraints_eq):
+        self.cost_matrix = cost_matrix
         self.obj_coeffs = obj_coeffs
         self.constraint_co_leq = constraint_co_leq
         self.bounds_leq = bounds_leq
@@ -29,6 +30,7 @@ class programing_const():
         return data
 
     def solver(self,is_maximization=True, is_integer=False):
+        size = self.num_constraints_eq-1
         data = self.create_data_model()
         if is_integer:
             solver = pywraplp.Solver.CreateSolver("SAT")
@@ -78,7 +80,6 @@ class programing_const():
                     print(x[j].name(), " = ", x[j].solution_value())
                 
                 print()
-                size = self.num_constraints_eq-1
                 print("Solution matrix:")
                 for i in range(size):
                     row_vals = []
@@ -100,6 +101,17 @@ class programing_const():
                 for j in range(data["num_vars"]):
                     print(x[j].name(), " = ", x[j].solution_value())
                 print()
+                print("Solution matrix:")
+                for i in range(size):
+                    row_vals = []
+                    for j in range(size):
+                        idx = i * size + j
+                        row_vals.append(f"{x[idx].solution_value()}")
+                        # row_vals.append(f"{x[idx].name()}={x[idx].solution_value()}")
+                    print(row_vals)              
+                
+                print()
+
                 print(f"Problem solved in {solver.wall_time():d} milliseconds")
             else:
                 print("The problem does not have an optimal solution.")
