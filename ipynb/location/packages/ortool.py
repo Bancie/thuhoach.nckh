@@ -101,7 +101,7 @@ class programing_const():
                     row_vals = []
                     for j in range(size):
                         idx = i * size + j
-                        row_vals.append(f"{x[idx].solution_value()}")
+                        row_vals.append(x[idx].solution_value())
                         # row_vals.append(f"{x[idx].name()}={x[idx].solution_value()}")
                     print(row_vals)              
 
@@ -122,7 +122,7 @@ class programing_const():
                     row_vals = []
                     for j in range(size):
                         idx = i * size + j
-                        row_vals.append(f"{x[idx].solution_value()}")
+                        row_vals.append(x[idx].solution_value())
                         # row_vals.append(f"{x[idx].name()}={x[idx].solution_value()}")
                     print(row_vals)              
                 
