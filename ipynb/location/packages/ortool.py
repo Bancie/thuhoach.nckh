@@ -2,35 +2,51 @@ from ortools.linear_solver import pywraplp
 import numpy as np
 
 class programing_const():
-    def __init__(self, cost_matrix, constraint_co_leq, bounds_leq, constraint_co_eq, bounds_eq, num_vars, num_constraints_leq, num_constraints_eq):
+    def __init__(self, cost_matrix, p_facility, constraint_co_leq, bounds_leq, num_constraints_leq):
         self.cost_matrix = cost_matrix
+        self.p_facility = p_facility
         self.constraint_co_leq = constraint_co_leq
         self.bounds_leq = bounds_leq
-        self.constraint_co_eq = constraint_co_eq
-        self.bounds_eq = bounds_eq
-        self.num_vars = num_vars
         self.num_constraints_leq = num_constraints_leq
-        self.num_constraints_eq = num_constraints_eq
         
     def create_data_model(self):
         data = {}
+        bounds_eq = []
+        rows, cols = np.array(self.cost_matrix).shape
+        
+        for i in range(rows):
+            bounds_eq.append(1)
+        bounds_eq.append(self.p_facility)
+
+        constraint_co_eq = np.zeros((rows, rows * cols), dtype=int)
+        for i in range(rows):
+            start = i * cols
+            for j in range(cols):
+                constraint_co_eq[i, start + j] = 1
+        row = np.zeros(rows * cols, dtype=int)
+        for i in range(rows):
+            for j in range(cols):
+                if i == j:
+                    row[i * cols + j] = 1
+        constraint_co_eq = np.vstack([constraint_co_eq, row])
+        
         data["constraint_co_leqeffs_leq"] = self.constraint_co_leq
         data["bounds_leq"] = self.bounds_leq
 
-        data["constraint_co_leqeffs_eq"] = self.constraint_co_eq
-        data["bounds_eq"] = self.bounds_eq
+        data["constraint_co_leqeffs_eq"] = constraint_co_eq
+        data["bounds_eq"] = bounds_eq
         
         data["obj_coeffs"] = np.array(self.cost_matrix).flatten().tolist()
-        data["num_vars"] = self.num_vars
+        data["num_vars"] = np.array(self.cost_matrix).size
 
         data["num_constraints_leq"] = self.num_constraints_leq
         
-        data["num_constraints_eq"] = self.num_constraints_eq
+        data["num_constraints_eq"] = rows + 1
 
         return data
 
     def solver(self,is_maximization=True, is_integer=False):
-        size = self.num_constraints_eq-1
+        size = np.array(self.cost_matrix).shape[0]
         data = self.create_data_model()
         if is_integer:
             solver = pywraplp.Solver.CreateSolver("SAT")
