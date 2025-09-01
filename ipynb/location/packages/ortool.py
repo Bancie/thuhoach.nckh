@@ -48,6 +48,7 @@ class programing_const():
     def solver(self,is_maximization=True, is_integer=False):
         size = np.array(self.cost_matrix).shape[0]
         data = self.create_data_model()
+        result = []
         if is_integer:
             solver = pywraplp.Solver.CreateSolver("SAT")
         else:
@@ -63,15 +64,11 @@ class programing_const():
         if is_integer:
             for j in range(data["num_vars"]):
                 x[j] = solver.NumVar(0, infinity, "x[%i]" % j)
-            print("Number of variables =", solver.NumVariables())
-            # NumVariables = solver.NumVariables()
-            # return NumVariables
+            NumVariables = solver.NumVariables()
         else:
             for j in range(data["num_vars"]):
                 x[j] = solver.IntVar(0, infinity, "x[%i]" % j)
-            print("Number of variables =", solver.NumVariables())
-            # NumVariables = solver.NumVariables()
-            # return NumVariables
+            NumVariables = solver.NumVariables()
 
         for i in range(data['num_constraints_leq']):
             constraint_expr = [data['constraint_co_leqeffs_leq'][i][j] * x[j] for j in range(data['num_vars'])]
@@ -89,53 +86,40 @@ class programing_const():
         else:
             objective.SetMinimization()
 
-        print(f"Solving with {solver.SolverVersion()}")
-        # version_solving = solver.SolverVersion()
-        # return version_solving
+        version_solving = solver.SolverVersion()
         status = solver.Solve()
 
         if is_integer:
             if status == pywraplp.Solver.OPTIMAL:
-                print("Objective value =", solver.Objective().Value())
-                # obj_val = solver.Objective().Value()
-                # return obj_val
-                # x values
-                for j in range(data["num_vars"]):
-                    print(x[j].name(), " = ", x[j].solution_value())
+                obj_val = solver.Objective().Value()
                 
-                print()
-                print("Solution matrix:")
                 for i in range(size):
                     row_vals = []
                     for j in range(size):
                         idx = i * size + j
                         row_vals.append(x[idx].solution_value())
-                    print(row_vals)
+                    result.append(row_vals)
 
-                print()
-                print(f"Problem solved in {solver.wall_time():d} milliseconds")
-                print(f"Problem solved in {solver.iterations():d} iterations")
-                print(f"Problem solved in {solver.nodes():d} branch-and-bound nodes")
+                wall_time = solver.wall_time()
+                iterations = solver.iterations()
+                nodes = solver.nodes()
+                return NumVariables, version_solving, obj_val, result, wall_time, iterations, nodes
             else:
                 print("The problem does not have an optimal solution.")
         else:
             if status == pywraplp.Solver.OPTIMAL:
-                print("Objective value =", solver.Objective().Value())
-                # obj_val = solver.Objective().Value()
-                # return obj_val
-                for j in range(data["num_vars"]):
-                    print(x[j].name(), " = ", x[j].solution_value())
-                print()
-                print("Solution matrix:")
+                obj_val = solver.Objective().Value()
+                
                 for i in range(size):
                     row_vals = []
                     for j in range(size):
                         idx = i * size + j
                         row_vals.append(x[idx].solution_value())
-                    print(row_vals)
-                
-                print()
+                    result.append(row_vals)
 
-                print(f"Problem solved in {solver.wall_time():d} milliseconds")
+                wall_time = solver.wall_time()
+                iterations = 0
+                nodes = 0
+                return NumVariables, version_solving, obj_val, result, wall_time, iterations, nodes
             else:
                 print("The problem does not have an optimal solution.")
