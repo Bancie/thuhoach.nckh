@@ -1,14 +1,15 @@
 from ortools.linear_solver import pywraplp
 import numpy as np
 
-class programing_const():
-    def __init__(self, cost_matrix, p_facility, constraint_co_leq, bounds_leq, num_constraints_leq):
+class data_model():
+    def __init__(self, cost_matrix, p_facility, constraint_co_leq):
         self.cost_matrix = cost_matrix
         self.p_facility = p_facility
         self.constraint_co_leq = constraint_co_leq
-        self.bounds_leq = bounds_leq
-        self.num_constraints_leq = num_constraints_leq
-        
+    
+    def getRowsCols(self):
+        return np.array(self.cost_matrix).shape
+    
     def create_data_model(self):
         data = {}
         bounds_eq = []
@@ -30,8 +31,17 @@ class programing_const():
                     row[i * cols + j] = 1
         constraint_co_eq = np.vstack([constraint_co_eq, row])
         
+        num_constraints_leq = 0
+        for i in range(rows):
+            for j in range(cols):
+                if i != j:
+                    num_constraints_leq += 1
+        
         data["constraint_co_leqeffs_leq"] = self.constraint_co_leq
-        data["bounds_leq"] = self.bounds_leq
+        
+        bounds_leq = np.zeros(num_constraints_leq, dtype=int)
+        
+        data["bounds_leq"] = bounds_leq
 
         data["constraint_co_leqeffs_eq"] = constraint_co_eq
         data["bounds_eq"] = bounds_eq
@@ -39,11 +49,24 @@ class programing_const():
         data["obj_coeffs"] = np.array(self.cost_matrix).flatten().tolist()
         data["num_vars"] = np.array(self.cost_matrix).size
 
-        data["num_constraints_leq"] = self.num_constraints_leq
+
+        data["num_constraints_leq"] = num_constraints_leq
         
         data["num_constraints_eq"] = rows + 1
 
         return data
+    
+    def getNumConstraintsLeq(self):
+        rows, cols = np.array(self.cost_matrix).shape
+        num_constraints_leq = 0
+        for i in range(rows):
+            for j in range(cols):
+                if i != j:
+                    num_constraints_leq += 1
+        return num_constraints_leq
+    
+    def getCostMatrix(self):
+        return self.cost_matrix
 
     def solver(self,is_maximization=True, is_integer=False):
         size = np.array(self.cost_matrix).shape[0]
