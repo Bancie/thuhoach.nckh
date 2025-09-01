@@ -102,8 +102,7 @@ class programing_const():
                     for j in range(size):
                         idx = i * size + j
                         row_vals.append(x[idx].solution_value())
-                        # row_vals.append(f"{x[idx].name()}={x[idx].solution_value()}")
-                    print(row_vals)              
+                    print(row_vals)
 
                 print()
                 print(f"Problem solved in {solver.wall_time():d} milliseconds")
@@ -123,8 +122,7 @@ class programing_const():
                     for j in range(size):
                         idx = i * size + j
                         row_vals.append(x[idx].solution_value())
-                        # row_vals.append(f"{x[idx].name()}={x[idx].solution_value()}")
-                    print(row_vals)              
+                    print(row_vals)
                 
                 print()
 
