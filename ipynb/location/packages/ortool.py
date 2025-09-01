@@ -64,10 +64,14 @@ class programing_const():
             for j in range(data["num_vars"]):
                 x[j] = solver.NumVar(0, infinity, "x[%i]" % j)
             print("Number of variables =", solver.NumVariables())
+            # NumVariables = solver.NumVariables()
+            # return NumVariables
         else:
             for j in range(data["num_vars"]):
                 x[j] = solver.IntVar(0, infinity, "x[%i]" % j)
             print("Number of variables =", solver.NumVariables())
+            # NumVariables = solver.NumVariables()
+            # return NumVariables
 
         for i in range(data['num_constraints_leq']):
             constraint_expr = [data['constraint_co_leqeffs_leq'][i][j] * x[j] for j in range(data['num_vars'])]
@@ -86,11 +90,15 @@ class programing_const():
             objective.SetMinimization()
 
         print(f"Solving with {solver.SolverVersion()}")
+        # version_solving = solver.SolverVersion()
+        # return version_solving
         status = solver.Solve()
 
         if is_integer:
             if status == pywraplp.Solver.OPTIMAL:
                 print("Objective value =", solver.Objective().Value())
+                # obj_val = solver.Objective().Value()
+                # return obj_val
                 # x values
                 for j in range(data["num_vars"]):
                     print(x[j].name(), " = ", x[j].solution_value())
@@ -113,6 +121,8 @@ class programing_const():
         else:
             if status == pywraplp.Solver.OPTIMAL:
                 print("Objective value =", solver.Objective().Value())
+                # obj_val = solver.Objective().Value()
+                # return obj_val
                 for j in range(data["num_vars"]):
                     print(x[j].name(), " = ", x[j].solution_value())
                 print()
