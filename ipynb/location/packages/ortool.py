@@ -2,10 +2,9 @@ from ortools.linear_solver import pywraplp
 import numpy as np
 
 class data_model():
-    def __init__(self, cost_matrix, p_facility, constraint_co_leq):
+    def __init__(self, cost_matrix, p_facility):
         self.cost_matrix = cost_matrix
         self.p_facility = p_facility
-        self.constraint_co_leq = constraint_co_leq
     
     def getRowsCols(self):
         return np.array(self.cost_matrix).shape
@@ -37,7 +36,23 @@ class data_model():
                 if i != j:
                     num_constraints_leq += 1
         
-        data["constraint_co_leqeffs_leq"] = self.constraint_co_leq
+        constraint_co_leq = np.zeros((num_constraints_leq, rows * cols), dtype=int)
+
+        demand_count = 0
+        for i in range(rows):
+            for j in range(cols):
+                if i != j:
+                    constraint_co_leq[demand_count, i * cols + j] = 1
+                    demand_count += 1
+
+        self_asign_count = 0
+        for i in range(rows):
+            for j in range(cols):
+                if i != j:
+                    constraint_co_leq[self_asign_count, j * cols + j] = -1
+                    self_asign_count += 1
+
+        data["constraint_co_leqeffs_leq"] = constraint_co_leq
         
         bounds_leq = np.zeros(num_constraints_leq, dtype=int)
         
