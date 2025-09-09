@@ -5,4 +5,4 @@
 \contentsline {section}{\numberline {1.1}Khái quát về bài toán xác định vị trí tối ưu}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Bài toán xác định vị trí trung tâm ($k$-center)}{2}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Đơn vị trí ($1$-center)}{2}{subsection.1.2.1}%
-\contentsline {section}{Phụ lục}{3}{figure.caption.9}%
+\contentsline {section}{Phụ lục}{2}{figure.caption.9}%
